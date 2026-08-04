@@ -14,6 +14,16 @@ Ein Hero muss in kurzer Zeit vier Dinge leisten: eine Situation oder Zielgruppe 
 
 Eine starke Headline kann emotional oder präzise sein. Sie braucht eine Subheadline, wenn die Bedeutung sonst offen bleibt. Ein Bild darf Atmosphäre, Ergebnis oder Kontext geben; es sollte nicht die zentrale Aussage ersetzen. Der CTA muss die tatsächliche Bereitschaft der Person respektieren. Das [Copywriting-System](../05_COPYWRITING/01-headlines-und-subheads.md) hilft, die sprachliche Aufgabe zu bestimmen.
 
+## Ausrichtung: Hero immer zentriert
+
+Der Hero-Bereich wird verbindlich zentriert gesetzt, nie linksbündig. Das gilt für den gesamten Hero-Inhalt als Einheit: Eyebrow/Badge, Headline, Subheadline, CTA-Gruppe und etwaige Vertrauenszeile stehen gemeinsam auf einer zentrierten vertikalen Achse, nicht als linksbündiger Textblock neben oder über einem Bild. Diese Regel gilt unabhängig vom Client, der Branche und der sonst frei zu wählenden visuellen Identität (Farbe, Typografie, Bildsprache bleiben wie in [03_VISUAL_LANGUAGE](../02_BRANDING/02-visuelles-system.md) beschrieben Sache des jeweiligen Projekts) — die Ausrichtung selbst ist hier bewusst kein Gestaltungsspielraum, sondern ein festes Systemmerkmal von VELLOX OS.
+
+Der Grund: Eine zentrierte Komposition liest sich als bewusste, ruhige Aussage an eine Person, während eine linksbündige Anordnung fast immer wie eine unreflektierte Übernahme generischer SaaS-Templates wirkt (Split-Hero mit Text links, Bild rechts) — genau das Muster, das der [Anti-Template-Standard](../00_SYSTEM/05-anti-template-standard.md) als austauschbar einstuft. Zentrierung zwingt außerdem zu Kürze und Priorität: eine zentrierte Headline verträgt keine beiläufig angehängten Nebensätze, weil jede zusätzliche Zeile die Achse sichtbar stört. Das dient direkt der in [Visuelle Dominanz begrenzen](#visuelle-dominanz-begrenzen) verlangten Reduktion auf die Kernaussage.
+
+Was das konkret ausschließt: kein zweispaltiger Hero mit Fließtext links und Bild/Illustration rechts; keine linksbündige Headline über einem großformatigen Hintergrundbild; keine CTA-Gruppe, die an den linken Rand des Textblocks andockt, während die Headline zentriert steht (gemischte Ausrichtung ist ebenso unzulässig wie durchgängig linksbündig). Ein Hintergrundbild, ein Video oder eine Illustration darf weiterhin die volle Breite/Höhe einnehmen — die Zentrierungspflicht betrifft die Anordnung der Textebene und der interaktiven Elemente (CTA, Badges), nicht zwingend ein zusätzliches, asymmetrisch platziertes Hintergrundmotiv, solange die Textachse selbst zentriert bleibt.
+
+Auf Mobile bleibt die zentrierte Achse erhalten; siehe [Mobile und Zwischenräume](#mobile-und-zwischenräume) für die übrigen Anpassungen (Bildbeschnitt, CTA-Reihenfolge, Abschnittsabstand), die davon unabhängig zu bewerten sind.
+
 ## Visuelle Dominanz begrenzen
 
 Ein Hero darf groß sein, aber die Größe darf nicht selbst das Argument sein. Überdimensionierte Typografie, Videos oder komplexe Parallax-Effekte können die Kernbotschaft verdecken, besonders auf kleinen Bildschirmen und bei Zoom. Prüfe den Hero daher im schnellen Blick, im Scroll und unter reduzierter Bewegung.
