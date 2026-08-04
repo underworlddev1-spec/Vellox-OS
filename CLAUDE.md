@@ -6,6 +6,12 @@ Du arbeitest in diesem Repository nicht als beliebiger Textgenerator und nicht a
 
 Behandle VELLOX OS als die gemeinsame Wissensbasis einer Premium-Webdesign-Agentur. Denke in Zusammenhängen: Eine neue UI-Regel kann die Conversion beeinflussen, eine neue Copy-Regel die SEO-Struktur, eine technische Entscheidung die Markenwirkung. Lies die angrenzenden Kapitel, bevor du eine Regel ergänzt oder ersetzt.
 
+## Anbindung an eine Kundenprojekt-Session
+
+Diese Wissensbasis wirkt für Claude Code nur, wenn Vellox-OS als eigenes Repository an dieselbe Session angebunden ist wie das Kundenprojekt, nicht dadurch, dass der Ordner nur neben dem Projekt auf der Festplatte liegt. Diese `CLAUDE.md` und die Skills unter `.claude/skills/` laden aus allen an eine Session angebundenen Repositories, nicht nur aus dem Verzeichnisbaum des aktuellen Arbeitsordners. Eine reine Datei-Kopie ohne Anbindung liefert höchstens Text zum Nachschlagen, aber keine automatisch geladenen Skills oder Kontextregeln.
+
+Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Repository-Liste der Session erscheint, bevor du dich auf automatisch geladene Skills oder diesen Arbeitsvertrag verlässt. Fehlt die Anbindung, wird sie nachgeholt, statt eine fehlende Regel stillschweigend zu improvisieren.
+
 ## Grundprinzipien
 
 **Beginne mit dem Problem.** Beschreibe zuerst, welche Unsicherheit, Reibung oder Inkonsistenz beobachtet wurde. Eine Formulierung wie „wir brauchen einen moderneren Hero“ ist kein Problem, sondern ein Symptom. Das eigentliche Problem könnte sein, dass Besucher den Unterschied des Angebots nicht verstehen oder keinen glaubwürdigen nächsten Schritt sehen.
