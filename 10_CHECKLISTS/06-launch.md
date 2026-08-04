@@ -12,6 +12,7 @@ Ein Launch ist die kontrollierte Übergabe von Gestaltung, Technik, Inhalt und B
 | Accessibility-Stichprobe ist bestanden | Launch darf keine zentrale Gruppe vom Weg ausschließen. | Tastatur, Zoom, Fokus, Screenreader-Stichprobe. |
 | Performance-Budget ist eingehalten oder Risiko dokumentiert | Last wirkt unmittelbar auf Nutzung und Markenwahrnehmung. | Messbericht mit Testumgebung. |
 | Analytics und Consent sind geprüft | Messung darf nicht die Privatsphäre oder Kernfunktion beschädigen. | Ereignis- und Datenschutzcheck. |
+| Datenschutzerklärung stimmt mit echten Integrationen überein | Ein generierter Text ist nur so vollständig wie sein Fragebogen; Formular-Dienste und externe Verweise fehlen dort oft. | Codebase-Audit nach [`07_ENGINEERING/05-datenschutzerklaerung-generator.md`](../07_ENGINEERING/05-datenschutzerklaerung-generator.md). |
 | Backup und Rücknahmeweg existieren | Ein kontrollierter Rückweg begrenzt Schaden bei kritischem Fehler. | Rollback-Anweisung. |
 | Zuständigkeiten nach Launch sind übergeben | Qualität endet nicht mit Veröffentlichung. | Betriebs- und Pflegebrief. |
 | Monitoring und erste Nachbeobachtung sind terminiert | Echte Nutzung liefert neue Evidenz, die das System verbessern kann. | Termin und Messplan. |
