@@ -1,6 +1,6 @@
-# VELLOX-Workflow und Reviewprozess
+# SAPHIRWEB-Workflow und Reviewprozess
 
-VELLOX organisiert Projekte nicht nach der Reihenfolge von Dateien, sondern nach der Reife von Entscheidungen. Der Workflow schützt zwei Dinge gleichzeitig: die Zeit des Teams und die Qualität des Ergebnisses. Frühe Arbeit soll Unsicherheit reduzieren. Spätere Arbeit soll Entscheidungen präzise ausführen. Wenn beides vermischt wird, entstehen teure Schleifen: Design kaschiert ungeklärte Strategie, Copy wird in Komponenten gezwängt, und Engineering entdeckt zu spät, dass die gewünschte Erfahrung nicht belastbar ist.
+SAPHIRWEB organisiert Projekte nicht nach der Reihenfolge von Dateien, sondern nach der Reife von Entscheidungen. Der Workflow schützt zwei Dinge gleichzeitig: die Zeit des Teams und die Qualität des Ergebnisses. Frühe Arbeit soll Unsicherheit reduzieren. Spätere Arbeit soll Entscheidungen präzise ausführen. Wenn beides vermischt wird, entstehen teure Schleifen: Design kaschiert ungeklärte Strategie, Copy wird in Komponenten gezwängt, und Engineering entdeckt zu spät, dass die gewünschte Erfahrung nicht belastbar ist.
 
 ## Phase 1: Ausrichten
 
@@ -48,7 +48,7 @@ Nach dem Launch wird ein begrenztes Lernfenster vereinbart. Beobachtet werden ni
 
 Jede Phase besitzt eine verantwortliche Person, einen Freigabepunkt und ein sichtbares Artefakt. Die verantwortliche Person muss nicht alles selbst erstellen; sie sorgt dafür, dass die Entscheidung eine Quelle der Wahrheit besitzt. Stakeholder werden zu den Fragen eingeladen, bei denen sie Kontext oder Autorität haben, nicht zu jeder Mikroentscheidung.
 
-Der Rhythmus soll Ruhe erzeugen: klare Übergaben, begrenzte Review-Fenster, wenige offene Grundsatzfragen und sichtbare nächste Entscheidungen. Geschwindigkeit entsteht bei VELLOX nicht durch Auslassen, sondern durch das Verhindern unnötiger Wiederholung.
+Der Rhythmus soll Ruhe erzeugen: klare Übergaben, begrenzte Review-Fenster, wenige offene Grundsatzfragen und sichtbare nächste Entscheidungen. Geschwindigkeit entsteht bei SAPHIRWEB nicht durch Auslassen, sondern durch das Verhindern unnötiger Wiederholung.
 ## Was ein guter Übergang schützt
 
 Ein Übergang ist gelungen, wenn die nächste Rolle nicht die gesamte vorherige Phase rekonstruieren muss. Sie erhält die relevante Entscheidung, ihre Begründung, den offenen Zweifel und das erwartete Artefakt. So bleibt Iteration möglich, ohne Verantwortung zu verwischen. Das schützt sowohl Geschwindigkeit als auch die Qualität der späteren Review.

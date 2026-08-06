@@ -16,7 +16,7 @@ Definiere Rollen statt einzelner Größen: Display, Überschrift, Zwischenübers
 
 ## Bildsprache als Beweis
 
-Bilder erzeugen Atmosphäre, aber sie können auch Erwartungen erzeugen, die das Angebot nicht erfüllt. VELLOX entscheidet für jedes Bild, ob es Kontext, Ergebnis, Prozess, Material, Person oder Stimmung zeigt. Ein Stimmungsbild darf nicht so eingesetzt werden, als sei es ein Beweis für echte Räumlichkeiten oder Ergebnisse.
+Bilder erzeugen Atmosphäre, aber sie können auch Erwartungen erzeugen, die das Angebot nicht erfüllt. SAPHIRWEB entscheidet für jedes Bild, ob es Kontext, Ergebnis, Prozess, Material, Person oder Stimmung zeigt. Ein Stimmungsbild darf nicht so eingesetzt werden, als sei es ein Beweis für echte Räumlichkeiten oder Ergebnisse.
 
 Eine starke Bildsprache besitzt wiederkehrende Entscheidungen: Nähe oder Distanz, kontrolliertes oder spontanes Licht, menschliche Präsenz, Materialität, Perspektive und Grad der Inszenierung. Diese Entscheidungen werden mit dem [Research zur Positionierung](../01_RESEARCH/02-zielgruppen-und-positionierung.md) abgeglichen. Ein Bild wird nicht gut, weil es schön ist, sondern weil es einen relevanten Gedanken schneller glaubwürdig macht.
 
@@ -36,7 +36,7 @@ Prüfe Hierarchie in drei Distanzen: im schnellen Blick auf die gesamte Seite, b
 
 Flächen, Schatten, Linien und Radien geben einer Oberfläche körperliche Beziehungen. Sie zeigen, was zusammengehört, was darüberliegt und was aktiv ist. Ein Schatten ist kein Qualitätszeichen; er ist eine Tiefeninformation. Ein Radius ist keine Persönlichkeit; er ist eine Aussage über Härte, Nähe und Systematik.
 
-Verwende diese Mittel sparsam und konsistent. Wenn jede Fläche eine eigene Materialität erhält, entsteht kein Reichtum, sondern ein unruhiges Koordinatensystem. VELLOX bevorzugt wenige, gut begründete Ebenen, die über alle Zustände hinweg lesbar bleiben.
+Verwende diese Mittel sparsam und konsistent. Wenn jede Fläche eine eigene Materialität erhält, entsteht kein Reichtum, sondern ein unruhiges Koordinatensystem. SAPHIRWEB bevorzugt wenige, gut begründete Ebenen, die über alle Zustände hinweg lesbar bleiben.
 ## Kontrast als Beziehung
 
 Kontrast ist nicht nur hell gegen dunkel oder groß gegen klein. Auch dicht gegen offen, fest gegen weich, sachlich gegen bildhaft und statisch gegen bewegt können Beziehungen tragen. Eine Oberfläche wird lesbar, wenn Kontraste gezielt eingesetzt werden. Zu viele gleich starke Kontraste machen jede Ebene wichtig und dadurch keine wirklich wichtig.

@@ -17,7 +17,7 @@ Die Qualitätskontrolle ist die letzte integrierte Betrachtung. Sie prüft nicht
 | Offene Abweichungen besitzen Begründung und Termin | Ein System kann Risiken akzeptieren, aber nicht vergessen. | Entscheidungs- und Risikolog. |
 | Nächste Lernschleife ist definiert | Gute Systeme entwickeln sich aus Nutzung, nicht aus einmaliger Perfektion. | Nachbeobachtungsplan. |
 
-Die Kontrolle wird mit dem [VELLOX-Qualitätsstandard](../00_SYSTEM/01-qualitaetsstandard.md) gelesen. Wenn mehrere Prüfpunkte gleichzeitig schwach sind, wird zuerst die zugrunde liegende Entscheidung untersucht. Einzelne kosmetische Korrekturen dürfen keine strategische oder technische Ursache verdecken.
+Die Kontrolle wird mit dem [SAPHIRWEB-Qualitätsstandard](../00_SYSTEM/01-qualitaetsstandard.md) gelesen. Wenn mehrere Prüfpunkte gleichzeitig schwach sind, wird zuerst die zugrunde liegende Entscheidung untersucht. Einzelne kosmetische Korrekturen dürfen keine strategische oder technische Ursache verdecken.
 ## Gegenseitige Abhängigkeiten
 
 Wenn ein Qualitätskriterium schwach ist, frage nach der Ursache in angrenzenden Disziplinen. Eine unklare CTA kann aus Copy, Positionierung, Proof oder Prozess stammen. Eine langsame Seite kann aus Video, CMS, Tracking oder Komposition stammen. Die Kontrolle darf nicht bei der sichtbaren Oberfläche stehen bleiben.
@@ -32,7 +32,7 @@ Ein Risiko kann akzeptiert werden, wenn seine Konsequenz verstanden, sein Umfang
 
 ## Lernschleife
 
-Nach dem Launch werden mindestens ein technisches, ein inhaltliches und ein qualitatives Signal betrachtet. Das Team fragt, welche Annahme bestätigt wurde, welche nicht und welche Regel daraus für VELLOX OS entsteht. So wird Qualitätskontrolle zu einer Quelle für Systementwicklung.
+Nach dem Launch werden mindestens ein technisches, ein inhaltliches und ein qualitatives Signal betrachtet. Das Team fragt, welche Annahme bestätigt wurde, welche nicht und welche Regel daraus für SAPHIRWEB OS entsteht. So wird Qualitätskontrolle zu einer Quelle für Systementwicklung.
 ## Gegenprobe
 
 Für die wichtigsten Seiten wird eine Gegenprobe durchgeführt: eine Person liest nur die Überschriften, eine andere navigiert per Tastatur, eine dritte sucht eine konkrete Information auf dem Smartphone. Die Ergebnisse ergänzen Fachreviews, weil sie zeigen, welche Bedeutung außerhalb des Projektvokabulars entsteht.
@@ -50,7 +50,7 @@ Lade mindestens eine Person ein, die weder Projektgeschichte noch Fachbegriffe k
 
 ## Regel zurückführen
 
-Wenn derselbe Befund in mehreren Projekten auftaucht, wird geprüft, ob die Ursache in VELLOX OS fehlt. Eine gute Qualitätskontrolle repariert nicht nur die aktuelle Seite. Sie verbessert die Regel, das Template oder den Review-Gate, der den Fehler künftig früher sichtbar machen kann.
+Wenn derselbe Befund in mehreren Projekten auftaucht, wird geprüft, ob die Ursache in SAPHIRWEB OS fehlt. Eine gute Qualitätskontrolle repariert nicht nur die aktuelle Seite. Sie verbessert die Regel, das Template oder den Review-Gate, der den Fehler künftig früher sichtbar machen kann.
 ## Risiko und Reihenfolge
 
 Wenn mehrere Befunde vorliegen, wird zuerst die gemeinsame Ursache gesucht. Ein schwacher Hero, ein unklarer CTA und ein dünnes FAQ können auf dieselbe Positionierungslücke hinweisen. Korrigiere die Quelle, bevor drei einzelne Symptome mit mehr Farbe, Text oder Animation überdeckt werden.

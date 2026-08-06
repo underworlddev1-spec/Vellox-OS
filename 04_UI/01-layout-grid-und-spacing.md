@@ -10,7 +10,7 @@ Ein Layout braucht eine Hauptachse, eine Lesebreite und definierte Ausnahmen. Di
 
 ## Grid als Verhalten
 
-Ein Grid schafft gemeinsame Bezugspunkte für Text, Bild und Handlung. Wenn Überschriften, Textkörper und CTA an zufälligen Kanten beginnen, wird der Blick unruhig. Wenn alle Elemente starr im Raster bleiben, kann die Seite mechanisch werden. VELLOX verwendet das Grid daher als unsichtbare Ordnung mit wenigen bewusst gesetzten Brüchen.
+Ein Grid schafft gemeinsame Bezugspunkte für Text, Bild und Handlung. Wenn Überschriften, Textkörper und CTA an zufälligen Kanten beginnen, wird der Blick unruhig. Wenn alle Elemente starr im Raster bleiben, kann die Seite mechanisch werden. SAPHIRWEB verwendet das Grid daher als unsichtbare Ordnung mit wenigen bewusst gesetzten Brüchen.
 
 Definiere Container, Außenabstände, Spalten, Gutter und die Übergänge zwischen Breakpoints. Die Werte sollten nicht allein aus einem Framework übernommen werden. Sie müssen zeigen, welche Inhaltsmengen und Bildverhältnisse zuverlässig funktionieren. Responsive Regeln beschreiben, wie die Beziehung zwischen Elementen erhalten bleibt, nicht nur, wann eine Spalte auf eine Zeile fällt.
 

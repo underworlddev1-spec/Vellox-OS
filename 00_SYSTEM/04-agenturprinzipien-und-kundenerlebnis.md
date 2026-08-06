@@ -1,16 +1,16 @@
 # Agenturprinzipien und Kundenerlebnis
 
-Ein internes Betriebssystem wirkt nicht nur auf die ausgelieferte Website. Es prägt auch die Beziehung zwischen Agentur und Kunde. Wenn die Zusammenarbeit unklar, reaktiv oder überladen ist, wird das Ergebnis diese Unruhe oft spiegeln. VELLOX behandelt das Kundenerlebnis deshalb als Teil der Designqualität: Der Kunde soll verstehen, warum eine Entscheidung getroffen wurde, wo seine Mitwirkung wichtig ist und wann er mit einer belastbaren Antwort rechnen kann.
+Ein internes Betriebssystem wirkt nicht nur auf die ausgelieferte Website. Es prägt auch die Beziehung zwischen Agentur und Kunde. Wenn die Zusammenarbeit unklar, reaktiv oder überladen ist, wird das Ergebnis diese Unruhe oft spiegeln. SAPHIRWEB behandelt das Kundenerlebnis deshalb als Teil der Designqualität: Der Kunde soll verstehen, warum eine Entscheidung getroffen wurde, wo seine Mitwirkung wichtig ist und wann er mit einer belastbaren Antwort rechnen kann.
 
 ## Wir führen durch Entscheidungen
 
-Kunden beauftragen keine Agentur, um jede gestalterische Möglichkeit selbst zu verwalten. Sie brauchen Fachlichkeit, ohne Kontrolle zu verlieren. VELLOX präsentiert daher keine ungeordnete Galerie von Varianten. Wir erklären die Frage, die Optionen, die Konsequenzen und unsere Empfehlung. Der Kunde kann widersprechen, aber er muss nicht erst selbst das System erfinden.
+Kunden beauftragen keine Agentur, um jede gestalterische Möglichkeit selbst zu verwalten. Sie brauchen Fachlichkeit, ohne Kontrolle zu verlieren. SAPHIRWEB präsentiert daher keine ungeordnete Galerie von Varianten. Wir erklären die Frage, die Optionen, die Konsequenzen und unsere Empfehlung. Der Kunde kann widersprechen, aber er muss nicht erst selbst das System erfinden.
 
 Das ist keine Bevormundung. Es ist eine faire Rollenklärung. Der Kunde besitzt Geschäftswissen, Verantwortung und Kontext. Das Team besitzt Methoden, Gestaltungskompetenz und die Pflicht, Konsequenzen sichtbar zu machen. Gute Zusammenarbeit bringt beides in eine Entscheidung.
 
 ## Wir versprechen nur, was wir tragen können
 
-Ein Premium-Auftritt darf ambitioniert sein, aber er darf keine Wirkung behaupten, die nicht beeinflussbar oder messbar ist. VELLOX trennt daher zwischen Ergebnisziel, Arbeitsziel und Signal. Mehr qualifizierte Anfragen können ein Ergebnisziel sein. Eine klarere Leistungspositionierung ist ein Arbeitsziel. Weniger Abbrüche im Kontaktformular ist ein Signal. Diese Ebenen werden nicht verwechselt.
+Ein Premium-Auftritt darf ambitioniert sein, aber er darf keine Wirkung behaupten, die nicht beeinflussbar oder messbar ist. SAPHIRWEB trennt daher zwischen Ergebnisziel, Arbeitsziel und Signal. Mehr qualifizierte Anfragen können ein Ergebnisziel sein. Eine klarere Leistungspositionierung ist ein Arbeitsziel. Weniger Abbrüche im Kontaktformular ist ein Signal. Diese Ebenen werden nicht verwechselt.
 
 Wenn Informationen fehlen, wird die Unsicherheit benannt. Das stärkt Vertrauen stärker als eine glatte Prognose. Kunden erleben Professionalität nicht dadurch, dass jede Antwort sofort kommt, sondern dadurch, dass jede Antwort den richtigen Grad an Sicherheit besitzt.
 
@@ -30,7 +30,7 @@ Diese Priorisierung wird offen erklärt. Ein Kunde soll nicht erst beim Launch m
 
 Feedback enthält häufig wertvolle Beobachtungen, aber nicht immer die richtige Lösung. „Der Hero braucht mehr Energie“ kann bedeuten, dass die Marke zu leise wirkt, dass der Nutzen nicht sofort sichtbar ist oder dass der Kunde ein vertrautes Muster vermisst. Das Team fragt nach der erwarteten Wirkung, bevor es die vorgeschlagene Form übernimmt.
 
-Umgekehrt wird Fachwissen nicht als Schutzschild verwendet. Wenn mehrere Menschen dieselbe Stelle missverstehen, ist das Signal ernst zu nehmen, auch wenn die ursprüngliche Idee elegant war. VELLOX sucht nicht nach dem Sieg einer Meinung, sondern nach einer besseren Entscheidung.
+Umgekehrt wird Fachwissen nicht als Schutzschild verwendet. Wenn mehrere Menschen dieselbe Stelle missverstehen, ist das Signal ernst zu nehmen, auch wenn die ursprüngliche Idee elegant war. SAPHIRWEB sucht nicht nach dem Sieg einer Meinung, sondern nach einer besseren Entscheidung.
 
 ## Wir bauen für die Abwesenheit des Teams
 
@@ -44,7 +44,7 @@ Respekt zeigt sich in kurzen Wegen, gut vorbereiteten Meetings und Entscheidunge
 
 ## Das Versprechen
 
-VELLOX liefert nicht einfach einen beeindruckenden Moment. VELLOX baut ein System, in dem Strategie, Inhalt, Gestaltung, Technik und Zusammenarbeit dieselbe Absicht tragen. Das Ergebnis soll sich für den Besucher ruhig und selbstverständlich anfühlen. Diese Selbstverständlichkeit ist die sichtbare Oberfläche vieler sorgfältiger, dokumentierter Entscheidungen.
+SAPHIRWEB liefert nicht einfach einen beeindruckenden Moment. SAPHIRWEB baut ein System, in dem Strategie, Inhalt, Gestaltung, Technik und Zusammenarbeit dieselbe Absicht tragen. Das Ergebnis soll sich für den Besucher ruhig und selbstverständlich anfühlen. Diese Selbstverständlichkeit ist die sichtbare Oberfläche vieler sorgfältiger, dokumentierter Entscheidungen.
 ## Eine ruhige Zusammenarbeit
 
 Ruhe bedeutet nicht, dass ein Projekt ohne Konflikte bleibt. Sie bedeutet, dass Konflikte eine Form bekommen: Frage, Evidenz, Optionen, Empfehlung und Entscheidung. Kunden erleben die Agentur dadurch als orientierend statt als beschleunigend. Diese Form der Zusammenarbeit ist selbst ein Teil des Premium-Erlebnisses und wird durch die Templates und Checklisten im Repository geschützt.

@@ -1,6 +1,6 @@
 # Markenstrategie: Eine erkennbare Haltung bauen
 
-Markenstrategie ist bei VELLOX die Verbindung zwischen Geschäftswirklichkeit und wahrnehmbarer Entscheidung. Sie beantwortet nicht nur, wie ein Unternehmen klingen oder aussehen soll. Sie legt fest, welche Beziehung es zu seinen Kunden anbietet, welchen Wert es verteidigt und welche Erwartungen es bewusst nicht weckt.
+Markenstrategie ist bei SAPHIRWEB die Verbindung zwischen Geschäftswirklichkeit und wahrnehmbarer Entscheidung. Sie beantwortet nicht nur, wie ein Unternehmen klingen oder aussehen soll. Sie legt fest, welche Beziehung es zu seinen Kunden anbietet, welchen Wert es verteidigt und welche Erwartungen es bewusst nicht weckt.
 
 ## Die Marke als Versprechen mit Beweis
 
@@ -18,7 +18,7 @@ Die Trennung verhindert eine häufige Verwechslung: Ein ungewöhnlicher Ton ist 
 
 Markencodes sind wiederkehrende Signale wie Typografie, Farbspannung, Bildperspektive, Satzrhythmus, Raumgefühl oder Bewegungsart. Sie funktionieren nicht isoliert. Ein dunkler Hintergrund ist weder automatisch luxuriös noch automatisch technisch. Erst seine Beziehung zu Inhalt, Material, Kontrast und Ton erzeugt Bedeutung.
 
-VELLOX definiert Codes deshalb als System: Ein Code besitzt eine Aufgabe, eine zulässige Bandbreite und eine Grenze. Eine Akzentfarbe kann Handlungen markieren, aber nicht gleichzeitig für Warnungen und dekorative Linien verwendet werden. Eine serifenbetonte Überschrift kann Charakter geben, darf aber nicht die Lesbarkeit langer Anleitungen beschädigen. Das [visuelle System](02-visuelles-system.md) macht diese Entscheidungen praktisch.
+SAPHIRWEB definiert Codes deshalb als System: Ein Code besitzt eine Aufgabe, eine zulässige Bandbreite und eine Grenze. Eine Akzentfarbe kann Handlungen markieren, aber nicht gleichzeitig für Warnungen und dekorative Linien verwendet werden. Eine serifenbetonte Überschrift kann Charakter geben, darf aber nicht die Lesbarkeit langer Anleitungen beschädigen. Das [visuelle System](02-visuelles-system.md) macht diese Entscheidungen praktisch.
 
 ## Die Marke über alle Kontaktpunkte
 
@@ -28,7 +28,7 @@ Die Strategie benennt daher wenige Verhaltensprinzipien für den gesamten Kontak
 
 ## Differenzierung ohne Theater
 
-Marken werden oft künstlich differenziert, indem sie allgemeine Kategorien ablehnen oder mit übertriebener Sprache aufladen. VELLOX sucht Differenzierung dort, wo sie getragen werden kann: im Prozess, im Auswahlkriterium, in der Qualität des Ergebnisses, in der Art der Betreuung oder in einer spezifischen Perspektive auf das Problem.
+Marken werden oft künstlich differenziert, indem sie allgemeine Kategorien ablehnen oder mit übertriebener Sprache aufladen. SAPHIRWEB sucht Differenzierung dort, wo sie getragen werden kann: im Prozess, im Auswahlkriterium, in der Qualität des Ergebnisses, in der Art der Betreuung oder in einer spezifischen Perspektive auf das Problem.
 
 Ein Unternehmen darf leise sein, wenn seine Genauigkeit die passende Erwartung ist. Ein Anbieter darf sinnlich und expressiv sein, wenn Erlebnis und Atmosphäre Teil des Ergebnisses sind. Die Frage lautet nicht, was auf dem Markt auffällt, sondern welche Form von Aufmerksamkeit die richtige Beziehung vorbereitet.
 

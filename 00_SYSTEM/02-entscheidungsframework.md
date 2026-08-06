@@ -1,6 +1,6 @@
 # Entscheidungsframework: Von Geschmack zu Begründung
 
-In Agenturprojekten entstehen Reibungen selten, weil niemand Ideen hat. Sie entstehen, weil mehrere Ideen plausibel klingen und niemand festlegt, nach welchem Maßstab entschieden wird. Das VELLOX-Framework macht aus einer ästhetischen oder strategischen Frage eine überprüfbare Entscheidung. Es soll Kreativität nicht einschränken. Es soll verhindern, dass die lauteste Meinung oder die letzte Referenz gewinnt.
+In Agenturprojekten entstehen Reibungen selten, weil niemand Ideen hat. Sie entstehen, weil mehrere Ideen plausibel klingen und niemand festlegt, nach welchem Maßstab entschieden wird. Das SAPHIRWEB-Framework macht aus einer ästhetischen oder strategischen Frage eine überprüfbare Entscheidung. Es soll Kreativität nicht einschränken. Es soll verhindern, dass die lauteste Meinung oder die letzte Referenz gewinnt.
 
 ## Schritt 1: Die Frage schärfen
 
@@ -16,7 +16,7 @@ Diese Trennung schützt vor einer typischen Fehlentwicklung: Eine plausible Verm
 
 ## Schritt 3: Die Entscheidungskriterien gewichten
 
-VELLOX verwendet sechs Kriterien. **Relevanz** fragt, ob die Lösung für die Zielgruppe und das Angebot wichtig ist. **Verständlichkeit** fragt, ob die beabsichtigte Bedeutung ohne unnötige Interpretation ankommt. **Vertrauen** fragt, ob die Lösung glaubwürdige Sicherheit schafft oder verbraucht. **Charakter** fragt, ob sie die Positionierung eigenständig ausdrückt. **Belastbarkeit** fragt, ob sie auf Geräten, Zuständen und späteren Änderungen funktioniert. **Aufwand** fragt, ob die Komplexität im Verhältnis zum erwarteten Nutzen steht.
+SAPHIRWEB verwendet sechs Kriterien. **Relevanz** fragt, ob die Lösung für die Zielgruppe und das Angebot wichtig ist. **Verständlichkeit** fragt, ob die beabsichtigte Bedeutung ohne unnötige Interpretation ankommt. **Vertrauen** fragt, ob die Lösung glaubwürdige Sicherheit schafft oder verbraucht. **Charakter** fragt, ob sie die Positionierung eigenständig ausdrückt. **Belastbarkeit** fragt, ob sie auf Geräten, Zuständen und späteren Änderungen funktioniert. **Aufwand** fragt, ob die Komplexität im Verhältnis zum erwarteten Nutzen steht.
 
 Nicht jedes Kriterium wiegt immer gleich. Für eine medizinische Website haben Vertrauen und Verständlichkeit vermutlich Vorrang vor experimenteller Bewegung. Für eine kulturelle Marke kann Charakter stärker gewichtet werden, solange die Grundorientierung erhalten bleibt. Dokumentiere die Gewichtung, sobald ein Zielkonflikt entsteht; sie macht die Entscheidung nachvollziehbar.
 
@@ -30,7 +30,7 @@ Gute Optionen sind bewusst unterschiedlich. Zum Beispiel kann eine Startseite ü
 
 Nicht jede Entscheidung braucht eine große Studie. Oft reicht der kleinste Test, der die riskanteste Annahme prüft: fünf kurze Verständnisinterviews, ein Click-Dummy, ein Inhaltsvergleich, ein Lighthouse-Lauf, ein Tastaturdurchgang oder eine Analyse echter Suchanfragen. Entscheidend ist, dass der Test zur Unsicherheit passt.
 
-Ein A/B-Test kann messen, welche Variante häufiger angeklickt wird, aber nicht automatisch, ob die richtigen Menschen besser verstehen, was sie erwartet. Eine hohe Conversion kann durch irreführende Copy entstehen. VELLOX betrachtet Kennzahlen deshalb gemeinsam mit qualitativen Signalen und Geschäftsergebnissen.
+Ein A/B-Test kann messen, welche Variante häufiger angeklickt wird, aber nicht automatisch, ob die richtigen Menschen besser verstehen, was sie erwartet. Eine hohe Conversion kann durch irreführende Copy entstehen. SAPHIRWEB betrachtet Kennzahlen deshalb gemeinsam mit qualitativen Signalen und Geschäftsergebnissen.
 
 ## Schritt 6: Entscheidung und Ausnahme dokumentieren
 
@@ -42,7 +42,7 @@ Eine Ausnahme ist erlaubt, wenn sie bewusst markiert wird. Ein bewusst asymmetri
 
 Entscheide nicht über Positionierung, Leistungsversprechen oder Zielgruppenbedürfnisse, wenn die nötige Evidenz fehlt und die Entscheidung später teuer wird. Entscheide auch nicht über Details, solange eine übergeordnete Frage offen ist. Die Wahl eines Icon-Stils kann warten, wenn unklar ist, welche Leistungen überhaupt priorisiert werden.
 
-Diese Reihenfolge reduziert sogenannte Scheinsicherheit. Ein fertiger Screen kann das Gefühl erzeugen, Fortschritt sei gemacht worden, obwohl die wichtigste Annahme noch unbeantwortet ist. VELLOX nutzt frühe Artefakte deshalb als Denkwerkzeuge, nicht als Beweis, dass eine Lösung bereits feststeht.
+Diese Reihenfolge reduziert sogenannte Scheinsicherheit. Ein fertiger Screen kann das Gefühl erzeugen, Fortschritt sei gemacht worden, obwohl die wichtigste Annahme noch unbeantwortet ist. SAPHIRWEB nutzt frühe Artefakte deshalb als Denkwerkzeuge, nicht als Beweis, dass eine Lösung bereits feststeht.
 
 ## Der Entscheidungseintrag
 

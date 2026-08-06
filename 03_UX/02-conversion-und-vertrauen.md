@@ -1,6 +1,6 @@
 # Conversion und Vertrauen: Den nächsten Schritt verantwortungsvoll gestalten
 
-Conversion ist die Bewegung von Interesse zu einer sinnvollen Handlung. Sie ist nicht identisch mit Klickrate. Ein Klick, der auf falschen Erwartungen beruht, erhöht später Abbrüche, Supportaufwand und Enttäuschung. VELLOX betrachtet Conversion deshalb als Ergebnis aus Relevanz, Vertrauen, Passung und geringer Reibung.
+Conversion ist die Bewegung von Interesse zu einer sinnvollen Handlung. Sie ist nicht identisch mit Klickrate. Ein Klick, der auf falschen Erwartungen beruht, erhöht später Abbrüche, Supportaufwand und Enttäuschung. SAPHIRWEB betrachtet Conversion deshalb als Ergebnis aus Relevanz, Vertrauen, Passung und geringer Reibung.
 
 ## Der richtige nächste Schritt
 
@@ -12,7 +12,7 @@ Für jede Handlung werden Erwartung, Aufwand und Ergebnis beschrieben. „Gespr�
 
 Vertrauen entsteht, wenn Menschen das Angebot, den Prozess und die Konsequenzen einschätzen können. Zeige deshalb passende Beweise vor der Handlung: echte Ergebnisse, konkrete Abläufe, Verantwortliche, Bedingungen und Antworten auf reale Einwände. Ein Beweis muss nicht spektakulär sein; er muss zur Frage passen, die gerade offen ist.
 
-Überredung beginnt dort, wo wichtige Informationen absichtlich verzögert, versteckt oder durch Druck ersetzt werden. VELLOX verwendet keine künstlichen Fristen, irreführenden Defaults oder Formulierungen, die einen Abbruch beschämen. Langfristige Conversion entsteht durch gute Passung, nicht durch das Erzwingen eines einzelnen Schrittes.
+Überredung beginnt dort, wo wichtige Informationen absichtlich verzögert, versteckt oder durch Druck ersetzt werden. SAPHIRWEB verwendet keine künstlichen Fristen, irreführenden Defaults oder Formulierungen, die einen Abbruch beschämen. Langfristige Conversion entsteht durch gute Passung, nicht durch das Erzwingen eines einzelnen Schrittes.
 
 ## Reibung diagnostizieren
 

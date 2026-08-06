@@ -1,6 +1,6 @@
 # Discovery: Die richtige Frage vor der richtigen Lösung
 
-Discovery ist bei VELLOX keine freundliche Vorbesprechung und kein Sammeln möglichst vieler Informationen. Discovery ist die erste Designleistung: Aus einem Auftrag, der meist in Ergebnissen wie „neue Website“ oder „mehr Anfragen“ formuliert ist, wird ein gemeinsames Verständnis des Problems. Ohne diese Arbeit kann eine Agentur sehr präzise an der falschen Aufgabe arbeiten.
+Discovery ist bei SAPHIRWEB keine freundliche Vorbesprechung und kein Sammeln möglichst vieler Informationen. Discovery ist die erste Designleistung: Aus einem Auftrag, der meist in Ergebnissen wie „neue Website“ oder „mehr Anfragen“ formuliert ist, wird ein gemeinsames Verständnis des Problems. Ohne diese Arbeit kann eine Agentur sehr präzise an der falschen Aufgabe arbeiten.
 
 ## Womit Discovery beginnt
 
@@ -34,7 +34,7 @@ Diese Synthese ist die Brücke zum [Research über Zielgruppe und Positionierung
 
 ## Umgang mit widersprüchlichen Aussagen
 
-Widersprüche sind oft die wertvollsten Ergebnisse. Der Inhaber kann das Angebot als individuell beschreiben, während Kunden vor allem die Zuverlässigkeit erwähnen. Das Marketing spricht von Innovation, während Interessenten nach Einfachheit suchen. VELLOX glättet solche Unterschiede nicht zu einem Kompromisssatz. Das Team prüft, ob die Marke ein gewünschtes Selbstbild kommuniziert, das von der erlebten Leistung nicht getragen wird.
+Widersprüche sind oft die wertvollsten Ergebnisse. Der Inhaber kann das Angebot als individuell beschreiben, während Kunden vor allem die Zuverlässigkeit erwähnen. Das Marketing spricht von Innovation, während Interessenten nach Einfachheit suchen. SAPHIRWEB glättet solche Unterschiede nicht zu einem Kompromisssatz. Das Team prüft, ob die Marke ein gewünschtes Selbstbild kommuniziert, das von der erlebten Leistung nicht getragen wird.
 
 Eine Aussage wird nicht automatisch wahr, weil sie von einer internen Person stammt. Sie wird aber auch nicht automatisch verworfen, weil sie nicht in eine erste Analyse passt. Markiere Herkunft und Sicherheit jeder Erkenntnis. So kann die Positionierung später klar sein, ohne ihre Entstehung zu verleugnen.
 

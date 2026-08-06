@@ -39,7 +39,7 @@ Prüfe, was bei Ausfall von JavaScript, Drittanbieter, E-Mail, Video, Consent od
 
 ## Lerntermin
 
-Setze einen konkreten Termin für die erste Nachbeobachtung. Prüfe technische Signale, Suchzugriffe, Anfragen, Rückfragen und redaktionelle Probleme. Die Erkenntnisse werden nach Fachbereich sortiert und entweder im Projekt oder in VELLOX OS dokumentiert.
+Setze einen konkreten Termin für die erste Nachbeobachtung. Prüfe technische Signale, Suchzugriffe, Anfragen, Rückfragen und redaktionelle Probleme. Die Erkenntnisse werden nach Fachbereich sortiert und entweder im Projekt oder in SAPHIRWEB OS dokumentiert.
 ## Go/No-Go
 
 Definiere vor dem Launch, welche Fehler einen Stopp auslösen: nicht erreichbare Kernseite, verlorene Formulardaten, falsche rechtliche oder lokale Information, fehlender Fokus, kritische Performance oder unkontrollierte Drittanbieter. Kleinere visuelle Abweichungen können akzeptiert werden, wenn Absicht und Kernweg erhalten bleiben.

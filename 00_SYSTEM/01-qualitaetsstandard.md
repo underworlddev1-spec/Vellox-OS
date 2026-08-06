@@ -1,6 +1,6 @@
-# Der VELLOX-Qualitätsstandard
+# Der SAPHIRWEB-Qualitätsstandard
 
-Qualität ist bei VELLOX kein Moment am Ende eines Projekts. Sie ist eine Eigenschaft der Entscheidungen, die vom ersten Gespräch bis zum Launch konsistent bleiben. Ein Auftritt kann technisch fehlerfrei und trotzdem schwach sein, wenn er die falsche Zielgruppe anspricht. Er kann strategisch klug und trotzdem unbrauchbar sein, wenn Kontraste, Ladezeit oder Tastaturbedienung nicht stimmen. Der Qualitätsstandard verbindet deshalb sechs Perspektiven.
+Qualität ist bei SAPHIRWEB kein Moment am Ende eines Projekts. Sie ist eine Eigenschaft der Entscheidungen, die vom ersten Gespräch bis zum Launch konsistent bleiben. Ein Auftritt kann technisch fehlerfrei und trotzdem schwach sein, wenn er die falsche Zielgruppe anspricht. Er kann strategisch klug und trotzdem unbrauchbar sein, wenn Kontraste, Ladezeit oder Tastaturbedienung nicht stimmen. Der Qualitätsstandard verbindet deshalb sechs Perspektiven.
 
 ## 1. Relevanz
 
@@ -36,7 +36,7 @@ Barrierefreiheit wird früh berücksichtigt, weil spätes Reparieren die Gestalt
 
 Eine Website ist belastbar, wenn ihre Qualität nicht von idealen Bedingungen abhängt. Sie muss auf kleinen Bildschirmen, langsamen Verbindungen, leeren Zuständen, langen Namen, übersetzten Texten und fehlerhaften Eingaben funktionieren. Sie muss wartbar sein, damit spätere Änderungen nicht die ursprüngliche Hierarchie zerstören. Sie muss messen können, ob ihre wichtigsten Wege funktionieren.
 
-Belastbarkeit ist der Grund, warum VELLOX keine visuellen Regeln isoliert dokumentiert. Eine Schattenstufe ist nur sinnvoll, wenn sie Oberflächen trennt, ohne Kontrast und Performance zu beschädigen. Ein heroisches Video ist nur sinnvoll, wenn es die Aussage stärkt, auf mobilen Geräten kontrolliert geladen wird und ohne Bewegung verständlich bleibt.
+Belastbarkeit ist der Grund, warum SAPHIRWEB keine visuellen Regeln isoliert dokumentiert. Eine Schattenstufe ist nur sinnvoll, wenn sie Oberflächen trennt, ohne Kontrast und Performance zu beschädigen. Ein heroisches Video ist nur sinnvoll, wenn es die Aussage stärkt, auf mobilen Geräten kontrolliert geladen wird und ohne Bewegung verständlich bleibt.
 
 ## Das Review-Modell
 

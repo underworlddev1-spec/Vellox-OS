@@ -10,7 +10,7 @@ Die beste Form hängt vom Risiko der Entscheidung ab. Ein lokaler Termin kann ei
 
 ## Relevanz vor Wortspiel
 
-Ein Wortspiel ist nur dann stark, wenn die angesprochene Person die Verbindung selbst herstellen kann. Wenn sie erst erraten muss, was angeboten wird, verbraucht die Headline Aufmerksamkeit für die falsche Aufgabe. VELLOX prüft deshalb zuerst die direkte Fassung und entscheidet dann, wie viel Eigenständigkeit die Seite verträgt.
+Ein Wortspiel ist nur dann stark, wenn die angesprochene Person die Verbindung selbst herstellen kann. Wenn sie erst erraten muss, was angeboten wird, verbraucht die Headline Aufmerksamkeit für die falsche Aufgabe. SAPHIRWEB prüft deshalb zuerst die direkte Fassung und entscheidet dann, wie viel Eigenständigkeit die Seite verträgt.
 
 Eine Headline darf poetisch sein, wenn Bild, Subheadline oder Kontext die Bedeutung stabilisieren. Sie darf sachlich sein, wenn Klarheit die gewünschte Markenerfahrung ist. „Ungewöhnlich“ ist kein Qualitätskriterium; „relevant und tragfähig“ schon.
 

@@ -1,6 +1,6 @@
-# Beispiel: VELLOX-Projekt für „Werkraum Süd“
+# Beispiel: SAPHIRWEB-Projekt für „Werkraum Süd“
 
-Dieses Beispiel zeigt, wie die VELLOX-Prinzipien in einem erfundenen, aber vollständig beschriebenen lokalen Handwerksprojekt zusammenwirken. Werkraum Süd ist ein kleiner Innenausbaubetrieb in einer mittelgroßen Stadt. Das Beispiel ist kein fertiger Branchenstandard. Es zeigt, wie aus Evidenz, Entscheidung und Prüfung ein belastbarer Auftritt entsteht.
+Dieses Beispiel zeigt, wie die SAPHIRWEB-Prinzipien in einem erfundenen, aber vollständig beschriebenen lokalen Handwerksprojekt zusammenwirken. Werkraum Süd ist ein kleiner Innenausbaubetrieb in einer mittelgroßen Stadt. Das Beispiel ist kein fertiger Branchenstandard. Es zeigt, wie aus Evidenz, Entscheidung und Prüfung ein belastbarer Auftritt entsteht.
 
 ## Ausgangslage
 
@@ -40,7 +40,7 @@ SEO-Seiten bedienen Suchintentionen wie Einbaumöbel, Küchen nach Maß und Inne
 
 ## Review-Ergebnis
 
-Der erste Entwurf war visuell stark, zeigte aber zu spät, für welche Projekte Werkraum Süd geeignet ist. Das Design Review war nicht das richtige Werkzeug; der Befund gehörte in UX und Positionierung. Nach der Änderung wird die Situation vor der Galerie erklärt, der Prozess vor dem Formular sichtbar und der CTA präzisiert. Das Beispiel zeigt die Kernlogik von VELLOX: Eine gute Oberfläche entsteht, wenn die Entscheidung davor richtig geordnet wurde.
+Der erste Entwurf war visuell stark, zeigte aber zu spät, für welche Projekte Werkraum Süd geeignet ist. Das Design Review war nicht das richtige Werkzeug; der Befund gehörte in UX und Positionierung. Nach der Änderung wird die Situation vor der Galerie erklärt, der Prozess vor dem Formular sichtbar und der CTA präzisiert. Das Beispiel zeigt die Kernlogik von SAPHIRWEB: Eine gute Oberfläche entsteht, wenn die Entscheidung davor richtig geordnet wurde.
 ## Was dieses Beispiel lehrt
 
 Die zentrale Verbesserung war kein neuer Stil, sondern eine andere Reihenfolge von Wahrheit. Erst wurde benannt, für welche Projektlage Werkraum Süd sinnvoll ist. Dann wurde gezeigt, wie der Betrieb arbeitet. Erst danach erhielt die Galerie ihre emotionale Funktion. Bilder konnten dadurch stärker wirken, weil sie nicht mehr allein erklären mussten, was das Unternehmen überhaupt anbietet.

@@ -4,13 +4,13 @@ Positionierung ist nicht der schönste Satz über ein Unternehmen. Sie ist die b
 
 ## Zielgruppen als Situationen verstehen
 
-VELLOX beschreibt Zielgruppen nicht zuerst über Alter, Beruf oder Wohnort. Solche Merkmale können relevant sein, erklären aber selten, warum ein Mensch jetzt handelt. Wichtiger ist die Situation: Was hat sich verändert? Welche Aufgabe muss gelöst werden? Was darf nicht passieren? Welche bisherige Lösung war unbefriedigend?
+SAPHIRWEB beschreibt Zielgruppen nicht zuerst über Alter, Beruf oder Wohnort. Solche Merkmale können relevant sein, erklären aber selten, warum ein Mensch jetzt handelt. Wichtiger ist die Situation: Was hat sich verändert? Welche Aufgabe muss gelöst werden? Was darf nicht passieren? Welche bisherige Lösung war unbefriedigend?
 
 Eine Person, die einen Coach sucht, kann nach Orientierung, Verbindlichkeit oder einem geschützten Raum suchen. Dieselbe demografische Person kann je nach Situation eine völlig andere Sprache und Beweisführung brauchen. Eine brauchbare Zielgruppenbeschreibung verbindet daher Kontext, Motivation, Risiko, Entscheidungsfähigkeit und Zugang zum Angebot.
 
 ## Segmentierung durch Passung
 
-Segmente werden bei VELLOX nach unterschiedlicher Relevanz gebildet, nicht nach maximaler Anzahl. Frage für jedes mögliche Segment: Hat es ein echtes Problem, das das Angebot löst? Kann es die Leistung erreichen und nutzen? Passt die Arbeitsweise des Anbieters? Ist der Wert der Beziehung für beide Seiten ausreichend?
+Segmente werden bei SAPHIRWEB nach unterschiedlicher Relevanz gebildet, nicht nach maximaler Anzahl. Frage für jedes mögliche Segment: Hat es ein echtes Problem, das das Angebot löst? Kann es die Leistung erreichen und nutzen? Passt die Arbeitsweise des Anbieters? Ist der Wert der Beziehung für beide Seiten ausreichend?
 
 Ein Segment darf klein sein, wenn seine Passung hoch ist. Ein lokales Unternehmen kann sich nicht ausschließlich auf eine abstrakte „breite Zielgruppe“ berufen, wenn verschiedene Anlässe unterschiedliche Seitenwege benötigen. Die Aufgabe der Website ist nicht, jede Person gleich anzusprechen. Sie soll passenden Menschen schnell zeigen, dass sie richtig sind, und unpassende Erwartungen freundlich korrigieren.
 
@@ -22,7 +22,7 @@ Der Unterschied muss eine Erfahrung oder Leistung benennen, die sich im Projekt 
 
 ## Relevanz und Eigenständigkeit balancieren
 
-Eine Positionierung muss verständlich genug sein, um einen Anschluss an die Situation des Besuchers zu schaffen, und eigenständig genug, um nicht wie eine Kopie der Konkurrenz zu klingen. VELLOX löst diesen Konflikt in zwei Ebenen: Die Hauptaussage benennt den konkreten Nutzen; die Ausdrucksform, Beispiele und Beweise geben ihm Charakter.
+Eine Positionierung muss verständlich genug sein, um einen Anschluss an die Situation des Besuchers zu schaffen, und eigenständig genug, um nicht wie eine Kopie der Konkurrenz zu klingen. SAPHIRWEB löst diesen Konflikt in zwei Ebenen: Die Hauptaussage benennt den konkreten Nutzen; die Ausdrucksform, Beispiele und Beweise geben ihm Charakter.
 
 Ein Restaurant kann sagen, welche Art von Abend es ermöglicht, ohne auf austauschbare Superlative zu setzen. Eine Agentur kann eine klare Wirkung versprechen, ohne jede fachliche Methode aufzulisten. Relevanz kommt aus der Frage des Besuchers; Charakter kommt aus der Art, wie das Unternehmen sie beantwortet.
 
@@ -40,7 +40,7 @@ Auch interne Teams sollten separat antworten. Unterschiede zwischen Selbstbild u
 
 ## Wenn mehrere Angebote bestehen
 
-Viele Unternehmen versuchen, alle Leistungen gleich prominent zu machen. Das erzeugt eine Broschüre, aber keine Führung. VELLOX ordnet Angebote nach der Entscheidung des Besuchers: Welches Problem ist der stärkste Einstieg? Welche Leistung ist der natürliche nächste Schritt? Welche Leistung braucht Vertiefung, weil sie komplex oder erklärungsbedürftig ist?
+Viele Unternehmen versuchen, alle Leistungen gleich prominent zu machen. Das erzeugt eine Broschüre, aber keine Führung. SAPHIRWEB ordnet Angebote nach der Entscheidung des Besuchers: Welches Problem ist der stärkste Einstieg? Welche Leistung ist der natürliche nächste Schritt? Welche Leistung braucht Vertiefung, weil sie komplex oder erklärungsbedürftig ist?
 
 Priorisierung bedeutet nicht, andere Leistungen zu verstecken. Sie schafft eine Hauptspur und sinnvolle Abzweigungen. Der Besucher darf erkennen, dass das Unternehmen mehr kann, ohne zuerst ein Inventar lesen zu müssen. Dieses Prinzip trägt später die [Hero-Guidelines](../04_UI/02-navigation-und-hero.md) und die [CTA-Logik](../05_COPYWRITING/02-cta-und-microcopy.md).
 ## Die Positionierung als Auswahlkriterium

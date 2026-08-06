@@ -1,6 +1,6 @@
 # Storytelling und Aufmerksamkeit: Die Seite als Argument
 
-Storytelling bedeutet bei VELLOX nicht, jede Marke in eine dramatische Heldengeschichte zu verwandeln. Es bedeutet, Informationen so zu ordnen, dass eine Veränderung verständlich wird. Ein Besucher soll erkennen, wo die Situation beginnt, warum sie schwierig ist, welche Entscheidung hilft und wie das Ergebnis aussieht.
+Storytelling bedeutet bei SAPHIRWEB nicht, jede Marke in eine dramatische Heldengeschichte zu verwandeln. Es bedeutet, Informationen so zu ordnen, dass eine Veränderung verständlich wird. Ein Besucher soll erkennen, wo die Situation beginnt, warum sie schwierig ist, welche Entscheidung hilft und wie das Ergebnis aussieht.
 
 ## Der narrative Kern
 

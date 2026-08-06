@@ -1,6 +1,6 @@
 # Anti-Template-Standard: Eigenständigkeit ohne künstliche Originalität
 
-VELLOX darf niemals wie eine automatisch zusammengestellte Website aussehen. Ein Auftritt kann technisch sauber, modern und gut gemeint sein und trotzdem sofort nach Vorlage wirken. Das geschieht, wenn vertraute Bausteine ohne konkrete Begründung aneinandergereiht werden, wenn jede Marke dieselbe Farbe und dieselbe Bewegung erhält oder wenn Text und Oberfläche eine Sicherheit vortäuschen, die aus keinem echten Verständnis stammt.
+SAPHIRWEB darf niemals wie eine automatisch zusammengestellte Website aussehen. Ein Auftritt kann technisch sauber, modern und gut gemeint sein und trotzdem sofort nach Vorlage wirken. Das geschieht, wenn vertraute Bausteine ohne konkrete Begründung aneinandergereiht werden, wenn jede Marke dieselbe Farbe und dieselbe Bewegung erhält oder wenn Text und Oberfläche eine Sicherheit vortäuschen, die aus keinem echten Verständnis stammt.
 
 Der Anti-Template-Standard schützt nicht vor Wiederverwendung. Ein gutes System braucht wiederverwendbare Regeln. Er schützt vor Wiederholung ohne Aufgabe. Der Unterschied ist entscheidend: Ein Button-System wiederholt eine verständliche Handlung. Eine identische Hero-Struktur auf jedem Projekt wiederholt nur eine Gewohnheit.
 
@@ -14,13 +14,13 @@ Frage bei einem visuellen Element: Welche Unsicherheit reduziert es? Welche Erwa
 
 ### Keine Pill Buttons
 
-Primäre Buttons werden nicht als pillenförmige Kapseln gestaltet. Eine vollständig abgerundete Form trägt häufig den visuellen Code von Softwareprodukten, Startups und generischen UI-Kits. Sie macht eine Handlung weich, austauschbar und oft kleiner, als sie in der Hierarchie sein sollte. VELLOX verwendet klare, markengerechte Formen mit einer kontrollierten Rundung. Die Form muss die Handlung tragen, nicht den Trend signalisieren.
+Primäre Buttons werden nicht als pillenförmige Kapseln gestaltet. Eine vollständig abgerundete Form trägt häufig den visuellen Code von Softwareprodukten, Startups und generischen UI-Kits. Sie macht eine Handlung weich, austauschbar und oft kleiner, als sie in der Hierarchie sein sollte. SAPHIRWEB verwendet klare, markengerechte Formen mit einer kontrollierten Rundung. Die Form muss die Handlung tragen, nicht den Trend signalisieren.
 
 Ausnahmen sind nur zulässig, wenn eine konkrete Marke die Kapsel nachweisbar als eigenen Code besitzt oder wenn ein kleiner Status, Filter oder Tag seine Funktion dadurch verständlicher macht. Eine Ausnahme braucht einen Entscheidungseintrag. Sie gilt nicht automatisch für alle Buttons des Projekts.
 
 ### Kein Lila als Default
 
-Lila wird nicht als VELLOX Standardfarbe eingesetzt. In vielen automatisch erzeugten Oberflächen signalisiert ein violetter Verlauf lediglich, dass eine Vorlage modern wirken soll. Farbe muss aus Positionierung, Material, Umgebung, Zielgruppe und Kontrast entstehen. Ein Kunde darf Lila verwenden, wenn es aus seiner Geschichte, seinem Angebot oder seiner visuellen Identität folgt. Dann wird es als Kundenentscheidung behandelt, nicht als VELLOX Signatur.
+Lila wird nicht als SAPHIRWEB Standardfarbe eingesetzt. In vielen automatisch erzeugten Oberflächen signalisiert ein violetter Verlauf lediglich, dass eine Vorlage modern wirken soll. Farbe muss aus Positionierung, Material, Umgebung, Zielgruppe und Kontrast entstehen. Ein Kunde darf Lila verwenden, wenn es aus seiner Geschichte, seinem Angebot oder seiner visuellen Identität folgt. Dann wird es als Kundenentscheidung behandelt, nicht als SAPHIRWEB Signatur.
 
 ### Keine generischen KI Muster
 
@@ -30,7 +30,7 @@ Auch die klassische Folge aus Hero, drei Karten, Logozeile, Testimonials, FAQ un
 
 ### Keine Gedankenstriche als künstliche Stimme
 
-VELLOX verwendet keine Gedankenstriche als Stilmittel in Copy, Dokumentation oder Interface Texten. Sie erzeugen oft den Eindruck automatisch geglätteter KI Sprache und ersetzen eine klare Satzentscheidung. Verwende stattdessen einen Punkt, ein Komma, einen Doppelpunkt oder einen neuen Satz. Ein normaler Bindestrich in einem zusammengesetzten Wort bleibt möglich. Die Regel betrifft das Satzzeichen, nicht die Rechtschreibung zusammengesetzter Wörter.
+SAPHIRWEB verwendet keine Gedankenstriche als Stilmittel in Copy, Dokumentation oder Interface Texten. Sie erzeugen oft den Eindruck automatisch geglätteter KI Sprache und ersetzen eine klare Satzentscheidung. Verwende stattdessen einen Punkt, ein Komma, einen Doppelpunkt oder einen neuen Satz. Ein normaler Bindestrich in einem zusammengesetzten Wort bleibt möglich. Die Regel betrifft das Satzzeichen, nicht die Rechtschreibung zusammengesetzter Wörter.
 
 ### Keine Anzeichen von Vibe Coding
 

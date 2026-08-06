@@ -11,7 +11,7 @@ Das Design Review prüft, ob die visuelle Form die strategische und UX-Absicht t
 | Bildsprache ist Beweis oder bewusst Atmosphäre | Ein Bild darf keine falsche Erwartung erzeugen. | Asset-Register mit Aufgabe und Quelle. |
 | Oberfläche besitzt kontrollierte Tiefe | Schatten, Border und Radius erklären Beziehungen statt dekorativ zu konkurrieren. | Surface-Review. |
 | Hero unterstützt Einordnung und Handlung | Größe und Bewegung dürfen die primäre Entscheidung nicht verschleiern. | Hero- und CTA-Review. |
-| Hero-Inhalt ist zentriert, nicht linksbündig | Zentrierung ist bei VELLOX ein festes Systemmerkmal, kein Gestaltungsspielraum — siehe [Ausrichtung: Hero immer zentriert](../04_UI/02-navigation-und-hero.md#ausrichtung-hero-immer-zentriert). | Hero-Review auf Desktop und Mobile. |
+| Hero-Inhalt ist zentriert, nicht linksbündig | Zentrierung ist bei SAPHIRWEB ein festes Systemmerkmal, kein Gestaltungsspielraum — siehe [Ausrichtung: Hero immer zentriert](../04_UI/02-navigation-und-hero.md#ausrichtung-hero-immer-zentriert). | Hero-Review auf Desktop und Mobile. |
 | Navigation bleibt als Karte verständlich | Aktiver Zustand, mobile Ansicht und Footer müssen dieselbe Ordnung tragen. | Navigationsdurchlauf. |
 | Spacing und Grid bilden Beziehungen ab | Abstand ist Bedeutung, nicht nur optische Luft. | Layout-Review mit realem Inhalt. |
 | Ausnahmen sind begründet | Charakter entsteht aus bewusster Abweichung, nicht aus Zufall. | Entscheidungseintrag. |

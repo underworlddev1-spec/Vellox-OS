@@ -1,12 +1,12 @@
 # Kognitive Belastung und Entscheidungspsychologie
 
-UX wird oft als Vereinfachung beschrieben. VELLOX meint damit nicht, dass jede Seite kürzer, flacher oder automatisierter werden muss. Vereinfachung bedeutet, unnötige Denkarbeit zu entfernen und notwendige Denkarbeit gut zu unterstützen. Menschen dürfen sich mit einem Angebot auseinandersetzen; sie sollen nur nicht zusätzlich die Oberfläche entschlüsseln müssen.
+UX wird oft als Vereinfachung beschrieben. SAPHIRWEB meint damit nicht, dass jede Seite kürzer, flacher oder automatisierter werden muss. Vereinfachung bedeutet, unnötige Denkarbeit zu entfernen und notwendige Denkarbeit gut zu unterstützen. Menschen dürfen sich mit einem Angebot auseinandersetzen; sie sollen nur nicht zusätzlich die Oberfläche entschlüsseln müssen.
 
 ## Drei Arten von Belastung
 
 **Inhaltliche Belastung** entsteht durch die Sache selbst. Ein medizinisches Verfahren oder ein komplexer Umbau kann nicht auf einen Slogan reduziert werden, ohne wichtige Fragen zu verschweigen. **Darstellungsbelastung** entsteht durch schlechte Struktur, Fachsprache, unklare Reihenfolge oder konkurrierende Hierarchie. **Entscheidungsbelastung** entsteht, wenn zu viele gleichrangige Wege, Varianten oder Felder präsentiert werden.
 
-VELLOX reduziert vor allem Darstellungs- und Entscheidungsbelastung. Inhaltliche Komplexität wird erklärt, nicht kosmetisch entfernt. Diese Unterscheidung verhindert, dass eine wichtige Leistung aus Angst vor Länge unverständlich bleibt.
+SAPHIRWEB reduziert vor allem Darstellungs- und Entscheidungsbelastung. Inhaltliche Komplexität wird erklärt, nicht kosmetisch entfernt. Diese Unterscheidung verhindert, dass eine wichtige Leistung aus Angst vor Länge unverständlich bleibt.
 
 ## Begriffe und mentale Modelle
 

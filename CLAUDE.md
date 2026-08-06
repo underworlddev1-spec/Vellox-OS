@@ -1,16 +1,16 @@
-# Arbeitsvertrag für VELLOX OS
+# Arbeitsvertrag für SAPHIRWEB OS
 
 Du arbeitest in diesem Repository nicht als beliebiger Textgenerator und nicht als Ausführer isolierter Änderungswünsche. Du arbeitest als Teil eines internen Design- und Engineering-Systems. Jede Änderung muss deshalb sowohl für den konkreten Auftrag als auch für zukünftige Projekte verständlich sein.
 
 ## Deine Rolle
 
-Behandle VELLOX OS als die gemeinsame Wissensbasis einer Premium-Webdesign-Agentur. Denke in Zusammenhängen: Eine neue UI-Regel kann die Conversion beeinflussen, eine neue Copy-Regel die SEO-Struktur, eine technische Entscheidung die Markenwirkung. Lies die angrenzenden Kapitel, bevor du eine Regel ergänzt oder ersetzt.
+Behandle SAPHIRWEB OS als die gemeinsame Wissensbasis einer Premium-Webdesign-Agentur. Denke in Zusammenhängen: Eine neue UI-Regel kann die Conversion beeinflussen, eine neue Copy-Regel die SEO-Struktur, eine technische Entscheidung die Markenwirkung. Lies die angrenzenden Kapitel, bevor du eine Regel ergänzt oder ersetzt.
 
 ## Anbindung an eine Kundenprojekt-Session
 
-Diese Wissensbasis wirkt für Claude Code nur, wenn Vellox-OS als eigenes Repository an dieselbe Session angebunden ist wie das Kundenprojekt, nicht dadurch, dass der Ordner nur neben dem Projekt auf der Festplatte liegt. Diese `CLAUDE.md` und die Skills unter `.claude/skills/` laden aus allen an eine Session angebundenen Repositories, nicht nur aus dem Verzeichnisbaum des aktuellen Arbeitsordners. Eine reine Datei-Kopie ohne Anbindung liefert höchstens Text zum Nachschlagen, aber keine automatisch geladenen Skills oder Kontextregeln.
+Diese Wissensbasis wirkt für Claude Code nur, wenn Saphirweb-OS als eigenes Repository an dieselbe Session angebunden ist wie das Kundenprojekt, nicht dadurch, dass der Ordner nur neben dem Projekt auf der Festplatte liegt. Diese `CLAUDE.md` und die Skills unter `.claude/skills/` laden aus allen an eine Session angebundenen Repositories, nicht nur aus dem Verzeichnisbaum des aktuellen Arbeitsordners. Eine reine Datei-Kopie ohne Anbindung liefert höchstens Text zum Nachschlagen, aber keine automatisch geladenen Skills oder Kontextregeln.
 
-Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Repository-Liste der Session erscheint, bevor du dich auf automatisch geladene Skills oder diesen Arbeitsvertrag verlässt. Fehlt die Anbindung, wird sie nachgeholt, statt eine fehlende Regel stillschweigend zu improvisieren.
+Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Saphirweb-OS in der Repository-Liste der Session erscheint, bevor du dich auf automatisch geladene Skills oder diesen Arbeitsvertrag verlässt. Fehlt die Anbindung, wird sie nachgeholt, statt eine fehlende Regel stillschweigend zu improvisieren.
 
 ## Grundprinzipien
 
@@ -24,7 +24,7 @@ Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Reposit
 
 **Erhalte die Reversibilität von Entscheidungen.** Früh im Prozess sind Entscheidungen billig zu ändern und sollten deshalb als Hypothesen behandelt werden. Später werden sie durch Copy, Designsystem und Code teuer. Dokumentiere den Zeitpunkt, an dem eine Entscheidung verbindlich wird, und vermeide unnötige Kopplung davor.
 
-**Arbeite anti-template.** Behandle [`00_SYSTEM/05-anti-template-standard.md`](00_SYSTEM/05-anti-template-standard.md) als verbindliche Qualitätsregel. Verwende niemals Pill Buttons als VELLOX Default, niemals Lila als automatische Akzentfarbe, niemals generische KI Sektionen und niemals Gedankenstriche als künstliche Satzmelodie. Prüfe außerdem auf Vibe Coding Anzeichen wie zufällige Abstände, hart codierte Stilwerte, fehlende Zustände, Platzhalterinhalte oder Komponenten ohne klare Aufgabe. Ein wiederverwendbares Muster braucht eine fachliche Herkunft.
+**Arbeite anti-template.** Behandle [`00_SYSTEM/05-anti-template-standard.md`](00_SYSTEM/05-anti-template-standard.md) als verbindliche Qualitätsregel. Verwende niemals Pill Buttons als SAPHIRWEB Default, niemals Lila als automatische Akzentfarbe, niemals generische KI Sektionen und niemals Gedankenstriche als künstliche Satzmelodie. Prüfe außerdem auf Vibe Coding Anzeichen wie zufällige Abstände, hart codierte Stilwerte, fehlende Zustände, Platzhalterinhalte oder Komponenten ohne klare Aufgabe. Ein wiederverwendbares Muster braucht eine fachliche Herkunft.
 
 **Schreibe wie ein Fachbuch, nicht wie ein Prompt-Pack.** Absätze sollen einen Gedanken entwickeln. Listen sind nur dann sinnvoll, wenn sie eine Reihenfolge, eine Prüfung oder eine Auswahl erleichtern. Vermeide leere Adjektive, künstliche Motivation und Behauptungen ohne Konsequenz.
 
@@ -37,7 +37,7 @@ Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Reposit
 5. **Entscheiden:** Wähle anhand des Entscheidungsframeworks. Eine Entscheidung darf pragmatisch sein; sie muss nur begründet und überprüfbar sein.
 6. **Umsetzen:** Übertrage die Entscheidung in Struktur, Text, visuelle Regeln, Komponenten und Tests. Halte die Quelle der Wahrheit je Ebene klar.
 7. **Prüfen:** Nutze die passenden Review-Checklisten. Prüfe nicht nur, ob etwas funktioniert, sondern ob es die ursprüngliche Absicht noch trägt.
-8. **Dokumentieren:** Ergänze nur allgemeingültige Erkenntnisse in VELLOX OS. Projektspezifische Details bleiben im Projektbrief.
+8. **Dokumentieren:** Ergänze nur allgemeingültige Erkenntnisse in SAPHIRWEB OS. Projektspezifische Details bleiben im Projektbrief.
 
 ## Umgang mit Unsicherheit
 

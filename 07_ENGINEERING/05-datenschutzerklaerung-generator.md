@@ -6,7 +6,7 @@ Die Regel für dieses Kapitel ist deshalb einfach zu benennen und leicht zu verg
 
 ## Vor jeder Antwort: den Code fragen, nicht das Gedächtnis
 
-Bevor ein einziges Kästchen angekreuzt wird, wird das Projekt auf die Kategorien durchsucht, nach denen Generatoren typischerweise fragen. Bei einer statischen oder serverarm gebauten Website wie einem VELLOX-Projekt lässt sich das fast vollständig über eine Suche im Quelltext klären:
+Bevor ein einziges Kästchen angekreuzt wird, wird das Projekt auf die Kategorien durchsucht, nach denen Generatoren typischerweise fragen. Bei einer statischen oder serverarm gebauten Website wie einem SAPHIRWEB-Projekt lässt sich das fast vollständig über eine Suche im Quelltext klären:
 
 ```
 # Externe Schriftarten
@@ -38,7 +38,7 @@ Generatoren wie e-recht24 gliedern sich erfahrungsgemäß in einen wiederkehrend
 
 **Kontaktformular und Direktanfragen.** Hier fragt der Generator meist nur, *ob* ein Kontaktformular existiert, nicht *wie* es technisch zugestellt wird. Ein cleveres Formular ohne eigenen Server nutzt fast immer einen externen Formular-Dienst (etwa Web3Forms, Formspree oder einen vergleichbaren Anbieter), der als eigener Auftragsverarbeiter genannt werden muss. Dieser Dienst taucht im Fragebogen oft an keiner Stelle ausdrücklich auf und muss deshalb aus dem Code selbst identifiziert werden, siehe nächster Abschnitt.
 
-**Cookies, Consent, Registrierung, Kommentarfunktion, Newsletter, Zahlungsdienste.** Bei den meisten VELLOX-Projekten (schlanke, statische Websites ohne Login, Warenkorb oder Tracking) treffen diese Kategorien nicht zu. Das wird nicht angenommen, sondern durch die Suche im Code bestätigt.
+**Cookies, Consent, Registrierung, Kommentarfunktion, Newsletter, Zahlungsdienste.** Bei den meisten SAPHIRWEB-Projekten (schlanke, statische Websites ohne Login, Warenkorb oder Tracking) treffen diese Kategorien nicht zu. Das wird nicht angenommen, sondern durch die Suche im Code bestätigt.
 
 **Plugins und Tools.** Vier Unterfragen wiederholen sich fast wortgleich: externe Medien-/Video-Dienste, externe Schriftarten, externe Karten, Sicherheitstools, sonstige Plugins. Für ein selbst gehostetes System aus reinem HTML, CSS und Vanilla-JavaScript ohne CDN-Abhängigkeiten sind das fünf saubere „Nein“, siehe die Suchbefehle oben.
 
@@ -48,7 +48,7 @@ Generatoren wie e-recht24 gliedern sich erfahrungsgemäß in einen wiederkehrend
 
 ## Wenn eine Frage nicht sicher zu beantworten ist
 
-Nicht jede Frage lässt sich per Grep klären. Ob ein berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO) oder eine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) die richtige Rechtsgrundlage für eine bestimmte Verarbeitung ist, ist eine rechtliche Einschätzung, keine technische Tatsache. Für diese Fälle gilt derselbe Grundsatz wie im Rest von VELLOX OS: Wenn eine belastbare Antwort fehlt, wird sie nicht erfunden, sondern als offene Frage an die verantwortliche Person zurückgegeben, mit der konkreten Unsicherheit benannt. Ein sauber dokumentiertes „das muss die Auftraggeberin oder eine Rechtsberatung entscheiden“ ist einer geratenen Antwort in jedem Fall vorzuziehen.
+Nicht jede Frage lässt sich per Grep klären. Ob ein berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO) oder eine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) die richtige Rechtsgrundlage für eine bestimmte Verarbeitung ist, ist eine rechtliche Einschätzung, keine technische Tatsache. Für diese Fälle gilt derselbe Grundsatz wie im Rest von SAPHIRWEB OS: Wenn eine belastbare Antwort fehlt, wird sie nicht erfunden, sondern als offene Frage an die verantwortliche Person zurückgegeben, mit der konkreten Unsicherheit benannt. Ein sauber dokumentiertes „das muss die Auftraggeberin oder eine Rechtsberatung entscheiden“ ist einer geratenen Antwort in jedem Fall vorzuziehen.
 
 ## Das Generator-Ergebnis ist ein Rohstoff, keine fertige Seite
 

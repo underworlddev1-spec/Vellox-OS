@@ -1,6 +1,6 @@
 # Beispiel: Entscheidungsprotokoll
 
-Dieses Beispiel zeigt, wie eine kontroverse Designentscheidung im VELLOX-Format dokumentiert wird. Die Frage betrifft eine lokale Handwerkswebsite, könnte aber in jeder Branche auftreten: Soll der Hero ein vollflächiges Video zeigen oder ein statisches Projektbild?
+Dieses Beispiel zeigt, wie eine kontroverse Designentscheidung im SAPHIRWEB-Format dokumentiert wird. Die Frage betrifft eine lokale Handwerkswebsite, könnte aber in jeder Branche auftreten: Soll der Hero ein vollflächiges Video zeigen oder ein statisches Projektbild?
 
 ## Frage
 

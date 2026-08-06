@@ -1,6 +1,6 @@
 # Coding Standards: Code als Träger von Entscheidungen
 
-VELLOX-Code soll nicht nur funktionieren, sondern die Absicht der Gestaltung sichtbar und veränderbar halten. Lesbarer Code schützt die Marke vor späteren Zufallsänderungen. Er zeigt, welche Regeln systemisch sind, welche Inhalte dynamisch sind und wo eine bewusste Ausnahme beginnt.
+SAPHIRWEB-Code soll nicht nur funktionieren, sondern die Absicht der Gestaltung sichtbar und veränderbar halten. Lesbarer Code schützt die Marke vor späteren Zufallsänderungen. Er zeigt, welche Regeln systemisch sind, welche Inhalte dynamisch sind und wo eine bewusste Ausnahme beginnt.
 
 ## Lesbarkeit vor Cleverness
 

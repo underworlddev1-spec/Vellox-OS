@@ -16,7 +16,7 @@ Analysiere direkte Anbieter, Ersatzlösungen und den Status quo. Ein Friseursalo
 
 ## Der Einwand ist ein Informationsbedarf
 
-Ein Einwand ist nicht automatisch Widerstand. „Das ist teuer“ kann bedeuten, dass der Wert unklar ist, der Vergleichsmaßstab fehlt oder der Zeitpunkt falsch ist. „Ich muss darüber nachdenken“ kann auf fehlendes Vertrauen, zu viele Optionen oder einen unpassenden nächsten Schritt hindeuten. VELLOX zerlegt Einwände deshalb in Ursache, sichtbares Signal und hilfreiche Antwort.
+Ein Einwand ist nicht automatisch Widerstand. „Das ist teuer“ kann bedeuten, dass der Wert unklar ist, der Vergleichsmaßstab fehlt oder der Zeitpunkt falsch ist. „Ich muss darüber nachdenken“ kann auf fehlendes Vertrauen, zu viele Optionen oder einen unpassenden nächsten Schritt hindeuten. SAPHIRWEB zerlegt Einwände deshalb in Ursache, sichtbares Signal und hilfreiche Antwort.
 
 Die Antwort muss nicht immer ein FAQ sein. Ein Beweis im richtigen Abschnitt, eine transparente Ablaufbeschreibung oder ein genauer CTA kann wirksamer sein. Wenn Menschen bei einem Gesundheitsangebot Sorgen wegen Ablauf und Vertraulichkeit haben, hilft eine sachliche Erklärung vor dem Kontaktformular mehr als ein Werbesatz über Kompetenz.
 

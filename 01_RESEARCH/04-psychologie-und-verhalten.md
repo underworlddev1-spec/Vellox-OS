@@ -1,6 +1,6 @@
 # Psychologie und Verhalten: Vorsichtig mit Wirkung umgehen
 
-Digitale Gestaltung beeinflusst Aufmerksamkeit und Entscheidungen. Das macht psychologische Modelle nützlich, aber auch gefährlich: Sie können helfen, Reibung zu verstehen, oder als scheinwissenschaftliche Begründung für Druck und Manipulation dienen. VELLOX nutzt Psychologie, um Menschen eine klare, freiwillige und informierte Entscheidung zu ermöglichen.
+Digitale Gestaltung beeinflusst Aufmerksamkeit und Entscheidungen. Das macht psychologische Modelle nützlich, aber auch gefährlich: Sie können helfen, Reibung zu verstehen, oder als scheinwissenschaftliche Begründung für Druck und Manipulation dienen. SAPHIRWEB nutzt Psychologie, um Menschen eine klare, freiwillige und informierte Entscheidung zu ermöglichen.
 
 ## Aufmerksamkeit ist begrenzt
 
@@ -22,7 +22,7 @@ Social Proof funktioniert aus demselben Grund: Er gibt Hinweise, wie andere die 
 
 ## Verhaltensprinzipien mit Grenzen
 
-Knappheit, Dringlichkeit, Defaults und soziale Bestätigung können Aufmerksamkeit und Handlung beeinflussen. VELLOX verwendet sie nur, wenn sie die Realität abbilden. Ein begrenzter Terminplan darf als Verfügbarkeit genannt werden; künstliche Countdown-Timer erzeugen Druck und beschädigen Vertrauen. Ein vorausgewähltes Feld darf einen plausiblen Standard vereinfachen, aber keine Zustimmung verstecken.
+Knappheit, Dringlichkeit, Defaults und soziale Bestätigung können Aufmerksamkeit und Handlung beeinflussen. SAPHIRWEB verwendet sie nur, wenn sie die Realität abbilden. Ein begrenzter Terminplan darf als Verfügbarkeit genannt werden; künstliche Countdown-Timer erzeugen Druck und beschädigen Vertrauen. Ein vorausgewähltes Feld darf einen plausiblen Standard vereinfachen, aber keine Zustimmung verstecken.
 
 Die Grenze ist freiwillige Informiertheit. Ein Muster ist nicht hochwertig, wenn es kurzfristig mehr Klicks erzeugt, aber die falschen Menschen anzieht, Rückfragen erhöht oder das Gefühl von Ausnutzung hinterlässt. Die [Agenturprinzipien](../00_SYSTEM/04-agenturprinzipien-und-kundenerlebnis.md) helfen, diese Grenze im Team zu halten.
 
@@ -36,7 +36,7 @@ Die richtige Länge ist daher keine feste Zahl. Sie hängt von Konsequenz, Vertr
 
 Psychologische Modelle sind Hypothesen. Prüfe sie mit Interviews, Verständnisfragen, beobachteten Formularabbrüchen und qualitativen Rückmeldungen. Ein niedriger Klickwert kann fehlendes Interesse bedeuten, aber auch eine bessere Informationsarchitektur, in der der Klick nicht mehr nötig ist. Eine lange Verweildauer kann Interesse oder Verwirrung signalisieren.
 
-Deshalb kombiniert VELLOX Verhalten mit Kontext. Das Team beschreibt nicht nur, was jemand getan hat, sondern was die Person wahrscheinlich erreichen wollte und welches Signal diese Deutung stützt. So bleibt Psychologie ein Werkzeug für Verständnis und wird nicht zur Ausrede für jede Designentscheidung.
+Deshalb kombiniert SAPHIRWEB Verhalten mit Kontext. Das Team beschreibt nicht nur, was jemand getan hat, sondern was die Person wahrscheinlich erreichen wollte und welches Signal diese Deutung stützt. So bleibt Psychologie ein Werkzeug für Verständnis und wird nicht zur Ausrede für jede Designentscheidung.
 ## Fairness als Qualitätskriterium
 
 Eine Entscheidung ist besonders verletzlich, wenn Menschen unter Zeitdruck, Sorge oder Informationsmangel handeln. In solchen Situationen muss die Oberfläche nicht neutral im Sinn von gleichgültig sein; sie muss fair im Sinn von nachvollziehbar und freiwillig sein. Preise, Bedingungen, Alternativen und Konsequenzen werden nicht absichtlich versteckt. Zustimmung wird nicht durch optische Gewichte erschlichen.
