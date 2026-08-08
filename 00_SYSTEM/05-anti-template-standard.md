@@ -10,6 +10,18 @@ Jede auffällige Entscheidung braucht eine Herkunft. Sie kann aus der Zielgruppe
 
 Frage bei einem visuellen Element: Welche Unsicherheit reduziert es? Welche Erwartung erzeugt es? Welche reale Eigenschaft des Kunden macht es sichtbar? Was würde verloren gehen, wenn es entfernt wird? Wenn nur „es sieht hochwertig aus“ als Antwort bleibt, fehlt die Begründung. Hochwertigkeit ist eine Folge stimmiger Entscheidungen, nicht der Name einer Dekoration.
 
+## Die drei Stellen, an denen es zuerst auffällt
+
+Beobachtet über mehrere Projekte: Der Verstoß tritt fast immer an denselben drei Stellen zuerst auf.
+
+**Der Hero sieht gleich aus.** Er ist der Abschnitt mit der geringsten Information zum Zeitpunkt des Bauens, deshalb entsteht dort die Form, die für jeden Betrieb passt. Er ist nicht das erste Gestaltungsproblem, sondern die letzte Konsequenz der Recherche.
+
+**Oben links steht nur ein Schriftzug.** Kein Zeichen, keine Form, nichts, was ohne das Wort funktioniert. Das ist keine Gestaltungsentscheidung, sondern die Form, die entsteht, wenn keine Marke entschieden wurde.
+
+**Die Seite wirkt mit Platzhaltern fertig.** Das ist der eigentliche Test: Eine Vorlage ist vollständig, bevor der Inhalt existiert. Eine handgebaute Seite ist unvollständig, solange er fehlt, weil ihre Formen aus ihm entstanden sind.
+
+Die konkreten Formen, in denen das auftritt, samt fünf beleggetriebener Hero-Varianten und der Regel, dass die Geometrie der Marke auf der Seite wiederkehren muss, stehen in [Wiedererkennbare Muster vermeiden](../04_UI/06-wiedererkennbare-muster-vermeiden.md). Eine Haltung ohne Beispiele wird nicht wiedererkannt.
+
 ## Verbindliche Verbote
 
 ### Keine Pill Buttons
@@ -53,6 +65,8 @@ Vor der Freigabe werden fünf Fragen beantwortet:
 3. Sind Sprache, Bilder und Beweise aus der echten Geschäftswirklichkeit entstanden? Wenn nein, wird Research nachgeschärft.
 4. Sind Buttons, Abstände, Farben und Bewegungen als Systementscheidung nachvollziehbar? Wenn nein, prüft Engineering oder Design die Quelle der Wahrheit.
 5. Würde ein Mensch die Seite als ruhig und eigenständig erleben, auch wenn alle dekorativen Effekte entfernt werden? Wenn nein, ist die Oberfläche zu abhängig von Styling.
+6. Auf welchen Abschnitt kann ich zeigen und sagen, dass keine Vorlage ihn enthalten würde? Wenn es keinen gibt, fehlt er. Siehe die Ein-Abschnitt-Regel in [Wiedererkennbare Muster vermeiden](../04_UI/06-wiedererkennbare-muster-vermeiden.md).
+7. Aus welchem Beweis folgt die Form des Heros? Wenn die Antwort „aus keinem" lautet, ist es der Standard-Hero und die Recherche ist nicht angekommen.
 
 Die Antworten werden im [Qualitätsstandard](01-qualitaetsstandard.md), im [Design Review](../10_CHECKLISTS/03-design-review.md) und in der [Qualitätskontrolle](../10_CHECKLISTS/07-qualitaetskontrolle.md) berücksichtigt. Ein Anti-Template-Review ist bestanden, wenn die Seite nicht nur anders aussieht, sondern anders begründet ist.
 
