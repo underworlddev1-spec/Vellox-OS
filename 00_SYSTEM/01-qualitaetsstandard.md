@@ -48,3 +48,9 @@ Ein Review soll keine Sammlung persönlicher Präferenzen sein. Jede Anmerkung n
 
 Eine Seite gilt als fertig, wenn sie ihre Kernentscheidung verständlich macht, ihre Beweise belastbar sind, die wichtigsten Wege ohne unnötige Reibung funktionieren und die Oberfläche auf den vorgesehenen Geräten stabil bleibt. Offene Punkte werden nicht versteckt, sondern als bewusst akzeptiertes Risiko dokumentiert. So bleibt Qualität auch dann ehrlich, wenn Zeit, Budget oder Datenlage Grenzen setzen.
 
+Dieser Standard beschreibt, was gut ist. Er sagt nicht, wo die prüfbaren Teile davon wohnen, und genau daran ist er in der Praxis mehrfach gescheitert: Der Fokusring war dokumentiert und fehlte, die Zeichengrenze für Titel stand im Text und wurde um vierundzwanzig Zeichen gerissen. Eine Regel in Prosa wirkt nur so lange, wie sich jemand an sie erinnert.
+
+[Erzwungene Qualität](06-erzwungene-qualitaet.md) ordnet deshalb jeder prüfbaren Regel einen Ort zu und nennt die Gates, die den Bau abbrechen lassen. Der Grundsatz dort: Eine Regel, die einmal gebrochen wurde, zieht eine Stufe nach oben. Was ein Mensch beurteilen muss, bleibt in diesem Kapitel und in der Qualitätskontrolle; was gezählt werden kann, zählt niemand mehr von Hand.
+
+[Erstauslieferung](07-erstauslieferung.md) beantwortet die zweite Frage, an der Qualität hängt: Warum die erste Fassung fast immer eine Korrekturrunde braucht, und welche Entscheidungen vor der ersten Zeile Code getroffen sein müssen, damit sie es nicht tut.
+
