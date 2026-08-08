@@ -26,6 +26,24 @@ Wenn ein Qualitätskriterium schwach ist, frage nach der Ursache in angrenzenden
 
 Prüfe vor Freigabe, ob primäre Buttons ohne Pill Form funktionieren, ob Lila nur aus einer begründeten Kundenentscheidung stammt, ob jeder Abschnitt eine konkrete Aufgabe erfüllt und ob Copy nicht wie automatisch geglättete KI Sprache klingt. Suche nach Gedankenstrichen, generischen Superlativen, Gradient Glow, austauschbaren Card Reihen, fehlenden Zuständen und zufälligen Stilwerten. Ein Fund wird als konkrete Korrektur oder als begründete Ausnahme dokumentiert.
 
+## Was diese Kontrolle nicht mehr prüft
+
+Eine Checkliste mit dreißig Punkten wird abgehakt statt gelesen. Deshalb prüft diese Kontrolle ausdrücklich nicht, was ein Gate im Bau schon garantiert: Zeichenlängen von Titel und Beschreibung, Bildmaße, vorhandene Bilddateien, Tabellenbreiten, Schablonenüberschriften in Seitenfamilien, Belege für Ortsseiten, Herkunft und Datum fremder Zahlen.
+
+Wer einen dieser Punkte hier vermisst, prüft zuerst, ob das zugehörige Gate existiert. Fehlt es, wird es angelegt statt in diese Tabelle geschrieben. Der Katalog steht in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md).
+
+Die Kontrolle bleibt damit auf das beschränkt, was ein Mensch beurteilen muss: ob eine Überschrift die Situation des Lesers trifft, ob ein Beweis an der richtigen Stelle steht, ob die Reihenfolge einer Entscheidung folgt.
+
+## Belegpflicht für jeden Befund
+
+Jede Anmerkung nennt ihre Messung. „Die Ortsseiten wirken austauschbar" ist ein Gefühl und lässt sich bestreiten. „Auf den vier Ortsseiten stehen fünfundfünfzig bis achtundfünfzig Prozent des Textes wortgleich, und drei der vier wiederkehrenden Zeilen stehen in Überschriften-Position" ist ein Befund und lässt sich abarbeiten.
+
+Was sich nicht messen lässt, wird als Urteil gekennzeichnet und nicht als Befund ausgegeben. Umgekehrt gilt: Ein gelieferter Befund aus einer externen Analyse ist kein Defekt, bevor er im Projekt geprüft wurde. Wer eine fremde Liste ausführt statt sie zu prüfen, baut fremde Fehler ein.
+
+## Erstauslieferung
+
+Vor der ersten Auslieferung an den Kunden gilt zusätzlich das Gate aus [Erstauslieferung](../00_SYSTEM/07-erstauslieferung.md), und zwar mit einer anderen Strenge als der Rest dieser Kontrolle: Es kennt keine akzeptierten Risiken, weil alle acht Punkte vor dem Bauen entscheidbar waren.
+
 ## Akzeptierte Risiken
 
 Ein Risiko kann akzeptiert werden, wenn seine Konsequenz verstanden, sein Umfang begrenzt und seine spätere Prüfung geplant ist. Es darf nicht akzeptiert werden, weil niemand zuständig ist oder der Punkt unangenehm wirkt. Dokumentiere die Entscheidung so, dass ein späteres Team sie anhand neuer Evidenz revidieren kann.

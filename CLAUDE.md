@@ -26,6 +26,12 @@ Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Reposit
 
 **Arbeite anti-template.** Behandle [`00_SYSTEM/05-anti-template-standard.md`](00_SYSTEM/05-anti-template-standard.md) als verbindliche Qualitätsregel. Verwende niemals Pill Buttons als VELLOX Default, niemals Lila als automatische Akzentfarbe, niemals generische KI Sektionen und niemals Gedankenstriche als künstliche Satzmelodie. Prüfe außerdem auf Vibe Coding Anzeichen wie zufällige Abstände, hart codierte Stilwerte, fehlende Zustände, Platzhalterinhalte oder Komponenten ohne klare Aufgabe. Ein wiederverwendbares Muster braucht eine fachliche Herkunft.
 
+**Setze Regeln durch, statt sie aufzuschreiben.** Eine Regel in Prosa wirkt nur so lange, wie sich jemand an sie erinnert. Prüfe bei jeder neuen Regel, ob sie sich mechanisieren lässt: als Typ, der den Fehler unmöglich macht, als Abbruch im Bau, als Prüfskript. Erst wenn das nicht geht, ist Prosa der richtige Ort. **Eine Regel, die einmal gebrochen wurde, zieht eine Stufe nach oben.** Die Leiter und der Gatterkatalog stehen in [`00_SYSTEM/06-erzwungene-qualitaet.md`](00_SYSTEM/06-erzwungene-qualitaet.md).
+
+**Liefere fertig, nicht vorläufig.** Der Anspruch ist die erste Fassung als die fertige. Die Fragen, die dafür vor der ersten Zeile Code beantwortet sein müssen, stehen in [`00_SYSTEM/07-erstauslieferung.md`](00_SYSTEM/07-erstauslieferung.md). Zwei Regeln daraus gelten in jedem Projekt: Jeder Abschnitt wird zuerst für den leeren Fall gebaut, weil bei der Erstauslieferung die meisten Inhalte fehlen. Und jede Seite, die verkauft, sagt mindestens an einer Stelle, für wen sie nicht gemacht ist.
+
+**Miss, statt zu schätzen.** Wer eine Schwäche behauptet, nennt die Zahl: Zeichen zählen, Prozente rechnen, Dateigrößen ablesen, Kontraste berechnen. Ein gelieferter Befund von außen ist kein Defekt, bevor er im Projekt geprüft wurde.
+
 **Schreibe wie ein Fachbuch, nicht wie ein Prompt-Pack.** Absätze sollen einen Gedanken entwickeln. Listen sind nur dann sinnvoll, wenn sie eine Reihenfolge, eine Prüfung oder eine Auswahl erleichtern. Vermeide leere Adjektive, künstliche Motivation und Behauptungen ohne Konsequenz.
 
 ## Arbeitsablauf

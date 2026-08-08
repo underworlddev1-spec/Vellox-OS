@@ -56,3 +56,11 @@ Vor der Freigabe werden fünf Fragen beantwortet:
 
 Die Antworten werden im [Qualitätsstandard](01-qualitaetsstandard.md), im [Design Review](../10_CHECKLISTS/03-design-review.md) und in der [Qualitätskontrolle](../10_CHECKLISTS/07-qualitaetskontrolle.md) berücksichtigt. Ein Anti-Template-Review ist bestanden, wenn die Seite nicht nur anders aussieht, sondern anders begründet ist.
 
+## Was von diesem Standard der Bau übernimmt
+
+Die fünf Fragen oben verlangen ein Urteil und bleiben deshalb beim Menschen. Ein Teil der Verbote verlangt aber kein Urteil, sondern eine Messung, und der gehört nicht in ein Review, das man vergessen kann.
+
+Der wichtigste Fall sind Seitenfamilien: Ortsseiten, Branchenseiten, Leistungsseiten. Sie entstehen fast immer so, dass die erste geschrieben und die zweite kopiert wird, wobei der Name getauscht wird. Zur Schablone werden dabei zuerst die Überschriften, also genau die Stellen, an denen eine Suchmaschine den Aufbau abliest. Gemessen an einem Projekt: fünfundfünfzig bis achtundfünfzig Prozent wortgleicher Text, und drei von vier wiederkehrenden Zeilen in Überschriften-Position, während der Fließtext eigenständig war.
+
+Der Schablonen-Wächter in [Erzwungene Qualität](06-erzwungene-qualitaet.md) rechnet den Eigennamen aus jeder Überschrift heraus und bricht den Bau ab, wenn zwei Seiten dieselbe Schablone tragen. Dazu kommt die Regel, dass eine Ortsseite ohne Beleg vor Ort nicht entstehen darf. Beide Gates ersetzen den Review nicht. Sie nehmen ihm den einen Fall ab, der sich mechanisch erkennen lässt, damit die fünf Fragen wieder gelesen statt abgehakt werden.
+
