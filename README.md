@@ -55,4 +55,6 @@ Zwei Kapitel entscheiden darüber, ob dieser Standard im Ergebnis ankommt. [Erzw
 
 Die konkreten Formen, an denen eine gebaute Seite auffliegt, stehen in [Wiedererkennbare Muster vermeiden](04_UI/06-wiedererkennbare-muster-vermeiden.md): warum der Hero immer gleich aussieht und welche fünf Varianten die Beleglage stattdessen vorgibt, warum oben links nie nur ein Schriftzug steht, und der Test dahinter. Eine Seite sieht nach Maschine aus, wenn sie fertig aussieht, obwohl sie nichts weiß.
 
+[Das Handy ist nicht die kleine Fassung](04_UI/07-handy-zuerst-und-gemessen.md) trägt die Messung dazu. Der Kern: Was nur unterhalb einer Bruchstelle existiert, wird am großen Bildschirm von niemandem gesehen, weder vom Entwickler noch im Review noch in der Freigabe. Deshalb vier notierte Zahlen je Seite bei 390 mal 844 statt eines verkleinerten Fensters.
+
 Für die Anwendung im Alltag stehen die Branchenpfade in [`08_PLAYBOOKS`](08_PLAYBOOKS), die Arbeitsanfänge in [`09_TEMPLATES`](09_TEMPLATES), die Freigaben in [`10_CHECKLISTS`](10_CHECKLISTS) und konkrete Demonstrationen in [`11_EXAMPLES`](11_EXAMPLES). Lies diese Ordner nicht als Abkürzung um die Grundlagen herum. Ein Playbook wird erst gut, wenn seine branchenspezifische Entscheidung auf der allgemeinen VELLOX-Logik beruht.

@@ -73,7 +73,25 @@ Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für
 | Bildmaße kommen aus der Datei | 1 | Ohne `width` und `height` springt das Layout. Von Hand geschriebene Maße veralten beim ersten Bildtausch, und zwar unbemerkt. |
 | Fehlende Bilddatei bricht den Bau | 2 | Ein toter Bildverweis wird sonst erst im Produktionsbuild sichtbar, wo ihn niemand mehr sucht. |
 | Tabellenzeile hat so viele Zellen wie die Kopfzeile | 1 | Eine verrutschte Tabelle ist auf einer Preisseite eine Falschaussage. |
+| Kante um fremdes Bildmaterial ist unabhängig vom Bildinhalt | 4 | Die mittlere Helligkeit dreier Kundenaufnahmen ergab gegen einen dunklen Grund 1,22:1, 2,62:1 und 10,92:1. Die dunkelste löste sich auf, und der Rahmen war Teil des Problems: Er stand auf derselben Farbe wie der Grund. Unter 3:1 braucht es eine Kante. |
+| Ein Element mit zwei Aufgaben bekommt zwei Umsetzungen | 4 | Vier Fassungen einer Hervorhebung gemessen: Jede, die das Licht unregelmäßig machte, verlor die Kante irgendwo. Eine Eigenschaft, die Grenze und Atmosphäre gleichzeitig leisten soll, leistet keines von beidem zuverlässig. |
 | Genau ein Bild je Seite lädt bevorzugt | 4 | Ein Bild oberhalb der Falz mit `lazy` kostet Ladezeit, eines darunter mit `eager` ebenfalls, und beides passiert, wenn man raten darf. Deshalb ist die Angabe ein Pflichtwert ohne Vorgabe. |
+
+### Was unterhalb einer Bruchstelle passiert
+
+Eine eigene Fehlerklasse, die kein Gate vollständig fangen kann und trotzdem
+hierher gehört, weil ihre Ursache mechanisch ist.
+
+Wenn eine Bruchstelle Geschwister ausblendet, ändert sich die Aufgabe der
+übrigen. Ein Element, das am Schreibtisch das dritte von vier ist und auf dem
+Telefon das erste von zwei, hat zwei verschiedene Aufgaben. Beobachtet: Ein
+Menü ohne `ml-auto` stand am Telefon neben dem Logo statt in der Ecke, und
+seine an der rechten Ankerkante ausgerichtete Klappe wanderte aus dem Bild.
+
+Mechanisierbar ist die Suche, nicht das Urteil: absolut positionierte Elemente
+finden, deren Anker unterhalb einer Bruchstelle seine Position im Fluss
+wechselt. Der Rest ist eine Messung am Gerät, siehe
+[Das Handy ist nicht die kleine Fassung](../04_UI/07-handy-zuerst-und-gemessen.md).
 
 ### Der Schablonen-Wächter
 

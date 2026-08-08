@@ -40,6 +40,28 @@ Jede Anmerkung nennt ihre Messung. „Die Ortsseiten wirken austauschbar" ist ei
 
 Was sich nicht messen lässt, wird als Urteil gekennzeichnet und nicht als Befund ausgegeben. Umgekehrt gilt: Ein gelieferter Befund aus einer externen Analyse ist kein Defekt, bevor er im Projekt geprüft wurde. Wer eine fremde Liste ausführt statt sie zu prüfen, baut fremde Fehler ein.
 
+## Die Messung am Telefon
+
+Nicht durch Verkleinern des Fensters, sondern mit einem Browser bei 390 mal 844
+und doppelter Pixeldichte. Vier Zahlen je wichtiger Seite, notiert und nicht
+geschätzt:
+
+| Zahl | Befund ab |
+| --- | --- |
+| Gesamthöhe in Bildschirmen | über 12 |
+| Position des ersten Beweises | über 844 Pixel |
+| Höhe und Wortzahl des längsten Abschnitts | über 1400 Pixel |
+| Zeilen des längsten Vorspanns | über 4 |
+
+Dazu drei Zustände, die sich nur am Gerät zeigen: Menü offen, Handlungsleiste
+in der Seitenmitte, Seitenende mit den Rechtstext-Verweisen.
+
+Der Grund für die Strenge steht in
+[Das Handy ist nicht die kleine Fassung](../04_UI/07-handy-zuerst-und-gemessen.md):
+Was nur unterhalb einer Bruchstelle existiert, wird am großen Bildschirm von
+niemandem gesehen. Nicht vom Entwickler, nicht im Review, nicht in der
+Freigabe.
+
 ## Erstauslieferung
 
 Vor der ersten Auslieferung an den Kunden gilt zusätzlich das Gate aus [Erstauslieferung](../00_SYSTEM/07-erstauslieferung.md), und zwar mit einer anderen Strenge als der Rest dieser Kontrolle: Es kennt keine akzeptierten Risiken, weil alle acht Punkte vor dem Bauen entscheidbar waren.

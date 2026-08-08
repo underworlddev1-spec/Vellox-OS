@@ -64,6 +64,13 @@ Ein Beispiel aus der Praxis, das trägt: Aus einem Kristall als Markenzeichen wu
 
 Woran man den Aufkleber erkennt: Die Form des Zeichens taucht nirgends sonst auf, und die Schaltflächen haben denselben Radius wie jede andere Seite auch.
 
+Die Kehrseite dieser Regel gilt genauso streng: **Die Marke liefert die Formen
+der Seite, nicht die Farben fremder Arbeit.** Zeigt ein Abschnitt Aufnahmen von
+Kundenauftritten, gehört deren Hervorhebung nicht in die Akzentfarbe. Gerendert
+und verglichen liest sich ein Schein in der Markenfarbe als ausgewähltes
+Bedienelement, ein weißer als Licht, das auf den Gegenstand fällt. Ausgeführt
+steht das in [Das Handy ist nicht die kleine Fassung](07-handy-zuerst-und-gemessen.md).
+
 **Wenn es keine Marke gibt, ist das eine Lücke in der Recherche und keine Gestaltungsfreiheit.** Sie wird benannt und geschlossen, nicht durch einen Schriftzug überbrückt.
 
 ## Die Erkennungsmerkmale im Einzelnen
