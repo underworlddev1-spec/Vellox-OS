@@ -49,6 +49,6 @@ Dokumentiere für jedes zentrale visuelle Token seinen Zweck, mögliche Kombinat
 
 ## Anti-Template-Farbprüfung
 
-Beginne kein Projekt mit Lila, violetten Verläufen oder einer vorgefertigten SaaS Palette. Prüfe zuerst Material, Umgebung, Zielgruppe, Angebot und vorhandene Markenrealität. Wenn keine belastbare Farbentscheidung vorliegt, ist eine ruhige neutrale Grundlage ehrlicher als ein künstlicher Akzent. Farbe wird erst dann markant, wenn sie eine Aufgabe übernimmt und in Kontrast, Bildsprache und Ton bestätigt wird.
+Beginne kein Projekt mit Lila, violetten Verläufen oder einer vorgefertigten SaaS Palette. Prüfe zuerst Material, Umgebung, Zielgruppe, Angebot und vorhandene Markenrealität. Wie die vorhandene Markenrealität festgestellt wird, steht in der [Markeninventur](04-markeninventur.md). Der Befund „es gibt keine Markenfarbe“ ist erst zulässig, wenn der bestehende Auftritt gerendert und nicht nur im Quelltext gelesen wurde. Wenn keine belastbare Farbentscheidung vorliegt, ist eine ruhige neutrale Grundlage ehrlicher als ein künstlicher Akzent. Farbe wird erst dann markant, wenn sie eine Aufgabe übernimmt und in Kontrast, Bildsprache und Ton bestätigt wird.
 
 Dasselbe gilt für Formen. Pillen, überweiche Cards, Glow Effekte und zufällige Farbverläufe sind keine neutrale Premium Sprache. Sie müssen aus dem Kunden stammen oder entfallen. Das [Anti-Template-System](../00_SYSTEM/05-anti-template-standard.md) liefert die verbindliche Grenze.

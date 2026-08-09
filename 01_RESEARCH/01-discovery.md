@@ -8,6 +8,12 @@ Der erste Schritt ist die Rekonstruktion des Geschäfts. Welche Leistung wird ta
 
 Danach wird die Ausgangslage betrachtet. Welche Seiten werden gefunden, welche werden besucht, wo entstehen Rückfragen, und welche Inhalte existieren bereits? Technische Daten, Suchanfragen, Supportfragen und Vertriebserfahrungen sind genauso relevant wie ästhetische Referenzen. Wenn ein Unternehmen behauptet, die Website sei „zu alt“, muss geklärt werden, welche Konsequenz dieses Alter hat: mangelndes Vertrauen, schlechte Wartbarkeit, falsche Zielgruppen oder schlicht fehlende mobile Lesbarkeit.
 
+## Bestehendes Material ist Evidenz
+
+Wenn ein Betrieb bereits einen Auftritt hat, ist dieser Auftritt eine Quelle und nicht nur ein Sanierungsfall. Er enthält Preise, Leistungen, Öffnungszeiten, ein Zeichen, Farben und eine Schrift, und all das sind Entscheidungen, die jemand einmal getroffen hat. Diese Bestandsaufnahme gehört in die Discovery, weil sie später nicht mehr nachgeholt wird: Sobald der erste Entwurf steht, wird niemand mehr fragen, ob eine Farbe hergeleitet oder übernommen wurde.
+
+Der bestehende Auftritt wird dafür geöffnet und angesehen, nicht nur im Quelltext gelesen. Das Verfahren und die Fallstricke stehen in der [Markeninventur](../02_BRANDING/04-markeninventur.md). Ihr Ergebnis wird in der Discovery mitgeführt wie jede andere Evidenz, mit Quelle, Datum und Sicherheit.
+
 ## Die Discovery-Fragen
 
 Gute Discovery-Fragen öffnen einen Zusammenhang. „Was macht ihr?“ führt oft zu einer Aufzählung. „In welchem Moment entscheidet sich ein Interessent für euch oder gegen euch?“ führt zu Verhalten. „Welche Frage wird vor dem Erstkontakt am häufigsten gestellt?“ legt Informationslücken frei. „Welcher Kunde passt gut, obwohl er nicht der größte ist?“ zeigt die gewünschte Qualität von Nachfrage.
