@@ -264,6 +264,52 @@ const abEinmalig = Math.min(...PAKETE.map((p) => p.preisEinmalig))
 
 Zwei Stellen mit demselben Wert bedeuten, dass eine bei der nächsten Änderung stehen bleibt, und zwar die, die niemand findet. Am teuersten ist der Fall, in dem eine sichtbare Angabe und ihre maschinenlesbare Fassung auseinanderlaufen: Das ist gegenüber Suchmaschinen eine Falschangabe.
 
+## 10. Jeder Markenwert nennt seine Herkunft
+
+An die Datei, in der die Design-Tokens stehen. Der Fehler, den dieses Gate
+verhindert, ist nicht sichtbar und fällt deshalb in keinem Review auf: Eine
+hergeleitete Farbe steht neben einer übernommenen, und nach der Übergabe kann
+niemand mehr sagen, welche dem Kunden gehört. Die Regel dahinter steht in der
+[Markeninventur](../02_BRANDING/04-markeninventur.md).
+
+```ts
+import { z } from "astro/zod"
+
+const Herkunft = z.discriminatedUnion("art", [
+  // Belegbar vom Kunden. Quelle und Abrufdatum sind Pflicht, weil ein
+  // Beleg ohne Fundstelle beim ersten Zweifel wertlos ist.
+  z.object({ art: z.literal("uebernommen"), quelle: z.string().min(10), geprueftAm: z.string().date() }),
+  // Folgt aus etwas Vorhandenem, war aber selbst nicht vorhanden.
+  z.object({ art: z.literal("abgeleitet"), aus: z.string().min(10) }),
+  // Nichts vorhanden, die Agentur hat entschieden. Braucht den Grund und
+  // die Stelle, an der die Entscheidung protokolliert ist.
+  z.object({ art: z.literal("neu"), begruendung: z.string().min(20), entscheidung: z.string() }),
+])
+
+const Token = z.object({ wert: z.string(), rolle: z.string(), herkunft: Herkunft })
+
+export const MARKE = {
+  akzent: Token.parse({
+    wert: "#015cab",
+    rolle: "primäre Handlung, Preisangabe, Positionsnummer",
+    herkunft: {
+      art: "uebernommen",
+      quelle: "kunde.de/css/bootstrap.min.css, --bs-primary",
+      geprueftAm: "2026-08-08",
+    },
+  }),
+}
+```
+
+Das Gate prüft nicht, ob die Farbe schön ist. Es prüft, ob jemand die Frage
+nach der Herkunft überhaupt gestellt hat. Ein Token ohne `herkunft` bricht den
+Bau ab, und ein `uebernommen` ohne Fundstelle ebenfalls. Genau diese beiden
+Fälle sind die, in denen später eine Kundenentscheidung durch eine
+Agenturpräferenz ersetzt wurde, ohne dass es jemand bemerkt hat.
+
+Der Rest der Markeninventur bleibt bewusst auf Stufe 4. Ob das Ladenschild
+denselben Ton führt wie das Stylesheet, kann kein Skript beurteilen.
+
 ## Aufnahmeprüfung
 
 Bevor das Projekt in Phase 3 geht:
@@ -275,6 +321,7 @@ Bevor das Projekt in Phase 3 geht:
 - [ ] Leere Belege rendern nichts, geprüft mit geleertem Frontmatter
 - [ ] Bildleser kennt jedes im Projekt verwendete Format
 - [ ] Jede Zahl auf der Seite hat genau eine Quelle im Code
+- [ ] Jeder Design-Token trägt eine Herkunft, übernommene mit Fundstelle und Datum
 - [ ] Der Katalog in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) ist um projektspezifische Gates ergänzt
 
 Der negative Test in Zeile drei wird am häufigsten übersprungen und ist der wichtigste. Ein Gate mit einem Denkfehler in der Bedingung erzeugt Vertrauen, das es nicht deckt.

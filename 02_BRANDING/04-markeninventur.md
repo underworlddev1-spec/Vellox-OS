@@ -68,6 +68,18 @@ Ebenso wird nicht alles fortgeführt, was rechtlich oder technisch nicht mitkomm
 
 Bei einer Neugründung ohne jede Präsenz gibt es nichts zu inventarisieren, und die Markenstrategie beginnt bei der Positionierung. Bei einem ausdrücklich beauftragten Markenwechsel wird die Inventur trotzdem durchgeführt, dann aber als Grundlage für die Entscheidung, was bewusst aufgegeben wird. Ein Bruch, der weiß, was er bricht, ist etwas anderes als ein Bruch aus Unkenntnis.
 
+## Wo diese Regel wohnt
+
+Nach [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) gehört eine prüfbare Regel nicht in Prosa. Die Markeninventur zerfällt dabei in Teile, die auf unterschiedliche Stufen gehören, und diese Aufteilung ist selbst eine Aussage darüber, was ein Skript leisten kann.
+
+Auf **Stufe 2** gehört die Vollständigkeit der Herkunftsangabe. Jeder Design-Token trägt einen der drei Zustände, übernommene tragen zusätzlich Fundstelle und Abrufdatum. Fehlt eine dieser Angaben, bricht der Bau ab. Das Gate steht als übernehmbarer Code in [`09_TEMPLATES/05-qualitaetsgates.md`](../09_TEMPLATES/05-qualitaetsgates.md), Abschnitt 10. Es prüft nicht, ob eine Farbe stimmt, sondern ob jemand die Frage nach ihrer Herkunft überhaupt gestellt hat.
+
+Auf **Stufe 3** gehört die Erhebung selbst. Ein Skript öffnet den bestehenden Auftritt, liest die berechneten Stile aus und gibt Farben und Schriften nach Fläche gewichtet aus. Damit ist der Weg über den gerenderten Zustand nicht mehr eine Frage der Disziplin, sondern der voreingestellte Weg. Ein solches Skript liegt noch nicht im Repository; bis dahin ist die Erhebung Handarbeit und wird im Discovery-Brief mit dem verwendeten Vorgehen vermerkt.
+
+Auf **Stufe 4** bleibt der Abgleich mit der Wirklichkeit. Ob Ladenschild, Fahrzeug und Arbeitskleidung denselben Ton führen wie das Stylesheet, kann kein Skript beurteilen. Das ist eine Frage an den Kunden und gehört auf die Checkliste, nicht in den Bau.
+
+Auf **Stufe 5**, also hier, bleibt die Begründung: warum ein negativer Befund gefährlicher ist als ein falscher positiver, und warum die Rangfolge bei Widersprüchen so herum verläuft.
+
 ## Prüfung vor der Freigabe
 
 Die Inventur ist belastbar, wenn vier Fragen beantwortet sind.
