@@ -8,6 +8,8 @@ Der Anti-Template-Standard schützt nicht vor Wiederverwendung. Ein gutes System
 
 Jede auffällige Entscheidung braucht eine Herkunft. Sie kann aus der Zielgruppe, dem Angebot, einem Beweis, einer lokalen Situation, einer technischen Bedingung oder einer bewusst gewählten Markenhaltung entstehen. Wenn sich die Herkunft nicht benennen lässt, wird die Entscheidung als Entwurf, nicht als Standard behandelt.
 
+Bei einem Kunden mit bestehendem Auftritt ist die beste Herkunft der Kunde selbst. Bevor eine Farbe, eine Schrift oder eine Form hergeleitet wird, wird geprüft, ob es sie bereits gibt. Die [Markeninventur](../02_BRANDING/04-markeninventur.md) beschreibt das Verfahren und die Regel dahinter: Ein negativer Befund braucht dieselbe Sorgfalt wie ein positiver, und er wird am gerenderten Auftritt erhoben, nicht durch Suche im Quelltext.
+
 Frage bei einem visuellen Element: Welche Unsicherheit reduziert es? Welche Erwartung erzeugt es? Welche reale Eigenschaft des Kunden macht es sichtbar? Was würde verloren gehen, wenn es entfernt wird? Wenn nur „es sieht hochwertig aus“ als Antwort bleibt, fehlt die Begründung. Hochwertigkeit ist eine Folge stimmiger Entscheidungen, nicht der Name einer Dekoration.
 
 ## Verbindliche Verbote
