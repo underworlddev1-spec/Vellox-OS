@@ -10,7 +10,7 @@ Discovery ist abgeschlossen, wenn aus Material und Gesprächen eine priorisierte
 | Konkrete Situationen statt allgemeiner Werte wurden untersucht | Situationen liefern bessere Hinweise für Copy, UX und CTA. | Interviewnotizen mit Auslöser und Folge. |
 | Alternativen und Status quo sind erfasst | Besucher vergleichen nicht nur Anbieter, sondern auch Aufschub und Eigenleistung. | Konkurrenz- und Ersatzanalyse. |
 | Vorhandenes Markenmaterial ist inventarisiert | Ein Relaunch, der eine bestehende Marke übersieht, ersetzt eine Kundenentscheidung durch eine Agenturpräferenz. | Markeninventur mit Quelle, Datum und Rechtelage. |
-| Negative Befunde nennen die verwendete Methode | „Es gibt keine Markenfarbe“ ist eine Tatsachenbehauptung und nur belastbar, wenn die Suche geeignet war. | Vermerk, dass der Auftritt gerendert und nicht nur gelesen wurde. |
+| Negative Befunde nennen die verwendete Methode | „Es gibt keine Markenfarbe“ ist eine Tatsachenbehauptung und nur belastbar, wenn die Suche geeignet war. | Bericht aus `werkzeuge/markeninventur.mjs` oder ein gleichwertiger Nachweis am gerenderten Auftritt. |
 | Angebot besitzt einen erkennbaren Beweis | Ein Versprechen ohne Nachweis wird später durch Design kaschiert. | Angebotsmatrix. |
 | Einwände sind nach Ursache und Zeitpunkt geordnet | So kann die Antwort dort erscheinen, wo Unsicherheit entsteht. | Einwandkarte. |
 | Zielgruppen sind nach Passung priorisiert | Eine lange Zielgruppenliste erzeugt keine Führung. | Priorisierte Situationsbeschreibungen. |

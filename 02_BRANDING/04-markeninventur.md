@@ -74,7 +74,13 @@ Nach [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) gehört ein
 
 Auf **Stufe 2** gehört die Vollständigkeit der Herkunftsangabe. Jeder Design-Token trägt einen der drei Zustände, übernommene tragen zusätzlich Fundstelle und Abrufdatum. Fehlt eine dieser Angaben, bricht der Bau ab. Das Gate steht als übernehmbarer Code in [`09_TEMPLATES/05-qualitaetsgates.md`](../09_TEMPLATES/05-qualitaetsgates.md), Abschnitt 10. Es prüft nicht, ob eine Farbe stimmt, sondern ob jemand die Frage nach ihrer Herkunft überhaupt gestellt hat.
 
-Auf **Stufe 3** gehört die Erhebung selbst. Ein Skript öffnet den bestehenden Auftritt, liest die berechneten Stile aus und gibt Farben und Schriften nach Fläche gewichtet aus. Damit ist der Weg über den gerenderten Zustand nicht mehr eine Frage der Disziplin, sondern der voreingestellte Weg. Ein solches Skript liegt noch nicht im Repository; bis dahin ist die Erhebung Handarbeit und wird im Discovery-Brief mit dem verwendeten Vorgehen vermerkt.
+Auf **Stufe 3** gehört die Erhebung selbst. Das Skript [`werkzeuge/markeninventur.mjs`](../werkzeuge/markeninventur.mjs) öffnet den bestehenden Auftritt, liest die berechneten Stile aus und gibt Farben und Schriften gewichtet aus, getrennt nach Fläche und nach Vorkommen an Handlungselementen. Damit ist der Weg über den gerenderten Zustand nicht mehr eine Frage der Disziplin, sondern der voreingestellte Weg.
+
+```bash
+node werkzeuge/markeninventur.mjs https://www.kunde.de --aus inventur.md
+```
+
+Scheitert der direkte Abruf an einem Proxy, einer Netzsperre oder einem Bot-Schutz, spiegelt `--spiegeln` den Auftritt lokal und rendert die Kopie. Der Bericht enthält zusätzlich die Kontrastwerte auf hellem und dunklem Grund, die geladenen Schriftdateien mit dem Hinweis auf ihre Lizenz und die Rahmenwerk-Dateien, die auf der eigenen Domain des Kunden liegen. Findet das Skript keine bunte Farbe, schreibt es das als noch nicht belastbaren Zwischenstand mit der Liste der Orte, die es nicht sehen kann, und nicht als Feststellung.
 
 Auf **Stufe 4** bleibt der Abgleich mit der Wirklichkeit. Ob Ladenschild, Fahrzeug und Arbeitskleidung denselben Ton führen wie das Stylesheet, kann kein Skript beurteilen. Das ist eine Frage an den Kunden und gehört auf die Checkliste, nicht in den Bau.
 
