@@ -64,6 +64,12 @@ Eine Marke, deren Farbe im Bestand eine ganze Navigationsleiste füllt, kann im 
 
 Ebenso wird nicht alles fortgeführt, was rechtlich oder technisch nicht mitkommt. Eine Schrift ohne übertragbare Lizenz wird ersetzt, und der Ersatz wird begründet. Ein Zeichen, das nur als kleines Pixelbild vorliegt, reicht für den Bildschirm und nicht für Druck; die Vektorfassung wird als offene Anforderung geführt, nicht stillschweigend nachgezeichnet.
 
+## Die Schwester dieser Regel: der Funktionsbestand
+
+Dieses Kapitel behandelt, was ein Auftritt an Markenwerten führt. Die gleiche Prüfung mit derselben Begründung gilt für das, was er **kann**: welche Funktionen er anbietet, welche Inhalte er veröffentlicht, welche fremden Dienste ihn mitbetreiben. Auch hier ist die häufigste Fehlerquelle nicht Nachlässigkeit, sondern eine Quelle, die zu früh für ausreichend gehalten wird. Bei der Marke ist es der Quelltext, beim Funktionsbestand das Briefing. Beide klingen, als beschrieben sie den Bestand, und beide tun es nicht.
+
+Ausgearbeitet ist das in [Das Briefing beschreibt eine Auffassung, nicht einen Bestand](../01_RESEARCH/01-discovery.md). Wer diese Inventur ohnehin durchführt, erledigt beides in einem Durchgang: Der Bericht des Werkzeugs nennt neben Farben und Schriften auch die fremden Herkünfte und die beim Laden leeren Behälter.
+
 ## Wann dieses Kapitel nicht gilt
 
 Bei einer Neugründung ohne jede Präsenz gibt es nichts zu inventarisieren, und die Markenstrategie beginnt bei der Positionierung. Bei einem ausdrücklich beauftragten Markenwechsel wird die Inventur trotzdem durchgeführt, dann aber als Grundlage für die Entscheidung, was bewusst aufgegeben wird. Ein Bruch, der weiß, was er bricht, ist etwas anderes als ein Bruch aus Unkenntnis.

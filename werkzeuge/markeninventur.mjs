@@ -356,6 +356,40 @@ const MESSUNG = () => {
 
   const geladeneSchriften = [...new Set([...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family))];
 
+  // Fremde Herkünfte. Nicht wegen der Marke, sondern wegen der Bestandsfrage:
+  // Eine Funktion, die hinter einem fremden Skript steckt, steht nicht im
+  // Quelltext. Wer nur den Quelltext liest, hält sie für nicht vorhanden und
+  // liefert später eine Seite ohne sie aus. Die Herkünfte sind der kürzeste
+  // Weg zu der Frage, was dieser Auftritt eigentlich kann.
+  const fremdeHerkuenfte = (() => {
+    const zaehler = new Map();
+    const merken = (roh, art) => {
+      if (!roh) return;
+      let h;
+      try { h = new URL(roh, location.href).origin; } catch { return; }
+      if (h === eigeneHerkunft || h === "null") return;
+      const eintrag = zaehler.get(h) ?? { herkunft: h, abrufe: 0, arten: new Set() };
+      eintrag.abrufe += 1;
+      eintrag.arten.add(art);
+      zaehler.set(h, eintrag);
+    };
+    for (const e of performance.getEntriesByType("resource")) merken(e.name, e.initiatorType || "abruf");
+    // Skripte, die noch nicht geladen sind, tauchen oben nicht auf.
+    for (const s of document.querySelectorAll("script[src]")) merken(s.getAttribute("src"), "script");
+    for (const f of document.querySelectorAll("iframe[src]")) merken(f.getAttribute("src"), "iframe");
+    return [...zaehler.values()]
+      .map((e) => ({ herkunft: e.herkunft, abrufe: e.abrufe, arten: [...e.arten].sort() }))
+      .sort((a, b) => b.abrufe - a.abrufe)
+      .slice(0, 20);
+  })();
+
+  // Behälter, die beim Laden leer sind. Ein leeres Element mit sprechendem
+  // Namen ist fast immer die Anschlussstelle eines fremden Dienstes.
+  const leereBehaelter = [...document.querySelectorAll("div[id], section[id]")]
+    .filter((el) => el.children.length === 0 && !el.textContent.trim() && el.id.length > 3)
+    .map((el) => ({ kennung: el.id, marke: el.tagName.toLowerCase() }))
+    .slice(0, 12);
+
   const sortieren = (karte) =>
     [...karte].filter(([, g]) => g > 0).sort((a, b) => b[1] - a[1]).slice(0, 12);
 
@@ -372,6 +406,8 @@ const MESSUNG = () => {
     weitereBilder: weitereBilder.slice(0, 6),
     symbole: symbole.slice(0, 6),
     stilvorlagen: stilvorlagen.slice(0, 15),
+    fremdeHerkuenfte,
+    leereBehaelter,
     variablen: [...new Map(variablen.map((v) => [v.name + v.wert, v])).values()].slice(0, 25),
   };
 };
@@ -531,6 +567,31 @@ function berichtBauen(quelle, seiten) {
       z.push("");
     }
 
+    if (d.fremdeHerkuenfte.length || d.leereBehaelter.length) {
+      z.push("**Fremde Dienste in diesem Auftritt**");
+      z.push("");
+      if (d.fremdeHerkuenfte.length) {
+        z.push("| Herkunft | Abrufe | Art |");
+        z.push("|---|---|---|");
+        for (const f of d.fremdeHerkuenfte) {
+          z.push(`| ${f.herkunft} | ${f.abrufe} | ${f.arten.join(", ")} |`);
+        }
+        z.push("");
+      }
+      if (d.leereBehaelter.length) {
+        z.push("Beim Laden leere Behälter, meist die Anschlussstelle eines dieser Dienste:");
+        z.push("");
+        for (const b of d.leereBehaelter) z.push(`- \`<${b.marke} id="${b.kennung}">\``);
+        z.push("");
+      }
+      z.push("Jede Zeile ist entweder eine **Funktion**, die der neue Auftritt weiterführen");
+      z.push("muss, oder eine **Abhängigkeit**, die endet. Beides muss entschieden werden,");
+      z.push("und zwar bevor der Umfang steht. Eine Funktion, die hinter einem fremden");
+      z.push("Skript steckt, ist im Quelltext nicht zu sehen: Dort steht nur ein leeres");
+      z.push("Element. Wer nur liest statt aufzurufen, hält sie für nicht vorhanden.");
+      z.push("");
+    }
+
     if (d.bildKandidaten.length) {
       z.push("**Kandidaten für das Zeichen**");
       z.push("");
@@ -588,6 +649,11 @@ function berichtBauen(quelle, seiten) {
   z.push("Ob Ladenschild, Fassade, Fahrzeugbeschriftung und Arbeitskleidung denselben Ton");
   z.push("führen. Das kann kein Skript beurteilen und bleibt eine Frage an den Kunden. Ein");
   z.push("Foto der Fassade genügt zur Kontrolle. Die gelebte Wirklichkeit schlägt die Datei.");
+  z.push("");
+  z.push("Und was die fremden Dienste oben tatsächlich leisten. Das Werkzeug nennt ihre");
+  z.push("Herkunft, nicht ihren Wert. Ob dort ein Zählpixel sitzt oder der halbe");
+  z.push("Warenbestand, entscheidet sich erst, wenn jemand den Dienst aufruft und");
+  z.push("nachsieht. Genau dieser Schritt wird am häufigsten übersprungen.");
   z.push("");
 
   return z.join("\n");

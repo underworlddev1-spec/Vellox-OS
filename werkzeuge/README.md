@@ -20,7 +20,8 @@ Diese Skripte laufen bei uns, nicht beim Kunden. Was in ein Kundenprojekt
 
 Erhebt den Markenbestand eines vorhandenen Auftritts am gerenderten Zustand.
 Gehört zu [Markeninventur](../02_BRANDING/04-markeninventur.md) und setzt deren
-Stufe 3 um.
+Stufe 3 um. Nebenbei beantwortet es die zweite Frage an einen Bestandsauftritt:
+welche fremden Dienste ihn mitbetreiben.
 
 ```bash
 node werkzeuge/markeninventur.mjs https://www.kunde.de --aus inventur.md
@@ -46,6 +47,15 @@ Kontrastwerten auf hellem und dunklem Grund. Dazu die tatsächlich verwendeten
 Schriften, die geladenen Schriftdateien, gesetzte Eigenschaftswerte mit Farbe,
 Kandidaten für das Zeichen mit ihren Pixelmaßen und eine leere Tabelle für die
 drei Zustände übernommen, abgeleitet und neu entschieden.
+
+**Und wer den Auftritt sonst noch mitbetreibt.** Der Bericht führt die fremden
+Herkünfte auf, die eine Seite tatsächlich abruft, dazu die Behälter, die beim
+Laden leer sind. Beides zusammen zeigt Funktionen, die im Quelltext nicht zu
+sehen sind, weil sie erst im Browser gefüllt werden: ein Katalog, eine
+Buchung, eine Bewertungsanzeige. Jede Herkunft ist entweder eine Funktion, die
+der neue Auftritt weiterführen muss, oder eine Abhängigkeit, die endet. Diese
+Einordnung gehört in die Discovery, siehe
+[Das Briefing beschreibt eine Auffassung, nicht einen Bestand](../01_RESEARCH/01-discovery.md).
 
 **Worauf es besonders achtet.** Auf Rahmenwerk-Dateien, die auf der eigenen
 Domain des Kunden liegen. Eine Datei mit einem Rahmenwerk-Namen dort ist selten

@@ -14,6 +14,22 @@ Wenn ein Betrieb bereits einen Auftritt hat, ist dieser Auftritt eine Quelle und
 
 Der bestehende Auftritt wird dafür geöffnet und angesehen, nicht nur im Quelltext gelesen. Das Verfahren und die Fallstricke stehen in der [Markeninventur](../02_BRANDING/04-markeninventur.md). Ihr Ergebnis wird in der Discovery mitgeführt wie jede andere Evidenz, mit Quelle, Datum und Sicherheit.
 
+## Das Briefing beschreibt eine Auffassung, nicht einen Bestand
+
+Zu Projektbeginn liegt fast immer ein Text vor, der beschreibt, was der Betrieb tut und was seine Website können soll: eine Ausschreibung, eine Zusammenfassung aus dem Erstgespräch, ein Anforderungspapier. Dieser Text ist Evidenz, aber nur für eine Sache. Er belegt, wie der Betrieb sein Angebot versteht und was ihm daran wichtig ist. Er belegt nicht, was sein bestehender Auftritt tatsächlich tut.
+
+Der Unterschied wird unterschätzt, weil beide Aussagen im selben Absatz stehen und gleich klingen. „Wir haben keinen Onlineshop und keine Preise für Räder“ ist zwei Aussagen in einem Satz. Die erste ist eine Selbstauskunft über das Geschäftsmodell und stimmt. Die zweite ist eine Tatsachenbehauptung über die bestehende Website und war in dem Projekt, aus dem dieses Kapitel stammt, falsch: Der Auftritt veröffentlichte 106 Räder mit Preisen, zwei Drittel davon reduziert mit Streichpreis. Der Betrieb meinte, dass man dort nicht bestellen kann. Wer den Satz als Bestandsbeschreibung liest, streicht einen ganzen Auftrittsteil.
+
+Das ist kein Einzelfall und keine Nachlässigkeit des Kunden. Ein Betriebsinhaber beschreibt sein Geschäft, nicht seine Software. Er sagt „wir verkaufen über Beratung“ und meint damit alles, was ihm an seinem Beruf wichtig ist; dass dieselbe Seite nebenbei einen Katalog mit Preisen führt, ist für ihn kein Widerspruch, sondern selbstverständliches Beiwerk. Die Übersetzung dieser Selbstauskunft in eine Bestandsliste ist unsere Arbeit, nicht seine.
+
+**Die Regel lautet deshalb:** Jede Aussage im Briefing, die sich auf den bestehenden Auftritt bezieht, wird vor der Umfangsplanung gegen den Auftritt geprüft. Nicht jede Aussage über das Geschäft, nicht jede Absicht, nicht jeder Wunsch. Nur die Tatsachenbehauptungen über das, was heute existiert. Das sind meist weniger als zehn Sätze, und sie zu prüfen kostet eine halbe Stunde. Sie nicht zu prüfen kostet einen Nachbau oder einen verlorenen Funktionsteil.
+
+**Woran man sie erkennt.** Eine Tatsachenbehauptung über den Bestand steht im Präsens und ließe sich mit einem Klick widerlegen: „Es gibt keine Terminbuchung.“ „Die Seite hat keine Preise.“ „Der Katalog ist nur ein Platzhalter.“ „Das Kontaktformular funktioniert nicht.“ Jede dieser Aussagen ist entweder eine Beobachtung oder eine Vermutung, und aus dem Text geht nicht hervor, welche von beiden.
+
+**Was besonders leicht übersehen wird.** Funktionen, die von einem fremden Dienst nachgeladen werden, stehen nicht im Quelltext. Dort steht ein leeres Element mit einem Namen, das erst im Browser gefüllt wird. Wer die Seite herunterlädt und liest, findet nichts und hält die Funktion für nicht vorhanden. Deshalb prüft [`werkzeuge/markeninventur.mjs`](../werkzeuge/markeninventur.mjs) auch die fremden Herkünfte eines Auftritts und die beim Laden leeren Behälter. Jede gefundene Herkunft ist entweder eine **Funktion**, die weitergeführt werden muss, oder eine **Abhängigkeit**, die endet. Beides gehört entschieden, bevor der Umfang steht.
+
+**Der Befund wird in beide Richtungen notiert.** Wenn die Prüfung das Briefing bestätigt, ist das ein Ergebnis und wird als solches festgehalten, mit Datum. Wenn sie es widerlegt, ist die Abweichung selbst wertvoll: Sie zeigt, dass der Betrieb einen Teil seines eigenen Auftritts nicht als Leistung wahrnimmt. Das ist regelmäßig ein Positionierungsbefund, kein Datenfehler. Im genannten Projekt war der übersehene Katalog gleichzeitig der beste Beleg für die Positionierung, weil sein Bestand zeigte, welche Art von Laden das ist.
+
 ## Die Discovery-Fragen
 
 Gute Discovery-Fragen öffnen einen Zusammenhang. „Was macht ihr?“ führt oft zu einer Aufzählung. „In welchem Moment entscheidet sich ein Interessent für euch oder gegen euch?“ führt zu Verhalten. „Welche Frage wird vor dem Erstkontakt am häufigsten gestellt?“ legt Informationslücken frei. „Welcher Kunde passt gut, obwohl er nicht der größte ist?“ zeigt die gewünschte Qualität von Nachfrage.
