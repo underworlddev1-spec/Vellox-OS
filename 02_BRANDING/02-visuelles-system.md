@@ -8,6 +8,24 @@ Farbe beeinflusst Orientierung, Stimmung und wahrgenommene Wichtigkeit. Ihre Bed
 
 Definiere eine funktionale Farbarchitektur: Grundflächen schaffen Ruhe und Kontrast, Textfarben sichern Lesbarkeit, Akzente markieren Handlung oder Identität, Statusfarben kommunizieren Zustände. Jede Farbe braucht zugängliche Kombinationen und einen definierten Zustand für Hover, Fokus, Fehler und deaktivierte Elemente. Psychologische Wirkung darf nie gegen die Wahrnehmungsrealität ausgespielt werden.
 
+## Farbe wird nach ihrer Aufgabe benannt, nicht nach ihrem Aussehen
+
+Diese Regel ist bei VELLOX verbindlich, und sie ist strenger als die verbreitete Empfehlung, Tokens zu verwenden. Ein Token namens `blau-600` ist kein Fortschritt gegenüber einem Farbwert. Es beantwortet weiterhin die Frage „welche Farbe" und nicht die Frage „wofür". Der Unterschied wird an dem Tag sichtbar, an dem der Wert sich ändert: `handlung` überlebt einen Wechsel von Blau nach Grün, `blau-600` wird in diesem Moment zu einer Unwahrheit im Code. Danach passiert regelmäßig das Schlimmere: Statt den Namen zu korrigieren, legt jemand `gruen-600` daneben, und das System führt zwei Wahrheiten.
+
+Das System hat deshalb zwei Ebenen, und nur die zweite wird verwendet.
+
+**Die Grundwerte** sind die Palette. Hier stehen die tatsächlichen Farbwerte, und hier steht nach der [Markeninventur](04-markeninventur.md) ihre Herkunft: übernommen, abgeleitet oder neu entschieden. Diese Ebene wird von keiner Komponente direkt benutzt.
+
+**Die semantischen Rollen** sind die Schicht, mit der gearbeitet wird. Jede Rolle benennt eine Aufgabe: Grundfläche, erhöhte Fläche, Text, ruhiger Text, Kante, primäre Handlung und ihre Zustände, Fokus, Fehler, Erfolg, Warnung. Eine Rolle zeigt auf einen Grundwert, und eine Komponente kennt ausschließlich Rollen.
+
+Der Gewinn ist nicht nur Umbenennbarkeit. Eine Rolle zwingt zu einer Entscheidung, die sonst nie getroffen wird. Wer eine Fläche einfärben will und dafür `handlung` nehmen muss, merkt beim Schreiben, dass er die Farbe der primären Handlung für Dekoration verbraucht. Bei einem Farbwert wäre ihm das nicht aufgefallen, und die Handlung hätte still ihre Auszeichnung verloren. Genau dieser Vorgang ist gemeint, wenn oben steht, dass eine Akzentfarbe ihre semantische Klarheit verliert.
+
+Ein semantischer Name kann selbst falsch werden. Eine Rolle `fehler`, die für eine Preishervorhebung eingesetzt wird, ist dieselbe Art von Unwahrheit wie `blau-600` nach dem Rebranding. Der Name verpflichtet; wer ihn zweckentfremdet, ändert entweder den Einsatz oder legt eine ehrliche neue Rolle an.
+
+**Wo die Regel nicht gilt.** Logos, Illustrationen, Fotos und eingebundene Fremdinhalte tragen eigene Werte. Ein Markenzeichen hat genau einen richtigen Farbwert, und der ist keine Rolle. Diese Dateien sind vom Verbot fester Farbwerte ausgenommen, und die Ausnahme wird ausdrücklich benannt, weil eine Regel ohne saubere Grenze innerhalb weniger Tage umgangen wird.
+
+**Jede Rolle trägt ihre Partner.** Eine Textrolle ohne die Flächen, auf denen sie zugelassen ist, ist unvollständig, weil sich Lesbarkeit nicht an einer einzelnen Farbe entscheidet, sondern an einem Paar. Erst wenn die zulässigen Paare benannt sind, lässt sich ihr Kontrast rechnen statt schätzen, und zwar ohne die Seite zu öffnen. Wie daraus ein Gate wird, das den Bau abbricht, steht in [Accessibility und Animation](../07_ENGINEERING/04-accessibility-und-animation.md).
+
 ## Typografie als Stimme und Navigation
 
 Typografie trägt nicht nur Tonalität. Sie steuert Lesegeschwindigkeit, Hierarchie und Raum. Eine prägnante Display-Schrift kann den Einstieg charakterisieren; eine ruhige Textschrift muss lange Erklärungen tragen. Die Kombination sollte nicht durch Kontrast um des Kontrasts willen gewählt werden, sondern durch unterschiedliche Aufgaben.

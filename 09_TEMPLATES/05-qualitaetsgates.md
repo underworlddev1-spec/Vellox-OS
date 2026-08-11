@@ -310,6 +310,168 @@ Agenturpräferenz ersetzt wurde, ohne dass es jemand bemerkt hat.
 Der Rest der Markeninventur bleibt bewusst auf Stufe 4. Ob das Ladenschild
 denselben Ton führt wie das Stylesheet, kann kein Skript beurteilen.
 
+## 11. Kein Farbwert außerhalb der Palette
+
+Die Regel steht in den [Coding Standards](../07_ENGINEERING/01-coding-standards.md); hier die Prüfung. Sie läuft über die Quelldateien, nicht über die Ausgabe, weil die Meldung sonst eine Zeile in generiertem CSS nennt und niemandem hilft.
+
+```ts
+// werkzeuge/farbwerte-pruefen.ts, aufgerufen vor dem Bau
+const MUSTER = [
+  { name: 'Hexadezimalwert', regex: /#[0-9a-fA-F]{3,8}\b/g },
+  { name: 'Funktionsschreibweise', regex: /\b(rgba?|hsla?|oklch|oklab|lab|lch)\s*\(/g },
+  // Hilfsklassen, die nach einem Farbton statt nach einer Aufgabe benannt sind.
+  // Der Tonname ist der Fehler, nicht die Zahl dahinter.
+  {
+    name: 'Hilfsklasse nach Farbton',
+    regex:
+      /\b(text|bg|border|ring|fill|stroke|from|via|to|decoration|outline|shadow)-(slate|gray|grey|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3}\b/g,
+  },
+]
+
+/** Dateien, die eigene Farbwerte tragen müssen. Jede Ergänzung braucht einen Grund. */
+const AUSGENOMMEN = [
+  'src/design/palette.ts', // die Palette selbst
+  'src/assets/',           // Zeichen, Illustrationen, Fotos
+  'public/',
+]
+```
+
+Der Abbruch nennt nach den drei Teilen aus [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) den gefundenen Wert, die Stelle und den Weg heraus:
+
+```
+Fester Farbwert außerhalb der Palette:
+  src/components/PreisKarte.astro:34   #0a3d62   (Hexadezimalwert)
+
+Farben werden über eine semantische Rolle bezogen, nicht über ihren Wert.
+Verfügbare Rollen: flaeche, flaeche-erhoben, text, text-leise, kante,
+handlung, handlung-aktiv, fokus, fehler, erfolg, warnung
+
+Wenn keine Rolle passt, fehlt eine. Lege sie in src/design/palette.ts an,
+statt den Wert hier einzutragen. Ausnahmen stehen in AUSGENOMMEN in
+werkzeuge/farbwerte-pruefen.ts und brauchen eine Begründung im Commit.
+```
+
+Der letzte Absatz der Meldung ist der wichtigste. Eine Prüfung, die nur verbietet, wird beim ersten Termindruck umgangen. Eine, die den richtigen Weg im selben Text nennt, wird befolgt.
+
+## 12. Kontrast aus den Rollen rechnen, bevor eine Seite existiert
+
+Möglich wird das erst durch Abschnitt 11: Wenn jede Rolle ihre zulässigen Partner nennt, ist die Menge der zu prüfenden Paare bekannt, und der Kontrast ist eine Rechnung statt einer Messung. Die Formel ist die relative Leuchtdichte nach WCAG.
+
+```ts
+const kanal = (v: number) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)
+
+const leuchtdichte = (hex: string) => {
+  const h = hex.replace('#', '')
+  const voll = h.length === 3 ? [...h].map((z) => z + z).join('') : h
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(voll.slice(i, i + 2), 16) / 255)
+  return 0.2126 * kanal(r) + 0.7152 * kanal(g) + 0.0722 * kanal(b)
+}
+
+export const kontrast = (a: string, b: string) => {
+  const [hell, dunkel] = [leuchtdichte(a), leuchtdichte(b)].sort((x, y) => y - x)
+  return (hell + 0.05) / (dunkel + 0.05)
+}
+```
+
+Die Zielwerte stehen an genau einer Stelle, damit eine neue Fassung der Richtlinie eine Änderung an einer Datei bleibt:
+
+```ts
+/** WCAG 2.2 Stufe AA. Quelle: w3.org/TR/WCAG22, Erfolgskriterien 1.4.3 und 1.4.11. */
+export const MINDESTKONTRAST = {
+  text: 4.5,        // Fließtext
+  textGross: 3.0,   // ab 24px oder ab 18,66px fett
+  bedienelement: 3.0, // Grenzen, Zustände, Fokusring (1.4.11)
+} as const
+```
+
+Jede Rolle nennt ihre Partner und die Aufgabe, aus der sich der Zielwert ergibt:
+
+```ts
+const paare = [
+  { vorn: 'text', hinten: 'flaeche', zweck: 'text' },
+  { vorn: 'text-leise', hinten: 'flaeche', zweck: 'text' },
+  { vorn: 'text-leise', hinten: 'flaeche-erhoben', zweck: 'text' },
+  { vorn: 'handlung', hinten: 'flaeche', zweck: 'bedienelement' },
+  { vorn: 'fokus', hinten: 'flaeche', zweck: 'bedienelement' },
+  { vorn: 'kante', hinten: 'flaeche', zweck: 'bedienelement' },
+] as const
+
+for (const { vorn, hinten, zweck } of paare) {
+  const ist = kontrast(ROLLE[vorn], ROLLE[hinten])
+  const soll = MINDESTKONTRAST[zweck]
+  if (ist < soll) {
+    throw new Error(
+      `Kontrast zu gering: ${vorn} auf ${hinten} erreicht ${ist.toFixed(2)}:1, ` +
+        `nötig sind ${soll}:1 (${zweck}).\n` +
+        `  ${vorn} = ${ROLLE[vorn]}, ${hinten} = ${ROLLE[hinten]}\n` +
+        `  Zielwerte stehen in src/design/palette.ts unter MINDESTKONTRAST.`
+    )
+  }
+}
+```
+
+**Die Grenze dieses Gates gehört zu ihm.** Es prüft Farbe gegen Farbe. Text auf einem Foto, auf einem Verlauf oder auf einer halbtransparenten Fläche hat keinen einzelnen Hintergrundwert, und dort sagt das Gate nichts, obwohl genau dort die Fehler sitzen, die auffallen. Diese Fälle bleiben eine Prüfung am gerenderten Zustand. Ein Gate, dem mehr zugetraut wird, als es leistet, ist gefährlicher als keines.
+
+Dazu läuft ein Prüflauf über **alle** gebauten Seiten, nicht über eine Auswahl:
+
+```json
+{
+  "scripts": {
+    "pruefe:a11y": "astro build && pa11y-ci --sitemap http://localhost:4321/sitemap-0.xml"
+  }
+}
+```
+
+Die Sitemap ist hier die Auswahlregel, und das ist ihr Zweck: Wer eine Seite ausliefert, prüft sie. Ein Durchlauf über drei von Hand eingetragene Adressen findet die Startseite in Ordnung und das Kontaktformular nie.
+
+## 13. Wartezustände vollständig machen
+
+Die Begründung steht in [Wartezustände](../04_UI/08-wartezustaende-und-skelette.md). Der vergessene Zustand ist fast immer der Fehlerausgang, und das Ergebnis ist ein Skelett, das stehen bleibt. Zwei Wahrheitswerte erlauben diesen Fall; eine unterscheidbare Variante nicht.
+
+```ts
+export type Ladelage<T> =
+  | { lage: 'laedt' }
+  | { lage: 'leer' }
+  | { lage: 'fehler'; grund: string; rueckweg: string }
+  | { lage: 'inhalt'; daten: T }
+```
+
+`rueckweg` ist Pflicht und kein Text zur Zierde: Er ist der Weg, der ohne diesen Dienst funktioniert, also die Rufnummer, wenn der Terminkalender nicht lädt. Ein Fehlerzustand ohne Ausweg ist eine Sackgasse mit Erklärung.
+
+Der erschöpfende Abgleich macht den vergessenen Fall zum Typfehler statt zur leeren Fläche:
+
+```ts
+switch (lage.lage) {
+  case 'laedt':   return <Skelett plaetze={ERWARTETE_PLAETZE} />
+  case 'leer':    return <Hinweis>{leerText}</Hinweis>
+  case 'fehler':  return <Stoerung grund={lage.grund} rueckweg={lage.rueckweg} />
+  case 'inhalt':  return <Liste daten={lage.daten} />
+  default:        {
+    const _unbehandelt: never = lage   // bricht den Bau bei einem neuen Zustand
+    throw new Error(`Unbehandelter Ladezustand: ${JSON.stringify(_unbehandelt)}`)
+  }
+}
+```
+
+Die Maße des Skeletts werden abgeleitet und nicht gezeichnet. Es benutzt dieselbe Komponente wie der Inhalt und ersetzt nur den Text durch Fläche, damit beide Fassungen dieselbe Höhe berechnen:
+
+```astro
+---
+interface Props { plaetze: number }
+const { plaetze } = Astro.props
+---
+<ul aria-busy="true" class="liste">
+  {Array.from({ length: plaetze }, () => (
+    <li class="liste__eintrag" aria-hidden="true">
+      <Eintrag titel="" text="" skelett />
+    </li>
+  ))}
+</ul>
+<p class="nur-vorlesen" role="status">Inhalte werden geladen.</p>
+```
+
+`aria-hidden` an den Platzhaltern und die Statusmeldung daneben gehören zusammen: Eine Folge bedeutungsloser Elemente vorzulesen ist schlechter als keine, aber gar keine Auskunft ist es auch. Die Zeitgrenzen, 200 Millisekunden Verzögerung vor dem Erscheinen und 400 Millisekunden Mindeststandzeit, stehen als benannte Werte an einer Stelle, weil sie Konvention sind und mit einer Messung geändert werden dürfen.
+
 ## Aufnahmeprüfung
 
 Bevor das Projekt in Phase 3 geht:
@@ -322,6 +484,12 @@ Bevor das Projekt in Phase 3 geht:
 - [ ] Bildleser kennt jedes im Projekt verwendete Format
 - [ ] Jede Zahl auf der Seite hat genau eine Quelle im Code
 - [ ] Jeder Design-Token trägt eine Herkunft, übernommene mit Fundstelle und Datum
+- [ ] Farbrollen sind benannt, die Palette ist die einzige Datei mit Farbwerten
+- [ ] Farbwert-Prüfung läuft vor dem Bau und **negativ getestet**, Ausnahmeliste begründet
+- [ ] Jedes zulässige Farbpaar ist deklariert und sein Kontrast wird gerechnet
+- [ ] Zugänglichkeitsprüfung läuft über die Sitemap, nicht über eine Auswahl
+- [ ] Asynchrone Flächen führen ihre vier Zustände als unterscheidbare Varianten
+- [ ] Skelettmaße kommen aus derselben Komponente wie der Inhalt
 - [ ] Der Katalog in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) ist um projektspezifische Gates ergänzt
 
 Der negative Test in Zeile drei wird am häufigsten übersprungen und ist der wichtigste. Ein Gate mit einem Denkfehler in der Bedingung erzeugt Vertrauen, das es nicht deckt.

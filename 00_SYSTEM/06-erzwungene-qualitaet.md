@@ -76,6 +76,25 @@ Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für
 | Kante um fremdes Bildmaterial ist unabhängig vom Bildinhalt | 4 | Die mittlere Helligkeit dreier Kundenaufnahmen ergab gegen einen dunklen Grund 1,22:1, 2,62:1 und 10,92:1. Die dunkelste löste sich auf, und der Rahmen war Teil des Problems: Er stand auf derselben Farbe wie der Grund. Unter 3:1 braucht es eine Kante. |
 | Ein Element mit zwei Aufgaben bekommt zwei Umsetzungen | 4 | Vier Fassungen einer Hervorhebung gemessen: Jede, die das Licht unregelmäßig machte, verlor die Kante irgendwo. Eine Eigenschaft, die Grenze und Atmosphäre gleichzeitig leisten soll, leistet keines von beidem zuverlässig. |
 | Genau ein Bild je Seite lädt bevorzugt | 4 | Ein Bild oberhalb der Falz mit `lazy` kostet Ladezeit, eines darunter mit `eager` ebenfalls, und beides passiert, wenn man raten darf. Deshalb ist die Angabe ein Pflichtwert ohne Vorgabe. |
+| Kein Farbwert außerhalb der Palette | 2 | Ein einzelner fester Wert in einer Komponente ist nicht der Fehler, sondern sein Anfang: Er wird von keiner Token-Suche gefunden, von keinem Kontrastgate erfasst, bleibt bei einer Markenänderung stehen und wird von der nächsten Komponente kopiert. Eine Rolle zwingt außerdem zu einer Entscheidung, die sonst nie getroffen wird, nämlich wofür diese Farbe da ist. |
+| Asynchrone Fläche führt vier unterscheidbare Zustände | 1 | Zwei Wahrheitswerte für „lädt" und „Fehler" erlauben vier Kombinationen, von denen zwei sinnlos sind, und in einer davon bleibt das Skelett stehen. Eine Variante je Zustand macht den vergessenen Fehlerausgang zum Typfehler statt zur Fläche, die nie aufhört zu laden. |
+| Skelettmaße kommen aus derselben Komponente wie der Inhalt | 2 | Von Hand gebaute Platzhalter stimmen bis zur ersten Inhaltsänderung. Danach springt das Layout wieder, unbemerkt, weil die Regel als erfüllt gilt. |
+
+### Zugänglichkeit und Recht
+
+Diese Gruppe ist jung, und ihr Anlass steht im Kapitel selbst: Der Fokusring war
+dokumentiert und fehlte. Das ist der Beweis, dass Zugänglichkeit auf Stufe 5
+nicht trägt. Nach der Verschiebungsregel zieht sie nach oben, aber nur mit den
+Teilen, die sich messen lassen.
+
+| Gate | Stufe | Warum |
+|---|---|---|
+| Kontrast jedes zulässigen Farbpaars | 2 | Möglich erst dadurch, dass Farben Rollen mit benannten Partnern sind: Dann ist die Menge der Paare bekannt, und der Kontrast wird gerechnet statt gemessen. Das Gate läuft ohne Browser und meldet den Fehler an dem Tag, an dem jemand einen Wert ändert, nicht Wochen später im Review. |
+| Kontrast auf Bild, Verlauf und Transparenz | 4 | Bewusst getrennt vom vorigen. Dort ist der Hintergrund kein Wert, sondern ein Bereich, und das gerechnete Gate sagt nichts, obwohl gerade hier die auffälligen Fehler sitzen. |
+| Zugänglichkeitsprüfung über alle ausgelieferten Seiten | 3 | Die Auswahl ist der Grund, warum solche Prüfungen nichts finden: Geprüft wird die Startseite, und der Fehler sitzt im Formular auf der Kontaktseite. Die Sitemap ist die Auswahlregel. |
+| Urteilsfragen der Zugänglichkeit | 4 | Ob ein vorhandener Alternativtext stimmt, ob die Fokusreihenfolge der sichtbaren Anordnung folgt, ob eine Fehlermeldung weiterhilft. Eine bestandene automatische Prüfung ist kein Nachweis von Barrierefreiheit, sondern die Abwesenheit einer Fehlerklasse. |
+| Keine fremde Netzwerkanfrage vor der Einwilligung | 3 | Der Punkt, der in der Praxis am häufigsten scheitert, und einer der wenigen rechtlich relevanten, die sich mechanisch belegen lassen: Seite ohne Zustimmung aufrufen, Anfragen aufzeichnen, fremde Domains auflisten. Damit ist eine mitladende Schriftart ein Befund und keine Vermutung. |
+| Vorhandensein der Pflichtangaben | 4 | Ob eine Seite Anbieterkennzeichnung und Datenschutzinformationen hat, prüft ein Mensch. Ob sie sie haben **muss**, beurteilt die Agentur nicht; das ist eine Rechtsauskunft. Wir liefern den Befund, der Kunde klärt die Bewertung. |
 
 ### Was unterhalb einer Bruchstelle passiert
 

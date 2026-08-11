@@ -10,7 +10,9 @@ Die Qualitätskontrolle ist die letzte integrierte Betrachtung. Sie prüft nicht
 | Primäre Handlungen sind eindeutig | Entscheidungen sollen leichter, nicht lauter werden. | CTA- und Formularreview. |
 | Visuelle Hierarchie unterstützt Scan und Tiefe | Die Seite muss sowohl schnell als auch gründlich lesbar sein. | Distanz- und Detailprüfung. |
 | Mobile und Zwischenbreiten funktionieren | Ein Premium-Eindruck darf nicht an einer Idealbreite hängen. | Responsive Matrix. |
-| Fokus, Kontrast, Semantik und Bewegung sind zugänglich | Zugänglichkeit ist Teil der Grundqualität. | Accessibility-Nachweis. |
+| Tastaturweg, Fokusreihenfolge und Fehlermeldungen tragen die Kernwege | Was ein Prüfwerkzeug nicht beurteilen kann, entscheidet über die Benutzbarkeit. | Durchgang mit Tastatur und Screenreader, dokumentiert. |
+| Jedes Element hält dem Wegnahmetest stand | Hinzufügen hat immer einen Fürsprecher, Weglassen fast nie. | Benannter Verlust je Element, Zählung der Auszeichnungsmittel. |
+| Wartezustände haben einen Ausgang | Ein Skelett ohne Fehlerweg ist kein halbfertiger Zustand, sondern ein defekter. | Messung am gedrosselten Netz. |
 | Inhalte sind aktuell und pflegbar | Betriebssicherheit entsteht nach dem Launch weiter. | Content-Owner und Aktualisierungsplan. |
 | Performance ist unter realen Bedingungen akzeptabel | Geschwindigkeit und Stabilität beeinflussen Vertrauen. | Produktionsmessung. |
 | SEO- und technische Struktur widersprechen nicht dem sichtbaren Inhalt | Auffindbarkeit darf keine falsche Erwartung erzeugen. | SEO-Review. |
@@ -28,7 +30,9 @@ Prüfe vor Freigabe, ob primäre Buttons ohne Pill Form funktionieren, ob Lila n
 
 ## Was diese Kontrolle nicht mehr prüft
 
-Eine Checkliste mit dreißig Punkten wird abgehakt statt gelesen. Deshalb prüft diese Kontrolle ausdrücklich nicht, was ein Gate im Bau schon garantiert: Zeichenlängen von Titel und Beschreibung, Bildmaße, vorhandene Bilddateien, Tabellenbreiten, Schablonenüberschriften in Seitenfamilien, Belege für Ortsseiten, Herkunft und Datum fremder Zahlen.
+Eine Checkliste mit dreißig Punkten wird abgehakt statt gelesen. Deshalb prüft diese Kontrolle ausdrücklich nicht, was ein Gate im Bau schon garantiert: Zeichenlängen von Titel und Beschreibung, Bildmaße, vorhandene Bilddateien, Tabellenbreiten, Schablonenüberschriften in Seitenfamilien, Belege für Ortsseiten, Herkunft und Datum fremder Zahlen, feste Farbwerte außerhalb der Palette, den gerechneten Kontrast der zulässigen Farbpaare, die Vollständigkeit der Ladezustände.
+
+Deshalb steht der Kontrast auch nicht mehr als eigene Zeile in der Tabelle oben. Was gerechnet werden kann, wird gerechnet; was hier bleibt, ist der Fall, den keine Rechnung erfasst: Text auf Bild, auf Verlauf und auf halbtransparenter Fläche.
 
 Wer einen dieser Punkte hier vermisst, prüft zuerst, ob das zugehörige Gate existiert. Fehlt es, wird es angelegt statt in diese Tabelle geschrieben. Der Katalog steht in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md).
 
@@ -61,6 +65,26 @@ Der Grund für die Strenge steht in
 Was nur unterhalb einer Bruchstelle existiert, wird am großen Bildschirm von
 niemandem gesehen. Nicht vom Entwickler, nicht im Review, nicht in der
 Freigabe.
+
+## Der Durchgang, den kein Werkzeug ersetzt
+
+Die automatische Prüfung ist gelaufen und grün, sonst wäre die Seite nicht hier. Grün heißt, dass eine Fehlerklasse abwesend ist, nicht dass die Seite benutzbar ist. Für die Wege, die das Geschäft tragen, also Orientierung, Leistungswahl, Kontakt und Fehlerrückkehr, wird deshalb einmal von Hand durchgegangen:
+
+Einmal vollständig mit der Tastatur, ohne die Maus anzufassen. Sichtbarer Fokus an jeder Station, Reihenfolge wie die sichtbare Anordnung, jeder Dialog schließbar und mit Rückkehr an die auslösende Stelle. Einmal mit einem Screenreader über dieselbe Strecke. Einmal bei 200 Prozent Zoom. Einmal mit reduzierter Bewegung. Dazu ein Formular mit einem echten Fehler absenden und prüfen, ob die Meldung jemandem weiterhilft, der das Feld nicht sieht.
+
+Rechtlich getrennt davon, weil es eine andere Frage ist: Sind Anbieterkennzeichnung und Datenschutzinformationen vorhanden, erreichbar und wahr, und lädt beim ersten Aufruf ohne Zustimmung etwas von einer fremden Domain? Der zweite Punkt wird nicht geschätzt, sondern in einer Minute aufgezeichnet. Ob eine Vorschrift für diesen Betrieb gilt, entscheidet die Agentur nicht; wir liefern den Befund, der Kunde klärt die Bewertung mit seiner Rechtsberatung.
+
+## Der Wegnahmetest
+
+Für die wichtigsten Abschnitte, Element für Element: Was kann ein Besucher nicht mehr, wenn es weg ist? Zulässig sind drei Antworten, nämlich eine Handlung, eine Information für die Entscheidung an dieser Stelle oder ein erkennbarer Zustand. „Es wirkt leerer" ist keine.
+
+| Beobachtung | Befund ab |
+| --- | --- |
+| Gleichzeitige Auszeichnungsmittel in einem Abschnitt | über 3 |
+| Elemente ohne Antwort im Wegnahmetest | jedes |
+| Wartende Fläche ohne erreichbaren Fehlerausgang | jede |
+
+Die Begründung und die Grenze der Regel, nämlich dass dicht nicht überladen heißt, stehen in [Cards, Content und Surfaces](../04_UI/04-cards-content-surfaces.md). Eine Preistabelle ist dicht und richtig.
 
 ## Erstauslieferung
 

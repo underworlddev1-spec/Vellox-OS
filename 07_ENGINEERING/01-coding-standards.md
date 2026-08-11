@@ -47,6 +47,16 @@ Eingaben werden sowohl im Interface als auch auf der vertrauenswürdigen Servers
 ## Code und Designsystem
 
 Die Namen im Code sollen die Begriffe des Designsystems und der Inhaltsarchitektur wiedererkennen lassen. Wenn Designer, Redakteur und Entwickler dieselbe Komponente mit verschiedenen Namen meinen, entstehen Übersetzungsverluste. Ein kleines Glossar oder eine klare Token-Dokumentation kann diese Reibung deutlich reduzieren.
+
+## Kein Farbwert außerhalb der Palette
+
+Eine Komponente nennt keine Farbe. Sie nennt eine Rolle. Feste Farbwerte, also Hexadezimalwerte, `rgb()`, `hsl()`, benannte CSS-Farben und Hilfsklassen, die nach einem Farbton statt nach einer Aufgabe benannt sind, kommen in genau einer Datei vor: der Palette. Die Begründung steht im [visuellen System](../02_BRANDING/02-visuelles-system.md); hier steht, was daraus für den Code folgt.
+
+Der Fehler, den diese Regel verhindert, ist nicht der eine falsche Farbwert. Er ist die stille Umgehung. Wenn ein einziges Mal `#0a3d62` in einer Komponente steht, weil die passende Rolle gerade fehlte, dann existiert dieser Wert danach an einer Stelle, die keine Suche nach Tokens findet, die kein Kontrastgate erfasst und die bei einer Markenänderung stehen bleibt. Er wird zusätzlich kopiert, weil die nächste Komponente sich an der vorhandenen orientiert. Ein einzelner fester Wert ist deshalb kein Schönheitsfehler, sondern der Anfang einer zweiten Farbwahrheit.
+
+Ausgenommen sind die Dateien, die eigene Farbwerte tragen müssen: die Palette selbst, Markenzeichen, Illustrationen und Fotos. Bei einem eingebundenen Fremddienst, der sich nur über feste Werte gestalten lässt, wird die Ausnahme wie jede andere nach der Regel [Dokumentierte Abweichung](#dokumentierte-abweichung) direkt an der Stelle begründet, an der sie steht.
+
+Wenn eine Rolle fehlt, ist das die eigentliche Meldung. Ein fehlender Name bedeutet, dass eine Aufgabe im System noch nicht benannt wurde. Sie wird benannt und aufgenommen, nicht umgangen. Der Bau prüft diese Regel, weil sie sich vollständig mechanisieren lässt; das Gate steht in [`09_TEMPLATES/05-qualitaetsgates.md`](../09_TEMPLATES/05-qualitaetsgates.md), Abschnitt 11.
 ## Abstraktion mit Ablaufdatum
 
 Eine Abstraktion wird nicht dadurch gut, dass sie früh existiert. Prüfe, ob sie mindestens zwei echte Verwendungen vereinheitlicht, ob ihre Ausnahmefälle verständlich bleiben und ob sie ohne versteckte Kopplung getestet werden kann. Wenn nicht, ist lokale Klarheit zunächst die bessere Entscheidung. Später kann aus wiederholter Praxis ein stärkeres Muster entstehen.
