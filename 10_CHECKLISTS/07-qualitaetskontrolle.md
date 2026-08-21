@@ -10,6 +10,8 @@ Die Qualitätskontrolle ist die letzte integrierte Betrachtung. Sie prüft nicht
 | Primäre Handlungen sind eindeutig | Entscheidungen sollen leichter, nicht lauter werden. | CTA- und Formularreview. |
 | Visuelle Hierarchie unterstützt Scan und Tiefe | Die Seite muss sowohl schnell als auch gründlich lesbar sein. | Distanz- und Detailprüfung. |
 | Mobile und Zwischenbreiten funktionieren | Ein Premium-Eindruck darf nicht an einer Idealbreite hängen. | Responsive Matrix. |
+| Erster Bildschirm auf dem Handy trägt Headline, Erklärung und Handlung | Ein Besucher, der die Handlung nicht sieht, kann sie nicht abwägen. | Gemessene Y-Positionen auf 390 x 750, siehe Erste-Bildschirm-Gate. |
+| Breakpoints sind an den realen Inhalten gemessen | Eine geschätzte Schwelle erzeugt einen Bereich, in dem nie geprüft wurde. | Umbruchmessung des längsten Eintrags. |
 | Fokus, Kontrast, Semantik und Bewegung sind zugänglich | Zugänglichkeit ist Teil der Grundqualität. | Accessibility-Nachweis. |
 | Inhalte sind aktuell und pflegbar | Betriebssicherheit entsteht nach dem Launch weiter. | Content-Owner und Aktualisierungsplan. |
 | Performance ist unter realen Bedingungen akzeptabel | Geschwindigkeit und Stabilität beeinflussen Vertrauen. | Produktionsmessung. |
@@ -25,6 +27,20 @@ Wenn ein Qualitätskriterium schwach ist, frage nach der Ursache in angrenzenden
 ## Anti-Template-Gate
 
 Prüfe vor Freigabe, ob primäre Buttons ohne Pill Form funktionieren, ob Lila nur aus einer begründeten Kundenentscheidung stammt, ob jeder Abschnitt eine konkrete Aufgabe erfüllt und ob Copy nicht wie automatisch geglättete KI Sprache klingt. Suche nach Gedankenstrichen, generischen Superlativen, Gradient Glow, austauschbaren Card Reihen, fehlenden Zuständen und zufälligen Stilwerten. Ein Fund wird als konkrete Korrektur oder als begründete Ausnahme dokumentiert.
+
+## Erste-Bildschirm-Gate
+
+Dieses Gate ist aus einem konkreten Fehler entstanden und ersetzt die Sichtprüfung des Heros auf dem Handy durch eine Messung. Der Fehler: Eine Startseite zeigte auf einem iPhone nur Kopfzeile, Headline und Porträt; der erklärende Satz begann bei 805 Pixeln, die primäre Handlung bei 895. Beides lag unter der Bildschirmkante, und weder eine Ganzseiten-Aufnahme noch die Desktop-Ansicht machten das sichtbar.
+
+Geprüft wird auf einem 390 Pixel breiten Viewport mit 750 Pixeln Höhe, also der verbreiteten Telefonklasse abzüglich der Browserleisten. Gemessen werden die absoluten Y-Positionen von Headline, erklärendem Satz und primärer Handlung. Alle drei müssen vollständig innerhalb der 750 Pixel liegen. Gegengeprüft wird auf 360 mal 640; dort genügt es, wenn die Oberkante der primären Handlung sichtbar ist. Ein Hero-Bild sollte dabei etwa ein Drittel der nutzbaren Höhe nicht überschreiten und bekommt auf dem Handy ein eigenes Seitenverhältnis, siehe [Navigation und Hero](../04_UI/02-navigation-und-hero.md).
+
+Ein Befund aus diesem Gate ist ein Mangel und wird in derselben Runde behoben. Er wird nicht als Beobachtung notiert und auch dann nicht aufgeschoben, wenn die Behebung eine sichtbare gestalterische Folge hat, etwa einen engeren Bildausschnitt. Die Folge wird benannt und kann zurückgenommen werden; die Unerreichbarkeit der Handlung nicht.
+
+## Breakpoints gegen die realen Inhalte messen
+
+Eine Schwelle zwischen zwei Layouts ist die gemessene Mindestbreite des Inhalts, den sie trägt, plus ein kleiner Sicherheitsabstand für abweichende Schriftmetriken, keine gerundete Gerätezahl. Gemessen wird, indem die Breite schrittweise verkleinert wird, bis das erste Element umbricht oder überläuft. Im Ausgangsfall stand die Navigation zwischen 701 und 805 Pixeln zweizeilig, weil die Schwelle bei 701 lag und niemand sie an den echten Menüpunkten geprüft hatte.
+
+Der gefundene Wert wird mit seiner Herkunft im Code notiert. Wird später ein Menüpunkt, eine Leistung oder ein Ortsname umbenannt, ändert sich die Mindestbreite: Eine Umbenennung ist deshalb nie nur eine Textänderung, sondern zieht eine erneute Messung nach sich.
 
 ## Akzeptierte Risiken
 
