@@ -59,3 +59,10 @@ Lass lokale Informationen von der Person freigeben, die den Alltag kennt. Market
 ## Die lokale Antwortkette
 
 Suchergebnis, Standortseite, Kartenprofil, Anruf, Weg und Besuch müssen eine gemeinsame Wahrheit tragen. Ein neues Angebot oder eine geänderte Öffnungszeit wird deshalb über alle Orte geprüft, an denen Menschen die Information sehen. Local SEO ist stark, wenn kein Übergang eine andere Realität verspricht.
+
+## Wenn der Eintrag steht und trotzdem niemand kommt
+
+Local SEO beschreibt, wie Nähe belegt wird. Es beschreibt nicht, in welcher
+Reihenfolge Eintrag, Seite und Ansprache zusammenwirken, wann welcher Teil
+frühestens wirkt und woran man erkennt, an welcher der drei Stellen es
+klemmt. Das steht in [Die ersten Besucher](05-die-ersten-besucher.md).

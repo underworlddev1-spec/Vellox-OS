@@ -9,6 +9,8 @@ Discovery ist abgeschlossen, wenn aus Material und Gesprächen eine priorisierte
 | Aussagen sind mit Quelle und Sicherheit markiert | Vermutungen dürfen später nicht als Fakten behandelt werden. | Evidenzregister. |
 | Konkrete Situationen statt allgemeiner Werte wurden untersucht | Situationen liefern bessere Hinweise für Copy, UX und CTA. | Interviewnotizen mit Auslöser und Folge. |
 | Alternativen und Status quo sind erfasst | Besucher vergleichen nicht nur Anbieter, sondern auch Aufschub und Eigenleistung. | Konkurrenz- und Ersatzanalyse. |
+| Vorhandenes Markenmaterial ist inventarisiert | Ein Relaunch, der eine bestehende Marke übersieht, ersetzt eine Kundenentscheidung durch eine Agenturpräferenz. | Markeninventur mit Quelle, Datum und Rechtelage. |
+| Negative Befunde nennen die verwendete Methode | „Es gibt keine Markenfarbe“ ist eine Tatsachenbehauptung und nur belastbar, wenn die Suche geeignet war. | Bericht aus `werkzeuge/markeninventur.mjs` oder ein gleichwertiger Nachweis am gerenderten Auftritt. |
 | Angebot besitzt einen erkennbaren Beweis | Ein Versprechen ohne Nachweis wird später durch Design kaschiert. | Angebotsmatrix. |
 | Einwände sind nach Ursache und Zeitpunkt geordnet | So kann die Antwort dort erscheinen, wo Unsicherheit entsteht. | Einwandkarte. |
 | Zielgruppen sind nach Passung priorisiert | Eine lange Zielgruppenliste erzeugt keine Führung. | Priorisierte Situationsbeschreibungen. |
@@ -31,7 +33,7 @@ Bewerte Erkenntnisse nicht nur nach Häufigkeit. Ein seltenes, aber geschäftlic
 Discovery ist freigegeben, wenn Research sagen kann, welche Menschen in welcher Situation zuerst geholfen werden sollen, welche Zweifel die Seite behandeln muss und welche Beweise tatsächlich vorhanden sind. Alles andere darf offen bleiben, wenn es als offene, verantwortete Frage im nächsten Arbeitsschritt sichtbar ist.
 ## Quellenvielfalt
 
-Kombiniere Gespräche, bestehende Support- und Vertriebsfragen, Suchsprache, Analytics, Konkurrenzbeobachtung und fachlichen Kontext, wenn sie verfügbar sind. Keine Quelle muss jedes Problem lösen. Mehrere Perspektiven zeigen, wo ein Signal stabil ist und wo es nur eine Hypothese bleibt. Dokumentiere fehlende Zugänge ausdrücklich.
+Kombiniere Gespräche, bestehende Support- und Vertriebsfragen, Suchsprache, Analytics, Konkurrenzbeobachtung, den bestehenden Auftritt im gerenderten Zustand und fachlichen Kontext, wenn sie verfügbar sind. Keine Quelle muss jedes Problem lösen. Mehrere Perspektiven zeigen, wo ein Signal stabil ist und wo es nur eine Hypothese bleibt. Dokumentiere fehlende Zugänge ausdrücklich.
 
 ## Nicht alles validieren
 

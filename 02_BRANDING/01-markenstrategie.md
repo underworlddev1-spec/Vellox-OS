@@ -45,4 +45,4 @@ Leitplanken sind besonders wichtig, wenn mehrere Menschen oder Agenten an einem 
 
 ## Strategische Pflege
 
-Markenstrategie wird bei einem Relaunch nicht neu erfunden, nur weil die Oberfläche neu aussieht. Sie wird überprüft, wenn sich Zielgruppe, Angebot, Markt oder Arbeitsweise verändert haben. Kleine Anpassungen werden als Hypothesen dokumentiert, größere als bewusste Neupositionierung. Diese Kontinuität schützt die Marke vor kurzfristigem Trendwechsel und erlaubt ihr trotzdem, aus echter Entwicklung zu lernen.
+Markenstrategie wird bei einem Relaunch nicht neu erfunden, nur weil die Oberfläche neu aussieht. Voraussetzung dafür ist, dass überhaupt bekannt ist, was bereits existiert; die [Markeninventur](04-markeninventur.md) stellt das fest, bevor Strategie und visuelles System darauf aufsetzen. Sie wird überprüft, wenn sich Zielgruppe, Angebot, Markt oder Arbeitsweise verändert haben. Kleine Anpassungen werden als Hypothesen dokumentiert, größere als bewusste Neupositionierung. Diese Kontinuität schützt die Marke vor kurzfristigem Trendwechsel und erlaubt ihr trotzdem, aus echter Entwicklung zu lernen.

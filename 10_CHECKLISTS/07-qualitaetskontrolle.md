@@ -10,8 +10,8 @@ Die Qualitätskontrolle ist die letzte integrierte Betrachtung. Sie prüft nicht
 | Primäre Handlungen sind eindeutig | Entscheidungen sollen leichter, nicht lauter werden. | CTA- und Formularreview. |
 | Visuelle Hierarchie unterstützt Scan und Tiefe | Die Seite muss sowohl schnell als auch gründlich lesbar sein. | Distanz- und Detailprüfung. |
 | Mobile und Zwischenbreiten funktionieren | Ein Premium-Eindruck darf nicht an einer Idealbreite hängen. | Responsive Matrix. |
-| Erster Bildschirm auf dem Handy trägt Headline, Erklärung und Handlung | Ein Besucher, der die Handlung nicht sieht, kann sie nicht abwägen. | Gemessene Y-Positionen auf 390 x 750, siehe Erste-Bildschirm-Gate. |
-| Breakpoints sind an den realen Inhalten gemessen | Eine geschätzte Schwelle erzeugt einen Bereich, in dem nie geprüft wurde. | Umbruchmessung des längsten Eintrags. |
+| Erster Bildschirm am Telefon trägt Headline, Erklärung und Handlung | Ein Besucher, der die Handlung nicht sieht, kann sie nicht abwägen. | Zahl 3 der Telefonmessung. |
+| Bruchstellen sind an den realen Inhalten gemessen | Eine geschätzte Schwelle erzeugt einen Bereich, in den nie jemand sieht. | Umbruchmessung des längsten Eintrags. |
 | Fokus, Kontrast, Semantik und Bewegung sind zugänglich | Zugänglichkeit ist Teil der Grundqualität. | Accessibility-Nachweis. |
 | Inhalte sind aktuell und pflegbar | Betriebssicherheit entsteht nach dem Launch weiter. | Content-Owner und Aktualisierungsplan. |
 | Performance ist unter realen Bedingungen akzeptabel | Geschwindigkeit und Stabilität beeinflussen Vertrauen. | Produktionsmessung. |
@@ -28,19 +28,52 @@ Wenn ein Qualitätskriterium schwach ist, frage nach der Ursache in angrenzenden
 
 Prüfe vor Freigabe, ob primäre Buttons ohne Pill Form funktionieren, ob Lila nur aus einer begründeten Kundenentscheidung stammt, ob jeder Abschnitt eine konkrete Aufgabe erfüllt und ob Copy nicht wie automatisch geglättete KI Sprache klingt. Suche nach Gedankenstrichen, generischen Superlativen, Gradient Glow, austauschbaren Card Reihen, fehlenden Zuständen und zufälligen Stilwerten. Ein Fund wird als konkrete Korrektur oder als begründete Ausnahme dokumentiert.
 
-## Erste-Bildschirm-Gate
+## Was diese Kontrolle nicht mehr prüft
 
-Dieses Gate ist aus einem konkreten Fehler entstanden und ersetzt die Sichtprüfung des Heros auf dem Handy durch eine Messung. Der Fehler: Eine Startseite zeigte auf einem iPhone nur Kopfzeile, Headline und Porträt; der erklärende Satz begann bei 805 Pixeln, die primäre Handlung bei 895. Beides lag unter der Bildschirmkante, und weder eine Ganzseiten-Aufnahme noch die Desktop-Ansicht machten das sichtbar.
+Eine Checkliste mit dreißig Punkten wird abgehakt statt gelesen. Deshalb prüft diese Kontrolle ausdrücklich nicht, was ein Gate im Bau schon garantiert: Zeichenlängen von Titel und Beschreibung, Bildmaße, vorhandene Bilddateien, Tabellenbreiten, Schablonenüberschriften in Seitenfamilien, Belege für Ortsseiten, Herkunft und Datum fremder Zahlen.
 
-Geprüft wird auf einem 390 Pixel breiten Viewport mit 750 Pixeln Höhe, also der verbreiteten Telefonklasse abzüglich der Browserleisten. Gemessen werden die absoluten Y-Positionen von Headline, erklärendem Satz und primärer Handlung. Alle drei müssen vollständig innerhalb der 750 Pixel liegen. Gegengeprüft wird auf 360 mal 640; dort genügt es, wenn die Oberkante der primären Handlung sichtbar ist. Ein Hero-Bild sollte dabei etwa ein Drittel der nutzbaren Höhe nicht überschreiten und bekommt auf dem Handy ein eigenes Seitenverhältnis, siehe [Navigation und Hero](../04_UI/02-navigation-und-hero.md).
+Wer einen dieser Punkte hier vermisst, prüft zuerst, ob das zugehörige Gate existiert. Fehlt es, wird es angelegt statt in diese Tabelle geschrieben. Der Katalog steht in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md).
 
-Ein Befund aus diesem Gate ist ein Mangel und wird in derselben Runde behoben. Er wird nicht als Beobachtung notiert und auch dann nicht aufgeschoben, wenn die Behebung eine sichtbare gestalterische Folge hat, etwa einen engeren Bildausschnitt. Die Folge wird benannt und kann zurückgenommen werden; die Unerreichbarkeit der Handlung nicht.
+Die Kontrolle bleibt damit auf das beschränkt, was ein Mensch beurteilen muss: ob eine Überschrift die Situation des Lesers trifft, ob ein Beweis an der richtigen Stelle steht, ob die Reihenfolge einer Entscheidung folgt.
 
-## Breakpoints gegen die realen Inhalte messen
+## Belegpflicht für jeden Befund
 
-Eine Schwelle zwischen zwei Layouts ist die gemessene Mindestbreite des Inhalts, den sie trägt, plus ein kleiner Sicherheitsabstand für abweichende Schriftmetriken, keine gerundete Gerätezahl. Gemessen wird, indem die Breite schrittweise verkleinert wird, bis das erste Element umbricht oder überläuft. Im Ausgangsfall stand die Navigation zwischen 701 und 805 Pixeln zweizeilig, weil die Schwelle bei 701 lag und niemand sie an den echten Menüpunkten geprüft hatte.
+Jede Anmerkung nennt ihre Messung. „Die Ortsseiten wirken austauschbar" ist ein Gefühl und lässt sich bestreiten. „Auf den vier Ortsseiten stehen fünfundfünfzig bis achtundfünfzig Prozent des Textes wortgleich, und drei der vier wiederkehrenden Zeilen stehen in Überschriften-Position" ist ein Befund und lässt sich abarbeiten.
 
-Der gefundene Wert wird mit seiner Herkunft im Code notiert. Wird später ein Menüpunkt, eine Leistung oder ein Ortsname umbenannt, ändert sich die Mindestbreite: Eine Umbenennung ist deshalb nie nur eine Textänderung, sondern zieht eine erneute Messung nach sich.
+Was sich nicht messen lässt, wird als Urteil gekennzeichnet und nicht als Befund ausgegeben. Umgekehrt gilt: Ein gelieferter Befund aus einer externen Analyse ist kein Defekt, bevor er im Projekt geprüft wurde. Wer eine fremde Liste ausführt statt sie zu prüfen, baut fremde Fehler ein.
+
+## Ein gemessener Mangel wird behoben, nicht notiert
+
+Die Belegpflicht hat eine Kehrseite, die einmal übersehen wurde: Ein Befund wurde korrekt gemessen und anschließend als Beobachtung dokumentiert, mit der Begründung, seine Behebung sei eine gestalterische Entscheidung des Kunden. Konkret lag die primäre Handlung einer Startseite am Telefon unter der Bildschirmkante, und die Behebung hätte einen engeren Bildausschnitt bedeutet. Das war eine Ausrede. Ob die wichtigste Handlung einer Seite erreichbar ist, ist keine Geschmacksfrage.
+
+Die Unterscheidung, die gilt: Eine Messung, die zeigt, dass eine Kernfunktion nicht erreichbar ist, ist ein Mangel und wird in derselben Runde behoben. Eine Messung, die eine gestalterische Alternative eröffnet, ist ein Vorschlag und wird vorgelegt. Wenn die Behebung eines Mangels eine sichtbare gestalterische Folge hat, wird sie umgesetzt und die Folge benannt, nicht die Behebung aufgeschoben. Ein Kunde kann einen Bildausschnitt zurücknehmen; von einem Button, der ihm nie gemeldet wurde, erfährt er nichts.
+
+## Die Messung am Telefon
+
+Nicht durch Verkleinern des Fensters, sondern mit einem Browser bei 390 mal 844
+und doppelter Pixeldichte. Vier Zahlen je wichtiger Seite, notiert und nicht
+geschätzt:
+
+| Zahl | Befund ab |
+| --- | --- |
+| Gesamthöhe in Bildschirmen | über 12 |
+| Position des ersten Beweises | über 844 Pixel |
+| Unterkante der primären Handlung im Hero | über 750 Pixel |
+| Höhe und Wortzahl des längsten Abschnitts | über 1400 Pixel |
+| Zeilen des längsten Vorspanns | über 4 |
+
+Dazu drei Zustände, die sich nur am Gerät zeigen: Menü offen, Handlungsleiste
+in der Seitenmitte, Seitenende mit den Rechtstext-Verweisen.
+
+Der Grund für die Strenge steht in
+[Das Handy ist nicht die kleine Fassung](../04_UI/07-handy-zuerst-und-gemessen.md):
+Was nur unterhalb einer Bruchstelle existiert, wird am großen Bildschirm von
+niemandem gesehen. Nicht vom Entwickler, nicht im Review, nicht in der
+Freigabe.
+
+## Erstauslieferung
+
+Vor der ersten Auslieferung an den Kunden gilt zusätzlich das Gate aus [Erstauslieferung](../00_SYSTEM/07-erstauslieferung.md), und zwar mit einer anderen Strenge als der Rest dieser Kontrolle: Es kennt keine akzeptierten Risiken, weil alle acht Punkte vor dem Bauen entscheidbar waren.
 
 ## Akzeptierte Risiken
 

@@ -51,4 +51,6 @@ Jede Phase besitzt eine verantwortliche Person, einen Freigabepunkt und ein sich
 Der Rhythmus soll Ruhe erzeugen: klare Übergaben, begrenzte Review-Fenster, wenige offene Grundsatzfragen und sichtbare nächste Entscheidungen. Geschwindigkeit entsteht bei VELLOX nicht durch Auslassen, sondern durch das Verhindern unnötiger Wiederholung.
 ## Was ein guter Übergang schützt
 
+Die Fragen, die vor Phase 3 beantwortet sein müssen, stehen gesammelt in [Erstauslieferung](07-erstauslieferung.md). Sie sind der Grund, warum dieser Workflow zwei Phasen vor dem Bauen hat: Eine geratene Entscheidung erzeugt später keine Nachfrage, sondern eine Korrekturrunde über Oberflächen, während die Ursache eine offene Frage bleibt.
+
 Ein Übergang ist gelungen, wenn die nächste Rolle nicht die gesamte vorherige Phase rekonstruieren muss. Sie erhält die relevante Entscheidung, ihre Begründung, den offenen Zweifel und das erwartete Artefakt. So bleibt Iteration möglich, ohne Verantwortung zu verwischen. Das schützt sowohl Geschwindigkeit als auch die Qualität der späteren Review.
