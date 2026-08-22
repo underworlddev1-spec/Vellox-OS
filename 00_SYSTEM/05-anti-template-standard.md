@@ -10,6 +10,14 @@ Jede auffällige Entscheidung braucht eine Herkunft. Sie kann aus der Zielgruppe
 
 Frage bei einem visuellen Element: Welche Unsicherheit reduziert es? Welche Erwartung erzeugt es? Welche reale Eigenschaft des Kunden macht es sichtbar? Was würde verloren gehen, wenn es entfernt wird? Wenn nur „es sieht hochwertig aus“ als Antwort bleibt, fehlt die Begründung. Hochwertigkeit ist eine Folge stimmiger Entscheidungen, nicht der Name einer Dekoration.
 
+## Die zweite Frage: Wo steht das schon?
+
+„Was geht verloren, wenn es weg ist“ beantwortet sich anders, wenn dieselbe Angabe zwei Bildschirmzentimeter weiter noch einmal steht. In einem Projekt trugen fünf Angaben unter einer Überschrift zwei verschiedene Register: Die Adresse lag auf einer gefüllten Fläche mit Kante und in der Displayschrift, die übrigen vier standen daneben als schlichte Liste. Zweihundert Pixel darunter begann der Fußbereich, und der führte Adresse, E-Mail und Telefonnummer erneut. Die Telefonnummer stand damit dreimal auf demselben Bildschirm: als Knopf, als Listenzeile und im Fuß.
+
+Das sah aus wie ein Layoutproblem und war keins. **Eine Form, die eine Angabe zum dritten Mal zeigt, ist der Versuch, etwas Gewicht zu geben, das keins mehr trägt.** Der Kasten war das Symptom. Wer ihn wegnimmt und die Angabe stehen lässt, hat das Symptom behandelt.
+
+Vor jedem Umbau eines Blocks steht deshalb eine Zählung: Welche seiner Angaben gibt es nur hier? Was mehrfach vorkommt, wird nicht schöner angeordnet, sondern an genau einer Stelle gezeigt. Diese Frage stellt sich auch über Abschnittsgrenzen hinweg, und im Fußbereich besonders oft.
+
 ## Verbindliche Verbote
 
 ### Keine Pill Buttons
@@ -55,4 +63,10 @@ Vor der Freigabe werden fünf Fragen beantwortet:
 5. Würde ein Mensch die Seite als ruhig und eigenständig erleben, auch wenn alle dekorativen Effekte entfernt werden? Wenn nein, ist die Oberfläche zu abhängig von Styling.
 
 Die Antworten werden im [Qualitätsstandard](01-qualitaetsstandard.md), im [Design Review](../10_CHECKLISTS/03-design-review.md) und in der [Qualitätskontrolle](../10_CHECKLISTS/07-qualitaetskontrolle.md) berücksichtigt. Ein Anti-Template-Review ist bestanden, wenn die Seite nicht nur anders aussieht, sondern anders begründet ist.
+
+## Was davon gemessen wird
+
+Die meisten Verbote dieses Kapitels sind Urteile und bleiben es. Ob eine Sektion eine Aufgabe erfüllt, entscheidet kein Programm. Drei Punkte sind trotzdem messbar geworden, und sie stehen genau deshalb im [Prüfstand](../12_PRUEFSTAND/README.md): der Gedankenstrich als Stilmittel, hart codierte Stilwerte statt Rollentoken und Platzhalterinhalte im sichtbaren Text.
+
+Der Gedankenstrich ist dabei das lehrreichste Beispiel für die [Prüfdoktrin](06-pruefdoktrin.md). Die Regel steht seit der ersten Fassung dieses Kapitels im System, sie ist begründet und verbindlich, und im Repository selbst standen vier davon, drei im jüngsten Fachkapitel. **Die neueste Prosa brach die älteste Regel, weil nichts sie messen konnte.**
 

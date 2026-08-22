@@ -25,6 +25,8 @@ Fehler werden sichtbar behandelt, nicht still verschluckt. Externe Abhängigkeit
 ## Review und Tests
 
 Code-Reviews prüfen nicht nur Stil. Sie fragen: Bleibt die UX-Absicht erkennbar? Sind Zustände vollständig? Ist die Lösung auf den vorgesehenen Geräten stabil? Können spätere Änderungen ohne Sonderfallkaskade erfolgen? Automatisierte Tests sichern wiederkehrende Logik; manuelle Checks prüfen Bedeutung, Visuelles und reale Nutzung.
+
+Für die gestalterischen und rechtlichen Regeln gilt zusätzlich die [Prüfdoktrin](../00_SYSTEM/06-pruefdoktrin.md): Jede Regel des Projekts nennt ihren Nachweis, jeder Nachweis ist ein Programm, das mit einem Rückgabewert ungleich null endet, und jede neue Prüfung weist mit einer Gegenprobe nach, dass sie den Fehler wirklich findet. Das Werkzeug dafür kommt als Kit aus [`12_PRUEFSTAND`](../12_PRUEFSTAND/README.md) und wird nicht je Projekt neu erfunden.
 ## Änderbarkeit als Qualitätskriterium
 
 Bewerte eine Lösung danach, wie sicher die nächste sinnvolle Änderung sein wird. Wenn eine Headline länger wird, ein Buttontext übersetzt wird, eine Karte fehlt oder ein Dienstleister ausfällt, sollte der Code die Änderung aufnehmen, ohne die Kernlogik zu beschädigen. Diese Art von Robustheit ist gerade für Agenturprojekte wichtig, weil Pflege oft von Menschen übernommen wird, die nicht am ersten Entwurf beteiligt waren.

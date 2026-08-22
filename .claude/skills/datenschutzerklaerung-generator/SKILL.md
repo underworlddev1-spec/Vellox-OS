@@ -5,7 +5,7 @@ description: Hilft dabei, den Fragebogen eines Datenschutzerklärung-Generators 
 
 # Datenschutzerklärung-Generator: Fragebogen und Integration
 
-Dieser Skill trägt den vollständigen Workflow in [`07_ENGINEERING/05-datenschutzerklaerung-generator.md`](../../07_ENGINEERING/05-datenschutzerklaerung-generator.md). Lies diese Datei, sobald der Skill auslöst; sie enthält die Begründung, die Grep-Muster und die Übertragungsregeln im Detail. Dieser Skill fasst nur die operativen Schritte zusammen.
+Dieser Skill trägt den vollständigen Workflow in [`07_ENGINEERING/05-datenschutzerklaerung-generator.md`](../../../07_ENGINEERING/05-datenschutzerklaerung-generator.md). Lies diese Datei, sobald der Skill auslöst; sie enthält die Begründung, die Grep-Muster und die Übertragungsregeln im Detail. Dieser Skill fasst nur die operativen Schritte zusammen.
 
 ## Wenn eine Fragebogen-Frage beantwortet werden soll
 

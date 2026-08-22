@@ -4,6 +4,8 @@ Ein Launch ist die kontrollierte Übergabe von Gestaltung, Technik, Inhalt und B
 
 | Prüfung | Warum sie zählt | Nachweis |
 |---|---|---|
+| Der vollständige Prüfstand ist grün | Eine Regel ohne bestandenen Test ist eine Absichtserklärung. Dieser Punkt ist blockierend: Ohne grünen Lauf gibt es keine Freigabe. | Protokoll von `npm run pruefen` mit Datum, Zahl der Prüfungen und Zahl der Routen. |
+| Jede projektspezifische Behauptung ist gegengeprüft | Eine Prüfung, die nie rot war, ist eine Behauptung über sich selbst. | Gegenprobenprotokoll je neuer Behauptung. |
 | Produktionsbuild wurde geprüft | Entwicklung kann sich von Produktion bei Assets, Environment und Routing unterscheiden. | Build- und Preview-Log. |
 | Domains, TLS und Redirects funktionieren | Der Einstieg darf keine technische Unsicherheit erzeugen. | URL- und Statuscodeprüfung. |
 | Kernjourneys funktionieren | Besucher müssen Orientierung, Auswahl, Kontakt und Bestätigung sicher durchlaufen können. | Szenario-Test. |
@@ -18,6 +20,8 @@ Ein Launch ist die kontrollierte Übergabe von Gestaltung, Technik, Inhalt und B
 | Monitoring und erste Nachbeobachtung sind terminiert | Echte Nutzung liefert neue Evidenz, die das System verbessern kann. | Termin und Messplan. |
 
 Der Launch wird freigegeben, wenn Kernwege stabil sind und jedes verbleibende Risiko eine bewusste Entscheidung besitzt. „Später prüfen“ ohne Termin oder Besitzer ist kein akzeptierter Zustand, sondern ein offener Fehler.
+
+Für den Prüfstand gilt das strenger als für die übrigen Zeilen, und zwar mit Absicht. Eine rote Prüfung ist kein Risiko, das man abwägen kann, sondern eine Regel, die das Projekt selbst aufgestellt hat und gerade bricht. Wer sie nicht erfüllen will, ändert die Regel und begründet das im Entscheidungsprotokoll, statt den Lauf zu überspringen. Der Unterschied ist nicht formal: Eine geänderte Regel steht danach für jeden lesbar da, ein übersprungener Lauf nicht.
 ## Launch-Kommunikation
 
 Vor dem Umschalten erhalten alle Beteiligten eine klare Information über Zeitpunkt, Verantwortliche, erwartetes Verhalten und Eskalationsweg. Redaktion weiß, wann Inhalte gesperrt oder aktualisiert werden dürfen. Support und Kunde kennen die häufigsten neuen Wege und die Stelle, an der Fehler gemeldet werden. Kommunikation ist ein Teil der technischen Stabilität.

@@ -14,15 +14,59 @@ Ein Hero muss in kurzer Zeit vier Dinge leisten: eine Situation oder Zielgruppe 
 
 Eine starke Headline kann emotional oder präzise sein. Sie braucht eine Subheadline, wenn die Bedeutung sonst offen bleibt. Ein Bild darf Atmosphäre, Ergebnis oder Kontext geben; es sollte nicht die zentrale Aussage ersetzen. Der CTA muss die tatsächliche Bereitschaft der Person respektieren. Das [Copywriting-System](../05_COPYWRITING/01-headlines-und-subheads.md) hilft, die sprachliche Aufgabe zu bestimmen.
 
-## Ausrichtung: Hero immer zentriert
+## Ausrichtung: zentriert als Standard, mit benannter Ausnahme
 
-Der Hero-Bereich wird verbindlich zentriert gesetzt, nie linksbündig. Das gilt für den gesamten Hero-Inhalt als Einheit: Eyebrow/Badge, Headline, Subheadline, CTA-Gruppe und etwaige Vertrauenszeile stehen gemeinsam auf einer zentrierten vertikalen Achse, nicht als linksbündiger Textblock neben oder über einem Bild. Diese Regel gilt unabhängig vom Client, der Branche und der sonst frei zu wählenden visuellen Identität (Farbe, Typografie, Bildsprache bleiben wie in [03_VISUAL_LANGUAGE](../02_BRANDING/02-visuelles-system.md) beschrieben Sache des jeweiligen Projekts) — die Ausrichtung selbst ist hier bewusst kein Gestaltungsspielraum, sondern ein festes Systemmerkmal von VELLOX OS.
+Der Hero-Inhalt steht zentriert: Eyebrow, Headline, Subheadline, CTA-Gruppe und
+eine etwaige Vertrauenszeile gemeinsam auf einer senkrechten Achse. Ein
+Hintergrundbild, ein Video oder eine Illustration darf weiterhin die volle
+Fläche einnehmen; die Regel betrifft die Textebene und die interaktiven
+Elemente. Gemischte Ausrichtung ist in keinem Fall zulässig: Eine zentrierte
+Headline über einer linksbündig andockenden CTA-Gruppe ist auffälliger als
+beide reinen Formen.
 
-Der Grund: Eine zentrierte Komposition liest sich als bewusste, ruhige Aussage an eine Person, während eine linksbündige Anordnung fast immer wie eine unreflektierte Übernahme generischer SaaS-Templates wirkt (Split-Hero mit Text links, Bild rechts) — genau das Muster, das der [Anti-Template-Standard](../00_SYSTEM/05-anti-template-standard.md) als austauschbar einstuft. Zentrierung zwingt außerdem zu Kürze und Priorität: eine zentrierte Headline verträgt keine beiläufig angehängten Nebensätze, weil jede zusätzliche Zeile die Achse sichtbar stört. Das dient direkt der in [Visuelle Dominanz begrenzen](#visuelle-dominanz-begrenzen) verlangten Reduktion auf die Kernaussage.
+Der Grund ist eine Beobachtung über Vorlagen. Der zweispaltige Hero mit Text
+links und Bild rechts ist das verbreitetste Muster automatisch erzeugter
+Oberflächen, und eine zentrierte Komposition zwingt zusätzlich zur Kürze: Jede
+beiläufig angehängte Nebenzeile stört die Achse sichtbar. Das dient direkt der
+Reduktion, die der nächste Abschnitt verlangt.
 
-Was das konkret ausschließt: kein zweispaltiger Hero mit Fließtext links und Bild/Illustration rechts; keine linksbündige Headline über einem großformatigen Hintergrundbild; keine CTA-Gruppe, die an den linken Rand des Textblocks andockt, während die Headline zentriert steht (gemischte Ausrichtung ist ebenso unzulässig wie durchgängig linksbündig). Ein Hintergrundbild, ein Video oder eine Illustration darf weiterhin die volle Breite/Höhe einnehmen — die Zentrierungspflicht betrifft die Anordnung der Textebene und der interaktiven Elemente (CTA, Badges), nicht zwingend ein zusätzliches, asymmetrisch platziertes Hintergrundmotiv, solange die Textachse selbst zentriert bleibt.
+**Warum das ein Standard ist und keine Pflicht.** Eine frühere Fassung dieses
+Kapitels erklärte die Zentrierung für verbindlich, ausdrücklich unabhängig von
+Kunde, Branche und Inhalt. Das war ein Widerspruch im eigenen System. Der
+[Anti-Template-Standard](../00_SYSTEM/05-anti-template-standard.md) verlangt für
+jede auffällige Entscheidung eine Herkunft und stuft eine Entscheidung ohne
+Herkunft ausdrücklich als Entwurf und nicht als Standard ein; seine erste
+Reviewfrage lautet, ob die Seite mit ausgetauschtem Logo für einen anderen
+Kunden funktionieren würde. Eine Regel, die für jeden künftigen Kunden dieselbe
+Komposition vorschreibt, beantwortet diese Frage mit Ja.
 
-Auf Mobile bleibt die zentrierte Achse erhalten; siehe [Mobile und Zwischenräume](#mobile-und-zwischenräume) für die übrigen Anpassungen (Bildbeschnitt, CTA-Reihenfolge, Abschnittsabstand), die davon unabhängig zu bewerten sind.
+Die Beobachtung dahinter bleibt richtig, und deshalb bleibt die Zentrierung der
+Standard. Was entfällt, ist die Behauptung, es gebe keinen Fall, in dem sie
+falsch ist.
+
+**Wann eine Abweichung zulässig ist.** Eine asymmetrische Anordnung braucht
+eine Herkunft, die nicht im Layout liegt, sondern im Material. Zwei Fälle
+kommen in der Praxis vor. Erstens: Der Hero trägt ein Foto, dessen Aussage vom
+Beschnitt abhängt, etwa eine Person im Blickkontakt oder ein Detail, das die
+Arbeitsweise zeigt; eine zentrierte Textinsel darüber zerstört genau dieses
+Detail. Zweitens: Das Angebot ist ein Vergleich oder ein Vorher-Nachher, und
+die Zweiteilung ist die Aussage und nicht die Dekoration.
+
+In beiden Fällen gilt: Die Abweichung wird im Entscheidungsprotokoll des
+Projekts begründet, sie nennt das Material, aus dem sie folgt, und sie führt
+die Komposition auf schmalen Flächen sauber zurück. Eine Abweichung, deren
+Begründung „wirkt moderner“ lautet, ist keine.
+
+**Nachweis.** Die Zentrierung ist messbar und wird gemessen. Die Projektprüfung
+misst die Mitte der gesetzten Tinte des Hero-Textblocks gegen die Fenstermitte,
+über die gesamte Breitenreihe, und sie misst die Tinte und nicht den Kasten:
+Ein zentrierter Kasten mit linksbündigem Text darin besteht jede
+Kastenmessung. Ein Projekt, das die Ausnahme nimmt, ersetzt diese Behauptung
+durch die, die für seine Komposition gilt, und begründet den Tausch. Was nicht
+zulässig ist, ist die Behauptung ersatzlos zu streichen.
+
+Auf Mobile bleibt die gewählte Achse erhalten; die übrigen Anpassungen stehen
+unter [Mobile und Zwischenräume](#mobile-und-zwischenräume).
 
 ## Visuelle Dominanz begrenzen
 

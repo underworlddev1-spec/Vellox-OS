@@ -24,6 +24,10 @@ Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Reposit
 
 **Erhalte die Reversibilität von Entscheidungen.** Früh im Prozess sind Entscheidungen billig zu ändern und sollten deshalb als Hypothesen behandelt werden. Später werden sie durch Copy, Designsystem und Code teuer. Dokumentiere den Zeitpunkt, an dem eine Entscheidung verbindlich wird, und vermeide unnötige Kopplung davor.
 
+**Jede Regel nennt ihren Nachweis.** Eine Regel ohne Test ist eine Absichtserklärung, und Absichtserklärungen halten genau bis zum nächsten Termindruck. Wenn du eine Regel ergänzt, schreibe dazu, woran ein Team ihre Einhaltung misst. Lässt sich kein Nachweis formulieren, ist der Satz keine Regel, sondern eine Entscheidung, und Entscheidungen stehen mit Datum und Begründung im Entscheidungsprotokoll des Projekts. Die Doktrin dazu steht in [`00_SYSTEM/06-pruefdoktrin.md`](00_SYSTEM/06-pruefdoktrin.md), das Werkzeug in [`12_PRUEFSTAND`](12_PRUEFSTAND/README.md).
+
+Für dieses Repository selbst gilt dasselbe. Das Verbot des Gedankenstrichs stand seit der ersten Fassung im System und wurde hier viermal gebrochen, dreimal im jüngsten Kapitel, weil nichts es messen konnte. Wer ein Kapitel ergänzt, prüft seinen eigenen Text gegen die Verbotsliste des Prüfstands.
+
 **Arbeite anti-template.** Behandle [`00_SYSTEM/05-anti-template-standard.md`](00_SYSTEM/05-anti-template-standard.md) als verbindliche Qualitätsregel. Verwende niemals Pill Buttons als VELLOX Default, niemals Lila als automatische Akzentfarbe, niemals generische KI Sektionen und niemals Gedankenstriche als künstliche Satzmelodie. Prüfe außerdem auf Vibe Coding Anzeichen wie zufällige Abstände, hart codierte Stilwerte, fehlende Zustände, Platzhalterinhalte oder Komponenten ohne klare Aufgabe. Ein wiederverwendbares Muster braucht eine fachliche Herkunft.
 
 **Schreibe wie ein Fachbuch, nicht wie ein Prompt-Pack.** Absätze sollen einen Gedanken entwickeln. Listen sind nur dann sinnvoll, wenn sie eine Reihenfolge, eine Prüfung oder eine Auswahl erleichtern. Vermeide leere Adjektive, künstliche Motivation und Behauptungen ohne Konsequenz.
@@ -36,7 +40,7 @@ Prüfe deshalb zu Beginn eines neuen Kundenprojekts, ob Vellox-OS in der Reposit
 4. **Optionen begrenzen:** Entwickle höchstens drei ernsthafte Optionen. Jede Option braucht einen Nutzen, ein Risiko und eine Bedingung, unter der sie sinnvoll ist.
 5. **Entscheiden:** Wähle anhand des Entscheidungsframeworks. Eine Entscheidung darf pragmatisch sein; sie muss nur begründet und überprüfbar sein.
 6. **Umsetzen:** Übertrage die Entscheidung in Struktur, Text, visuelle Regeln, Komponenten und Tests. Halte die Quelle der Wahrheit je Ebene klar.
-7. **Prüfen:** Nutze die passenden Review-Checklisten. Prüfe nicht nur, ob etwas funktioniert, sondern ob es die ursprüngliche Absicht noch trägt.
+7. **Prüfen:** Fahre den vollständigen Prüfstand und nutze die passenden Review-Checklisten. Der Lauf ist vollständig oder er hat nicht stattgefunden; wer Markup verschiebt, fährt den ganzen Satz und nicht die Auswahl, die zum Thema zu passen scheint. Prüfe danach mit dem Blick, ob es die ursprüngliche Absicht noch trägt, denn kein Gate sieht eine Komposition.
 8. **Dokumentieren:** Ergänze nur allgemeingültige Erkenntnisse in VELLOX OS. Projektspezifische Details bleiben im Projektbrief.
 
 ## Umgang mit Unsicherheit
@@ -56,6 +60,8 @@ Vor der Freigabe wird der Anti-Template-Review durchgeführt. Frage, ob die Seit
 ## Definition of Done
 
 Eine Änderung ist erst abgeschlossen, wenn ihr Problem benannt, ihr Warum erklärt, ihre Anwendung verständlich und ihr Nachweis festgelegt ist. Die betroffenen Dokumente sind verlinkt, die Sprache ist ruhig und präzise, und die passenden Tests oder Checklisten wurden ausgeführt. Ein Commit beschreibt die fachliche Veränderung, nicht nur die Dateinamen.
+
+Wenn die Änderung eine Prüfung betrifft, kommt eine Bedingung dazu: Die Prüfung ist mit einem eingebauten Fehler gegengeprüft worden und dabei nachweislich rot geworden. **Eine Prüfung, die nie rot war, ist keine Prüfung, sondern eine Behauptung über sich selbst.** Bleibt die Gegenprobe grün, sagt das etwas über das Gate, über die geprüfte Regel oder über die Gegenprobe selbst; welches von den dreien, entscheidet eine zweite Messung und keine Vermutung.
 ## Umgang mit großen Änderungen
 
 Bei einem größeren Auftrag wird zuerst der betroffene Wissenspfad beschrieben: Welche Systemregel, welches Fachkapitel, welches Template und welche Checkliste sind betroffen? Änderungen werden dann in einem logischen Commit zusammengefasst und mit dem relevanten Warum dokumentiert. Wenn eine neue Regel bestehende Regeln ersetzt, wird die alte Formulierung entfernt oder ausdrücklich als historisch markiert. So bleibt das System lesbar und wächst nicht durch widersprüchliche Schichten.

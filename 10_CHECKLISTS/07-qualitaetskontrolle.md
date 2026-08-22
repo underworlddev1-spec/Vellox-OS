@@ -8,14 +8,16 @@ Die Qualitätskontrolle ist die letzte integrierte Betrachtung. Sie prüft nicht
 | Versprechen besitzen passende Beweise | Vertrauen entsteht aus Übereinstimmung, nicht aus Superlativen. | Claim-Proof-Matrix. |
 | Tonalität hält auch bei Fehlern und Grenzen | Marke zeigt sich in schwierigen Momenten. | Microcopy- und Zustandsprüfung. |
 | Primäre Handlungen sind eindeutig | Entscheidungen sollen leichter, nicht lauter werden. | CTA- und Formularreview. |
-| Visuelle Hierarchie unterstützt Scan und Tiefe | Die Seite muss sowohl schnell als auch gründlich lesbar sein. | Distanz- und Detailprüfung. |
-| Mobile und Zwischenbreiten funktionieren | Ein Premium-Eindruck darf nicht an einer Idealbreite hängen. | Responsive Matrix. |
-| Fokus, Kontrast, Semantik und Bewegung sind zugänglich | Zugänglichkeit ist Teil der Grundqualität. | Accessibility-Nachweis. |
+| Visuelle Hierarchie unterstützt Scan und Tiefe | Die Seite muss sowohl schnell als auch gründlich lesbar sein. | `staffel.mjs` über alle Routen und Breiten, dazu Vollseiten-Aufnahmen auf Desktop und Handy. |
+| Mobile und Zwischenbreiten funktionieren | Ein Premium-Eindruck darf nicht an einer Idealbreite hängen. | `ueberlauf.mjs`, `textfluss.mjs` und `achse.mjs` über die volle Breitenreihe, einschliesslich der Zwischenbreiten. |
+| Fokus, Kontrast, Semantik und Bewegung sind zugänglich | Zugänglichkeit ist Teil der Grundqualität. | `axe.mjs`, `kontrast.mjs` und `a11y.mjs` grün, dazu ein Tastaturdurchlauf der Kernjourney. |
 | Inhalte sind aktuell und pflegbar | Betriebssicherheit entsteht nach dem Launch weiter. | Content-Owner und Aktualisierungsplan. |
-| Performance ist unter realen Bedingungen akzeptabel | Geschwindigkeit und Stabilität beeinflussen Vertrauen. | Produktionsmessung. |
+| Performance ist unter realen Bedingungen akzeptabel | Geschwindigkeit und Stabilität beeinflussen Vertrauen. | Messbericht mit gedrosselter Verbindung, Testumgebung benannt, und `bilder.mjs` grün. |
 | SEO- und technische Struktur widersprechen nicht dem sichtbaren Inhalt | Auffindbarkeit darf keine falsche Erwartung erzeugen. | SEO-Review. |
-| Offene Abweichungen besitzen Begründung und Termin | Ein System kann Risiken akzeptieren, aber nicht vergessen. | Entscheidungs- und Risikolog. |
+| Offene Abweichungen besitzen Begründung und Termin | Ein System kann Risiken akzeptieren, aber nicht vergessen. | Entscheidungsprotokoll mit Datum, Umfang und Prüfdatum je Abweichung. |
 | Nächste Lernschleife ist definiert | Gute Systeme entwickeln sich aus Nutzung, nicht aus einmaliger Perfektion. | Nachbeobachtungsplan. |
+
+**Was in dieser Spalte stehen muss.** Ein Nachweis ist ein Protokoll oder eine Aufnahme, nicht der Name einer Tätigkeit. „Responsive Matrix“ und „Distanz- und Detailprüfung“ standen hier lange als Nachweis und waren keiner: Sie benennen, dass jemand hinsehen soll, und lassen offen, woran man erkennt, dass er es getan hat und was dabei herauskam. Wo eine Zeile heute noch eine Tätigkeit nennt, ist das eine offene Stelle und keine Formulierungsfrage.
 
 Die Kontrolle wird mit dem [VELLOX-Qualitätsstandard](../00_SYSTEM/01-qualitaetsstandard.md) gelesen. Wenn mehrere Prüfpunkte gleichzeitig schwach sind, wird zuerst die zugrunde liegende Entscheidung untersucht. Einzelne kosmetische Korrekturen dürfen keine strategische oder technische Ursache verdecken.
 ## Gegenseitige Abhängigkeiten
