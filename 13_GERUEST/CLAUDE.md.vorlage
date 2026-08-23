@@ -151,7 +151,7 @@ die zum Thema zu passen scheint.
 | `konform.mjs` | keine fremden Verbindungen, keine Cookies, kein Speicher, Rechtsverweise erreichbar, `noopener`, erzeugte Medien gekennzeichnet |
 | `sichtbar.mjs` | keiner der verbotenen Begriffe im sichtbaren Text |
 | `ausfall.mjs` | ohne JavaScript sind Bilder sichtbar, keine Route leer, ein ausgeblendetes Formular hat einen Ersatz |
-| `geruest.mjs` | keine Route trägt mehr Gerüsttext |
+| `geruest.mjs` | keine Route trägt mehr Gerüsttext, keine Entscheidung des Gerüsts ist mehr offen |
 | `werkzeug/schlank.mjs --pruefen` | ausgelieferte Fassung ist auf dem Stand ihrer Quelle |
 
 Projekteigene Behauptungen kommen als neue Datei nach `pruefstand/pruefungen/`,
@@ -159,6 +159,22 @@ in die Liste in `pruefstand.config.mjs` und in diese Tabelle. Was in keiner List
 steht, fährt niemand mit.
 
 ---
+
+## Die Form prüft kein Gate
+
+Der Prüfstand fragt, ob diese Seite richtig gebaut ist. Keine seiner
+Behauptungen fragt, ob sie diesem Kunden gehört.
+
+Das trifft besonders die Seiten, die aus dem Gerüst stammen. Sie sind ein
+Messgerüst und keine Seitenvorlage: Kopfzeile, Abschnittsform und Fußbereich
+stehen dort, damit die Prüfungen am ersten Tag etwas zu messen haben. **Die
+erste echte Seite entsteht aus der Journey und nicht durch Bearbeiten von
+`index.html`.** Wer die Gerüstseite umtextet, bekommt eine Seite mit dreizehn
+grünen Prüfungen und der Form, die der Anti-Template-Standard verbietet.
+
+Dagegen hilft ein Review und kein Gate. Die fünf Fragen stehen in
+[`docs/04-anti-template-review.md`](docs/04-anti-template-review.md) und werden
+vor der Freigabe schriftlich beantwortet.
 
 ## Was diese Regeln nicht ersetzen
 

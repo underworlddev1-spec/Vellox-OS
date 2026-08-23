@@ -19,10 +19,18 @@
    Gerüst, das eine Gestaltung mitbringt, aus jedem Projekt dieselbe Website
    macht. Genau das verbietet der Anti-Template-Standard.
 
-   Die Werte, die als GERUESTWERT markiert sind, sind Platzhalter mit einer
-   Eigenschaft: Sie sind zugänglich, damit der Prüfstand von Anfang an läuft.
-   Sie sind keine Gestaltung und müssen ersetzt werden, bevor jemand die Seite
-   sieht.
+   ## Die Marker
+
+   Jede Entscheidung, die dieses Gerüst trifft, obwohl sie eigentlich dem
+   Projekt gehört, ist im folgenden Text markiert. Solange ein solcher Marker im
+   Stylesheet steht, meldet `geruest.mjs` rot und nennt seine Zeile.
+
+   Er verlangt nicht, dass sich eine Zahl ändert, sondern dass jemand sie
+   entscheidet: Wer nach dem Messen zu dem Schluss kommt, dass die vorhandene
+   richtig ist, streicht den Marker und hat die Entscheidung damit übernommen.
+   Die ausführliche Begründung steht im Kopf von `pruefstand/pruefungen/geruest.mjs`.
+
+   Dieser Abschnitt selbst verschwindet mit dem letzten Marker.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -96,6 +104,11 @@
      Netzverbindung und ohne Einbindung läuft. Eine Schrift ist eine
      Markenentscheidung und keine Voreinstellung.
 
+     GERUESTWERT auch bei der Skala selbst: Sieben Stufen, ihre Sprünge und
+     ihre beiden Zeilenhöhen sind ein Rhythmus, und ein Rhythmus, den ein
+     Projekt erbt statt ihn zu setzen, ist genau die Wiederholung ohne Aufgabe,
+     die der Anti-Template-Standard meint.
+
      Die Größen sind fließend und brauchen keine Umbruchpunkte. Jede Stufe
      nennt ihre Aufgabe und nicht ihre Größe; eine Skala mit einer Stufe, die
      niemand verwendet, ist keine Skala, sondern eine Wunschliste, und
@@ -112,12 +125,16 @@
   --gr-h2: clamp(1.5rem, 1.28rem + 0.95vw, 2.25rem);
   --gr-h1: clamp(1.875rem, 1.5rem + 1.6vw, 3rem);
 
-  /* Der obere Rand der Staffel ist auf die Lesebahn gerechnet und nicht auf
-     die Seitenachse. Ein Seitentitel von vier Zentimetern Höhe steht in einer
-     Spalte von 36ch nach drei Wörtern um und sieht dort gedrängt aus; das ist
-     keine Typografie, sondern eine Zahl aus dem falschen Zusammenhang. Ein
-     Projekt mit einer breiten Titelbahn hebt die Obergrenzen an, misst dabei
-     aber die Umbruchstellen und nicht nur die Wirkung des Screenshots. */
+  /* GERUESTWERT, und der ehrlichste Fall im ganzen Stylesheet. Der obere Rand
+     stand bei 3,875rem, sah im Screenshot der 36ch-Bahn gedrängt aus und wurde
+     deshalb auf 3rem gesenkt. Die Rechnung stimmt: Ein Seitentitel dieser Höhe
+     bricht in einer schmalen Spalte nach drei Wörtern um.
+
+     Sie stimmt nur für dieses Gerüst. Für ein Projekt, dessen Titelbahn noch
+     niemand kennt, ist sie eine Zahl aus einem fremden Zusammenhang, und sie
+     stünde hier mit einer Begründung, die wie eine Messung aussieht. Wer eine
+     breitere Titelbahn baut, hebt die Obergrenze an und misst dabei die
+     Umbruchstellen und nicht die Wirkung des Screenshots. */
 
   --zh-eng: 1.15;
   --zh-weit: 1.6;
@@ -130,6 +147,11 @@
 
      Der kleinste Schritt trennt Elemente innerhalb einer Gruppe, größere
      Schritte trennen Gruppen, der größte markiert einen neuen Abschnitt.
+
+     GERUESTWERT: Die sieben Zahlen sind eine Vorlage für einen Rhythmus und
+     keiner. Wie weit ein Abschnitt atmet, ist eine Aussage über das Tempo einer
+     Marke und gehört zu den ersten Dingen, die ein Besucher spürt, ohne sie zu
+     benennen.
      ---------------------------------------------------------------------- */
   --raum-2xs: 0.25rem;
   --raum-xs: 0.5rem;
@@ -164,12 +186,23 @@
      Ein `ch` steht hier also für rund 1,8 gesetzte Zeichen. Wer die Schrift
      wechselt, wechselt diesen Faktor mit und misst neu, statt die 36
      mitzunehmen.
+
+     GERUESTWERT: alle vier Zahlen. Die 65 Zeichen sind gegen die Systemschrift
+     gemessen, und die ist selbst ein Gerüstwert; damit ist auch das Ergebnis
+     einer. Die Hauptachse und die zweite Achse sind ohnehin
+     Kompositionsentscheidungen.
      ---------------------------------------------------------------------- */
   --breite-seite: 72rem;
   --breite-schmal: 52rem;
   --breite-lese: 36ch;
   --rand: 1.25rem;
 
+  /* GERUESTWERT: Form und Bewegung. Eine Rundung ist der leiseste Teil einer
+     Markenstimme und der zäheste: Sie sitzt an jedem Knopf und jedem Feld und
+     fällt niemandem auf, bis sie in fünf Projekten dieselbe ist. Dasselbe gilt
+     für Dauer und Kurve, die entscheiden, ob eine Oberfläche sachlich oder
+     freundlich wirkt. Zwei Pixel sind hier gewählt, weil sie nichts behaupten,
+     und nicht, weil sie richtig wären. */
   --radius: 2px;
   --zeit-schnell: 120ms;
   --zeit-raum: 320ms;
@@ -297,6 +330,10 @@ p:empty {
   max-width: var(--breite-lese);
 }
 
+/* GERUESTWERT: die Behandlung der Verweise. Ein Unterstrich in der Akzentfarbe
+   ist eine Signatur und keine Mechanik; verbindlich ist nur, dass ein Verweis
+   sich nicht allein durch Farbe von seinem Umfeld unterscheidet (WCAG 1.4.1).
+   Wie er das tut, ist eine Markenentscheidung. */
 a {
   color: var(--farbe-text);
   text-decoration-color: var(--farbe-detail);
@@ -353,6 +390,9 @@ a {
   max-width: calc(var(--breite-lese) + 2 * var(--rand));
 }
 
+/* GERUESTWERT: der Abschnittsrhythmus. Wie weit zwei Abschnitte auseinander
+   stehen, entscheidet, ob eine Seite drängt oder atmet, und diese Entscheidung
+   gehört zur Dramaturgie einer bestimmten Seite und nicht in ein Gerüst. */
 .abschnitt {
   padding-block: var(--raum-2xl);
 }
@@ -382,9 +422,15 @@ a {
 /* --------------------------------------------------------------------------
    8. Kopf und Fuß
 
-   Struktur, keine Gestaltung. Der Kopf trägt eine Wortmarke und eine
-   Navigation, der Fuß die Rechtsverweise, die von jeder Route aus erreichbar
-   sein müssen. Wie beides aussieht, entscheidet das Projekt.
+   Verbindlich ist nur eines: Der Fuß trägt die Rechtsverweise, und die müssen
+   von jeder Route aus erreichbar sein. `konform.mjs` misst das.
+
+   GERUESTWERT ist alles andere an diesen beiden Bereichen. Die Wortmarke links
+   und die Navigation daneben, die Haarlinie als Trennung, die Displayschrift
+   auf der Wortmarke: Das ist die verbreitetste Kopfzeile des Webs, und sie
+   steht hier, weil der Prüfstand eine Landmarke braucht, nicht weil sie für
+   irgendein Projekt die richtige wäre. Eine Kopfzeile ist der erste Satz einer
+   Marke.
    -------------------------------------------------------------------------- */
 
 .kopfbereich {
@@ -442,7 +488,13 @@ a {
    als sie in der Hierarchie sein sollte.
 
    Die Mindesthöhe von 44 px ist keine Gestaltung, sondern die Fingerfläche aus
-   WCAG 2.5.8.
+   WCAG 2.5.8. Dass es einen primären und einen zweitrangigen Knopf gibt, ist
+   ebenfalls Mechanik: Zwei gleichwertige Handlungen nebeneinander sind keine
+   Hierarchie.
+
+   GERUESTWERT ist, wie die beiden aussehen. Gefüllt gegen umrandet ist eine von
+   mehreren Möglichkeiten, eine Rangfolge zu zeigen; Größe, Ort und Gewicht
+   können dasselbe leisten.
    -------------------------------------------------------------------------- */
 
 .knopf {
@@ -530,7 +582,11 @@ a {
 
 /* Eine Meldung sagt, was passiert ist, und trägt die Aussage im Wort und nicht
    nur in der Farbe. Wer Rot und Grün nicht unterscheidet, liest sonst zwei
-   gleiche Kästen.
+   gleiche Kästen. Das ist die Mechanik.
+
+   GERUESTWERT ist ihre Form: Der Balken links, drei Pixel breit, auf einer
+   gehobenen Fläche. Er trägt keine Aufgabe, die nicht auch eine Kante, ein
+   Symbol oder ein anderer Grund tragen könnte.
 
    Hier steht nur der Fehlerzustand, weil nur er ohne Gegenstelle erreichbar
    ist. Ein Erfolgszustand gehört neben den Code, der ihn auslösen kann, und

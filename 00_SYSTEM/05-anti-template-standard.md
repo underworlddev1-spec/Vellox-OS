@@ -64,9 +64,25 @@ Vor der Freigabe werden fünf Fragen beantwortet:
 
 Die Antworten werden im [Qualitätsstandard](01-qualitaetsstandard.md), im [Design Review](../10_CHECKLISTS/03-design-review.md) und in der [Qualitätskontrolle](../10_CHECKLISTS/07-qualitaetskontrolle.md) berücksichtigt. Ein Anti-Template-Review ist bestanden, wenn die Seite nicht nur anders aussieht, sondern anders begründet ist.
 
+## Ein Gerüst ist die schwierigste Stelle dieses Standards
+
+Ein Projektgerüst spart Wochen und ist zugleich der wahrscheinlichste Weg, wie eine Schablone in jedes Projekt gelangt. Beim Bau von [`13_GERUEST`](../13_GERUEST/README.md) ist genau das passiert, und der Fall ist lehrreich, weil die Absicht die ganze Zeit richtig war.
+
+Die Leitlinie lautete: Mechanik gehört ins Gerüst, Gestaltung nicht. Farbrollen ja, Palette nein. Diese Grenze klingt scharf und ist es nicht. Sie wurde an mindestens sechs Stellen überschritten, ohne dass es jemandem aufgefallen wäre: eine Rundung von zwei Pixeln an Knopf und Feld, ein Akzentbalken an der Meldung, ein Unterstrich in der Akzentfarbe, Haarlinien unter Kopf und über Fuß, die sieben Zahlen der Raumskala und der obere Rand der typografischen Staffel.
+
+Der letzte Fall ist der klarste. Der Spitzenwert der Staffel sah in der Lesebahn des Gerüsts gedrängt aus und wurde deshalb gesenkt. Die Rechnung stimmte, die Begründung stand als Kommentar daneben, und genau dadurch wurde aus einer Entscheidung für eine bestimmte Bahn eine scheinbar geprüfte Tatsache für jedes Projekt. **Eine begründete Zahl aus einem fremden Zusammenhang ist gefährlicher als eine unbegründete, weil sie niemand mehr befragt.**
+
+Die brauchbare Grenze ist deshalb nicht Mechanik gegen Gestaltung, sondern eine Frage: **Entscheidet das Gerüst etwas, das ein Projekt sonst selbst entscheiden müsste?** Wenn ja, ist es an dieser Stelle eine Schablone, und es gibt drei zulässige Umgangsweisen. Der Wert wird entfernt. Oder er wird markiert und ein Gate hält die Entscheidung offen. Oder eine Review-Frage zwingt sie auf den Tisch.
+
+Ein Marker verlangt dabei nicht, dass sich eine Zahl ändert, sondern dass jemand sie entscheidet. Wer nach dem Messen zu dem Schluss kommt, dass der vorhandene Wert richtig ist, streicht den Marker und hat die Entscheidung übernommen. Wer ihn stehen lässt, hat sie geerbt.
+
+Die Grenze dieses Ansatzes ist ebenfalls bekannt und steht im Gerüst dokumentiert: Seine Seiten sind ein Messgerüst und keine Seitenvorlage. Wer sie umtextet, bekommt eine Seite mit dreizehn grünen Prüfungen und der Form, die dieses Kapitel verbietet. Dagegen hilft nur der Review weiter oben.
+
 ## Was davon gemessen wird
 
-Die meisten Verbote dieses Kapitels sind Urteile und bleiben es. Ob eine Sektion eine Aufgabe erfüllt, entscheidet kein Programm. Drei Punkte sind trotzdem messbar geworden, und sie stehen genau deshalb im [Prüfstand](../12_PRUEFSTAND/README.md): der Gedankenstrich als Stilmittel, hart codierte Stilwerte statt Rollentoken und Platzhalterinhalte im sichtbaren Text.
+Die meisten Verbote dieses Kapitels sind Urteile und bleiben es. Ob eine Sektion eine Aufgabe erfüllt, entscheidet kein Programm. Vier Punkte sind trotzdem messbar geworden, und sie stehen genau deshalb im [Prüfstand](../12_PRUEFSTAND/README.md): der Gedankenstrich als Stilmittel, hart codierte Stilwerte statt Rollentoken, Platzhalterinhalte im sichtbaren Text und die offenen Entscheidungen eines Gerüsts, das noch niemand übernommen hat.
+
+Der vierte ist die schwächste der vier Messungen und trotzdem nützlich. Er beantwortet nicht die Frage, ob eine Entscheidung gut ist, sondern nur, ob jemand sie angesehen hat. Für alles Weitere gibt es den Review.
 
 Der Gedankenstrich ist dabei das lehrreichste Beispiel für die [Prüfdoktrin](06-pruefdoktrin.md). Die Regel steht seit der ersten Fassung dieses Kapitels im System, sie ist begründet und verbindlich, und im Repository selbst standen vier davon, drei im jüngsten Fachkapitel. **Die neueste Prosa brach die älteste Regel, weil nichts sie messen konnte.**
 

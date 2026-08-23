@@ -28,18 +28,29 @@ liegt, ist Mechanik. Wie die Seite aussieht, entscheidet die Positionierung des
 Kunden, und nicht dieser Ordner.
 
 Alle Werte, die trotzdem gesetzt sein müssen, damit etwas läuft, sind im
-Stylesheet als `GERUESTWERT` gekennzeichnet. Sie sind bewusst neutral gewählt:
-Papier, Tinte, ein zurückhaltender Akzent, Systemschriften. Ihre Aufgabe ist,
-messbar zu sein, nicht schön.
+Stylesheet markiert. Zwölf Marker stehen dort, und sie sind der Grund, warum
+dieser Ordner kein Template ist.
+
+Die offensichtlichen sind Farben und Schriften. Die gefährlichen sind die
+anderen: eine Rundung von zwei Pixeln, ein Akzentbalken an der Meldung, die
+sieben Zahlen der Raumskala, der obere Rand der typografischen Staffel, der
+Abschnittsrhythmus, die Haarlinie unter der Kopfzeile. Das sind Entscheidungen,
+die niemand bemerkt, weil sie funktionieren, und die deshalb unverändert in das
+fünfte Projekt wandern.
+
+**Der Marker verlangt nicht, dass sich eine Zahl ändert. Er verlangt, dass
+jemand sie entscheidet.** Wer nach dem Messen zu dem Schluss kommt, dass zwei
+Pixel richtig sind, streicht den Marker und hat die Entscheidung übernommen.
+Wer ihn stehen lässt, hat sie geerbt.
 
 ## Der erste Lauf ist rot
 
 Der Prüfstand fährt dreizehn Prüfungen. Zwölf sind am ersten Tag grün, die
 dreizehnte ist rot, und das ist ihre Aufgabe.
 
-`geruest.mjs` meldet, solange eine Route das Attribut `data-geruest` trägt oder
-das Wort `GERUESTWERT` im sichtbaren Text steht. Der Zustand, den sie fängt, ist
-gefährlicher als er aussieht: Das Gerüst liefert vollständige Seiten mit
+`geruest.mjs` meldet, solange eine Route das Attribut `data-geruest` trägt, der
+Marker im sichtbaren Text steht oder ein Marker im Stylesheet offen ist. Der
+Zustand, den sie fängt, ist gefährlicher als er aussieht: Das Gerüst liefert vollständige Seiten mit
 Überschriften, einem Formular und zwei Rechtstexten aus. Alles daran ist echt
 gebaut und nichts davon ist wahr. Ein Impressum, das die Pflichtabschnitte in
 der richtigen Reihenfolge zeigt und keine einzige Angabe enthält, ist
@@ -49,6 +60,27 @@ Wer die Attribute entfernt, ohne die Texte zu ersetzen, hat die Prüfung umgange
 und nicht bestanden. Das lässt sich nicht messen, sondern nur schreiben. Aber
 niemand entfernt sie versehentlich, und das ist der Unterschied zu einem Haken
 in einer Übergabeliste.
+
+## Die vier Routen sind ein Messgerüst und keine Seitenvorlage
+
+Das ist die Stelle, an der dieser Ordner am ehesten zum Template werden kann,
+und kein Gate hält sie.
+
+Die Seiten liefern Kopfzeile, Abschnitte und Fußbereich aus, damit die zwölf
+Prüfungen am ersten Tag etwas zu messen haben. Ihre Formen sind die
+verbreitetsten des Webs: Wortmarke links, Navigation daneben, Abschnitt gleich
+Überschrift plus Prosa, Fußzeile mit Rechtsverweisen. Sie stehen dort, weil ein
+Prüfstand eine Landmarke, eine Überschriftenrangfolge und ein Formular braucht,
+und nicht, weil sie für irgendein Projekt die richtigen wären.
+
+**Die erste echte Seite entsteht aus der Journey und nicht durch Bearbeiten von
+`index.html`.** Wer die Gerüstseite umtextet, bekommt eine Seite, die alle
+Prüfungen besteht und trotzdem genau die Schablone ist, die der
+Anti-Template-Standard verbietet.
+
+Dagegen hilft kein Gate, sondern ein Review. Er liegt als
+[`docs/04-anti-template-review.md`](docs/04-anti-template-review.md) im Projekt
+und wird vor der Freigabe schriftlich beantwortet.
 
 ## Ein Projekt starten
 
@@ -87,6 +119,7 @@ dann Inhalte, und der Prüfstand läuft nach jedem Schritt und nicht am Ende.
 | `docs/01-entscheidungen.md` | Das Entscheidungsprotokoll. Leer, mit Format. |
 | `docs/02-offene-punkte.md` | Was noch fehlt, mit Auswirkung. |
 | `docs/03-bildbedarf.md` | Der Fotoauftrag, gerechnet statt geschätzt. |
+| `docs/04-anti-template-review.md` | Die fünf Fragen, die kein Gate stellen kann. Vor der Freigabe. |
 | `CLAUDE.md.vorlage` | Das Regelwerk des Projekts. Wird zu `CLAUDE.md`, sobald die ersten Regeln stehen. |
 
 ## Die vier Routen
@@ -113,6 +146,7 @@ einer Schätzung.
 | Ausgeliefertes Stylesheet | 7,5 KB | `werkzeug/schlank.mjs` |
 | Ausgeliefertes Skript | 1,2 KB aus 4,1 KB Quelle | 70 Prozent Kommentar |
 | Kantenkontrast der Feldgrenze | 3,3 zu 1 hell, 4,5 zu 1 dunkel | gerechnet, `kontrast.mjs` misst nach |
+| Offene Entscheidungen | 12 Marker | `geruest.mjs`, Behauptung 3 |
 
 Das Verhältnis von `ch` zu gesetzten Zeichen gilt nur für diese Schrift. Wer die
 Schrift wechselt, misst es neu, statt die 36 mitzunehmen: `ch` ist die
