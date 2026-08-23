@@ -132,7 +132,7 @@ window.vx = {
         const g = document.createRange();
         g.selectNodeContents(k);
         r = g.getBoundingClientRect();
-      } else if (/^(IMG|VIDEO|CANVAS|SVG|HR)$/i.test(k.tagName)) {
+      } else if (/^(IMG|VIDEO|CANVAS|SVG|HR|INPUT|SELECT|TEXTAREA|BUTTON)$/i.test(k.tagName)) {
         if (!window.vx.sichtbar(k)) continue;
         r = k.getBoundingClientRect();
       } else continue;
@@ -145,6 +145,12 @@ window.vx = {
     }
     return gefunden ? { links, rechts, oben, unten, breite: rechts - links, hoehe: unten - oben } : null;
   },
+
+  // Bedienelemente zaehlen als Tinte, obwohl sie keinen Textknoten tragen.
+  // Ohne sie misst ein Formularabschnitt nur seine Beschriftungen: Gemessen
+  // hielt das Gate einen Abschnitt fuer 99 px aus der Mitte geschoben, waehrend
+  // die Felder darunter die Spalte sichtbar fuellten. Ein gerendertes Feld ist
+  // sichtbare Masse, auch wenn eine Textbereichsmessung sie nicht sieht.
 
   // Zeilen werden über Textknoten gezählt und nicht über Elemente. Seit Zeilen
   // auch als Blockelemente gesetzt werden, liefert ein Element je Zeile zwei

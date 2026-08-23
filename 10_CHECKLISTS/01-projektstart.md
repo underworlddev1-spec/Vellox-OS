@@ -14,8 +14,21 @@ Diese Checkliste prüft, ob ein Projekt entscheidungsfähig beginnt. Ein Haken b
 | Erfolgsmessung besitzt Kontext | Ein Klick ist nicht automatisch eine qualifizierte Anfrage oder ein gutes Ergebnis. | Messdefinition mit Quelle und Zeitpunkt. |
 | Freigaberhythmus ist vereinbart | Review funktioniert nur, wenn Fragen, Zeit und Entscheidungskompetenz zusammenpassen. | Kalender oder Projektplan. |
 | Offene Fragen haben einen Besitzer | Ungewissheit wird dadurch handhabbar, statt still in das Design zu wandern. | Offene-Fragen-Register. |
+| Der Prüfstand läuft, bevor die erste Seite steht | Ein Prüfstand, der erst vor dem Launch eingebaut wird, findet Befunde in Arbeit, die schon bezahlt ist. Er gehört zum Gerüst und nicht zur Abnahme. | Protokoll eines Laufs gegen das leere Gerüst, mit Datum, Zahl der Prüfungen und Zahl der Routen. |
+| Die Projektregeldatei existiert und nennt zu jeder Regel ihre Prüfung | Eine Regel ohne Test ist eine Absichtserklärung, und die hält bis zum nächsten Termindruck. | `CLAUDE.md` des Projekts mit einer Prüfungstabelle am Ende. |
+| Vellox-OS ist an die Session angebunden | Eine Dateikopie neben dem Projekt lädt keine Skills und keine Kontextregeln. Ohne Anbindung improvisiert das Werkzeug die fehlende Regel still. | Repository-Liste der Session. |
 
 Der Projektstart ist abgeschlossen, wenn Team und Kunde dieselbe erste Entscheidung sehen: Was muss zuerst verstanden werden, damit die Website für die richtigen Menschen relevant werden kann? Die [Projektbrief-Vorlage](../09_TEMPLATES/01-projektbrief.md) ist die ausführliche Arbeitsgrundlage; diese Checkliste ist der Freigabepunkt.
+
+## Warum der Prüfstand hier steht und nicht beim Launch
+
+Die drei technischen Zeilen wirken an dieser Stelle verfrüht. Sie stehen hier, weil ihre Abwesenheit am ersten Tag nichts kostet und am letzten alles.
+
+Ein Prüfstand, der vor dem Launch eingebaut wird, meldet seine ersten Befunde gegen Seiten, die fertig, abgestimmt und bezahlt sind. Dann ist jede Korrektur eine Rückabwicklung, und die Erfahrung sagt, was in dieser Lage passiert: Die Regel wird gelockert, nicht die Seite korrigiert. Am ersten Tag dagegen läuft er gegen ein leeres Gerüst, ist in zehn Minuten eingebaut und findet jeden Befund am Tag seiner Entstehung.
+
+Der Einbau steht in [`12_PRUEFSTAND`](../12_PRUEFSTAND/README.md). Die Routenliste wird dabei vollständig gepflegt und nicht beispielhaft: Was dort fehlt, wird nie gemessen.
+
+Und ein Prüfstand ersetzt weder den Blick noch das Urteil. Er hält die mechanischen Eigenschaften einer Seite fest, damit die Aufmerksamkeit des Teams für die Fragen frei bleibt, die er nicht beantworten kann. Welche Aussage ein Abschnitt trägt und welche Form dazu passt, steht in der [Prüfdoktrin](../00_SYSTEM/06-pruefdoktrin.md) ausdrücklich außerhalb seiner Reichweite.
 ## Häufige Fehlinterpretationen
 
 Ein ausgefülltes Briefing beweist nicht, dass die Positionierung geklärt ist. Ein Kick-off mit vielen Beteiligten beweist nicht, dass eine Entscheidungsrolle existiert. Ein Zeitplan beweist nicht, dass die Entscheidung an einem Meilenstein reif werden kann. Prüfe deshalb die Qualität der Antworten. Sind sie konkret, beobachtbar und mit einer Konsequenz verbunden? Wenn nicht, wird der Punkt als offene Frage behandelt.
