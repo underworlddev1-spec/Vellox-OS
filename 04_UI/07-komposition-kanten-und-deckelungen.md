@@ -22,6 +22,18 @@ Auf Rechtstextseiten lag eine Lesebreite innerhalb einer bereits gedeckelten Bah
 
 Welche Deckelung bleibt, entscheidet dieselbe Frage wie überall: **die, die eine Entscheidung ausdrückt.** Wenn die Bahn das Lesemaß der Seite ist, deckelt die Bahn. Wenn Prosa in einer vollen Bahn steht und keine zweite Begrenzung existiert, deckelt die Lesebreite.
 
+## Das Lesemaß gehört an den Text, nicht an die Bahn
+
+Der Fall, an dem diese Regel entstanden ist, kostete einen Kunden fast einen Termin. Er öffnete seine Seite auf dem Desktop und sagte, das sei sehr schlimm. Gemessen standen dort 468 Pixel Text zwischen zwei leeren Rändern von je 694 Pixeln bei 1920, je 1014 bei 2560; jeder weitere Abschnitt derselben Seite lag auf der Hauptachse. Die Seite brach optisch entzwei, bevor ihr erster Absatz zu Ende war.
+
+Entstanden war das aus einer richtigen Korrektur. Zwei Tage vorher waren die Zeilenlängen der Rechtstextseiten gemessen worden, sie lagen mit 107 Zeichen weit über der Spanne, und das Lesemaß wurde gesenkt, bis sie passten. Die Rechnung stimmte für den Fließtext, dem sie galt.
+
+Der Fehler lag eine Ebene darüber. Ein Lesemaß, das als Variable geführt wird, löst sich dort auf, wo es benutzt wird. Steht es an der Bahn, gilt es für die Bahn und nicht für den Text darin: Dieselbe Breite trug auf den Rechtstextseiten 69 Zeichen und im Vorspann der anderen Seite 51, weil dort ein größerer Grad steht. Ein Maß, das die Zahl der Zeichen meint, muss deshalb am Element hängen, das die Zeichen setzt.
+
+**Daraus folgen zwei Sätze.** Eine Bahn, die das Lesemaß selbst ist, bleibt den Seiten vorbehalten, die wirklich nichts anderes sind als eine Lesespalte, also den Rechtstexten. Jede Seite, die aus mehr besteht, stellt ihre Bahn auf die Hauptachse und lässt die Rasterspur oder den Textblock das Maß tragen.
+
+Und ein Hinweis für den Bau eines Gerüsts: Wer die Deckelung in eine Komponente einbaut, verlagert denselben Fehler nur. Deckeln dürfen Bahnen und eine ausdrückliche Lesebreite-Klasse; eine Komponente, die sich selbst deckelt, rechnet mit ihrem eigenen Grad und wird schmaler als die Spur, die sie eigentlich führen sollte. Beide Werte sind für sich richtig, und niemand sieht, welcher greift.
+
 ## Ein schmaler Block steht in seiner Bahn, nicht an deren linker Kante
 
 Das ist die zweite Hälfte derselben Regel und die unauffälligere. Eine Formularspalte misst 44 Rem, ihre Bahn 72, und die Differenz von 384 Pixeln steht vollständig rechts. Jeder Abschnitt der Seite sitzt dadurch im linken Drittel des Fensters.
