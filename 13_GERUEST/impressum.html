@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum</title>
+<meta name="robots" content="noindex">
+<!--stil:anfang--><style>:root {
+  --grund-papier-050: #ffffff;
+  --grund-papier-100: #f6f5f3;
+  --grund-papier-200: #e9e7e3;
+  --grund-tinte-700: #4a4742;
+  --grund-tinte-900: #1c1b19;
+  --grund-akzent-600: #6b4f1d;
+  --grund-signal-fehler: #8c2f24;
+  --farbe-flaeche: var(--grund-papier-100);
+  --farbe-flaeche-gehoben: var(--grund-papier-200);
+  --farbe-text: var(--grund-tinte-900);
+  --farbe-text-leise: var(--grund-tinte-700);
+  --farbe-linie: color-mix(in srgb, var(--grund-tinte-900) 14%, transparent);
+  --farbe-linie-stark: color-mix(in srgb, var(--grund-tinte-900) 50%, transparent);
+  --farbe-detail: var(--grund-akzent-600);
+  --farbe-handlung: var(--grund-tinte-900);
+  --farbe-handlung-aktiv: var(--grund-tinte-700);
+  --farbe-auf-handlung: var(--grund-papier-050);
+  --farbe-fehler: var(--grund-signal-fehler);
+  --farbe-bildplatz: var(--grund-papier-200);
+  --farbe-fokus: var(--grund-akzent-600);
+  --schrift-display: Georgia, "Times New Roman", serif;
+  --schrift-text: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gr-meta: clamp(0.9375rem, 0.9rem + 0.15vw, 1.0625rem);
+  --gr-text-klein: clamp(0.9375rem, 0.88rem + 0.2vw, 1.0625rem);
+  --gr-text: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  --gr-text-gross: clamp(1.1875rem, 1.05rem + 0.6vw, 1.5rem);
+  --gr-h3: clamp(1.25rem, 1.16rem + 0.4vw, 1.625rem);
+  --gr-h2: clamp(1.5rem, 1.28rem + 0.95vw, 2.25rem);
+  --gr-h1: clamp(1.875rem, 1.5rem + 1.6vw, 3rem);
+  --zh-eng: 1.15;
+  --zh-weit: 1.6;
+  --raum-2xs: 0.25rem;
+  --raum-xs: 0.5rem;
+  --raum-s: 0.75rem;
+  --raum-m: 1.25rem;
+  --raum-l: 2rem;
+  --raum-xl: 3rem;
+  --raum-2xl: 4.5rem;
+  --breite-seite: 72rem;
+  --breite-schmal: 52rem;
+  --breite-lese: 36ch;
+  --rand: 1.25rem;
+  --radius: 2px;
+  --zeit-schnell: 120ms;
+  --zeit-raum: 320ms;
+  --kurve: cubic-bezier(0.2, 0, 0, 1);
+}
+@media (min-width: 48em) {
+  :root {
+    --rand: 2rem;
+  }
+}
+.kontext-dunkel {
+  --farbe-flaeche: var(--grund-tinte-900);
+  --farbe-flaeche-gehoben: var(--grund-tinte-700);
+  --farbe-text: var(--grund-papier-050);
+  --farbe-text-leise: var(--grund-papier-200);
+  --farbe-linie: color-mix(in srgb, var(--grund-papier-050) 22%, transparent);
+  --farbe-linie-stark: color-mix(in srgb, var(--grund-papier-050) 45%, transparent);
+  --farbe-handlung: var(--grund-papier-050);
+  --farbe-handlung-aktiv: var(--grund-papier-200);
+  --farbe-auf-handlung: var(--grund-tinte-900);
+  --farbe-bildplatz: var(--grund-tinte-700);
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text);
+  font-family: var(--schrift-text);
+  font-size: var(--gr-text);
+  line-height: var(--zh-weit);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--schrift-display);
+  line-height: var(--zh-eng);
+  margin: 0 0 var(--raum-m);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+h1 {
+  font-size: var(--gr-h1);
+}
+h2 {
+  font-size: var(--gr-h2);
+}
+h3 {
+  font-size: var(--gr-h3);
+}
+p {
+  margin: 0 0 var(--raum-m);
+}
+p:empty {
+  margin-block-end: 0;
+}
+.lesebreite {
+  max-width: var(--breite-lese);
+}
+a {
+  color: var(--farbe-text);
+  text-decoration-color: var(--farbe-detail);
+  text-underline-offset: 0.2em;
+}
+@media (hover: hover) {
+  a:hover {
+    text-decoration-color: var(--farbe-text);
+  }
+}
+:focus-visible {
+  outline: 2px solid var(--farbe-fokus);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.bahn {
+  width: 100%;
+  max-width: var(--breite-seite);
+  margin-inline: auto;
+  padding-inline: var(--rand);
+}
+.bahn--schmal {
+  max-width: var(--breite-schmal);
+}
+.bahn--lese {
+  max-width: calc(var(--breite-lese) + 2 * var(--rand));
+}
+.abschnitt {
+  padding-block: var(--raum-2xl);
+}
+.abschnitt--flaeche {
+  background: var(--farbe-flaeche-gehoben);
+}
+.sprungmarke {
+  position: absolute;
+  left: var(--raum-xs);
+  top: -100%;
+  z-index: 10;
+  padding: var(--raum-s) var(--raum-m);
+  background: var(--farbe-handlung);
+  color: var(--farbe-auf-handlung);
+  text-decoration: none;
+}
+.sprungmarke:focus {
+  top: var(--raum-xs);
+}
+.kopfbereich {
+  border-bottom: 1px solid var(--farbe-linie);
+}
+.kopfbereich__innen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--raum-m) var(--raum-l);
+  padding-block: var(--raum-m);
+}
+.wortmarke {
+  font-family: var(--schrift-display);
+  font-size: var(--gr-text-gross);
+  text-decoration: none;
+}
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-m) var(--raum-l);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--gr-text-klein);
+}
+.fussbereich {
+  border-top: 1px solid var(--farbe-linie);
+  padding-block: var(--raum-xl);
+  font-size: var(--gr-text-klein);
+}
+.fussbereich__rechtsweg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-m);
+  margin: var(--raum-m) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--farbe-text-leise);
+}
+.knopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--raum-s) var(--raum-l);
+  border: 1px solid var(--farbe-handlung);
+  border-radius: var(--radius);
+  background: var(--farbe-handlung);
+  color: var(--farbe-auf-handlung);
+  font: inherit;
+  font-size: var(--gr-text-klein);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--zeit-schnell) var(--kurve);
+}
+.knopf--sekundaer {
+  background: transparent;
+  color: var(--farbe-text);
+  border-color: var(--farbe-linie-stark);
+}
+@media (hover: hover) {
+  .knopf:hover {
+    background: var(--farbe-handlung-aktiv);
+    border-color: var(--farbe-handlung-aktiv);
+  }
+}
+.knopf[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.feld {
+  display: block;
+  margin-bottom: var(--raum-l);
+}
+.feld__marke {
+  display: block;
+  margin-bottom: var(--raum-2xs);
+  font-size: var(--gr-text-klein);
+  font-weight: 600;
+}
+.feld__eingabe {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--raum-xs) var(--raum-s);
+  border: 1px solid var(--farbe-linie-stark);
+  border-radius: var(--radius);
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text);
+  font: inherit;
+  font-size: var(--gr-text);
+}
+.feld__eingabe:user-invalid {
+  border-color: var(--farbe-fehler);
+}
+.feld__hilfe {
+  display: block;
+  margin-top: var(--raum-2xs);
+  color: var(--farbe-text-leise);
+  font-size: var(--gr-meta);
+}
+.meldung {
+  margin: 0 0 var(--raum-l);
+  padding: var(--raum-m);
+  border-left: 3px solid var(--farbe-linie-stark);
+  background: var(--farbe-flaeche-gehoben);
+  font-size: var(--gr-text-klein);
+}
+.meldung--fehler {
+  border-left-color: var(--farbe-fehler);
+}
+.meldung__marke {
+  display: block;
+  margin-bottom: var(--raum-2xs);
+  font-weight: 700;
+}
+.ladeflaeche {
+  background-color: var(--farbe-bildplatz);
+  overflow: hidden;
+}
+html:not(.js) .ladeflaeche img {
+  opacity: 1;
+}
+.js .ladeflaeche img {
+  opacity: 0;
+  transition: opacity var(--zeit-raum) var(--kurve);
+}
+.ladeflaeche img.ist-da {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ladeflaeche img {
+    transition: none;
+  }
+}
+.hinweis-leise {
+  color: var(--farbe-text-leise);
+  font-size: var(--gr-meta);
+}
+.knopf-gruppe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-m);
+  margin-bottom: var(--raum-m);
+}
+</style><!--stil:ende-->
+</head>
+<body data-geruest="impressum">
+<a class="sprungmarke" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="kopfbereich">
+  <div class="bahn bahn--lese kopfbereich__innen">
+    <a class="wortmarke" href="index.html">Projektname</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="navigation">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="abschnitt">
+    <div class="bahn bahn--lese">
+      <h1>Impressum</h1>
+      <p>
+        Diese Seite trägt die Anbieterkennzeichnung. Sie ist im Gerüst
+        vollständig aufgebaut und inhaltlich leer: Die Angaben stammen vom
+        Betreiber und werden nicht geraten.
+      </p>
+
+      <h2>Anbieter</h2>
+      <p>
+        Name des Unternehmens oder der Person, Rechtsform, Anschrift mit
+        Straße, Hausnummer, Postleitzahl und Ort.
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefonnummer und E-Mail-Adresse, unter denen eine schnelle
+        elektronische Kontaktaufnahme möglich ist.
+      </p>
+
+      <h2>Vertretung und Register</h2>
+      <p>
+        Vertretungsberechtigte Personen, Registergericht und Registernummer,
+        soweit ein Eintrag besteht.
+      </p>
+
+      <h2>Umsatzsteuer</h2>
+      <p>
+        Umsatzsteuer-Identifikationsnummer, soweit vorhanden.
+      </p>
+
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>
+        Name und Anschrift der für redaktionelle Inhalte verantwortlichen
+        Person.
+      </p>
+
+      <h2>Streitbeilegung</h2>
+      <p>
+        Hinweis, ob der Betreiber zur Teilnahme an einem
+        Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+        bereit oder verpflichtet ist.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="fussbereich">
+  <div class="bahn bahn--lese">
+    <p>Projektname, Ort</p>
+    <ul class="fussbereich__rechtsweg">
+      <li><a href="impressum.html" aria-current="page">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/script.schlank.js" defer></script>
+</body>
+</html>

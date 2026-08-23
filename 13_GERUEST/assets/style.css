@@ -1,0 +1,619 @@
+/* ==========================================================================
+   VELLOX-Gerüst: Stilquelle
+
+   Diese Datei ist die QUELLE. Bearbeitet wird immer sie, nie die Fassung, die
+   in den Seiten zwischen <!--stil:anfang--> und <!--stil:ende--> steht. Die
+   erzeugt `node werkzeug/schlank.mjs`, und im Bereich zwischen den Marken geht
+   jede Handarbeit beim nächsten Lauf verloren.
+
+   Der Grund für diese Trennung: Eine Regel steht hier neben ihrer Begründung,
+   damit niemand sie später aus Unkenntnis wieder aufweicht. Für den Menschen,
+   der die Datei liest, ist das der ganze Wert. Für den Gast, der die Seite
+   öffnet, ist es Ballast auf dem kritischen Pfad. Beides zugleich geht nur
+   getrennt.
+
+   ## Was hier steht und was nicht
+
+   Hier steht Mechanik: Rollen, Skalen, Bahnen, Zustände. Hier steht kein Look.
+   Es gibt keine Palette, keine Schriftpaarung und kein Sektionsmuster, weil ein
+   Gerüst, das eine Gestaltung mitbringt, aus jedem Projekt dieselbe Website
+   macht. Genau das verbietet der Anti-Template-Standard.
+
+   Die Werte, die als GERUESTWERT markiert sind, sind Platzhalter mit einer
+   Eigenschaft: Sie sind zugänglich, damit der Prüfstand von Anfang an läuft.
+   Sie sind keine Gestaltung und müssen ersetzt werden, bevor jemand die Seite
+   sieht.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Grundfarben
+
+   Grundfarben nennen die Farbe. Sie werden nirgends direkt verwendet, sondern
+   ausschließlich über die Rollen weiter unten. Wer hier eine Farbe ändert,
+   ändert die Marke; wer eine Rolle ändert, ändert eine Aufgabe.
+
+   GERUESTWERT: neutrale Achse plus ein Akzent, gewählt nach Kontrast und nicht
+   nach Wirkung. Die Markenfarben kommen aus Positionierung, Material und
+   Umgebung; siehe 02_BRANDING/02-visuelles-system.md.
+   -------------------------------------------------------------------------- */
+
+:root {
+  --grund-papier-050: #ffffff;
+  --grund-papier-100: #f6f5f3;
+  --grund-papier-200: #e9e7e3;
+  --grund-tinte-700: #4a4742;
+  --grund-tinte-900: #1c1b19;
+  --grund-akzent-600: #6b4f1d;
+  --grund-signal-fehler: #8c2f24;
+
+  /* ------------------------------------------------------------------------
+     2. Rollen
+
+     Rollen nennen die Aufgabe. Nur sie stehen im Regelwerk. Eine Deklaration,
+     die eine Grundfarbe oder einen Literalwert direkt einsetzt, ist ein
+     Fehler, auch wenn sie zufällig dasselbe Ergebnis liefert: Sie liefert es
+     nur so lange, bis der Kontext wechselt.
+
+     Eine Rolle, die Durchsichtigkeit braucht, mischt sie aus ihrer Grundfarbe
+     statt denselben Farbwert ein zweites Mal als Zahlentripel zu führen. Ein
+     `-rgb`-Zwilling neben jeder Rolle wäre genau diese zweite Wahrheit, und
+     seit `color-mix` verfügbar ist, braucht ihn niemand mehr. Wer ihn dennoch
+     anlegt, hat eine Rolle ohne Verbraucher, und `farben.mjs` meldet sie.
+
+     **Die Deckkraft einer Bedienelement-Grenze ist keine Geschmacksfrage.**
+     `--farbe-linie-stark` trägt die Kante von Feld und Knopf und muss drei zu
+     eins gegen ihre Fläche halten (WCAG 1.4.11). Gemessen über der hellen
+     Fläche: 40 Prozent ergeben 2,5 zu 1 und fallen durch, 50 Prozent ergeben
+     3,3 zu 1. Über der dunklen Fläche halten 45 Prozent bereits 4,5 zu 1. Die
+     beiden Zahlen sind deshalb verschieden, weil die Rechnung es ist, und
+     nicht aus Nachlässigkeit. Ein Projekt mit eigener Farbwelt rechnet sie neu
+     oder lässt `kontrast.mjs` sie rechnen.
+     ---------------------------------------------------------------------- */
+  --farbe-flaeche: var(--grund-papier-100);
+  --farbe-flaeche-gehoben: var(--grund-papier-200);
+  --farbe-text: var(--grund-tinte-900);
+  --farbe-text-leise: var(--grund-tinte-700);
+  --farbe-linie: color-mix(in srgb, var(--grund-tinte-900) 14%, transparent);
+  --farbe-linie-stark: color-mix(in srgb, var(--grund-tinte-900) 50%, transparent);
+  --farbe-detail: var(--grund-akzent-600);
+  --farbe-handlung: var(--grund-tinte-900);
+  --farbe-handlung-aktiv: var(--grund-tinte-700);
+  --farbe-auf-handlung: var(--grund-papier-050);
+  --farbe-fehler: var(--grund-signal-fehler);
+  /* Fläche, die ein Bild hält, solange es nicht geladen ist. Ein Ton aus der
+     eigenen Familie und kein Grau: Das Bild soll aus der Seite auftauchen und
+     nicht aus einem Loch. */
+  --farbe-bildplatz: var(--grund-papier-200);
+  /* Der Fokusring braucht eine eigene Rolle, weil das, worauf er liegt, nicht
+     immer die Abschnittsfläche ist. Über einem Hero liegt eine durchsichtige
+     Kopfleiste auf einem Foto. */
+  --farbe-fokus: var(--grund-akzent-600);
+
+  /* ------------------------------------------------------------------------
+     3. Typografie
+
+     GERUESTWERT bei den Schriftstapeln: Systemschriften, damit die Seite ohne
+     Netzverbindung und ohne Einbindung läuft. Eine Schrift ist eine
+     Markenentscheidung und keine Voreinstellung.
+
+     Die Größen sind fließend und brauchen keine Umbruchpunkte. Jede Stufe
+     nennt ihre Aufgabe und nicht ihre Größe; eine Skala mit einer Stufe, die
+     niemand verwendet, ist keine Skala, sondern eine Wunschliste, und
+     `staffel.mjs` meldet sie.
+     ---------------------------------------------------------------------- */
+  --schrift-display: Georgia, "Times New Roman", serif;
+  --schrift-text: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --gr-meta: clamp(0.9375rem, 0.9rem + 0.15vw, 1.0625rem);
+  --gr-text-klein: clamp(0.9375rem, 0.88rem + 0.2vw, 1.0625rem);
+  --gr-text: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  --gr-text-gross: clamp(1.1875rem, 1.05rem + 0.6vw, 1.5rem);
+  --gr-h3: clamp(1.25rem, 1.16rem + 0.4vw, 1.625rem);
+  --gr-h2: clamp(1.5rem, 1.28rem + 0.95vw, 2.25rem);
+  --gr-h1: clamp(1.875rem, 1.5rem + 1.6vw, 3rem);
+
+  /* Der obere Rand der Staffel ist auf die Lesebahn gerechnet und nicht auf
+     die Seitenachse. Ein Seitentitel von vier Zentimetern Höhe steht in einer
+     Spalte von 36ch nach drei Wörtern um und sieht dort gedrängt aus; das ist
+     keine Typografie, sondern eine Zahl aus dem falschen Zusammenhang. Ein
+     Projekt mit einer breiten Titelbahn hebt die Obergrenzen an, misst dabei
+     aber die Umbruchstellen und nicht nur die Wirkung des Screenshots. */
+
+  --zh-eng: 1.15;
+  --zh-weit: 1.6;
+  /* Zwei Zeilenhöhen und nicht drei. Eine mittlere Stufe für Text zwischen
+     Überschrift und Fließtext ist naheliegend und hat hier keinen Verbraucher;
+     sie kommt dazu, sobald der erste Vorspann sie braucht, und nicht vorher. */
+
+  /* ------------------------------------------------------------------------
+     4. Raum
+
+     Der kleinste Schritt trennt Elemente innerhalb einer Gruppe, größere
+     Schritte trennen Gruppen, der größte markiert einen neuen Abschnitt.
+     ---------------------------------------------------------------------- */
+  --raum-2xs: 0.25rem;
+  --raum-xs: 0.5rem;
+  --raum-s: 0.75rem;
+  --raum-m: 1.25rem;
+  --raum-l: 2rem;
+  --raum-xl: 3rem;
+  --raum-2xl: 4.5rem;
+
+  /* ------------------------------------------------------------------------
+     5. Bahnen
+
+     Drei Achsen mit drei Aufgaben. Sie sind der Grund, warum eine Seite nicht
+     an einer Kante klebt und warum Prosa lesbar bleibt.
+
+     `--breite-seite` ist die Hauptachse: Sie hält die Seite zusammen.
+     `--breite-schmal` ist die zweite Achse für Blöcke, die die Hauptachse
+     nicht füllen. Sie ist ausdrücklich KEIN Lesemaß.
+     `--breite-lese` ist das Lesemaß und gilt für jede Prosa.
+
+     **Das Lesemaß wird gemessen und nicht gerechnet, und die Zählweise gehört
+     zur Zahl.** `ch` ist die Vorschubbreite der Ziffer Null und nicht die
+     Breite eines mittleren Zeichens; je nach Schrift liegt der Unterschied bei
+     Faktor zwei. Ein Projekt, das seine Schrift gewählt hat, misst diesen Wert
+     neu: die längste Zeile eines Prosablocks, mit Leerzeichen gezählt, über
+     alle Routen und Breiten. Zielbereich sind 45 bis 75 Zeichen; die
+     Obergrenze von 80 ist eine Grenze und kein Ziel, denn drei Zeichen Abstand
+     sind kein Sicherheitsabstand. `textfluss.mjs` misst es.
+
+     Für die Systemschrift dieses Gerüsts ist der Wert gemessen: 36ch ergeben
+     über alle vier Routen und zwölf Breiten höchstens 65 Zeichen je Zeile.
+     Ein `ch` steht hier also für rund 1,8 gesetzte Zeichen. Wer die Schrift
+     wechselt, wechselt diesen Faktor mit und misst neu, statt die 36
+     mitzunehmen.
+     ---------------------------------------------------------------------- */
+  --breite-seite: 72rem;
+  --breite-schmal: 52rem;
+  --breite-lese: 36ch;
+  --rand: 1.25rem;
+
+  --radius: 2px;
+  --zeit-schnell: 120ms;
+  --zeit-raum: 320ms;
+  --kurve: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 48em) {
+  :root {
+    --rand: 2rem;
+  }
+}
+
+/* Ein Abschnitt, der eine dunkle Fläche trägt, definiert die Rollen für seinen
+   Teilbaum neu. Damit ist jedes Kind automatisch richtig eingefärbt, auch
+   eines, das es heute noch nicht gibt.
+
+   Der Gegenentwurf ist eine Übersteuerungsliste, die für jede Komponente noch
+   einmal sagt, wie sie auf dunklem Grund aussieht. Eine solche Liste muss
+   vollständig sein, und sie ist es nie lange.
+
+   Auch die Handlungsfarbe dreht mit. Die verbreitete Ausnahme lautet, der
+   Hauptknopf solle überall gleich aussehen; sie trägt genau so lange, bis
+   Handlungsfarbe und Abschnittsfläche dieselbe Farbe sind. Wiedererkennung
+   braucht keine identische Farbe, sie braucht eine identische Gestalt. */
+.kontext-dunkel {
+  --farbe-flaeche: var(--grund-tinte-900);
+  --farbe-flaeche-gehoben: var(--grund-tinte-700);
+  --farbe-text: var(--grund-papier-050);
+  --farbe-text-leise: var(--grund-papier-200);
+  --farbe-linie: color-mix(in srgb, var(--grund-papier-050) 22%, transparent);
+  --farbe-linie-stark: color-mix(in srgb, var(--grund-papier-050) 45%, transparent);
+  --farbe-handlung: var(--grund-papier-050);
+  --farbe-handlung-aktiv: var(--grund-papier-200);
+  --farbe-auf-handlung: var(--grund-tinte-900);
+  --farbe-bildplatz: var(--grund-tinte-700);
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text);
+}
+
+/* --------------------------------------------------------------------------
+   6. Grundlagen
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text);
+  font-family: var(--schrift-text);
+  font-size: var(--gr-text);
+  line-height: var(--zh-weit);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* `overflow-wrap` an den Überschriften ist keine Feinheit, sondern eine
+   Sprachfrage. Deutsche Komposita werden lang, eine Überschrift steht im
+   größten Grad, und beides zusammen ergibt auf dem Telefon regelmäßig ein
+   einzelnes Wort, das breiter ist als seine Spalte. Ohne diese Zeile ist das
+   ein waagerechter Überlauf und kein Umbruch. */
+h1,
+h2,
+h3 {
+  font-family: var(--schrift-display);
+  line-height: var(--zh-eng);
+  margin: 0 0 var(--raum-m);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--gr-h1);
+}
+
+h2 {
+  font-size: var(--gr-h2);
+}
+
+h3 {
+  font-size: var(--gr-h3);
+}
+
+p {
+  margin: 0 0 var(--raum-m);
+}
+
+/* Ein leerer Absatz ist eine Meldungsfläche, die noch nichts zu sagen hat. Sie
+   bleibt im Dokument, damit ein Vorlesewerkzeug ihre spätere Änderung ansagen
+   kann, und beansprucht bis dahin keinen Raum. */
+p:empty {
+  margin-block-end: 0;
+}
+
+/* Prosa trägt das Lesemaß, und zwar genau einmal.
+
+   **Deckeln dürfen nur Bahnen und diese Klasse, keine Komponente sich selbst.**
+   Zwei Deckelungen für dieselbe Strecke bedeuten, dass eine von beiden nicht
+   wirkt, und welche das ist, sieht man dem Regelwerk nicht an: Ein Hilfetext
+   mit eigener Deckelung in `ch` rechnet mit seinem eigenen, kleineren Grad und
+   wird dadurch schmaler als die Bahn, die ihn eigentlich führen sollte. Beide
+   Werte sind für sich richtig, und niemand sieht, welcher greift.
+
+   Die Regel kostet einen Klassennamen im Markup und spart die Suche danach.
+   Steht Prosa in einer Bahn, die breiter ist als das Lesemaß, etwa in einer
+   Formularspalte, bekommt sie hier `lesebreite`. Wird es vergessen, meldet
+   `textfluss.mjs` die zu lange Zeile. */
+.lesebreite {
+  max-width: var(--breite-lese);
+}
+
+a {
+  color: var(--farbe-text);
+  text-decoration-color: var(--farbe-detail);
+  text-underline-offset: 0.2em;
+}
+
+@media (hover: hover) {
+  a:hover {
+    text-decoration-color: var(--farbe-text);
+  }
+}
+
+/* Der Fokusring ist sichtbar und liegt außerhalb des Elements, damit er auf
+   einer gefüllten Fläche nicht verschwindet. Er wird nie entfernt: Wer mit der
+   Tastatur navigiert, verliert sonst die Orientierung vollständig. */
+:focus-visible {
+  outline: 2px solid var(--farbe-fokus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Bahnen und Abschnitte
+   -------------------------------------------------------------------------- */
+
+.bahn {
+  width: 100%;
+  max-width: var(--breite-seite);
+  margin-inline: auto;
+  padding-inline: var(--rand);
+}
+
+.bahn--schmal {
+  max-width: var(--breite-schmal);
+}
+
+/* Eine Bahn, die selbst das Lesemaß ist. Sie trägt Seiten, die eine einzige
+   Lesespalte sind: Überschrift, Verzeichnis und Prosa stehen darin auf
+   derselben Achse und im selben Maß.
+
+   Der Zuschlag gleicht die Innenpolsterung aus, damit das Lesemaß für den Text
+   gilt und nicht für den Kasten darum. */
+.bahn--lese {
+  max-width: calc(var(--breite-lese) + 2 * var(--rand));
+}
+
+.abschnitt {
+  padding-block: var(--raum-2xl);
+}
+
+.abschnitt--flaeche {
+  background: var(--farbe-flaeche-gehoben);
+}
+
+/* Sprungmarke. Sie ist der erste fokussierbare Punkt der Seite und wird erst
+   sichtbar, wenn sie ihn bekommt. Ohne sie muss jemand, der mit der Tastatur
+   navigiert, die vollständige Navigation auf jeder Seite erneut durchlaufen. */
+.sprungmarke {
+  position: absolute;
+  left: var(--raum-xs);
+  top: -100%;
+  z-index: 10;
+  padding: var(--raum-s) var(--raum-m);
+  background: var(--farbe-handlung);
+  color: var(--farbe-auf-handlung);
+  text-decoration: none;
+}
+
+.sprungmarke:focus {
+  top: var(--raum-xs);
+}
+
+/* --------------------------------------------------------------------------
+   8. Kopf und Fuß
+
+   Struktur, keine Gestaltung. Der Kopf trägt eine Wortmarke und eine
+   Navigation, der Fuß die Rechtsverweise, die von jeder Route aus erreichbar
+   sein müssen. Wie beides aussieht, entscheidet das Projekt.
+   -------------------------------------------------------------------------- */
+
+.kopfbereich {
+  border-bottom: 1px solid var(--farbe-linie);
+}
+
+.kopfbereich__innen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--raum-m) var(--raum-l);
+  padding-block: var(--raum-m);
+}
+
+.wortmarke {
+  font-family: var(--schrift-display);
+  font-size: var(--gr-text-gross);
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-m) var(--raum-l);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--gr-text-klein);
+}
+
+.fussbereich {
+  border-top: 1px solid var(--farbe-linie);
+  padding-block: var(--raum-xl);
+  font-size: var(--gr-text-klein);
+}
+
+.fussbereich__rechtsweg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-m);
+  margin: var(--raum-m) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--farbe-text-leise);
+}
+
+/* --------------------------------------------------------------------------
+   9. Handlungen
+
+   Ein Knopf löst eine Aktion aus, ein Verweis führt zu einem Ziel. Die Form
+   folgt der Bedeutung und nicht dem Standardstil des Browsers.
+
+   Keine Pillenform als Voreinstellung: Eine vollständig abgerundete Form trägt
+   den visuellen Code generischer Oberflächen und macht eine Handlung weicher,
+   als sie in der Hierarchie sein sollte.
+
+   Die Mindesthöhe von 44 px ist keine Gestaltung, sondern die Fingerfläche aus
+   WCAG 2.5.8.
+   -------------------------------------------------------------------------- */
+
+.knopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--raum-s) var(--raum-l);
+  border: 1px solid var(--farbe-handlung);
+  border-radius: var(--radius);
+  background: var(--farbe-handlung);
+  color: var(--farbe-auf-handlung);
+  font: inherit;
+  font-size: var(--gr-text-klein);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--zeit-schnell) var(--kurve);
+}
+
+.knopf--sekundaer {
+  background: transparent;
+  color: var(--farbe-text);
+  border-color: var(--farbe-linie-stark);
+}
+
+@media (hover: hover) {
+  .knopf:hover {
+    background: var(--farbe-handlung-aktiv);
+    border-color: var(--farbe-handlung-aktiv);
+  }
+}
+
+.knopf[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   10. Formular und Zustände
+
+   Zustände werden ausdrücklich modelliert und entstehen nicht als
+   nachträgliche Sonderfälle. Ein Feld hat eine Beschriftung, eine Hilfe, einen
+   Fehlerzustand und einen Erfolgszustand, bevor es das erste Mal ausgeliefert
+   wird.
+   -------------------------------------------------------------------------- */
+
+.feld {
+  display: block;
+  margin-bottom: var(--raum-l);
+}
+
+.feld__marke {
+  display: block;
+  margin-bottom: var(--raum-2xs);
+  font-size: var(--gr-text-klein);
+  font-weight: 600;
+}
+
+.feld__eingabe {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--raum-xs) var(--raum-s);
+  border: 1px solid var(--farbe-linie-stark);
+  border-radius: var(--radius);
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text);
+  font: inherit;
+  font-size: var(--gr-text);
+}
+
+/* Die Feldkante ist eine Bedienelement-Grenze und muss drei zu eins gegen ihre
+   Fläche halten (WCAG 1.4.11). Gemessen wird am gemischten Pixel und nicht am
+   Farbwert im Stylesheet: Eine Linie mit Deckkraft ist nicht die Farbe, die
+   im Code steht. `kontrast.mjs` misst das. */
+.feld__eingabe:user-invalid {
+  border-color: var(--farbe-fehler);
+}
+
+.feld__hilfe {
+  display: block;
+  margin-top: var(--raum-2xs);
+  color: var(--farbe-text-leise);
+  font-size: var(--gr-meta);
+}
+
+/* Eine Meldung sagt, was passiert ist, und trägt die Aussage im Wort und nicht
+   nur in der Farbe. Wer Rot und Grün nicht unterscheidet, liest sonst zwei
+   gleiche Kästen.
+
+   Hier steht nur der Fehlerzustand, weil nur er ohne Gegenstelle erreichbar
+   ist. Ein Erfolgszustand gehört neben den Code, der ihn auslösen kann, und
+   entsteht mit der echten Absendestrecke des Projekts. Eine Klasse, die
+   niemand erreichen kann, sieht wie eine modellierte Zustandsfamilie aus und
+   ist eine Behauptung über sich selbst.
+
+   Aus demselben Grund fehlt oben die Signalfarbe für Erfolg. Sie kommt mit dem
+   Zustand, den sie färbt, und nicht auf Vorrat: Eine Rolle ohne Verbraucher
+   ist eine Wunschliste, und `farben.mjs` meldet sie. */
+.meldung {
+  margin: 0 0 var(--raum-l);
+  padding: var(--raum-m);
+  border-left: 3px solid var(--farbe-linie-stark);
+  background: var(--farbe-flaeche-gehoben);
+  font-size: var(--gr-text-klein);
+}
+
+.meldung--fehler {
+  border-left-color: var(--farbe-fehler);
+}
+
+.meldung__marke {
+  display: block;
+  margin-bottom: var(--raum-2xs);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   11. Ladefläche
+
+   Was später eintrifft, bekommt vorher seinen Platz und eine Fläche. Das
+   Seitenverhältnis steht fest, die Fläche trägt einen Ton aus der Farbfamilie,
+   und das Bild blendet sich auf, sobald es dekodiert ist.
+
+   `decode()` und nicht das Ladeereignis: Das Ladeereignis feuert, wenn die
+   Daten da sind, aber bevor der Browser sie zeichnen kann; dazwischen liegt
+   bei großen Bildern ein sichtbarer Sprung.
+
+   **Die Ausfallrichtung ist verbindlich**: Ohne JavaScript ist jedes Bild
+   sofort sichtbar. Ein Bild darf nie unsichtbar auf ein Skript warten, das
+   nicht kommt. `ausfall.mjs` misst das.
+   -------------------------------------------------------------------------- */
+
+.ladeflaeche {
+  background-color: var(--farbe-bildplatz);
+  overflow: hidden;
+}
+
+html:not(.js) .ladeflaeche img {
+  opacity: 1;
+}
+
+.js .ladeflaeche img {
+  opacity: 0;
+  transition: opacity var(--zeit-raum) var(--kurve);
+}
+
+.ladeflaeche img.ist-da {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ladeflaeche img {
+    transition: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. Kleinteile
+
+   `.hinweis-leise` trägt eine Einschränkung oder eine Nebenangabe. Sie steht
+   nach der Handlung, die sie einschränkt, und nicht davor.
+   -------------------------------------------------------------------------- */
+
+.hinweis-leise {
+  color: var(--farbe-text-leise);
+  font-size: var(--gr-meta);
+}
+
+.knopf-gruppe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-m);
+  margin-bottom: var(--raum-m);
+}

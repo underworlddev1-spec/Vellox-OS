@@ -1,0 +1,186 @@
+# Arbeitsregeln für dieses Projekt
+
+> Diese Datei heißt `CLAUDE.md.vorlage`, solange sie aus dem Gerüst stammt.
+> Umbenennen zu `CLAUDE.md`, sobald die ersten projekteigenen Regeln darin
+> stehen. Vorher lädt sie absichtlich nicht: Ein Regelwerk, das nur allgemeine
+> Sätze enthält, gewöhnt ein Team daran, es zu überfliegen.
+
+Diese Regeln gelten für jede Änderung an dieser Website, ohne dass jemand sie
+erneut nennen muss. Jede von ihnen hat einen Test. Eine Regel ohne Test ist eine
+Absichtserklärung, und Absichtserklärungen halten genau bis zum nächsten
+Termindruck.
+
+Die Tests liegen unter `pruefstand/pruefungen/` und laufen über einen lokalen
+Server gegen den Browser, nicht gegen den Quelltext allein.
+
+---
+
+## 1. Farben ausschließlich über Rollentoken
+
+**Regel.** Kein Farbwert steht direkt in einer Regel. Farben werden auf zwei
+Ebenen geführt. Grundfarben nennen die Farbe (`--grund-papier-100`), Rollen
+nennen die Aufgabe (`--farbe-flaeche`, `--farbe-text`, `--farbe-handlung`). Nur
+Rollen stehen im Regelwerk.
+
+Ein Abschnitt, der dunkel ist, trägt `.kontext-dunkel` und definiert die Rollen
+für seinen Teilbaum neu. Damit ist jedes Kind automatisch richtig eingefärbt,
+auch eines, das es heute noch nicht gibt.
+
+**Warum.** Der Gegenentwurf ist eine Übersteuerungsliste, die für jede
+Komponente noch einmal sagt, wie sie auf dunklem Grund aussieht. Eine solche
+Liste muss vollständig sein, und sie ist es nie lange.
+
+**Wenn eine neue Farbe gebraucht wird.** Erst prüfen, ob eine bestehende Rolle
+passt. Wenn nicht: Grundfarbe anlegen, Rolle benennen, im Entscheidungslog
+begründen. Nicht: einen Wert in die Regel schreiben.
+
+**Test.** `farben.mjs`
+
+---
+
+## 2. Barrierefreiheit und Rechtskonformität werden bei jeder Änderung geprüft
+
+**Regel.** Nach jeder Änderung am Frontend läuft der vollständige Prüfstand.
+Nicht am Ende eines Auftrags, sondern nach jedem Schritt.
+
+Rechtskonformität wird am ausgelieferten Verhalten gemessen und nicht am
+Quelltext: Der Browser wird gestartet, und dann wird gezählt, was tatsächlich
+passiert ist. Verbindungen zu fremden Servern, Cookies, Speicher, die
+Erreichbarkeit der Rechtstexte, `rel="noopener"` und die Kennzeichnung erzeugter
+Medien.
+
+**Zur KI-Kennzeichnung.** Solange ein erzeugtes Bild auf der Seite ist, bleibt
+die sichtbare Kennzeichnung am Bild. Sie ist keine Arbeitsnotiz, sondern eine
+Pflichtangabe nach Art. 50 Abs. 4 KI-VO, und sie muss beim Kontakt mit dem
+Inhalt erfolgen; ein Hinweis im Fußbereich erfüllt das nicht. Welches Verb
+richtig ist, entscheidet die Datei und nicht der Klang der Marke.
+
+**Tests.** `axe.mjs`, `a11y.mjs`, `kontrast.mjs`, `konform.mjs`
+
+---
+
+## 3. Ladeflächen statt springender Layouts
+
+**Regel.** Was später eintrifft, bekommt vorher seinen Platz und eine Fläche.
+Kein Element darf durch verspätetes Laden die Seite verschieben. Bei Bildern
+heißt das: Das Seitenverhältnis steht fest, die Fläche trägt einen Ton aus der
+Farbfamilie, und das Bild blendet sich auf, sobald es dekodiert ist.
+
+`decode()` und nicht das Ladeereignis: Das Ladeereignis feuert, wenn die Daten da
+sind, aber bevor der Browser sie zeichnen kann.
+
+**Ausfallrichtung.** Ohne JavaScript ist jedes Bild sofort sichtbar, und kein
+Abschnitt ist leer. Ein Abschnitt, der ein Skript braucht, um seinen Inhalt zu
+zeigen, hat ohne dieses Skript keinen Inhalt.
+
+**Test.** `ausfall.mjs`
+
+---
+
+## 4. Keine überladenen Bedienelemente
+
+**Regel.** Jedes sichtbare Element braucht eine Aufgabe. Bevor eines bleibt, wird
+eine Frage beantwortet: Was geht verloren, wenn es weg ist? Wenn die Antwort
+lautet „es sieht dann leerer aus“, ist das keine Aufgabe.
+
+Die zweite Frage lautet: Wo steht das schon? Was mehrfach vorkommt, wird nicht
+schöner angeordnet, sondern an genau einer Stelle gezeigt. Eine Form, die eine
+Angabe zum dritten Mal zeigt, ist der Versuch, etwas Gewicht zu geben, das keins
+mehr trägt.
+
+**Prüfung.** Diese Regel lässt sich nicht automatisch messen, sie ist eine
+Entscheidung. Sie wird im Bild geprüft: Nach jeder größeren Änderung werden
+Vollseiten-Aufnahmen aller Routen auf Desktop und Handy erstellt und Abschnitt
+für Abschnitt durchgegangen.
+
+---
+
+## 5. Genau eine Deckelung je Textspalte
+
+**Regel.** Eine Textspalte wird an genau einer Stelle in ihrer Breite begrenzt.
+Deckeln dürfen Bahnen und die Klasse `.lesebreite`, keine Komponente sich
+selbst. Zwei Deckelungen für dieselbe Strecke bedeuten, dass eine von beiden
+nicht wirkt, und welche das ist, sieht man dem Regelwerk nicht an.
+
+**Und ein schmaler Block steht in seiner Bahn, nicht an deren linker Kante.** Das
+ist die zweite Hälfte derselben Regel. Der Versatz ist absolut konstant und
+fällt prozentual sogar, je breiter das Fenster wird; er ist deshalb ausdrücklich
+kein Problem großer Schirme.
+
+**Und das Lesemaß wird gemessen, nicht gerechnet.** Die Zählweise gehört zur
+Zahl: Zeilenlängen werden mit Leerzeichen gezählt, und `ch` ist die
+Vorschubbreite der Ziffer Null und nicht die Breite eines mittleren Zeichens.
+
+**Tests.** `achse.mjs` misst den Ort, `textfluss.mjs` die Breite.
+
+---
+
+## 6. Quelle und Auslieferung sind getrennt
+
+**Regel.** Bearbeitet werden `assets/style.css` und `assets/script.js`.
+`node werkzeug/schlank.mjs` erzeugt daraus die Auslieferung: das Skript als
+`assets/script.schlank.js`, das Stylesheet direkt in jede Seite, zwischen die
+Marken `<!--stil:anfang-->` und `<!--stil:ende-->`. Im Bereich zwischen den
+Marken geht jede Handarbeit beim nächsten Lauf verloren.
+
+**Warum.** Eine Regel neben ihrer Begründung ist der Grund, warum ein Projekt
+seine Entscheidungen über Monate halten kann. Nur liest kein Browser diesen
+Text, und das Stylesheet blockiert das erste Bild.
+
+**Test.** `werkzeug/schlank.mjs --pruefen`
+
+---
+
+## Prüfungen
+
+Alle Prüfungen liegen unter `pruefstand/pruefungen/`. Reihenfolge egal, aber
+vollständig: Wer Markup verschiebt, fährt den ganzen Satz und nicht die Auswahl,
+die zum Thema zu passen scheint.
+
+| Prüfung | Was sie sicherstellt |
+|---|---|
+| `farben.mjs` | Farbwerte nur in Tokendefinitionen, kein Token nach Aussehen benannt, kein Kommentar zwischen Komma und Selektor, keine Rolle ohne Verbraucher |
+| `staffel.mjs` | kein Rang unter seinem Untergeordneten, kein Grad mit zwei Rängen, kein Größentoken ohne Verbraucher |
+| `kontrast.mjs` | WCAG AA für Text, 3 zu 1 für die Grenze jedes Bedienelements |
+| `axe.mjs` | axe-core gegen WCAG 2.0/2.1/2.2 A und AA sowie Best Practice |
+| `a11y.mjs` | Sprache, eine h1, `main`-Landmarke, keine Rangsprünge, jedes Bedienelement benannt |
+| `ueberlauf.mjs` | kein waagerechter Überlauf auf Telefon- und Zwischenbreiten |
+| `textfluss.mjs` | keine Zeile über dem Höchstmaß, keine Zwangsspalte |
+| `achse.mjs` | Abschnittsmitte auf der Fenstermitte, Schild nutzt seine Spalte, Schild polstert ringsum oder gar nicht |
+| `bilder.mjs` | der Bildvertrag: `sizes` nur mit echter Auswahl, Dateiname und w-Deskriptor gleich der echten Breite, keine Hochrechnung bei einfacher Dichte |
+| `konform.mjs` | keine fremden Verbindungen, keine Cookies, kein Speicher, Rechtsverweise erreichbar, `noopener`, erzeugte Medien gekennzeichnet |
+| `sichtbar.mjs` | keiner der verbotenen Begriffe im sichtbaren Text |
+| `ausfall.mjs` | ohne JavaScript sind Bilder sichtbar, keine Route leer, ein ausgeblendetes Formular hat einen Ersatz |
+| `geruest.mjs` | keine Route trägt mehr Gerüsttext |
+| `werkzeug/schlank.mjs --pruefen` | ausgelieferte Fassung ist auf dem Stand ihrer Quelle |
+
+Projekteigene Behauptungen kommen als neue Datei nach `pruefstand/pruefungen/`,
+in die Liste in `pruefstand.config.mjs` und in diese Tabelle. Was in keiner Liste
+steht, fährt niemand mit.
+
+---
+
+## Was diese Regeln nicht ersetzen
+
+Sie verhindern Fehler. Sie erzeugen keine gute Gestaltung. Die Entscheidung,
+welche Aussage ein Abschnitt trägt und welche Form dazu passt, bleibt eine
+Entscheidung und steht mit ihrer Begründung in
+[`docs/01-entscheidungen.md`](docs/01-entscheidungen.md).
+
+**Wer eine Prüfung ergänzt, baut die Gegenprobe mit und weist nach, dass sie mit
+einem eingebauten Fehler wirklich rot wird.** Eine Prüfung, die nie rot war, ist
+keine Prüfung, sondern eine Behauptung über sich selbst. Bleibt die Gegenprobe
+grün, sagt das eines von drei Dingen: Das Gate ist zu schwach, die geprüfte Regel
+tut nichts, oder die Gegenprobe greift nicht. Welches davon, entscheidet eine
+zweite Messung und keine Vermutung.
+
+**Eine Regel, die für eine Breite gemessen wurde, gilt nur für diese Breite.**
+Wer eine Regel an einer Breite misst, schreibt die Medienabfrage dazu, auch wenn
+sie an der anderen Breite vermutlich nichts tut.
+
+**Drei Gates, die dasselbe bestätigen, sind ein Gate.** Abdeckung ist nicht die
+Zahl der Prüfungen, sondern die Zahl der unabhängigen Fragen.
+
+**Und keine Prüfung ersetzt den Blick.** Ein Gate kann grün melden, während die
+Seite sichtbar kaputt ist. Beide Male, als das in dem Projekt passiert ist, aus
+dem diese Regeln stammen, fand den Fehler ein Screenshot.

@@ -28,6 +28,10 @@ Ein Prüfstand, der vor dem Launch eingebaut wird, meldet seine ersten Befunde g
 
 Der Einbau steht in [`12_PRUEFSTAND`](../12_PRUEFSTAND/README.md). Die Routenliste wird dabei vollständig gepflegt und nicht beispielhaft: Was dort fehlt, wird nie gemessen.
 
+Der kürzeste Weg dorthin ist [`13_GERUEST`](../13_GERUEST/README.md). Der Ordner ist ein lauffähiges Projekt mit eingebautem Prüfstand, leerem Entscheidungsprotokoll und einer Regeldatei, die zu jeder Regel ihre Prüfung nennt. Damit sind drei Zeilen dieser Tabelle am ersten Tag erledigt, statt in der dritten Woche nachgeholt zu werden.
+
+Sein erster Lauf ist absichtlich rot. Eine Prüfung meldet, solange die Gerüsttexte noch dastehen, denn ein Impressum mit den richtigen Abschnitten und ohne eine einzige Angabe sieht aus wie erledigt.
+
 Und ein Prüfstand ersetzt weder den Blick noch das Urteil. Er hält die mechanischen Eigenschaften einer Seite fest, damit die Aufmerksamkeit des Teams für die Fragen frei bleibt, die er nicht beantworten kann. Welche Aussage ein Abschnitt trägt und welche Form dazu passt, steht in der [Prüfdoktrin](../00_SYSTEM/06-pruefdoktrin.md) ausdrücklich außerhalb seiner Reichweite.
 ## Häufige Fehlinterpretationen
 

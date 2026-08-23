@@ -50,6 +50,16 @@ Ein Beispiel: Der Abschluss einer Startseite sollte vier Angaben als Band aus vi
 
 Vor jeder Formentscheidung steht deshalb ein Blick auf den Nachbarn, und zwar über die Abschnittsgrenze hinaus.
 
+## Kopf, Inhalt und Fuß, und warum das keine Regel wird
+
+Ein Fall aus dem Bau des Projektgerüsts. Die Kopfzeile stand auf der Hauptachse, der Inhalt in einer Lesespalte, beide sauber mittig. Die Abstände zum Fensterrand stimmten, kein Gate meldete etwas, und der Screenshot zeigte trotzdem zwei linke Kanten mit 160 Pixeln Abstand. Die Seite zerfiel in ein Dokument und einen Rahmen um ein anderes.
+
+Es ist derselbe Fehler wie ein schmaler Block an der linken Kante seiner Bahn, nur eine Ebene höher, und die Korrektur ist dieselbe: Kopf und Fuß bekommen die Bahn des Inhalts.
+
+Der Versuch, daraus eine Behauptung zu machen, ist gescheitert, und das ist der lehrreiche Teil. Die naheliegende Formulierung lautet, die Bahn von Kopf und Fuß dürfe nicht breiter sein als die breiteste Bahn des Inhalts. Gegen das Referenzprojekt gefahren meldete sie sofort sechsunddreißig Befunde, und keiner davon war ein Fehler: Dessen Kopfzeile ist ein symmetrisches Band mit mittiger Wortmarke und geteilter Navigation, das die Achse ausfüllt. Ein solches Band hat keine linke Kante, die man verfehlen könnte.
+
+**Eine Behauptung, die an einer korrekten Seite anschlägt, ist keine Regel, sondern die Beschreibung eines Layouts.** Sie würde Teams dazu erziehen, Ausnahmen einzutragen, und damit genau die Gewohnheit stärken, gegen die die Prüfdoktrin geschrieben ist. Der Fall bleibt deshalb eine Frage der Sichtprüfung, und sie lautet: Wo beginnt die erste Zeile des Kopfes, wo die erste Zeile des Inhalts, und ist der Unterschied gewollt?
+
 ## Nachweis
 
 Der Prüfstand fährt für dieses Kapitel drei Behauptungen (siehe [`12_PRUEFSTAND`](../12_PRUEFSTAND/README.md), Prüfungen `achse.mjs` und `textfluss.mjs`):
