@@ -14,6 +14,16 @@ Props und Schnittstellen sollen eine fachliche Absicht ausdrücken. `intent="pri
 
 Varianten brauchen Grenzen. Wenn jede Komponente durch zahlreiche Flags in jede Form gebracht werden kann, ist das System nicht flexibel, sondern unentschieden. Ein neuer Bedarf ist ein Anlass, das Modell zu prüfen, nicht automatisch ein weiterer Parameter.
 
+## Was eine Komponente von außen zulassen muss
+
+Eine Komponente, die einen Wert als Inline-Stil schreibt, entscheidet ihn endgültig. Inline schlägt jede Klasse, und wer den Wert von außen ändern will, kommt nur noch mit einer Ausnahmeregel durch. Das ist selten beabsichtigt: Meistens war der Wert als **Standard** gemeint und nicht als Beschluss.
+
+Der Fall, an dem das auffiel: Ein Markenzeichen bekam seine Kantenlänge als Zahl übergeben und schrieb sie inline. Als die Wortmarke daneben auf großen Bildschirmen mitwuchs, blieb das Zeichen stehen und war plötzlich zu klein für den Schriftzug. Der erste Versuch, die Zahl über eine Variable von außen zu überschreiben, änderte nichts — beide hingen am selben Element, und der Inline-Stil gewann weiterhin.
+
+**Standard und Vorrang gehören getrennt.** Inline steht nur der Standard; der Vorrang ist eine zweite Variable, die eine gewöhnliche Klasse setzen kann, und der Wert wird als Rückfallkette gelesen. Ohne Klasse greift der Standard, mit Klasse der Vorrang, und niemand braucht eine Ausnahmeregel. Der übergebene Parameter behält dabei seine Bedeutung für alle Aufrufe, die nichts anderes wollen.
+
+**Und eine Komponente entscheidet nur, was sie allein wissen kann.** Dieselbe Bildkomponente darf begrenzen, wie breit ein Bild höchstens dargestellt wird, denn sie kennt dessen Auflösung; wohin ein begrenztes Bild in seiner Spalte rückt, weiß sie nicht. Als sie es trotzdem entschied und mittig setzte, zerbrach das eine andere Seite, auf der ein zweites Bild absolut an der Kante des umgebenden Kastens hing. Die Grenze zwischen beidem ist die Frage, ob die Information im Gegenstand steckt oder in seiner Umgebung.
+
 ## Inhaltsrealität
 
 Komponenten werden mit echten Überschriften, langen Namen, fehlenden Bildern, Fehlern und Übersetzungen getestet. Die visuelle Vorstellung eines idealen Inhalts ist kein ausreichend gutes API-Design. Content-Modelle müssen die erforderlichen, optionalen und abhängigen Felder klar machen.
