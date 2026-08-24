@@ -38,11 +38,17 @@ Die dritte Fassung ist die gefährlichste, weil sie sich wie Erfolg anfühlt.
 
 Wer eine Prüfung ergänzt, baut den Fehler ein, den sie finden soll, und weist nach, dass sie rot wird. **Eine Prüfung, die nie rot war, ist keine Prüfung, sondern eine Behauptung über sich selbst.** Der Nachweis wird zusammen mit der Prüfung dokumentiert: welche Übersteuerung, welcher gemessene Wert, wie viele Befunde.
 
-Bleibt die Gegenprobe grün, sagt das eines von zwei Dingen, und beide sehen im Protokoll identisch aus.
+Bleibt die Gegenprobe grün, sagt das eines von drei Dingen, und alle drei sehen im Protokoll identisch aus.
 
 Im ersten Fall ist das Gate zu schwach. Eine Behauptung über gemeinsame Unterkanten las die Kanten der Kästen statt der Schrift. Ein gestrecktes Rasterkind reicht pflichtschuldig bis zur Unterkante seiner Zeile, während sein Text oben klebt; die Gegenprobe blieb deshalb grün, obwohl die Komposition zerfallen war. Die Gegenprobe hatte nicht das Stylesheet geprüft, sondern das Gate.
 
 Im zweiten Fall ist die Regel überflüssig. Zwei Regeln in einem Abschnitt waren richtig gerechnet und für einen Fall geschrieben, den es dort nicht gab. Gemessen waren die Kästen mit und ohne sie auf das Pixel identisch. Auch hier blieb die Gegenprobe grün.
+
+Im dritten Fall ist die Gegenprobe selbst kaputt, und dieser Fall ist der gefährlichste, weil er wie eine Entwarnung aussieht. Zweimal in einem Lauf hat der eingebaute Fehler den Fehler nicht eingebaut: Einmal setzte die Übersteuerung einen Wert, den eine stärkere Regel weiter oben ohnehin überstimmte, sodass sich am gerenderten Ergebnis nichts änderte. Einmal war das Prüfwort so gewählt, dass es die sabotierte Stelle gar nicht berührte. In beiden Fällen war die geprüfte Regel in Ordnung und die Aussage der Gegenprobe wertlos.
+
+Die Unterscheidung kostet einen Handgriff: Eine Gegenprobe ist erst dann eine, wenn nachgewiesen ist, dass sie an der ausgelieferten Seite etwas verändert hat. Wer sabotiert, misst deshalb zuerst die Wirkung der Sabotage und dann das Gate.
+
+Der zweite Fall hat außerdem eine Spielart, die im Code besonders plausibel aussieht: Die Regel ist nicht für einen nicht existierenden Fall geschrieben, sondern deckt einen Fall ab, den eine allgemeinere Regel desselben Stylesheets längst abdeckt. Eine Ausblenderegel für zwei Komponenten war überflüssig, weil hundert Zeilen weiter oben dieselbe Ausblendung für alle Elemente mit `!important` stand. Beide Regeln waren einzeln richtig begründet, und genau deshalb fiel die Doppelung niemandem auf.
 
 **Wer eine grüne Gegenprobe sieht, misst ein zweites Mal**: den Zustand mit und ohne die Regel, an denselben Breiten. Bleibt er identisch, kommt die Regel weg. Aus dem Code lässt sich das nicht schließen, denn beide Fälle sind dort plausibel.
 
@@ -63,6 +69,16 @@ Wer eine Regel an einer Breite misst, schreibt die Abfrage dazu, auch wenn sie a
 Bei diesem Fehler waren zweiundzwanzig Prüfungen grün, und zwar folgerichtig. Die Überlaufprüfung sah keinen Überlauf, denn der Kasten wurde ja schmaler. Die Textflussprüfung sah keine Zwangsspalte, denn 219 Pixel tragen mehr als sechs Zeichen. Die Achsprüfung sah keinen Versatz, denn zentriert stand das Schild. Alle drei bestätigten dieselbe Tatsache, nämlich dass es schön in der Mitte steht, und keine fragte, ob es dort auch breit genug ist.
 
 Abdeckung ist nicht die Zahl der Prüfungen, sondern die Zahl der unabhängigen Fragen. Wer eine Prüfung ergänzt, prüft zuerst, ob sie eine neue Frage stellt.
+
+## Eine Dokumentposition ist keine Bildposition
+
+Sobald ein Projekt einen Zustand kennt, in dem Teile der Seite fehlen, wird eine ganze Klasse bisher richtiger Regeln falsch. Filter, Suchen, Tabs, aufklappbare Bereiche und bedingt eingeblendete Abschnitte gehören alle dazu.
+
+Der Mechanismus ist immer derselbe: Eine Regel benennt eine Stelle im Dokument und meint eine Stelle im Bild. Solange nichts ausgeblendet ist, sind beide dasselbe, und der Unterschied fällt niemandem auf. `:last-child` meint das letzte Kind und nicht die letzte sichtbare Zeile. `:first-of-type` meint das erste Element seiner Art und nicht den ersten sichtbaren Block. Eine Sprungnavigation zeigt auf Abschnitte, die es gerade nicht gibt. Und eine redaktionelle Zäsur zwischen zwei Blöcken steht plötzlich mitten in einer Ergebnisliste, in der es nichts zu zäsurieren gibt.
+
+Besonders heimtückisch ist der Rückgabewert einer Geometriemessung an einem ausgeblendeten Element: Er ist überall null. Wer prüft, ob eine Oberkante über einer Lesegrenze liegt, bekommt für jedes unsichtbare Element ein Ja. In einem gemessenen Fall markierte eine Kategorienleiste dadurch bei aktivem Filter immer denselben, weit unten liegenden Abschnitt, unabhängig davon, wo der Gast gerade stand.
+
+**Wer Sichtbarkeit einführt, macht aus jeder Dokumentposition eine Behauptung, die nachgewiesen werden muss.** Das gilt für die Regeln der Seite und für den Prüfstand gleichermaßen: Kein bestehendes Gate kann diese Fälle sehen, weil eine Seite ohne den neuen Zustand sie nie erreicht. Die Prüfung dazu zählt deshalb, was ein Layoutkasten hat, und nicht, was ein Attribut trägt. Wer das Attribut zählt, prüft seine eigene Umsetzung und nicht deren Wirkung.
 
 ## Kann die gemessene Zahl aus dem Ding stammen, das ich ändern will?
 
