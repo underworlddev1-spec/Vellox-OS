@@ -18,6 +18,8 @@ Jede Qualitätsregel hat einen Ort. Von oben nach unten sinkt die Verlässlichke
 
 **Stufe 3: Eine Prüfung wird rot.** Ein Test, ein Skript, ein Linter. Der Fehler verhindert die Auslieferung nicht von selbst, aber niemand kann behaupten, ihn nicht gesehen zu haben.
 
+*Nebenform von Stufe 3, der Hinweis.* Manche Zustände sind heute erlaubt und sollen es nicht bleiben: fehlende Fotos vor dem Fototermin, ein Preis, der noch nicht bestätigt ist. Ein Abbruch wäre falsch, weil der Zustand zulässig ist. Schweigen wäre auch falsch, weil er sonst unbemerkt mit online geht. Der Hinweis zählt und benennt, ohne zu unterbrechen: „Drei Bildplätze noch offen" mit den drei Namen. Er unterscheidet sich von einer Notiz in einer Datei dadurch, dass er bei jedem Bau erscheint und beim Verschwinden des Zustands von selbst aufhört. Die Ebene ist sparsam zu verwenden: Wer alles zum Hinweis macht, hat ein Rauschen gebaut, das man nach der dritten Zeile überliest.
+
 **Stufe 4: Eine Checkliste vor der Freigabe.** Ein Mensch prüft und trägt ein. Verlässlich genug für Urteile, die kein Skript fällen kann, und nur dafür.
 
 **Stufe 5: Prosa im Wissen.** Der Ort für Begründungen, Zusammenhänge und Ermessensfragen. Nicht der Ort für prüfbare Grenzen.
@@ -85,6 +87,8 @@ Alle drei setzt [`werkzeuge/farbwort-pruefen.mjs`](../werkzeuge/farbwort-pruefen
 | Tabellenzeile hat so viele Zellen wie die Kopfzeile | 1 | Eine verrutschte Tabelle ist auf einer Preisseite eine Falschaussage. |
 | Kante um fremdes Bildmaterial ist unabhängig vom Bildinhalt | 4 | Die mittlere Helligkeit dreier Kundenaufnahmen ergab gegen einen dunklen Grund 1,22:1, 2,62:1 und 10,92:1. Die dunkelste löste sich auf, und der Rahmen war Teil des Problems: Er stand auf derselben Farbe wie der Grund. Unter 3:1 braucht es eine Kante. |
 | Ein Element mit zwei Aufgaben bekommt zwei Umsetzungen | 4 | Vier Fassungen einer Hervorhebung gemessen: Jede, die das Licht unregelmäßig machte, verlor die Kante irgendwo. Eine Eigenschaft, die Grenze und Atmosphäre gleichzeitig leisten soll, leistet keines von beidem zuverlässig. |
+| Ein offener Bildplatz nennt seine Aufnahme | 1 | Ein Kunde sah eine gefüllte Fläche, wo ein Foto fehlte, und fragte, ob das ein Platzhalter sei. Ein offener Platz, der nicht sagt, was hier hingehört, ist ein Rätsel; die Angabe ist deshalb ein Pflichtwert ohne Vorgabe, und ein namenloser Platz lässt sich nicht bauen. Siehe [Erstauslieferung](07-erstauslieferung.md#der-verkleidete-platzhalter). |
+| Offene Bildplätze werden gezählt | 3 (Hinweis) | Derselbe Fall von der anderen Seite: Der Zustand ist bis zum Fototermin erlaubt, ein Abbruch wäre also falsch. Der Bau nennt bei jedem Durchlauf ihre Zahl und ihre Namen, damit keiner unbemerkt mit online geht. |
 | Genau ein Bild je Seite lädt bevorzugt | 4 | Ein Bild oberhalb der Falz mit `lazy` kostet Ladezeit, eines darunter mit `eager` ebenfalls, und beides passiert, wenn man raten darf. Deshalb ist die Angabe ein Pflichtwert ohne Vorgabe. |
 
 ### Was unterhalb einer Bruchstelle passiert

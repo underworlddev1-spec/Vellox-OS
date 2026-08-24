@@ -46,6 +46,26 @@ Jeder Abschnitt wird zuerst für den leeren Fall gebaut. Das ist keine Vorsichts
 
 Ein Raster, das sich an die Zahl seiner Einträge anpasst, sieht bei einem Eintrag immer aus wie ein Fehler. Für solche Fälle gilt eine Untergrenze: Zwei Haken sind keine Liste, ein Wert ist keine Bilanz. Wer nur einen hat, hat eine Randnotiz und keinen Abschnitt.
 
+### Der verkleidete Platzhalter
+
+Die vorstehende Regel hat eine Ausweichbewegung, und sie ist gefährlicher als der Fehler, den die Regel verhindern soll.
+
+Ein Kosmetikstudio bekam eine Seite, für die noch keine Fotos existierten. Weil „kein Platzhalter" galt, wurde dort, wo ein Foto hingehört, eine gefüllte Fläche in der dunklen Markenfarbe gesetzt, mit der Markengeometrie darauf, im richtigen Seitenverhältnis. Sie sah nicht nach einem Loch aus. Sie sah nach Gestaltung aus. Der erste Mensch, der die Seite ansah, fragte: Was sollen diese Blöcke, sind das Platzhalter?
+
+**Dass die Frage gestellt werden musste, ist der Befund.** Wer nicht entscheiden kann, ob eine Fläche Absicht oder Fehler ist, hat weder Inhalt noch Gestaltung vor sich. Ein grauer Kasten mit „800 × 600" ist peinlich, aber er ist ehrlich und er wird entfernt. Eine dekorativ gefüllte Fläche wird nicht entfernt, weil niemand merkt, dass sie leer ist. Sie geht mit online.
+
+Die Ursache lag nicht im Bau, sondern in der Regel. „Kein Platzhalter" ist zu grob, und ein zu grobes Verbot drückt die Arbeit in die nächstbeste Umgehung. Die Unterscheidung, die stattdessen gilt:
+
+**Unzulässig ist ein Platzhalter, der sich als Inhalt ausgibt.** Blindtext, eine erfundene Kundenstimme, eine graue Kachel, eine dekorativ gefüllte Fläche. Alle vier behaupten, an dieser Stelle sei etwas.
+
+**Zulässig ist ein benannter offener Platz.** Er sagt, dass er leer ist, und er sagt, was hier hingehört: nicht „Bild folgt", sondern „11 Porträt der Inhaberin", wörtlich aus der Aufnahmeliste. Er behauptet nichts, er beauftragt.
+
+Die Wahl zwischen beidem ist keine Geschmacksfrage, sondern eine Frage nach dem Publikum. Vor der Freigabe sieht der Kunde die Seite, und für ihn ist der benannte Platz das nützlichere Bauteil: Der Fototermin wird an der Seite selbst konkret, statt in einem Dokument zu stehen, das niemand aufmacht. Nach der Freigabe sieht ihn der Besucher, und für den ist er Rauschen. **Ein offener Platz ist ein Arbeitsstand und überlebt den Livegang nicht.**
+
+Woran man ihn erkennt, wenn man selbst zu lange draufgeschaut hat: Zeig die Seite jemandem, der das Projekt nicht kennt, und frag nicht „gefällt es dir", sondern „was ist das". Jede Fläche, bei der die Antwort eine Rückfrage ist, ist weder Inhalt noch Gestaltung.
+
+Zwei Teile davon gehören in den Bau und nicht in diese Prosa. **Der Name ist Pflicht:** Ein offener Platz ohne Angabe, was hier hingehört, ist wieder der Block, nach dem gefragt wurde; ein Typ ohne Vorgabewert macht ihn unmöglich. **Und die offenen Plätze werden gezählt:** Der Bau nennt bei jedem Durchlauf, wie viele noch offen sind und welche. Das ist kein Abbruch, weil der Zustand bis zum Fototermin erlaubt ist, aber es ist auch kein Schweigen. Beides steht im [Gatterkatalog](06-erzwungene-qualitaet.md#der-gatterkatalog).
+
 ### Jedes Versprechen nennt seine Grenze
 
 Eine Zusage mit benannter Grenze trägt weiter als eine unbegrenzte, die später eine Ausnahme braucht. „Du bekommst die fertige Seite als Dateien, nur das Kontaktformular muss beim neuen Anbieter neu verbunden werden" ist stärker als „du bekommst alles". Die Grenze beweist, dass die Zusage durchdacht ist.
@@ -82,7 +102,7 @@ Vor der ersten Auslieferung an den Kunden werden acht Fragen beantwortet. Nicht 
 
 1. Welche Entscheidung auf dieser Seite stammt aus echter Recherche und nicht aus Konvention? Nenne sie.
 2. Welche Zahl steht auf der Seite, und woher kommt jede einzelne?
-3. Welcher Abschnitt würde ohne Inhalt einen leeren Rahmen zeigen? Wenn es einen gibt, ist die Seite nicht fertig.
+3. Welcher Abschnitt würde ohne Inhalt einen leeren Rahmen zeigen? Wenn es einen gibt, ist die Seite nicht fertig. Und umgekehrt: Welche Fläche ist leer, sieht aber nicht so aus? Zeig sie jemandem, der das Projekt nicht kennt, und frag, was das ist.
 4. Welches Versprechen hat keine benannte Grenze?
 5. Wo sagt die Seite, für wen sie nicht gemacht ist?
 6. Welcher Abschnitt hat keinen Ausgang?

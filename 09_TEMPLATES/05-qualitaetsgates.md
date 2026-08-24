@@ -254,6 +254,50 @@ const modern = (['avif', 'webp'] as const)
 
 Der Leser muss jedes Format kennen, das im Projekt vorkommt. Beobachtet: Der Bau brach ab, weil AVIF-Dateien angelegt wurden, der Leser aber nur WebP, PNG und JPEG kannte. Das war der richtige Abbruch, und die Fehlermeldung sollte dazu auffordern, den Leser zu ergänzen statt die Maße von Hand einzutragen.
 
+### Der Bildplatz, solange kein Bild da ist
+
+Bei der Erstauslieferung ist der Normalfall, dass die Fotos fehlen. Dieselbe Komponente trägt deshalb beide Zustände, und der leere ist der wichtigere: Er wird länger ausgeliefert als der gefüllte.
+
+Zwei Angaben machen ihn tragfähig. Der Name der Aufnahme ist Pflicht ohne Vorgabe, damit ein offener Platz nicht zum Rätsel wird; die Begründung steht in [Erstauslieferung](../00_SYSTEM/07-erstauslieferung.md#der-verkleidete-platzhalter). Und der leere Platz trägt eine Auszeichnung im Markup, damit ein Skript ihn im gebauten Verzeichnis wiederfindet.
+
+```astro
+---
+interface Props {
+  bild?: ImageMetadata | null
+  alt: string
+  verhaeltnis: string          // Pflicht, sonst springt das Layout beim Tausch
+  aufnahme: string             // Pflicht ohne Vorgabe: welche Aufnahme hier hingehört
+}
+---
+{bild
+  ? <Bild {...} />
+  : <div class="platz-offen" style={`aspect-ratio: ${verhaeltnis}`} data-aufnahme={aufnahme}>
+      <p><span>Foto folgt</span><span>{aufnahme}</span></p>
+    </div>}
+```
+
+Drei Entscheidungen daran sind nicht dekorativ:
+
+**Kein `role="img"`, kein `aria-label`.** Hier ist kein Bild. Einem Screenreader eine Behandlungsliege anzusagen, die es nicht gibt, ist eine Falschauskunft. Vorgelesen wird, was dasteht.
+
+**Zurückhaltend statt gestaltet.** Ein heller Rahmen mit einer Andeutung von Fläche, nicht die dunkelste Fläche der Seite. Ein offener Platz, der mehr Aufmerksamkeit zieht als der Text daneben, verschiebt die Hierarchie so lange, bis das Foto kommt.
+
+**Am Telefon gar nicht.** Ein Platz ohne Information kostet dort die knappste Größe der Seite und schiebt den nächsten Abschnitt unter die Falz. Die Regel sitzt an der Hülle und nicht an der Fläche, sonst erzeugt ein leeres Rasterfeld weiter eine Zeile.
+
+Dazu der Hinweis im Bau, der die offenen Plätze zählt:
+
+```js
+const offen = new Map()
+for (const datei of htmlDateien) {
+  for (const m of lies(datei).matchAll(/data-aufnahme="([^"]*)"/g)) {
+    offen.set(m[1], [...(offen.get(m[1]) ?? []), datei])
+  }
+}
+if (offen.size > 0) hinweis(`${offen.size} Bildplätze noch offen`, [...offen.keys()])
+```
+
+Ein Hinweis bricht den Bau nicht ab. Der Zustand ist bis zum Fototermin erlaubt; unsichtbar darf er nicht sein. Zur Abgrenzung von Befund und Hinweis siehe [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md#die-leiter-der-durchsetzung).
+
 ## 9. Eine Angabe, eine Quelle
 
 Preise, Namen, Rufnummern, Laufzeiten stehen in genau einer Datei. Jede Anzeige wird abgeleitet, auch die Meta-Beschreibung und die strukturierten Daten.
@@ -362,6 +406,8 @@ Bevor das Projekt in Phase 3 geht:
 - [ ] Ortsseiten und vergleichbare Familien haben eine Belegbedingung
 - [ ] Leere Belege rendern nichts, geprüft mit geleertem Frontmatter
 - [ ] Bildleser kennt jedes im Projekt verwendete Format
+- [ ] Jeder offene Bildplatz nennt seine Aufnahme, und der Bau zählt die offenen mit
+- [ ] Keine Fläche ist leer, ohne leer auszusehen: einem Projektfremden gezeigt und gefragt, was das ist
 - [ ] Jede Zahl auf der Seite hat genau eine Quelle im Code
 - [ ] Jeder Design-Token trägt eine Herkunft, übernommene mit Fundstelle und Datum
 - [ ] Jedes Farbtoken misst, was sein Name behauptet, und der Akzent ist die auffälligste Farbe
