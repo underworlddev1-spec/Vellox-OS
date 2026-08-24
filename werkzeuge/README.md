@@ -69,3 +69,38 @@ auch eine globale Installation.
 ```bash
 npm install -g playwright && npx playwright install chromium
 ```
+
+---
+
+## farbwort-pruefen.mjs
+
+Prüft, ob ein Farbtoken misst, was sein Name behauptet. Gehört zu
+[Farbe und Material](../02_BRANDING/05-farbe-und-material.md) und setzt dessen
+Stufe 3 um.
+
+```bash
+node werkzeuge/farbwort-pruefen.mjs src/styles/global.css --akzent gold
+node werkzeuge/farbwort-pruefen.mjs dist/
+node werkzeuge/farbwort-pruefen.mjs --selbsttest
+```
+
+Drei Prüfungen, alle drei aus echten Fehlern entstanden:
+
+1. **Heißt ein Token, wie es aussieht?** Ein Token namens `gold` bei Farbton
+   36 Grad ist Orange. Genau dieser Wert stand in einem Projektbrief, wurde
+   übernommen, weil eine Hexzahl wie ein Messwert aussieht, und fiel erst beim
+   Kunden auf.
+2. **Hält Text auf einer Fläche mit Verlauf an jeder Stufe?** Auf einem Verlauf
+   zählt die schlechteste Stufe. Ein Knopf hielt auf der Grundfarbe 5,49:1 und
+   an der dunkelsten Stufe nur 3,89:1.
+3. **Ist die Akzentfarbe wirklich die auffälligste Farbe?** Wenn ein anderes
+   Token auffälliger ist, gibt es zwei Akzente, unabhängig davon, wie die
+   Tokens heißen.
+
+Das Skript endet mit 1, wenn ein Befund vorliegt, und lässt sich damit
+unverändert in den Bau eines Kundenprojekts hängen. Es beurteilt nicht, ob eine
+Farbe zur Marke passt; welches Farbwort der Kunde meint, bleibt eine Frage an
+den Kunden und damit auf Stufe 4.
+
+`--selbsttest` prüft das Werkzeug gegen die echten Werte, aus denen die Regeln
+entstanden. Ein Gate, das nie ausgelöst hat, ist eine Behauptung.

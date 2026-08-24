@@ -6,6 +6,8 @@ Ein visuelles System ist keine Sammlung einzelner Stilelemente. Es ist ein Netz 
 
 Farbe beeinflusst Orientierung, Stimmung und wahrgenommene Wichtigkeit. Ihre Bedeutung entsteht jedoch aus Kontext und Gebrauch. Eine Akzentfarbe wirkt nur als Akzent, wenn sie begrenzt eingesetzt wird. Wenn dieselbe Farbe für primäre Buttons, Links, Illustrationen und Warnungen verwendet wird, verliert sie ihre semantische Klarheit.
 
+Bevor eine Farbe eine Aufgabe bekommt, wird geprüft, ob sie überhaupt die Farbe ist, die ihr Name behauptet. Ein Wert, der als „Gold" geführt wird und im Orange liegt, führt jede weitere Entscheidung in die Irre. Diese Prüfung samt der Bereiche der gebräuchlichen Farbwörter steht in [Farbe und Material](05-farbe-und-material.md). Dort steht auch, warum ein Material wie Gold oder Kupfer sich mit einem einzigen Wert nicht darstellen lässt.
+
 Definiere eine funktionale Farbarchitektur: Grundflächen schaffen Ruhe und Kontrast, Textfarben sichern Lesbarkeit, Akzente markieren Handlung oder Identität, Statusfarben kommunizieren Zustände. Jede Farbe braucht zugängliche Kombinationen und einen definierten Zustand für Hover, Fokus, Fehler und deaktivierte Elemente. Psychologische Wirkung darf nie gegen die Wahrnehmungsrealität ausgespielt werden.
 
 ## Typografie als Stimme und Navigation

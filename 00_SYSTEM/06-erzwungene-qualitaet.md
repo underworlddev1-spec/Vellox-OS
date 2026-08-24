@@ -66,6 +66,16 @@ Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für
 | Eine Seite, eine Adresse | 2 | Mit und ohne `www`, mit und ohne Schrägstrich sind für einen Besucher dieselbe Seite und für eine Suchmaschine vier Kopien. Ein Canonical ist ein Hinweis, eine Weiterleitung eine Anweisung. |
 | Sichtbare Brotkrume und Auszeichnung stimmen überein | 3 | Zwei Darstellungen desselben Wegs, die voneinander abweichen, sind schlechter als eine. |
 
+### Farbe
+
+| Gate | Stufe | Warum |
+|---|---|---|
+| Ein Farbtoken misst, was sein Name behauptet | 3 | Ein Brief nannte die Akzentfarbe „warmes Amber" und gab `#E4A03C` vor. Der Wert liegt bei Farbton 36 Grad und Sättigung 76 Prozent, also im Orange. Weil eine Hexzahl wie ein Messwert aussieht, wurde sie nie gegen ihren eigenen Namen gehalten, und der Fehler fiel erst beim Kunden auf. Siehe [Farbe und Material](../02_BRANDING/05-farbe-und-material.md). |
+| Text auf einem Verlauf hält an jeder Stufe | 3 | Auf einer Fläche mit Verlauf zählt die schlechteste Stufe. Ein Knopf hielt auf der Grundfarbe 5,49:1 und an der dunkelsten Stufe nur 3,89:1. Wer die Grundfarbe prüft, misst die Stelle, an der nichts passiert. |
+| Die Akzentfarbe ist die auffälligste Farbe | 3 | Ein Türkis war heller und bunter als der Akzent und zog auf der dunklen Fläche mehr Aufmerksamkeit als die Überschrift. Zwei Akzente sind keiner. Gemessen wird Sättigung, gewichtet mit dem Abstand zur mittleren Helligkeit; rohe Sättigung meldet sonst jede dunkle Grundfarbe. |
+
+Alle drei setzt [`werkzeuge/farbwort-pruefen.mjs`](../werkzeuge/farbwort-pruefen.mjs) um. Was das Werkzeug nicht kann: Es beurteilt nicht, ob eine Farbe zur Marke passt. Welches Farbwort der Kunde meint, bleibt eine Frage an den Kunden und damit auf Stufe 4.
+
 ### Oberfläche
 
 | Gate | Stufe | Warum |
@@ -110,6 +120,8 @@ Diese Ehrlichkeit über die Grenze gilt für jedes Gate. Ein Gate, dem mehr zuge
 Ein Gate braucht eine Zahl, und eine Zahl braucht eine Messung. Das klingt selbstverständlich und ist der Punkt, an dem Reviews üblicherweise scheitern.
 
 „Die Ortsseiten wirken austauschbar" ist ein Gefühl und lässt sich bestreiten. „Auf den vier Ortsseiten stehen zwischen fünfundfünfzig und achtundfünfzig Prozent des Textes wortgleich, und drei der vier wiederkehrenden Zeilen stehen in Überschriften-Position" ist ein Befund und lässt sich abarbeiten. Der Unterschied ist nicht Genauigkeit, sondern Handlungsfähigkeit.
+
+Der umgekehrte Fall ist seltener benannt und genauso teuer: eine Zahl, die als Vorgabe hereinkommt und deshalb wie eine Messung behandelt wird, obwohl sie eine Vermutung ist. Er steht in [Eine Vorgabe ist keine Messung](08-vorgabe-ist-keine-messung.md).
 
 Deshalb gilt für jedes Review in VELLOX: **Wer eine Schwäche behauptet, nennt die Messung.** Zeichen zählen, Prozente rechnen, Dateigrößen ablesen, Kontraste berechnen, Klicktiefen nachbauen. Was sich nicht messen lässt, wird als Urteil gekennzeichnet und nicht als Befund verkauft.
 

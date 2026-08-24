@@ -310,6 +310,48 @@ Agenturpräferenz ersetzt wurde, ohne dass es jemand bemerkt hat.
 Der Rest der Markeninventur bleibt bewusst auf Stufe 4. Ob das Ladenschild
 denselben Ton führt wie das Stylesheet, kann kein Skript beurteilen.
 
+## 11. Ein Farbtoken misst, was sein Name behauptet
+
+Ein Projektbrief nannte die Akzentfarbe „warmes Amber" und gab `#E4A03C` vor.
+Der Wert wurde übernommen, weil eine Hexzahl wie ein Messwert aussieht.
+Gemessen liegt er bei Farbton 36 Grad und Sättigung 76 Prozent, also im Orange;
+Gold liegt bei 46 bis 52 Grad. Der Fehler fiel erst beim Kunden auf, mit dem
+Satz „das sieht altmodisch aus, unsere Farbe ist Gold, nicht Gelb".
+
+Das Werkzeug dafür liegt fertig in
+[`werkzeuge/farbwort-pruefen.mjs`](../werkzeuge/farbwort-pruefen.mjs) und läuft
+unverändert in einem Kundenprojekt. Es endet mit 1, wenn ein Befund vorliegt.
+
+```json
+{
+  "scripts": {
+    "build": "astro check && astro build && npm run farbpruefung",
+    "farbpruefung": "node werkzeuge/farbwort-pruefen.mjs dist/ --akzent gold"
+  }
+}
+```
+
+Wer das Werkzeug nicht mitnehmen will, braucht im Projekt mindestens diese drei
+Prüfungen. Alle drei stammen aus demselben Projekt und aus echten Fehlern.
+
+**Der Name gegen den Wert.** Ein Token, dessen Name ein Farbwort trägt, wird
+gegen den Bereich dieses Wortes gemessen. Die Bereiche stehen in
+[Farbe und Material](../02_BRANDING/05-farbe-und-material.md).
+
+**Text auf einem Verlauf.** Auf einer Fläche mit Verlauf zählt die schlechteste
+Stufe, nicht die Grundfarbe. Ein Knopf hielt auf der Grundfarbe 5,49:1 und an
+der dunkelsten Stufe nur 3,89:1.
+
+**Genau ein Akzent.** Wenn ein anderes Token auffälliger ist als die
+Akzentfarbe, gibt es zwei Akzente. Gemessen wird Sättigung, gewichtet mit dem
+Abstand zur mittleren Helligkeit; rohe Sättigung meldet sonst jede dunkle
+Grundfarbe als Akzent.
+
+Und die Grenze, die dazugehört: Das Gate beurteilt nicht, ob eine Farbe zur
+Marke passt. Amber und Gold sind beide warm und beide richtig, und nur eines
+davon ist die Marke. Diese Frage bleibt auf Stufe 4 und gehört in das
+Freigabegespräch.
+
 ## Aufnahmeprüfung
 
 Bevor das Projekt in Phase 3 geht:
@@ -322,6 +364,8 @@ Bevor das Projekt in Phase 3 geht:
 - [ ] Bildleser kennt jedes im Projekt verwendete Format
 - [ ] Jede Zahl auf der Seite hat genau eine Quelle im Code
 - [ ] Jeder Design-Token trägt eine Herkunft, übernommene mit Fundstelle und Datum
+- [ ] Jedes Farbtoken misst, was sein Name behauptet, und der Akzent ist die auffälligste Farbe
+- [ ] Text auf jeder Fläche mit Verlauf hält an der dunkelsten Stufe
 - [ ] Der Katalog in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) ist um projektspezifische Gates ergänzt
 
 Der negative Test in Zeile drei wird am häufigsten übersprungen und ist der wichtigste. Ein Gate mit einem Denkfehler in der Bedingung erzeugt Vertrauen, das es nicht deckt.
