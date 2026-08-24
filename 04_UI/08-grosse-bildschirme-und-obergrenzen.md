@@ -149,6 +149,18 @@ Entscheidung und wird gern vergessen: **Wer eine Beschwerde über große
 Bildschirme hört, ändert große Bildschirme.** Ein Entwurf, über den niemand
 geklagt hat, ist kein Anlass.
 
+## Das Werkzeug dazu
+
+Die Zeilenlängen-Prüfung ist der Teil dieses Kapitels, der sich mechanisieren
+lässt, und sie hat den zweiten Fehler oben gefangen — nicht das Auge.
+[`werkzeuge/zeilen.mjs`](../werkzeuge/zeilen.mjs) misst über mehrere Breiten
+und gibt einen Rückgabewert zurück, taugt also als Abbruchbedingung im Bau.
+
+Die übrigen Zahlen dieses Kapitels bleiben Prosa und Urteil. Ob ein Anteil von
+57 Prozent richtig ist oder eine Kopfleiste dünn wirkt, kann kein Skript
+entscheiden. Die Einordnung dieser Stufen steht in
+[Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md).
+
 ## Reviewfrage
 
 Öffne die fertige Seite bei 2560 Pixeln und notiere die vier Zahlen. Wenn
