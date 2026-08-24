@@ -71,6 +71,26 @@ Was nur unterhalb einer Bruchstelle existiert, wird am großen Bildschirm von
 niemandem gesehen. Nicht vom Entwickler, nicht im Review, nicht in der
 Freigabe.
 
+## Das obere Ende
+
+Dieselbe Messung bei 2560 Pixeln, vier Zahlen, notiert und nicht geschätzt.
+
+| Zahl | Befund ab |
+| --- | --- |
+| Anteil der Hülle am Fenster | unter 50 Prozent |
+| Größe der Hauptüberschrift | gleicher Wert wie bei 1280 |
+| Höhe der Kopfleiste | gleicher Wert wie bei 1280 |
+| Höhe der Hauptschaltfläche | gleicher Wert wie bei 1280 |
+
+Ein gleichbleibender Wert ist kein Beweis für einen Fehler, aber immer eine
+Frage: Ist das entschieden oder übrig geblieben?
+
+Wurde die Hülle für große Bildschirme verbreitert, kommen zwei Prüfungen dazu,
+die beide schon einmal etwas zerbrochen haben: Gilt eine engere Grenze am
+selben Element noch, und wird jetzt ein Bild größer dargestellt, als es ist?
+Die Begründung steht in
+[Das obere Ende](../04_UI/08-grosse-bildschirme-und-obergrenzen.md).
+
 ## Erstauslieferung
 
 Vor der ersten Auslieferung an den Kunden gilt zusätzlich das Gate aus [Erstauslieferung](../00_SYSTEM/07-erstauslieferung.md), und zwar mit einer anderen Strenge als der Rest dieser Kontrolle: Es kennt keine akzeptierten Risiken, weil alle acht Punkte vor dem Bauen entscheidbar waren.

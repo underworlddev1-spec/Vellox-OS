@@ -175,6 +175,11 @@ und doppelter Pixeldichte. Fünf Zahlen je Seite, notiert und nicht geschätzt:
 Dazu drei Zustände, die sich nur am Gerät zeigen: Menü offen, Handlungsleiste
 in der Seitenmitte, Seitenende mit den Rechtstext-Verweisen.
 
+Am oberen Rand gilt derselbe Satz in der anderen Richtung, mit einem
+wichtigen Unterschied: Dort bricht nichts. Die Seite funktioniert, jeder Test
+läuft durch, und sie wirkt trotzdem billiger, als sie ist. Ausgearbeitet in
+[Das obere Ende](08-grosse-bildschirme-und-obergrenzen.md).
+
 Diese Messung gehört in die [Qualitätskontrolle](../10_CHECKLISTS/07-qualitaetskontrolle.md)
 und nicht in ein Gate: Die Zahlen sind Befunde, die ein Urteil brauchen. Was
 sich mechanisieren lässt, etwa die Prüfung auf absolut positionierte Elemente
