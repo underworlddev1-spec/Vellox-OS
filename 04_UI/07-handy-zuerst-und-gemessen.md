@@ -180,3 +180,14 @@ und nicht in ein Gate: Die Zahlen sind Befunde, die ein Urteil brauchen. Was
 sich mechanisieren lässt, etwa die Prüfung auf absolut positionierte Elemente
 unterhalb einer Bruchstelle, gehört nach
 [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md).
+
+## Der Gegenpol am oberen Ende der Breiten
+
+Diese Messung sichert das untere Ende. Das obere Ende hat seinen eigenen Fehler
+und sein eigenes Kapitel: Ein an einer Maximalbreite gedeckeltes Layout hört an
+seinem letzten Breakpoint auf zu wachsen und klebt auf einem großen Monitor in
+einer schmalen Spalte, während es dort zu klein wirkt. Er bleibt aus demselben
+Grund unsichtbar wie der Menüfehler, nur an der anderen Kante: Gebaut wird um
+1280 herum, und oberhalb sieht niemand hin.
+[Der große Bildschirm ist nicht die feste Fassung](08-grosser-bildschirm-und-skalierung.md)
+trägt die Regel und die Messung dazu.
