@@ -16,6 +16,8 @@ Die Nutzerwahrnehmung bleibt der Kontext. Ein schneller technischer Start hilft 
 
 Lege Budgets für Bildgewicht, Schriftvarianten, JavaScript, Drittanbieter und Animation fest. Jedes zusätzliche Asset braucht einen Nutzen. Responsive Bilder, moderne Formate, korrekte Größen, Lazy Loading für nachgelagerte Inhalte und frühe Priorisierung des Hauptinhalts gehören zur Umsetzung, nicht zur letzten Politur.
 
+Zwei Auslieferungsfallen treten erst beim Gast auf und bleiben im Build unsichtbar: ein AVIF, das ein Browser meldet, aber nicht dekodiert und ohne Rückfall leer zeigt, und ein Schriftwechsel, der ohne metrisch angepasste Fallback-Schrift das Layout springen lässt und den CLS verdirbt. Beide und ihre Lösung stehen in [Der Build ist nicht der Browser des Gastes](../07_ENGINEERING/06-der-build-ist-nicht-der-browser-des-gastes.md).
+
 Fonts werden auf Rollen begrenzt und mit Fallbacks getestet. Drittanbieter-Skripte werden nur eingesetzt, wenn ihr geschäftlicher oder funktionaler Wert nachgewiesen ist. Tracking, Chat, Video und externe Widgets sind Teil des Performance-Budgets und dürfen nicht als kostenlos betrachtet werden.
 
 ## Layout-Stabilität und Bewegung
