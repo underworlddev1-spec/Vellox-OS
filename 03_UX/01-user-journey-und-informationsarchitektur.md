@@ -32,6 +32,18 @@ Ein Seitenmodell beschreibt die Aufgaben eines Typs, nicht eine fixe Pixelstrukt
 
 Jedes Modell benennt Pflichtinhalte, optionale Vertiefungen und Abbruch- oder Ausweichwege. Das verhindert, dass eine Komponente auf jeder Seite auftaucht, obwohl sie dort keine Aufgabe erfüllt. Templates in [`09_TEMPLATES`](../09_TEMPLATES) machen diese Modelle projektfähig.
 
+## Wann eine Liste aufhört, eine Übersicht zu sein
+
+Eine Übersichtsseite wächst mit jedem neuen Beitrag, und niemand merkt den Punkt, an dem sie kippt. Solange sechs oder acht Einträge untereinander stehen, liest ein Besucher sie alle und entscheidet danach. Ab etwa einem Dutzend liest er sie nicht mehr alle. Er überfliegt, findet die gesuchte Frage nicht in den ersten Sekunden und geht zurück zur Suche — obwohl die Antwort da war.
+
+Das Problem ist nicht die Höhe, sondern der Suchvorgang. Eine flache Liste zwingt zum linearen Lesen, weil sie keine Vorauswahl anbietet. Deshalb hilft es auch nicht, die Einträge zu kürzen: Zwanzig kurze Zeilen sind genauso schwer zu durchsuchen wie zwanzig lange, nur unattraktiver.
+
+Die Antwort sind wenige, benannte Gruppen. Wenige heißt drei bis vier, weil eine Gruppierung, die selbst zwanzig Kategorien hat, das Problem nur verschiebt. Benannt heißt in der Sprache der Besucher und in der Reihenfolge ihrer Fragen, nicht alphabetisch und nicht nach interner Logik. Wer eine Wissenssammlung nach dem Weg eines Interessenten ordnet — was vor der Entscheidung gefragt wird, was währenddessen, was danach —, gibt jedem Besucher eine Gruppe, die er überspringen darf.
+
+Die Gruppenzugehörigkeit gehört dabei in das Datenmodell, nicht in eine gepflegte Liste in der Übersichtsseite. Ein Pflichtfeld mit fester Auswahl erzwingt bei jedem neuen Beitrag eine Entscheidung und macht den Fall unmöglich, dass ein Eintrag nirgendwo auftaucht. Eine Liste in der Seite dagegen vergisst man beim nächsten Beitrag. Das ist dieselbe Leiter wie in [`00_SYSTEM/06-erzwungene-qualitaet.md`](../00_SYSTEM/06-erzwungene-qualitaet.md): Die Regel wird zum Typ, statt eine Erinnerung zu bleiben.
+
+Eine Angabe, die auf jeder Zeile dieselbe ist, gehört nicht in die Übersicht. Ein Stand, ein Autor oder eine Kategorie, die siebzehnmal identisch erscheint, trägt keine Information und kostet siebzehnmal Höhe. Sie gehört auf den einzelnen Beitrag, wo sie eine Aussage über genau diesen Text ist. Sobald sich die Werte unterscheiden, ist das neu zu entscheiden.
+
 ## Architektur testen
 
 Teste zuerst Sprache, nicht Farbe. Bitte Menschen, eine Seite zu finden, die eine Aufgabe löst, und beobachte, welche Begriffe sie erwarten. Prüfe anschließend, ob sie erklären können, wo sie sind, was sie gerade erfahren haben und wie sie zurück oder weiterkommen. Ein Tree Test kann Benennungen prüfen; ein einfacher Click-Dummy kann Reihenfolge und Priorität prüfen.
