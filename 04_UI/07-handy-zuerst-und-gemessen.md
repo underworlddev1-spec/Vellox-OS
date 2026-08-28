@@ -175,6 +175,42 @@ und doppelter Pixeldichte. Fünf Zahlen je Seite, notiert und nicht geschätzt:
 Dazu drei Zustände, die sich nur am Gerät zeigen: Menü offen, Handlungsleiste
 in der Seitenmitte, Seitenende mit den Rechtstext-Verweisen.
 
+## Die erste Zahl ist die schwächste, und das hat einen Grund
+
+Die zwölf Bildschirme sind die einzige der fünf Zahlen, die keinen Schaden
+benennt, sondern eine Menge. Sie ist ein Stellvertreter für zwei Fragen, die
+sich einzeln messen lassen: **Ist der Beweis vergraben, und ist die Handlung
+erreichbar?** Sind beide mit Nein und Ja beantwortet, ist eine lange Seite lang
+und nicht schlecht.
+
+Der Fall, aus dem das folgt: Eine Startseite maß 13,6 Bildschirme, also
+dreizehn Prozent über der Grenze. Die naheliegende Reaktion wäre gewesen, einen
+Abschnitt zu streichen. Drei Messungen sprachen dagegen. Der erste Beweis stand
+bei 618 Pixeln, also im ersten Bildschirm — es waren Aufnahmen echter
+Kundenseiten im Hero, und nicht die Referenzsektion weiter unten, die zuerst
+gemessen worden war. Die primäre Handlung lag in einer festen Leiste am unteren
+Rand und war auf jedem Punkt der Seite einen Fingertipp entfernt. Und die
+Sektionsabstände machten zusammen 720 Pixel aus, also 0,9 von 13,6
+Bildschirmen: Die Höhe war Inhalt und nicht Luft.
+
+Daraus zwei Regeln.
+
+**Die Gesamthöhe wird nie allein bewertet.** Wer sie meldet, meldet die
+Positionen zwei und drei mit dazu. Eine Seite über zwölf Bildschirmen mit
+frühem Beweis und fester Handlungsleiste ist ein anderer Fall als eine mit
+neun, deren Beweis bei 3000 Pixeln beginnt.
+
+**Vor jedem Streichen wird der Abstand gemessen.** Wenn die Summe der
+Sektionsabstände unter etwa einem Bildschirm liegt, ist die Länge Inhalt, und
+dann kostet jede Kürzung etwas. Liegt sie darüber, gibt es Höhe, die niemandem
+gehört.
+
+Und eine Warnung zur zweiten Zahl: **Der erste Beweis ist selten die
+Referenzsektion.** Er ist das erste Element, das etwas zeigt, was nicht
+behauptet ist — eine Aufnahme, ein Name, eine Zahl mit Quelle. Wer nach der
+Sektion sucht statt nach dem Element, misst regelmäßig zu spät und leitet
+daraus eine Kürzung ab, die nichts verbessert.
+
 Am oberen Rand gilt derselbe Satz in der anderen Richtung, mit einem
 wichtigen Unterschied: Dort bricht nichts. Die Seite funktioniert, jeder Test
 läuft durch, und sie wirkt trotzdem billiger, als sie ist. Ausgearbeitet in
