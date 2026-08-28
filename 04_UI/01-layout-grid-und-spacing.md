@@ -12,6 +12,10 @@ Ein Layout braucht eine Hauptachse, eine Lesebreite und definierte Ausnahmen. Di
 
 Ein Grid schafft gemeinsame Bezugspunkte für Text, Bild und Handlung. Wenn Überschriften, Textkörper und CTA an zufälligen Kanten beginnen, wird der Blick unruhig. Wenn alle Elemente starr im Raster bleiben, kann die Seite mechanisch werden. VELLOX verwendet das Grid daher als unsichtbare Ordnung mit wenigen bewusst gesetzten Brüchen.
 
+**Ausgerichtet wird an Textkanten, nicht an Kastenkanten.** Der Unterschied fällt auf, sobald in einer Rasterzeile eine gefasste Fläche neben ungefasstem Inhalt steht: Beide Spalten beginnen bündig, aber die Karte trägt Rahmen und Innenabstand, und ihre erste Textzeile sitzt entsprechend tiefer. Gemessen waren es in einem Fall 33 Pixel, also ein Rahmen plus zwei Rem. Im Quelltext sahen beide Spalten identisch aus, und das Raster war rechnerisch richtig — gelesen werden aber Textkanten, und ein Versatz ohne erkennbaren Grund liest sich als Fehler.
+
+Die Regel lautet deshalb nicht „gleiche Oberkante", sondern: Der Ausgleich beträgt genau den inneren Vorlauf der gefassten Spalte, er wird gemessen und nicht geschätzt, und er gilt nur, solange die Spalten nebeneinanderstehen. Sobald sie stapeln, trägt der Abstand des Rasters diese Aufgabe, und ein zusätzlicher Vorlauf wäre dort ein Loch. Ein bewusst gesetzter Versatz bleibt möglich, wenn zwei Elemente verschiedene Ebenen sind — eine große Abschnittsüberschrift neben der kleinen Überschrift einer Karte ist Hierarchie und kein Versehen.
+
 Definiere Container, Außenabstände, Spalten, Gutter und die Übergänge zwischen Breakpoints. Die Werte sollten nicht allein aus einem Framework übernommen werden. Sie müssen zeigen, welche Inhaltsmengen und Bildverhältnisse zuverlässig funktionieren. Responsive Regeln beschreiben, wie die Beziehung zwischen Elementen erhalten bleibt, nicht nur, wann eine Spalte auf eine Zeile fällt.
 
 ## Spacing als Grammatik

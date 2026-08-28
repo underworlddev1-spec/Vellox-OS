@@ -6,6 +6,8 @@ Technisches SEO sorgt dafür, dass Suchmaschinen und Menschen eine Seite zuverl�
 
 Jede wichtige Seite braucht eine klare, erreichbare URL, interne Verlinkung und einen sinnvollen Indexierungsstatus. Vermeide verwaiste Inhalte, unkontrollierte Parameter, doppelte Versionen und Seiten, die nur über Formulare erreichbar sind. `robots.txt`, Canonical-Referenzen, Sitemaps und Statuscodes müssen die tatsächliche Inhaltsarchitektur abbilden, nicht eine alte Projektstruktur.
 
+Nicht jede Meldung über eine nicht indexierte Adresse ist ein Defekt. „Gefunden – zurzeit nicht indexiert" ist eine Warteschlange und eine Frage des Abrufbudgets, „gecrawlt – zurzeit nicht indexiert" ein inhaltlicher Befund, und „alternative Seite mit korrektem kanonischem Tag" die Bestätigung, dass die Einrichtung funktioniert. Die Unterscheidung entscheidet darüber, ob an der Seite oder außerhalb gearbeitet wird; sie steht in [Verweise von außen](06-verweise-von-aussen.md).
+
 Indexierung ist kein Selbstzweck. Nicht jede Seite muss sichtbar sein. Interne Suchergebnisse, leere Filterkombinationen, technische Varianten oder vertrauliche Bereiche können bewusst ausgeschlossen werden. Wichtig ist, dass Ausschluss, Linkstruktur und Nutzererwartung übereinstimmen.
 
 ## Semantik und Dokumentstruktur

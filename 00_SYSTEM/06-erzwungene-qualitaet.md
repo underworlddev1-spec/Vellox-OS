@@ -72,6 +72,7 @@ Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für
 | Gate | Stufe | Warum |
 |---|---|---|
 | Bildmaße kommen aus der Datei | 1 | Ohne `width` und `height` springt das Layout. Von Hand geschriebene Maße veralten beim ersten Bildtausch, und zwar unbemerkt. |
+| Kein Bild breiter als seine Auflösung | 1 | Die Komponente kennt die echten Maße ohnehin und setzt daraus eine Höchstbreite. Bei Fotos fällt Hochskalierung spät auf, bei Bildschirmfotos sofort, weil sie kleine Schrift enthalten — und eine breitere Hülle für große Bildschirme vergrößert jedes Bild darin auf einmal. Beobachtet: drei Aufnahmen mit 1200 Pixeln, dargestellt mit 1408. |
 | Fehlende Bilddatei bricht den Bau | 2 | Ein toter Bildverweis wird sonst erst im Produktionsbuild sichtbar, wo ihn niemand mehr sucht. |
 | Tabellenzeile hat so viele Zellen wie die Kopfzeile | 1 | Eine verrutschte Tabelle ist auf einer Preisseite eine Falschaussage. |
 | Kante um fremdes Bildmaterial ist unabhängig vom Bildinhalt | 4 | Die mittlere Helligkeit dreier Kundenaufnahmen ergab gegen einen dunklen Grund 1,22:1, 2,62:1 und 10,92:1. Die dunkelste löste sich auf, und der Rahmen war Teil des Problems: Er stand auf derselben Farbe wie der Grund. Unter 3:1 braucht es eine Kante. |

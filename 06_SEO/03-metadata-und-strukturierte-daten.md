@@ -32,6 +32,12 @@ Metadaten werden gemeinsam mit dem Seiteninhalt freigegeben. Prüfe Titel, Descr
 ## Suchergebnis als erster Kontakt
 
 Ein Suchergebnis ist eine kleine Voransicht der Marke. Es sollte klar, glaubwürdig und spezifisch sein, aber nicht lauter als die Seite. Gute Metadata lädt die passende Person ein und filtert unpassende Erwartungen früh.
+
+Dazu gehört das kleine Zeichen links neben dem Ergebnis, und es folgt eigenen Regeln, die von denen des Browsertabs abweichen. Ein Projekt, das nur eine Vektordatei ausliefert, ist im Browser richtig versorgt und im Suchergebnis nicht: Die Suchmaschine verwendet dort kein SVG. Sie ruft außerdem `/favicon.ico` an der Wurzel der Domain mit Vorrang ab, auch ohne einen Verweis im Kopf der Seite — fehlt die Datei, liefert dieser Abruf einen Fehler, und was im Kopf steht, wird nachrangig behandelt. Und eine als Verweis angebotene Rasterdatei fällt durch, wenn ihre Kantenlänge kein Vielfaches von 48 ist; 512 ist keines.
+
+In einem beobachteten Fall trafen zwei dieser Punkte gleichzeitig zu, und im Ergebnis stand statt der Marke ein fremdes Ersatzzeichen. **Die Korrektur ist billig, ihre Wirkung dauert Wochen**, weil diese Zeichen in einem eigenen, langsamen Durchlauf geholt werden. Deshalb gehört die Prüfung zur Auslieferung und nicht in die erste Optimierungsrunde danach.
+
+Praktisch heißt das: aus einer Quelldatei alle nötigen Fassungen erzeugen statt sie einzeln von Hand zu exportieren. Wer das Zeichen ändert und vier von fünf Dateien neu exportiert, merkt den Rest erst, wenn irgendwo ein altes Logo auftaucht — und im Suchergebnis eben erst Wochen später.
 ## Strukturierte Daten als Inhaltsvertrag
 
 Ein strukturierter Datensatz sollte mit der sichtbaren Seite synchron bleiben. Wenn ein Preis, eine Verfügbarkeit, ein Ort oder ein Event geändert wird, müssen sichtbarer Text, Metadata, strukturierte Daten und gegebenenfalls Feeds gemeinsam geprüft werden. Ein automatisiertes Feld ist nur so vertrauenswürdig wie seine Quelle.

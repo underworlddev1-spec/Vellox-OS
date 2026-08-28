@@ -164,6 +164,9 @@ beides ist eine Information.
 
 ## Querverweise
 
+- [Verweise von außen](06-verweise-von-aussen.md) — was zu tun ist, wenn die
+  Seite fehlerfrei ist und trotzdem auf Seite vier steht, und wie die
+  Meldungen der Search Console dabei zu lesen sind.
 - [Local SEO](02-local-seo.md) — der Verzeichniseintrag und die Ortsseiten im
   Detail.
 - [SEO-Copywriting und Content-System](../05_COPYWRITING/04-seo-copywriting-und-content-system.md)

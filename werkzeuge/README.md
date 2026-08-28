@@ -69,3 +69,44 @@ auch eine globale Installation.
 ```bash
 npm install -g playwright && npx playwright install chromium
 ```
+
+---
+
+## zeilen.mjs
+
+Findet Absätze, deren Zeilen zu lang sind, und zwar exakt in Zeichen. Gehört zu
+[Das obere Ende](../04_UI/08-grosse-bildschirme-und-obergrenzen.md) und
+[Layout, Grid und Spacing](../04_UI/01-layout-grid-und-spacing.md).
+
+```bash
+node werkzeuge/zeilen.mjs --adresse http://localhost:3000 --verzeichnis dist
+node werkzeuge/zeilen.mjs --adresse https://www.kunde.de --seiten /,/leistungen/,/kontakt/
+```
+
+Standardmäßig geprüft wird bei 390, 1280, 1920 und 2560 Pixeln gegen eine
+Grenze von 90 Zeichen; beides lässt sich über `--breiten` und `--grenze`
+ändern. Der Rückgabewert ist 0 bei null Befunden und 1 sonst, das Skript eignet
+sich also als Abbruchbedingung im Bau.
+
+**Wie gemessen wird.** Ein Bereich über die ersten n Zeichen eines Textknotens
+liefert so lange genau ein Rechteck, wie diese Zeichen in eine Zeile passen.
+Das größte n mit einem Rechteck ist die Zeichenzahl der ersten Zeile. Die
+naheliegende Schätzung — Breite geteilt durch halbe Schriftgröße — wäre falsch
+genug, um Befunde zu erfinden oder zu übersehen.
+
+**Warum bei mehreren Breiten.** Zeilenlänge ist unsichtbar, solange man in der
+Breite arbeitet, in der entworfen wurde. Zwei Fälle machen sie sichtbar, und
+beide sind eingetreten: Absätze ohne eigene Breitenbegrenzung, die nur zufällig
+von der Hülle begrenzt wurden, und eine neue Regel für die Hülle, die in der
+Datei weiter unten stand als eine engere Grenze am selben Element und diese ab
+einer Bruchstelle aushebelte. Im zweiten Fall sprang ein Vorspann von 768 auf
+1408 Pixel, 17 Stellen waren betroffen, und in der Entwurfsbreite war nichts
+davon zu sehen.
+
+**Was es nicht kann.** Beurteilen, ob ein kurzer Absatz gut gesetzt ist. Es
+findet nur die obere Grenze; die untere — eine Spalte, die so schmal ist, dass
+jede Zeile drei Wörter trägt — bleibt ein Urteil.
+
+**Voraussetzung.** Playwright, im Projektordner oder global. Das Skript sucht
+in dieser Reihenfolge: Arbeitsverzeichnis, eigener Ordner, globale
+Installation. Ein abweichender Browserpfad geht über `CHROMIUM_PFAD`.
