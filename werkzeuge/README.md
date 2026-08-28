@@ -69,3 +69,44 @@ auch eine globale Installation.
 ```bash
 npm install -g playwright && npx playwright install chromium
 ```
+
+---
+
+## pruefe-ausgabe.mjs
+
+Prueft die ausgelieferte Seite gegen die mechanisierbaren Gates aus
+[Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md). Laeuft ueber ein
+gebautes Ausgabeverzeichnis, nicht ueber den Quelltext, weil erst dort steht,
+was der Gast wirklich bekommt.
+
+```bash
+node werkzeuge/pruefe-ausgabe.mjs dist
+```
+
+**Was es prueft.** Titel- und Beschreibungslaenge (Stufe 2), genau eine h1 je
+Seite, Floskeln und Gedankenstriche im ausgelieferten Text, Bewertungs-Schema
+ohne eigene Bewertungen, fehlende Bildmaße (Layout-Shift), AVIF-Quellen ohne
+Rueckfall (07_ENGINEERING/06), fluide Wurzel-Schrift zusammen mit rem-Breakpoints
+(04_UI/08), fehlende metrisch angepasste Fallback-Schrift, und den
+Schablonen-Waechter, der zwei Seiten mit derselben Ueberschriften-Schablone
+findet (der schaerfste Test gegen Doorway-Seiten). Es liest CSS aus eigenen
+Dateien und aus inline `<style>`, weil viele Build-Tools kleines CSS inlinen.
+
+**Was es liefert.** Je Befund den gemessenen Wert, die Grenze und die
+Fundstelle, wie ein guter Abbruch es verlangt. Exit-Code 1, sobald ein Gate der
+Stufe Abbruch ausloest; Warnungen aendern ihn nicht. Mit `--json` als Datenstrom,
+mit `--nur=titel,floskel` auf einzelne Gates begrenzt.
+
+**Was es nicht kann.** Urteilen. Ob eine Ueberschrift die Situation des Lesers
+trifft, ob eine Farbe stimmt, ob ein AVIF in der erklaerten Browsermatrix
+vertretbar ist: das bleibt beim Menschen. Der Schablonen-Waechter misst
+Gliederung, nicht Substanz, und setzt voraus, dass der Eigenname der Seite im
+Titel steht; zwei Seiten mit verschiedenen Ueberschriften und austauschbarem
+Fliesstext gehen durch. Ein Gate, dem mehr zugetraut wird als es leistet, ist
+gefaehrlicher als keines.
+
+**Die Grenzen sind aenderbar.** Sie stehen oben im Skript als Konstanten. Wer
+eine Grenze anders braucht, aendert sie dort und schreibt in den Commit, warum.
+
+**Voraussetzung.** Nur Node. Keine npm-Pakete, kein Browser. Damit laeuft es in
+jeder CI.
