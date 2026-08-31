@@ -86,6 +86,52 @@ gehören:
 jeder Artikel einen Stand, und jede Marktzahl, die nicht aus dem eigenen
 Angebot stammt, eine Quelle.
 
+## Die meistgesuchte Frage ist selten die richtige
+
+Ein Ratgeber wird nach vier Wochen zum ersten Mal messbar, und die Messung
+verführt zu einem Fehlschluss. Der Artikel mit den meisten Impressionen sieht
+aus wie der Erfolg. Er ist es nur, wenn ihn die richtigen Leute gesucht haben.
+
+Der Beleg stammt aus einem eigenen Projekt, achtundzwanzig Tage nach dem Start
+mit sechs veröffentlichten Artikeln. Ein einziger Artikel trug 93 der 284
+Impressionen — mehr als die anderen fünf zusammen. Die Suchanfragen dahinter
+waren technisch: wie lange die Indexierung bei Google dauert, in vier
+Varianten. Wer so sucht, hat bereits eine Website und arbeitet selbst daran.
+Er wird keinen Dienstleister beauftragen.
+
+Im selben Zeitraum kamen auf die beiden Anfragen mit tatsächlicher Kaufabsicht
+— die Leistung plus der Ort — zusammen sieben Impressionen.
+
+Der Grund für dieses Verhältnis ist strukturell und wiederholt sich in jedem
+Projekt. Eine sachliche Wissensfrage hat bundesweites Suchvolumen, eine klare
+Antwort und wenig Wettbewerb, weil sie niemandem etwas verkauft. Eine
+Kaufabsichtsfrage hat örtliches Volumen, keine eindeutige Antwort und
+maximalen Wettbewerb, weil sie jeder Anbieter besetzen will. Deshalb gewinnt
+die falsche Frage zuerst, und zwar zuverlässig.
+
+Daraus folgt keine Abkehr vom Ratgeber, sondern eine andere Auswertung. Lies
+nicht die Zahl der Impressionen, sondern die Liste der Suchanfragen, und sortiere
+sie in drei Gruppen: Anfragen von möglichen Kunden, Anfragen von Leuten, die
+es selbst machen wollen, und Anfragen nach Kunden des Kunden. Nur die erste
+Gruppe zählt für den Auftrag. Die dritte ist trotzdem wertvoll, aber als
+Verkaufsargument gegenüber dem Kunden und nicht als eigener Erfolg.
+
+Zwei Konsequenzen für die Arbeit. **Ein Artikel, der die falsche Gruppe
+anzieht, wird nicht optimiert, sondern verlinkt.** Wer nach der Indexierungszeit
+sucht, hat als nächste Frage, warum die Seite trotzdem nicht gefunden wird, und
+das ist eine Frage mit Kaufabsicht. Der Verweis gehört in den Artikel, der die
+Aufrufe bekommt, nicht nur in den, der sie verdient hätte. **Und die Reihenfolge
+der Veröffentlichung folgt nicht dem Suchvolumen.** Die Wissensfragen ranken
+schneller und tragen die Domain, die Kaufabsichtsfragen brauchen länger und
+tragen den Umsatz. Beide werden gebraucht, aber nur die zweite Gruppe wird an
+Anfragen gemessen.
+
+Die örtliche Kaufabsichtsfrage hat dabei eine Obergrenze, die vor dem Projekt
+ausgesprochen gehört. Sieben Impressionen im Monat werden auch auf Platz eins
+nicht zu einem vollen Kalender. Wer örtliche Sichtbarkeit als einzigen Kanal
+verkauft, verkauft eine Rechnung, die nicht aufgeht; sie ist die Grundlage,
+nicht der Motor.
+
 ## Erwartung gehört auf die Seite, nicht ins Gespräch
 
 Der häufigste Grund für eine unzufriedene Betreuung ist nicht schlechte
