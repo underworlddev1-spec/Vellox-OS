@@ -59,3 +59,5 @@ Betrieb und lokale Verantwortliche bestätigen Daten und Grenzen. Research prüf
 ## Praktischer Einstieg
 
 Die wichtigste Handlung wird aus dem Geschäftsmodell abgeleitet. Ein Laden braucht vielleicht Öffnungszeiten und Weg, ein Dienstleister eine Anfrage, ein Studio einen Termin und ein Beratungsbetrieb ein Gespräch. Die Website nennt den Schritt so, wie er im Betrieb wirklich stattfindet, damit die Conversion keine falsche Erwartung erzeugt.
+
+Bei einem Betrieb, der seit Jahren im Netz steht, gehört vor jede Gestaltungsfrage die Prüfung, ob unter derselben Domain noch ein älterer Auftritt erreichbar ist. Falsche Öffnungszeiten aus einem solchen Bestand wandern in Verzeichnisse und schicken Kunden vor eine verschlossene Tür. Verfahren und Reihenfolge stehen in [Der Altauftritt, den niemand abgeschaltet hat](../06_SEO/07-der-altauftritt-den-niemand-abgeschaltet-hat.md).

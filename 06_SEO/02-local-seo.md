@@ -66,3 +66,5 @@ Local SEO beschreibt, wie Nähe belegt wird. Es beschreibt nicht, in welcher
 Reihenfolge Eintrag, Seite und Ansprache zusammenwirken, wann welcher Teil
 frühestens wirkt und woran man erkennt, an welcher der drei Stellen es
 klemmt. Das steht in [Die ersten Besucher](05-die-ersten-besucher.md).
+
+Stimmen die Betriebsdaten auf der Seite, weichen aber in Verzeichnissen ab, ist die Quelle der Abweichung zu suchen, bevor die Verzeichnisse einzeln korrigiert werden. Sie liegt häufig in einem zweiten, vergessenen Auftritt derselben Domain — siehe [Der Altauftritt, den niemand abgeschaltet hat](07-der-altauftritt-den-niemand-abgeschaltet-hat.md).
