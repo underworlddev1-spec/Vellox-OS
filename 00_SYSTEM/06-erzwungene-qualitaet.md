@@ -66,6 +66,8 @@ Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für
 | Keine zwei Seiten mit derselben Überschriftenschablone | 2 | Siehe unten. Das schärfste Gate gegen Doorway-Seiten. |
 | Eine Seite, eine Adresse | 2 | Mit und ohne `www`, mit und ohne Schrägstrich sind für einen Besucher dieselbe Seite und für eine Suchmaschine vier Kopien. Ein Canonical ist ein Hinweis, eine Weiterleitung eine Anweisung. |
 | Sichtbare Brotkrume und Auszeichnung stimmen überein | 3 | Zwei Darstellungen desselben Wegs, die voneinander abweichen, sind schlechter als eine. |
+| Kein Ratgeber-Artikel ohne eingehenden Verweis | 2 | Wer einen Artikel schreibt, verlinkt, was schon da ist; der bestehende Artikel bekommt nie einen Verweis auf den neuen, weil ihn dafür niemand anfasst. Gemessen an einem Stapel von elf neuen Artikeln: sechs von siebzehn ohne eingehenden Verweis, darunter die Anschlussfrage zum stärksten Artikel des Projekts. Schwelle bei eins und nicht bei zwei — die zweite Verbindung ist eine Ermessensfrage, und ein erzwungener Verweis ohne Grund ist genau das Muster, gegen das der Anti-Template-Standard antritt. |
+| Jeder Ratgeber-Artikel hat einen Weg ins Angebot | 1 | Ein Ratgeber ohne Rückweg kostet Arbeit, bringt Aufrufe und führt sie im Kreis. Am selben Stapel gemessen: vier von siebzehn verwiesen ausschließlich auf andere Artikel. Geprüft wird nur, DASS ein Verweis nach draußen existiert; welcher richtig ist, hängt an der Frage des Artikels und bleibt eine Entscheidung. |
 
 ### Oberfläche
 
