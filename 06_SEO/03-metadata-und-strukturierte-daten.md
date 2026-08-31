@@ -42,6 +42,20 @@ Praktisch heißt das: aus einer Quelldatei alle nötigen Fassungen erzeugen stat
 
 Ein strukturierter Datensatz sollte mit der sichtbaren Seite synchron bleiben. Wenn ein Preis, eine Verfügbarkeit, ein Ort oder ein Event geändert wird, müssen sichtbarer Text, Metadata, strukturierte Daten und gegebenenfalls Feeds gemeinsam geprüft werden. Ein automatisiertes Feld ist nur so vertrauenswürdig wie seine Quelle.
 
+## Die Brotkrume, und warum sie zweimal falsch sein kann
+
+Die Brotkrume ist für eine kleine Seite die realistischste Auszeichnung überhaupt: Sie verlangt keine Bewertungen, keine Preise und keine Termine, und im Suchergebnis ersetzt sie die technische Adresse durch einen lesbaren Weg. Wichtiger ist ihre Aufgabe auf der Seite selbst. Wer über eine Suche mitten in einer Website landet — auf einem Artikel, einer Branchenseite, einer Referenz — hat keine Vorgeschichte. Die Brotkrume ist die einzige Stelle, die ihm sagt, wo er ist und was es sonst noch gibt.
+
+Genau daraus entsteht der Fehler, der in einem Projekt an sechsundzwanzig von achtundvierzig Seiten gemessen wurde: Die Auszeichnung war da, die Anzeige nicht. Sie entsteht leicht, weil beide getrennt entstehen — das Schema beim Anlegen des Seitentyps, die Anzeige beim Gestalten des Kopfbereichs, und das zweite wird vergessen, ohne dass etwas kaputtgeht.
+
+**Der Schaden liegt selten dort, wo man ihn sucht.** Die Abweichung selbst ist eine Ungenauigkeit gegenüber der Suchmaschine. Die Folge war schwerer: Weil den fünf Branchenseiten die sichtbare Brotkrume fehlte, verwies keine einzige Seite des Projekts auf die Branchenübersicht. Sie stand in der Sitemap und war über den Seiteninhalt nicht erreichbar. Eine fehlende Brotkrume nimmt einer Übersichtsseite ihre Zuflüsse, und das fällt niemandem auf, weil die Seite ja existiert und sich aufrufen lässt.
+
+Die Lösung ist keine Prüfung, sondern eine gemeinsame Quelle. Eine Liste von Gliedern, aus der die Auszeichnung erzeugt und dieselbe Liste angezeigt wird. Danach ist die Abweichung nicht mehr ein Fehler, den man vermeiden muss, sondern einer, den man absichtlich herstellen müsste. Das ist dieselbe Bauweise wie beim FAQ-Schema und aus demselben Grund.
+
+**Ein Weg von einer Stufe bekommt weder Anzeige noch Auszeichnung.** „Start / Preise" auf einer Seite, die oben in der Hauptnavigation steht, sagt niemandem etwas Neues. Eine Brotkrume lohnt sich ab der zweiten Ebene, also dort, wo die Seite ein Elternteil hat, das nicht die Startseite ist. Wer sie trotzdem überall setzt, verwechselt Vollständigkeit mit Nutzen.
+
+**Die Gegenprobe kostet eine Zeile.** Durchsuche den fertigen Build danach, welche Seiten auf eine Adresse verweisen, und ziehe Kopf- und Fußbereich ab. Was danach null Verweise hat, ist entweder mit Absicht unverlinkt — eine Danke-Seite, eine Anzeigen-Landingpage, ein QR-Ziel — oder ein Versehen. Beides muss man einmal benannt haben; sonst steht am Ende eine Übersicht im Verzeichnis, zu der kein Weg führt.
+
 ## Organisation und lokale Präsenz
 
 Organisations- und LocalBusiness-Daten werden mit tatsächlichen Kontaktdaten, Logo, URL, Adresse und Öffnungszeiten gefüllt. Verwende keine Felder, nur um ein Schema zu vervollständigen. Nicht jede optionale Information erhöht die Qualität; widersprüchliche oder nicht sichtbare Information senkt sie.
