@@ -59,3 +59,15 @@ Tonalität wird bei Änderungen mitgeprüft. Ein neuer Preistext, eine Absage, e
 ## Revision durch Servicefragen
 
 Wiederkehrende Fragen aus Telefon, E-Mail oder Support werden regelmäßig mit der Website verglichen. Wenn dieselbe Frage entsteht, ist entweder die Information schwer auffindbar, die Formulierung unklar oder der Betrieb selbst uneinheitlich. Copy dokumentiert diesen Befund und entscheidet gemeinsam mit UX oder Service, wo die Ursache liegt.
+
+## Verneinungen, die den Verdacht erst erzeugen
+
+Eine Beruhigung setzt eine Beunruhigung voraus. Wer „Kein Kaufzwang, keine Produktpflicht" auf eine Seite schreibt, beantwortet eine Frage, die viele Besucher bis dahin nicht gestellt hatten, und beantwortet sie ausgerechnet in der Sprache derjenigen, gegen die sie sich abgrenzen will. Dasselbe gilt für „Es gibt keine vorgefertigte Checkliste, die abgearbeitet wird": Der Satz will Individualität behaupten und ruft dabei das Bild einer abgearbeiteten Checkliste auf, das ohne ihn gar nicht entstanden wäre. Die Sätze sind nicht falsch. Sie kosten nur mehr Vertrauen, als sie einbringen.
+
+Der Grund liegt darin, wie Menschen Verneinungen lesen. Um „kein Kaufzwang" zu verstehen, muss man sich zuerst Kaufzwang vorstellen. Die Vorstellung bleibt, die Verneinung verblasst. Eine positive Formulierung desselben Inhalts hat dieses Problem nicht: „Du entscheidest den nächsten Schritt" trägt dieselbe Zusage, ohne das Gegenbild aufzurufen.
+
+Die Regel gilt nicht für jede Verneinung. Sie gilt dort, wo eine Verneinung eine **Beruhigung** ist, also ein Misstrauen ausräumen soll, das der Besucher an dieser Stelle noch nicht hat. Sie gilt ausdrücklich **nicht** für Grenzaussagen, die eine reale Erwartung korrigieren: „Kein Ersatz für Arzt oder Therapie" und „Keine ärztliche Diagnose" bleiben stehen, weil hier die falsche Erwartung tatsächlich existiert und ihre Nichtkorrektur ein rechtliches und ein menschliches Risiko wäre. Der Unterschied ist prüfbar: Eine Grenzaussage schützt den Besucher vor einer Fehlannahme, eine Beruhigung schützt den Anbieter vor einem Verdacht.
+
+Zwei Prüfungen genügen im Review. Erstens: Streiche den Satz und lies den Abschnitt erneut. Fehlt jetzt eine Information, oder fehlt nur eine Beteuerung? Zweitens: Frage, woher der Verdacht kommen soll, den der Satz ausräumt. Steht er woanders auf der Seite, gehört die Antwort dorthin, wo er entsteht, typischerweise in die FAQ. Steht er nirgends, erzeugt der Satz ihn selbst.
+
+Der Befund stammt aus einem Kundenprojekt im Gesundheitsbereich, in dem die Auftraggeberin selbst vier solcher Sätze aus ihrer Seite streichen ließ, darunter zwei, die aus einem externen Audit als Verbesserung übernommen worden waren. Das ist der zweite Teil der Lehre: Eine Beruhigung wirkt in einer Auditliste plausibel, weil sie dort ohne die Seite gelesen wird, auf der sie später steht.
