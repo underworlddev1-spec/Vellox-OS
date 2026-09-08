@@ -42,6 +42,14 @@ Die folgenden Muster werden nicht ohne spezifische Begründung verwendet: ein he
 
 Auch die klassische Folge aus Hero, drei Karten, Logozeile, Testimonials, FAQ und Kontakt ist kein Qualitätsnachweis. Sie darf nur entstehen, wenn Research, Journey und Angebot genau diese Reihenfolge verlangen. Sonst ist sie eine Schablone, auch wenn ihre Farben und Texte neu sind.
 
+### Kein interaktives Feature ohne eigene Aufgabe
+
+Ein Quiz, ein Selbsttest, ein Rechner oder ein Konfigurator wirkt in einem Entwurf sofort wertvoll, weil er Aufwand zeigt. Genau deshalb entsteht er oft, bevor jemand gefragt hat, welche Frage er beantwortet, die ein Absatz nicht beantworten könnte. Ein solches Feature ist erst dann begründet, wenn es entweder eine Antwort gibt, die von den Eingaben des Besuchers tatsächlich abhängt, oder eine Entscheidung abnimmt, die als Fließtext zu viele Fälle nebeneinander stellen müsste.
+
+Der Test dafür steht meist schon in der eigenen Dokumentation. Fast jedes solche Feature braucht einen Fallback für den Fall ohne JavaScript, und dieser Fallback wird beim Bau gern als „vollständige, gleichwertige Antwort" beschrieben. Wenn das stimmt, ist das Feature nach der eigenen Beschreibung verzichtbar: Es liefert nichts, was der Fallback nicht liefert, kostet aber Code, Zustände, Tests und Wartung. Wenn es nicht stimmt, ist der Fallback der eigentliche Mangel und gehört repariert. Beide Antworten sind brauchbar, nur die Frage wird selten gestellt.
+
+Ein Projekt hat diesen Fall gemessen: Ein vierstufiger Selbsttest auf der Startseite verschwand auf Wunsch der Auftraggeberin, seine statische Liste blieb. Es fiel nichts weg, was die Liste nicht sagte, und die Skriptdatei der Seite wurde dabei um zweiundvierzig Prozent kleiner.
+
 ### Keine Gedankenstriche als künstliche Stimme
 
 VELLOX verwendet keine Gedankenstriche als Stilmittel in Copy, Dokumentation oder Interface Texten. Sie erzeugen oft den Eindruck automatisch geglätteter KI Sprache und ersetzen eine klare Satzentscheidung. Verwende stattdessen einen Punkt, ein Komma, einen Doppelpunkt oder einen neuen Satz. Ein normaler Bindestrich in einem zusammengesetzten Wort bleibt möglich. Die Regel betrifft das Satzzeichen, nicht die Rechtschreibung zusammengesetzter Wörter.
