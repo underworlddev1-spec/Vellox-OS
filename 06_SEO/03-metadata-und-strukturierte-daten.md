@@ -18,6 +18,16 @@ Strukturierte Daten werden nur für Inhalte verwendet, die sichtbar, wahr und ak
 
 Validierungstools prüfen Syntax und mögliche Felder. Das Team prüft zusätzlich, ob die Daten zur Informationsarchitektur passen und keine veralteten Geschäftsinformationen wiederholen. Strukturierte Daten dürfen nie als Ersatz für eine klare sichtbare Antwort behandelt werden.
 
+## Sichtbar ist nicht dasselbe wie verifiziert
+
+Die Regel „markiere nur, was der Nutzer sieht" hat eine schärfere Schwester, die in der Praxis häufiger greift: **Markiere nur, was du als aktuell verantworten kannst, auch wenn es sichtbar ist.** Ein Wert kann auf der Seite stehen und trotzdem nicht maschinenlesbar gehören. Der typische Fall ist ein Preis oder eine Bewertung, die sichtbar, aber mit einem ehrlichen Vorbehalt versehen ist: ein Preis „Stand Januar 2021", eine Sternezahl aus einer fremden Quelle. Für den Menschen ist der Vorbehalt mitlesbar; die Maschine liest das Feld ohne den Vorbehalt und behandelt es als aktuelle Zusage. Genau da entsteht die Falschangabe.
+
+Deshalb gilt: Ein Feld wandert erst dann in die strukturierten Daten, wenn es dieselbe Beweislatte besteht wie eine sichtbare Zusage. Ein unbestätigter Preis wird sichtbar mit seinem Stand gezeigt, aber nicht als `Offer` ausgezeichnet. Eine fremde Sternezahl wird sichtbar mit Quelle und Link gezeigt, aber nicht als `aggregateRating` ausgezeichnet. Die sichtbare Ebene darf einen Vorbehalt tragen; die Maschinenebene kann keinen tragen, also bekommt sie den Wert erst nach Bestätigung.
+
+Das Warum ist nicht Vorsicht, sondern Vertrauen: Eine Suchmaschine, die eine strukturierte Zusage ausspielt und dann einen anderen Preis vorfindet, straft die Domain ab, und der Gast, der mit einer falschen Zahl kommt, verliert Vertrauen an der Kasse. Der Schaden ist größer als der Gewinn eines früher gefüllten Feldes.
+
+Diese Grenze lässt sich mechanisieren, statt sie zu merken, und das gehört nach [`00_SYSTEM/06-erzwungene-qualitaet.md`](../00_SYSTEM/06-erzwungene-qualitaet.md): Jeder Preis trägt ein Feld `priceVerified`, und die Schema-Funktion erzeugt ein `Offer` nur, wenn es gesetzt ist. Solange nichts bestätigt ist, enthält der Datensatz null Preise, ganz ohne Sonderfall im Markup. Sobald der Inhaber bestätigt, erscheinen die Preise von selbst. Ein Gate prüft, dass dieser Schutz nicht aus der Schema-Funktion entfernt wird. So ist „sichtbar, aber noch nicht maschinenlesbar" kein Versehen, sondern ein erzwungener Zustand mit einem klar dokumentierten Punkt, an dem er endet.
+
 ## Versionierung
 
 Metadaten und strukturierte Daten werden bei neuen Seitenmodellen, Angeboten, Standorten und rechtlichen Änderungen mitgeprüft. Dokumentiere Quelle und Verantwortlichkeit. So bleibt die SEO-Schicht wartbar und fällt nicht nur beim Audit auf.
