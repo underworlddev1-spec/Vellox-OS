@@ -24,6 +24,22 @@ Automatisierte Tools finden typische Fehler, aber keine vollständige Erfahrung.
 
 Accessibility ist abgeschlossen, wenn die Kernaufgaben ohne unnötige Sonderwege funktionieren. Eine alternative Version, die wichtige Informationen oder Würde verliert, ist keine gleichwertige Lösung.
 
+## Eine Stichprobe nach Seitentypen prüft die Vorlage, nicht die Seiten
+
+Wer ein automatisches Prüfwerkzeug einrichtet, wählt fast immer eine Liste aus: eine Startseite, eine Leistungsseite, eine Detailseite, ein Artikel. Die Begründung klingt zwingend — die siebzehn Artikel teilen sich ein Template, also genügt einer.
+
+Sie ist falsch, und der Fall dazu ist billig zu haben. In einem Projekt lief die Prüfung über vierzehn handverlesene Seiten und meldete monatelang null Verstöße. Ein einmaliger Lauf über alle achtundvierzig Unterseiten fand auf sieben Artikeln einen Verstoß der Stufe „serious": eine waagrecht scrollbare Vergleichstabelle, die mit der Tastatur nicht erreichbar war. Der stellvertretend geprüfte Artikel war einer der zehn ohne Tabelle.
+
+**Ein gemeinsames Template heißt nicht, dass alle Seiten dieselben Elemente enthalten.** Jedes optionale Feld — eine Tabelle, ein Bild, eine Kundenstimme, ein eingebetteter Kalender — erzeugt eine Variante, und keine Stichprobe nach Seitentypen trifft sie zuverlässig. Getroffen wird, was die Sortierung gerade nach vorne stellt.
+
+Daraus zwei Regeln.
+
+**Die Liste der geprüften Seiten wird aus dem fertigen Bau erzeugt, nicht gepflegt.** Eine handgeschriebene Liste veraltet mit jedem neuen Seitentyp, und zwar stillschweigend: Sie meldet weiter null, nur über weniger. Ein Verzeichnisdurchlauf über die gebauten Dateien kostet drei Zeilen und kennt jede Seite.
+
+**Wenn die Laufzeit dagegenspricht, wird nach Elementen ausgewählt und nicht nach Seitentypen.** Wer kürzen muss, sucht je optionalem Feld eine Seite, die es enthält — die eine mit Tabelle, die eine mit Video, die eine mit Formular. Das ist die Auswahl, die eine Stichprobe rechtfertigt; die nach Seitentypen ist eine Auswahl nach Ordnerstruktur.
+
+Der volle Lauf im genannten Projekt kostete zweieinhalb Minuten für neunundvierzig Seiten in zwei Größen. Das ist billiger als die Frage, ob der Befund von gestern noch gilt.
+
 ## Accessibility im Prozess
 
 Accessibility wird bereits beim Seitenmodell, bei der Copy, im visuellen System und in der Komponentenarchitektur besprochen. Das Team entscheidet früh, wie Fokus, Fehler, Dialoge, Medienalternativen und Bewegung funktionieren. Dadurch bleiben barrierearme Lösungen Teil der Grundstruktur und nicht eine sichtbare Reparaturschicht.
