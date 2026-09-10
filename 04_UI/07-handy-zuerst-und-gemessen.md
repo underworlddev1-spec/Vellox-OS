@@ -83,6 +83,27 @@ die Aussage des Abschnitts ist und der Rest ihre Begründung.
 Die Prüfung ist mechanisch: Vorspann am Telefon rendern und Zeilen zählen. Mehr
 als vier heißt aufteilen.
 
+Im Fließtext gibt es dieselbe Wand mit einem anderen Auslöser, und sie verrät
+sich meist selbst. Gemessen wurde ein Absatz von achtzehn Zeilen, der längste
+einer ganzen Website. Sein erster Satz lautete: „Das hier ist keine
+Abschreckung, sondern die Liste." Danach folgten neun Aufgaben, durch
+Semikolon und Punkt getrennt, als Prosa gesetzt.
+
+**Wenn ein Absatz sich selbst eine Liste nennt, ist er eine.** Das gilt auch
+für die schwächeren Signale: eine Reihe von Sätzen, die alle mit demselben
+Wort beginnen, oder eine Aufzählung mit „erstens, zweitens, drittens" ohne
+Umbruch. Am Telefon ist so ein Absatz ein Block, in dem niemand die Stelle
+wiederfindet, die ihn betrifft.
+
+Der Fall hatte eine zweite Hälfte, die häufiger vorkommt, als man denkt: Zwei
+Bildschirme weiter unten stand dieselbe Aufzählung noch einmal als Tabelle —
+scannbar, und mit einer Vergleichsspalte, die der Prosa fehlte. Die Doppelung
+war niemandem aufgefallen, weil beide Fassungen für sich gut geschrieben
+waren. **Vor dem Umbau einer Textwand wird deshalb geprüft, ob ihr Inhalt auf
+derselben Seite schon einmal vorkommt.** Wenn ja, ist die bessere Fassung die
+mit der zusätzlichen Information, und die Prosa behält nur, was diese Fassung
+nicht sagen kann.
+
 ## Die Handlung muss erreichbar bleiben
 
 Eine Seite von vierzehn Bildschirmen hat ein Problem, das am Schreibtisch nicht
@@ -204,6 +225,26 @@ neun, deren Beweis bei 3000 Pixeln beginnt.
 Sektionsabstände unter etwa einem Bildschirm liegt, ist die Länge Inhalt, und
 dann kostet jede Kürzung etwas. Liegt sie darüber, gibt es Höhe, die niemandem
 gehört.
+
+**Und die Grenze gilt nicht für jeden Seitentyp.** Sie stammt von einer
+Startseite, und dort bedeutet Höhe, dass die Handlung weit weg ist. Auf einem
+Nachschlagetext bedeutet sie nur, dass die Frage umfangreich war. Eine
+Datenschutzerklärung im selben Projekt maß 24 Bildschirme; daran ist nichts zu
+gestalten, ihre Länge folgt der Rechtslage. Ein Ratgeberartikel maß 13,1, weil
+er sieben Fragen beantwortet statt der üblichen fünf — auch das ist Umfang und
+keine Nachlässigkeit.
+
+Wer die Grenze trotzdem überall erzwingt, kürzt an Texten, die jemand
+absichtlich lang geschrieben hat, und gewöhnt sich gleichzeitig daran, die
+Meldung zu überlesen, weil auf zwei Seiten immer dieselbe steht. Deshalb
+trennt die Prüfung zwei Regime: Seiten, die verkaufen, halten die Grenze;
+Nachschlagetexte werden gemessen und berichtet, aber nicht abgebrochen. Für
+sie zählt statt der Gesamthöhe der längste Absatz, weil eine Wand aus
+einunddreißig Zeilen auch auf einer kurzen Seite unlesbar wäre.
+
+Jede Ausnahme trägt ihren Grund an der Stelle, an der sie steht. Eine Ausnahme
+ohne Begründung ist keine Ausnahme, sondern eine abgeschaltete Regel, und die
+Liste wächst dann mit jedem Projekt über die ganze Seite.
 
 Und eine Warnung zur zweiten Zahl: **Der erste Beweis ist selten die
 Referenzsektion.** Er ist das erste Element, das etwas zeigt, was nicht
