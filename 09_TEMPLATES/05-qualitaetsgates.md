@@ -298,6 +298,57 @@ if (offen.size > 0) hinweis(`${offen.size} Bildplätze noch offen`, [...offen.ke
 
 Ein Hinweis bricht den Bau nicht ab. Der Zustand ist bis zum Fototermin erlaubt; unsichtbar darf er nicht sein. Zur Abgrenzung von Befund und Hinweis siehe [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md#die-leiter-der-durchsetzung).
 
+## 8b. Der Ausfall junger Funktionen wird gemessen
+
+Ein Test in drei Motoren prüft drei aktuelle Motoren. Die Geräte der Kundschaft
+sind nicht aktuell. Statt ein altes Gerät zu besorgen, wird die Funktion
+abgeschaltet: Die ausgelieferte CSS-Datei wird unterwegs umgeschrieben, so wie
+ein Browser sie behandeln würde, der die Funktion nicht kennt.
+
+```js
+/* Jede Deklaration, deren Wert die junge Funktion enthält. */
+const ohneFunktion = (css) =>
+  css.replace(/[^;{}]*:[^;{}]*color-mix\([^;{}]*\)[^;{}]*;?/g, '')
+
+await ctx.route('**/*.css', async (weg) => {
+  const antwort = await weg.fetch()
+  weg.fulfill({ response: antwort, body: ohneFunktion(await antwort.text()) })
+})
+```
+
+Gemessen wird danach der schlechteste Textkontrast der Seite. Nicht die Stelle,
+die man verdächtigt, sondern jede sichtbare Textstelle gegen ihre wirksame
+Hintergrundfarbe, und die wirksame steht selten am Element selbst.
+
+Zwei Fallen stecken in dieser Messung, beide sind beim ersten Lauf zugeschnappt:
+
+**Die Hintergrundfarbe muss gesucht werden.** Wer `backgroundColor` am Element
+selbst liest, bekommt fast immer `rgba(0, 0, 0, 0)` und misst durchsichtig
+gegen durchsichtig. Die Schleife geht nach oben, bis eine Farbe mit Deckung
+kommt.
+
+**Eine berechnete Farbe hat zwei Schreibweisen.** `rgb(237, 242, 239)` zählt
+bis 255, `color(srgb 0.807 0.841 0.829)` bis 1. Wer beide gleich behandelt,
+liest ein helles Grau als Schwarz und meldet Kontrastfehler, die es nicht gibt.
+Der erste Lauf dieser Prüfung meldete vier davon, und alle vier lagen in der
+Prüfung.
+
+```js
+function farbe(s) {
+  const teile = (s.match(/[\d.]+/g) ?? []).map(Number)
+  if (teile.length < 3) return null
+  const einsSkala = /^color\(/.test(s)
+  const [r, g, b] = teile
+  return {
+    rgb: einsSkala ? [r * 255, g * 255, b * 255] : [r, g, b],
+    alpha: teile[3] ?? 1,
+  }
+}
+```
+
+Ein gemeldeter Fehler wird geprüft, bevor er ein Befund wird. Das gilt für
+Befunde von außen und für die eigenen genauso.
+
 ## 9. Eine Angabe, eine Quelle
 
 Preise, Namen, Rufnummern, Laufzeiten stehen in genau einer Datei. Jede Anzeige wird abgeleitet, auch die Meta-Beschreibung und die strukturierten Daten.
@@ -412,6 +463,8 @@ Bevor das Projekt in Phase 3 geht:
 - [ ] Jeder Design-Token trägt eine Herkunft, übernommene mit Fundstelle und Datum
 - [ ] Jedes Farbtoken misst, was sein Name behauptet, und der Akzent ist die auffälligste Farbe
 - [ ] Text auf jeder Fläche mit Verlauf hält an der dunkelsten Stufe
+- [ ] Für jede junge Plattformfunktion ist der Ausfall gemessen, nicht nur die Anwesenheit
+- [ ] Keine Eigenschaft steht zweimal im selben Block mit einer jungen Funktion in der zweiten Fassung
 - [ ] Der Katalog in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) ist um projektspezifische Gates ergänzt
 
 Der negative Test in Zeile drei wird am häufigsten übersprungen und ist der wichtigste. Ein Gate mit einem Denkfehler in der Bedingung erzeugt Vertrauen, das es nicht deckt.

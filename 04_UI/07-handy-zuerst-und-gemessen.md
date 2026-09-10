@@ -160,6 +160,81 @@ Regel: **Wenn ein Element zwei Aufgaben hat, bekommt es zwei Umsetzungen.** Eine
 Eigenschaft, die Grenze und Atmosphäre gleichzeitig leisten soll, leistet
 keines von beidem zuverlässig.
 
+## Der aktuelle Browser ist nicht der installierte Bestand
+
+Es gibt eine zweite Art, am Telefon zu prüfen und trotzdem nichts zu sehen,
+und sie ist heimtückischer als das verkleinerte Fenster: den richtigen Motor
+in der falschen Fassung zu prüfen.
+
+Ein Projekt wurde in drei Motoren getestet, Chromium, WebKit und Firefox, und
+bestand zwanzig Prüfungen in allen dreien. Das klingt nach Abdeckung und war
+keine. Die Testbibliothek liefert einen sehr aktuellen WebKit; das iPhone, auf
+dem die Seite dem Kunden gezeigt wird, ist es womöglich nicht.
+
+**Die Frage ist nicht, ob es im aktuellen Safari läuft, sondern was in dem
+Safari passiert, der eine Funktion noch nicht kennt.**
+
+Der Fall lässt sich prüfen, ohne ein altes Gerät zu besitzen. Die Funktion wird
+abgeschaltet, indem die ausgelieferte CSS-Datei unterwegs umgeschrieben wird:
+Jede Deklaration mit der jungen Funktion fliegt raus, jede Regel mit dem jungen
+Selektor fliegt raus. Genau das tut ein Browser, der sie nicht kennt. Er
+verwirft die Deklaration, und was danach gilt, entscheidet die Kaskade und
+nicht die Absicht des Autors.
+
+Gemessen wird dann das, was wirklich weh tut. Der schlechteste Textkontrast der
+Seite, die Höhe am Telefon, und ob das auffälligste Bauteil noch funktioniert.
+
+Das Ergebnis in dem Projekt, aus dem diese Regel stammt: Ohne `color-mix()`
+stand der Vorspann eines dunklen Abschnitts bei **1:1**, also Textfarbe exakt
+gleich Hintergrundfarbe. Unsichtbarer Text auf Safari 15.4 bis 16.1, und kein
+Test hätte das je gezeigt, weil alle Tests den neuen Motor benutzten.
+
+### Die Ursache ist fast nie die junge Funktion
+
+Sie war es auch hier nicht. Schuld war eine Layoutklasse, die eine Farbe
+mitführte: `.vorspann` setzte `color: var(--color-deep)`. Auf jedem hellen
+Abschnitt war das eine Wiederholung dessen, was `body` ohnehin setzt, also
+folgenlos. Auf dem einen dunklen Abschnitt war es Deep auf Deep, sobald die
+darüberliegende Regel wegfiel.
+
+**Eine Klasse, die Größe und Breite regelt, entscheidet nicht über Farbe.**
+Wo eine Klasse eine Farbe gegen ihren Container durchsetzt, ist die Vererbung
+nicht mehr tragfähig, und dann hängt die Lesbarkeit an einer einzigen Regel.
+Die Deklaration ersatzlos zu streichen war die ganze Korrektur; danach traf
+die Vererbung in beiden Fällen das Richtige.
+
+### Eine Absicherung im Quelltext ist noch keine im Ergebnis
+
+Der erste Reparaturversuch war das übliche Muster: den einfachen Wert vor den
+gemischten schreiben, damit ein alter Browser den ersten nimmt.
+
+Es hat nichts geändert. Der Minifier hält zwei Deklarationen derselben
+Eigenschaft im selben Block für redundant und entfernt die erste. Im Quelltext
+sah die Absicherung vollständig aus, im Ergebnis war sie nicht da, und beides
+sieht im Browser identisch aus, solange die junge Funktion vorhanden ist.
+
+**Eine Absicherung wird am gebauten Ergebnis geprüft, nicht am Quelltext.** Das
+ist dieselbe Regel wie bei der Frage, ob eine Adresse ausgeliefert wird: Der
+Bau ist eine Übersetzung, und eine Übersetzung darf Dinge weglassen. Wer nur
+die Vorlage liest, prüft seine Absicht und nicht sein Produkt.
+
+Tragfähig sind zwei Wege. Entweder die Vererbung trägt, dann braucht es gar
+keinen Ersatzwert. Oder die junge Fassung steht in `@supports`, denn über eine
+Bedingung hinweg kann kein Minifier zusammenfassen. Das doppelte Schreiben
+derselben Eigenschaft ist in einem minifizierten Bau kein dritter Weg, sondern
+eine Täuschung, und gehört deshalb verboten statt empfohlen.
+
+### Was das für ein Projekt heißt
+
+Für jede Plattformfunktion, die jünger ist als die Geräte der Zielgruppe, wird
+einmal der Ausfall geprüft und nicht nur die Anwesenheit. Welche das sind, ist
+eine kurze Liste, die beim Bau ohnehin entsteht: Man weiß, welche Funktionen
+man verwendet hat.
+
+Der Aufwand ist ein Skript und einmal fünf Minuten. Der Ertrag ist die Antwort
+auf eine Frage, die sonst der Kunde stellt, und zwar in der Form „bei mir sieht
+man da nichts".
+
 ## Wie am Telefon geprüft wird
 
 Nicht durch Verkleinern des Fensters, sondern mit einem Browser bei 390 mal 844

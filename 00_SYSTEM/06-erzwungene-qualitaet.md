@@ -24,6 +24,32 @@ Jede Qualitätsregel hat einen Ort. Von oben nach unten sinkt die Verlässlichke
 
 **Stufe 5: Prosa im Wissen.** Der Ort für Begründungen, Zusammenhänge und Ermessensfragen. Nicht der Ort für prüfbare Grenzen.
 
+## Geprüft wird das Ergebnis, nicht die Vorlage
+
+Eine Stufe ist nur so viel wert wie die Sache, an der sie prüft. Zwei Fehler
+aus echten Projekten hatten dieselbe Form: Die Regel war richtig gedacht, im
+Quelltext richtig geschrieben, und im ausgelieferten Ergebnis nicht vorhanden.
+
+Einmal zeigte ein Canonical auf `behandlungen.html`, während die Adresse
+`/behandlungen` ausgeliefert wurde. Einmal stand ein Ersatzwert vor einer
+jungen CSS-Funktion, und der Minifier entfernte ihn als redundant. Beide Male
+war die Vorlage in Ordnung. Beide Male hätte ein Blick in die Vorlage
+Entwarnung gegeben.
+
+**Der Bau ist eine Übersetzung, und eine Übersetzung darf Dinge weglassen,
+zusammenfassen und umbenennen.** Ein Gate, das die Vorlage liest, prüft die
+Absicht des Autors. Ein Gate, das `dist/` liest, prüft das Produkt.
+
+Die Umkehrung gilt genauso und wird seltener bemerkt: Wo der Bau eine
+Doppelung bereits entfernt hat, ist im Ergebnis nichts mehr zu sehen. Ein Gate
+gegen das Schreiben einer Scheinabsicherung muss deshalb den Quelltext lesen.
+Die Frage ist nicht, welche Seite grundsätzlich richtig ist, sondern an welcher
+Stelle der Fehler noch sichtbar ist.
+
+Und die dritte Ebene, die weder Vorlage noch Ergebnis kennt: Ob eine Adresse
+ausgeliefert wird, entscheidet die Hosting-Konfiguration. Dafür braucht es eine
+laufende Seite, keinen Ordner.
+
 ## Die Verschiebungsregel
 
 **Eine Regel, die einmal gebrochen wurde, zieht eine Stufe nach oben.** Nicht als Strafe, sondern weil der Bruch der Beweis ist, dass die bisherige Stufe für diese Regel nicht trägt.
@@ -89,6 +115,9 @@ Alle drei setzt [`werkzeuge/farbwort-pruefen.mjs`](../werkzeuge/farbwort-pruefen
 | Ein Element mit zwei Aufgaben bekommt zwei Umsetzungen | 4 | Vier Fassungen einer Hervorhebung gemessen: Jede, die das Licht unregelmäßig machte, verlor die Kante irgendwo. Eine Eigenschaft, die Grenze und Atmosphäre gleichzeitig leisten soll, leistet keines von beidem zuverlässig. |
 | Ein offener Bildplatz nennt seine Aufnahme | 1 | Ein Kunde sah eine gefüllte Fläche, wo ein Foto fehlte, und fragte, ob das ein Platzhalter sei. Ein offener Platz, der nicht sagt, was hier hingehört, ist ein Rätsel; die Angabe ist deshalb ein Pflichtwert ohne Vorgabe, und ein namenloser Platz lässt sich nicht bauen. Siehe [Erstauslieferung](07-erstauslieferung.md#der-verkleidete-platzhalter). |
 | Offene Bildplätze werden gezählt | 3 (Hinweis) | Derselbe Fall von der anderen Seite: Der Zustand ist bis zum Fototermin erlaubt, ein Abbruch wäre also falsch. Der Bau nennt bei jedem Durchlauf ihre Zahl und ihre Namen, damit keiner unbemerkt mit online geht. |
+| Der Ausfall einer jungen Funktion ist gemessen | 3 | Die Testbibliothek liefert einen sehr aktuellen WebKit, das Gerät der Kundschaft nicht. Die junge Funktion wird abgeschaltet, indem die ausgelieferte CSS-Datei unterwegs umgeschrieben wird, dann werden schlechtester Textkontrast, Höhe am Telefon und das auffälligste Bauteil gemessen. Gefunden wurde so ein Vorspann bei 1:1, also unsichtbarer Text auf Safari 15.4 bis 16.1. Siehe [Das Handy ist nicht die kleine Fassung](../04_UI/07-handy-zuerst-und-gemessen.md). |
+| Kein Schein-Rückfall im Quelltext | 2 | Zwei Deklarationen derselben Eigenschaft im selben Block sehen nach Absicherung aus. Der Minifier hält die erste für redundant und entfernt sie, also ist die Absicherung im Quelltext sichtbar und im Ergebnis nicht vorhanden. Geprüft wird hier ausnahmsweise die Vorlage, weil im Ergebnis nichts mehr zu sehen ist. |
+| Eine Layoutklasse setzt keine Farbe | 4 | `.vorspann` regelte Größe und Breite und führte eine Farbe mit. Auf hellen Flächen folgenlos, auf einer dunklen Deep auf Deep, sobald die überschreibende Regel wegfiel. Eine Klasse, die eine Farbe gegen ihren Container durchsetzt, macht die Vererbung untragfähig. |
 | Genau ein Bild je Seite lädt bevorzugt | 4 | Ein Bild oberhalb der Falz mit `lazy` kostet Ladezeit, eines darunter mit `eager` ebenfalls, und beides passiert, wenn man raten darf. Deshalb ist die Angabe ein Pflichtwert ohne Vorgabe. |
 
 ### Was unterhalb einer Bruchstelle passiert
