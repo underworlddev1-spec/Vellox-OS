@@ -138,6 +138,39 @@ umgebenden Kastens, und sobald das große Bild schmaler wurde als der Kasten,
 stand es daneben in der Luft. Wohin ein begrenztes Bild rückt, weiß nur die
 aufrufende Stelle. Die Komponente begrenzt, das Layout ordnet an.
 
+## Wo die Stufe hingehört, damit sie nicht bei einer Komponente bleibt
+
+Der Fehler wiederholt sich auf eine Weise, die vorhersagbar ist. Jemand
+bemerkt, dass die Seite auf einem großen Bildschirm klein wirkt, öffnet den
+Hero, ergänzt zwei Bruchstellen an der Überschrift — und dort bleibt es. In
+einem gemessenen Projekt kam die Stufe für große Bildschirme anschließend in
+genau einer Komponente vor, und siebenundvierzig von neunundvierzig Seiten
+trugen bei 2560 dieselbe Überschriftengröße wie bei 1280. Auch die Seite, auf
+die bezahlte Anzeigen zeigten, war unberührt geblieben.
+
+Der Grund ist nicht Nachlässigkeit. Der Hero ist die Stelle, an der man den
+Fehler sieht, und jede andere Überschrift steht in einer anderen Datei.
+
+**Deshalb gehört die Stufe in den Wert, nicht in die Fundstelle.** Zwölf
+Überschriften mit derselben Klassenkette brauchen keine zwölf zusätzlichen
+Bruchstellen-Klassen, sondern eine Variable mit Stufen und eine Klasse, die
+sie liest. Der Unterschied ist nicht Schreibarbeit: Zwölf Kopien einer
+Entscheidung driften auseinander, und die dreizehnte Überschrift bekommt sie
+gar nicht.
+
+Dazu kommt ein technischer Grund, der in [Zwei Regeln um dieselbe
+Eigenschaft](#die-erste-falle-zwei-regeln-um-dieselbe-eigenschaft) ausgeführt
+ist: Eine zweite Deklaration derselben Eigenschaft neben der bestehenden
+erzeugt einen Wettbewerb in der Kaskade, den die Dateireihenfolge entscheidet.
+Wer die Kette durch eine Variable ersetzt, statt Regeln danebenzustellen,
+behält genau eine Deklaration und damit das Problem gar nicht erst.
+
+**Wenige Ausnahmen bleiben und sind welche.** Ein Hero mit eigener
+Größenkette, eine Pflichtseite, eine Landingpage mit eigenem Kopf — dort steht
+die Stufe explizit, weil es je einen Fall gibt und keine Familie. Die Regel
+lautet nicht „immer eine Variable", sondern: Sobald dieselbe Entscheidung an
+mehr als zwei Stellen steht, gehört sie an eine.
+
 ## Die Obergrenze ist eine Entscheidung, keine Zahl
 
 Es gibt keinen richtigen Wert. Es gibt eine Begründung, die für das Projekt
@@ -156,10 +189,29 @@ lässt, und sie hat den zweiten Fehler oben gefangen — nicht das Auge.
 [`werkzeuge/zeilen.mjs`](../werkzeuge/zeilen.mjs) misst über mehrere Breiten
 und gibt einen Rückgabewert zurück, taugt also als Abbruchbedingung im Bau.
 
-Die übrigen Zahlen dieses Kapitels bleiben Prosa und Urteil. Ob ein Anteil von
-57 Prozent richtig ist oder eine Kopfleiste dünn wirkt, kann kein Skript
-entscheiden. Die Einordnung dieser Stufen steht in
+**Nachtrag, und eine Korrektur an dieser Stelle:** Hier stand, die übrigen
+Zahlen blieben Prosa und Urteil. Für drei von ihnen stimmt das nicht. Ob eine
+Kopfleiste *dünn wirkt*, kann kein Skript entscheiden — ob sie bei 2560 exakt
+dieselbe Höhe hat wie bei 1280, sehr wohl. Die Frage ist nicht ästhetisch,
+sondern binär: Hat oberhalb der letzten Bruchstelle überhaupt jemand eine
+Regel geschrieben?
+
+Messbar sind deshalb Überschrift, Kopfleiste und Schaltfläche. Ein Skript
+öffnet jede gebaute Seite bei beiden Breiten, vergleicht die drei Werte und
+bricht ab, wenn alle drei gleich sind.
+
+Nur die erste Zahl bleibt Urteil. Ein Anteil von 40 Prozent ist bei einem
+langen Lesetext eine Entscheidung und bei einem Raster aus drei Karten
+meistens keine, und diesen Unterschied kennt kein Skript. Sie wird deshalb
+berichtet und nicht erzwungen. Die Einordnung dieser Stufen steht in
 [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md).
+
+**Der Abbruch darf nicht nur den Totalausfall kennen.** In dem Projekt, aus
+dem diese Erfahrung stammt, waren Kopfleiste und Schaltfläche längst gestuft
+und nur die Überschrift eingefroren — auf 47 von 49 Seiten. Eine Prüfung, die
+erst bei drei gleichen Werten anschlägt, hätte genau diesen Fall durchgelassen.
+Ein einzelner eingefrorener Wert wird deshalb berichtet, auch wenn er den Bau
+nicht anhält.
 
 ## Reviewfrage
 
