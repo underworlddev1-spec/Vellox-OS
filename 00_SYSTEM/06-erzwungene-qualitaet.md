@@ -42,6 +42,22 @@ Ein Bau, der abbricht, ist eine Nachricht. Sie taugt nur, wenn sie drei Dinge en
 
 Eine Fehlermeldung ohne diese drei Teile erzeugt Frust und führt zur ersten Umgehung. Mit ihnen erzeugt sie eine Entscheidung.
 
+## Stufe 3 hält nur, wenn der Bericht leer werden kann
+
+Über Stufe 3 steht oben, niemand könne behaupten, den Fehler nicht gesehen zu haben. Das stimmt beim ersten Lauf und hört danach auf zu stimmen. Ein Bericht, der jedes Mal dieselben Zeilen zeigt, wird beim dritten Mal überflogen und beim fünften gar nicht mehr gelesen — und damit auch der Lauf nicht, in dem eine neue Zeile dazwischensteht.
+
+Der Beleg dafür ist unangenehm konkret. In einem Projekt meldete die Rasterprüfung über Wochen neun Versätze, Lauf für Lauf dieselben. Sie wurden mehrfach als „Bericht, kein Abbruch" abgetan, ohne dass jemand hineinsah. Beim ersten ernsthaften Blick waren sechs davon echte Fehler, und zwar derselben Bauart, die an anderer Stelle im selben Projekt längst behoben war: Zwei Spalten begannen bündig, aber eine trug eine Karte mit Innenabstand, und ihre erste Textzeile stand siebenunddreißig Pixel tiefer als die Überschrift daneben. Gelesen werden Textkanten, nicht Kastenkanten.
+
+Ein zweiter Fall aus demselben Projekt zeigt die andere Ursache. Ein Messwerkzeug bewertete eine Anzeigen-Landingpage jedes Mal mit 66 von 100 für Auffindbarkeit, weil sie absichtlich nicht indexiert wird. Der Wert war nie ein Fehler und stand trotzdem in jeder Tabelle. Wer ihn dreimal gesehen hat, liest die Spalte nicht mehr.
+
+**Daraus folgt: Ein Befund gehört entweder behoben oder entschieden.** Entschieden heißt, dass er mit seinem Grund neben der Prüfung steht und aus der Zählung herausfällt. Was in keiner der beiden Listen steht, ist neu, steht oben und ist damit das Einzige, was ein Mensch lesen muss. Die Schlusszeile nennt nur die offenen Befunde; alles andere ist Anhang.
+
+Das klingt nach Buchhaltung und ist das Gegenteil. Es zwingt dazu, jede Zeile einmal zu beurteilen — und genau diese eine Beurteilung war es, die in beiden Fällen jahrelang nicht stattfand, weil es bequemer war, den Bericht als Rauschen zu behandeln.
+
+**Die Entscheidungsliste prüft sich selbst.** Ein Eintrag, dessen Befund nicht mehr auftritt, wird gemeldet und entfernt. Sonst wächst die Liste still weiter, und irgendwann deckt ein alter Eintrag einen neuen Befund ab, der zufällig zur alten Beschreibung passt — eine Ausnahme, die niemand mehr entschieden hat und die trotzdem wirkt.
+
+**Und jede Ausnahme trägt ihren Grund an Ort und Stelle.** Nicht in einem Ticket, nicht in einem Commit, sondern in der Datei, die die Prüfung enthält. Ein Grund, den man suchen muss, wird beim nächsten Mal nicht gesucht, sondern geraten.
+
 ## Der Gatterkatalog
 
 Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für Urteil, sondern die Freistellung des Urteils von Buchhaltung. Jedes Gate wird mit dem Problem dokumentiert, aus dem es entstand, damit ein späteres Team es beurteilen kann statt es zu erben.
