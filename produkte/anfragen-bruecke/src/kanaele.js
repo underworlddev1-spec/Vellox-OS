@@ -104,13 +104,46 @@ export async function zustellen({ kunde, text, parameter, env }) {
   return telegramSenden({ chat: ziel.telegram, text, env })
 }
 
-/** Stoerungen gehen an den Betreiber, nicht an den Kunden. */
+/**
+ * Stoerungen gehen an den Betreiber, nicht an den Kunden -- und zwar per
+ * E-Mail ueber Resend.
+ *
+ * Nicht ueber WhatsApp, obwohl der Kanal danebenliegt: Eine
+ * geschaeftsinitiierte WhatsApp-Nachricht braucht eine genehmigte Vorlage,
+ * und eine Vorlage mit einer freien Fehlermeldung als Variable waere bei
+ * Meta entweder abgelehnt oder sie zwaengt jede Stoerung in drei Felder.
+ * Eine Stoerungsmeldung muss sagen duerfen, was kaputt ist.
+ *
+ * Resend steht ohnehin schon, weil die Kundenwebsites darueber verschicken.
+ * Fehlt es, bleibt die Meldung im Protokoll -- verschluckt wird sie nie.
+ */
 export async function betreiberMelden(text, env) {
+  const zeile = `Brücke: ${text}`
+  console.log('STOERUNG | ' + zeile.replace(/\n/g, ' | '))
+
+  if (!env.RESEND_TOKEN || !env.BETREIBER_MAIL || !env.ABSENDER_MAIL) return false
   try {
-    if (env.TELEGRAM_TOKEN && env.TELEGRAM_CHAT) {
-      await telegramSenden({ chat: env.TELEGRAM_CHAT, text: `⚠️ Brücke\n\n${text}`, env })
-      return true
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.RESEND_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: env.ABSENDER_MAIL,
+        to: [env.BETREIBER_MAIL],
+        subject: 'Anfragen-Brücke: Störung',
+        text,
+      }),
+    })
+    if (!res.ok) {
+      console.log('Stoerungsmeldung nicht zustellbar:', res.status, await antwortLesen(res))
+      return false
     }
-  } catch { /* eine Stoerungsmeldung, die selbst stoert, wird verschluckt */ }
-  return false
+    return true
+  } catch (e) {
+    // Eine Meldung, die selbst scheitert, darf den Lauf nicht abbrechen.
+    console.log('Stoerungsmeldung gescheitert:', e.message)
+    return false
+  }
 }

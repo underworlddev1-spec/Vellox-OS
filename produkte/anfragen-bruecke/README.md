@@ -44,8 +44,8 @@ zum Nutzen steht.
 | Teil | Zustand |
 |---|---|
 | Worker, Filter, Felderkennung, Nachrichtenbau | **fertig** |
-| Telegram-Ausgang | **fertig** |
-| WhatsApp-Ausgang | **fertig im Code**, wartet auf Zugangsdaten von Meta |
+| WhatsApp-Ausgang | **fertig** |
+| Telegram-Ausgang | **fertig**, als Ausweichweg falls Meta die Nummer sperrt |
 | Mehrkundenfähigkeit | **fertig** — ein Eintrag je Betrieb |
 | Prüfstand mit sieben Proben | **fertig**, `npm run pruefen` |
 | Gmail-Bestätigung durchreichen | **fertig** |
@@ -83,11 +83,20 @@ Google-Bestätigung durchzureichen.
 **6. Geheimnisse setzen.** Niemals in eine Datei:
 
 ```bash
-npx wrangler secret put TELEGRAM_TOKEN      # vom @BotFather
-npx wrangler secret put TELEGRAM_CHAT       # deine eigene Chat-ID
-npx wrangler secret put BETREIBER_MAIL      # deine Mailadresse
-npx wrangler secret put STATUS_SCHLUESSEL   # frei erfunden, lang
+npx wrangler secret put WHATSAPP_TOKEN          # aus der Meta-App
+npx wrangler secret put WHATSAPP_TELEFON_ID     # aus der Meta-App
+npx wrangler secret put WHATSAPP_NUMMER_KOSTA   # 49176...  ohne Plus, ohne Leerzeichen
+npx wrangler secret put BETREIBER_MAIL          # wohin Störungen gehen
+npx wrangler secret put ABSENDER_MAIL           # verifizierter Absender bei Resend
+npx wrangler secret put RESEND_TOKEN            # dasselbe Konto wie die Kundenwebsites
+npx wrangler secret put STATUS_SCHLUESSEL       # frei erfunden, lang
 ```
+
+> Störungsmeldungen gehen per **E-Mail über Resend**, nicht über WhatsApp.
+> Eine geschäftsinitiierte WhatsApp-Nachricht braucht eine genehmigte Vorlage,
+> und eine Vorlage, die eine freie Fehlermeldung tragen soll, zwängt jede
+> Störung in drei feste Felder. Eine Störungsmeldung muss sagen dürfen, was
+> kaputt ist.
 
 **7. Gedächtnis anlegen** (optional, für Zähler und Lebenszeichen):
 
@@ -150,15 +159,9 @@ Beispielwerte für die Einreichung:
 > Meta lehnt Vorlagen ab, die mit einer Variablen beginnen oder enden. Der
 > Rumpf oben hält das ein. Wenn du ihn änderst, prüfe das zuerst.
 
-**4. Geheimnisse setzen und umschalten:**
-
-```bash
-npx wrangler secret put WHATSAPP_TOKEN
-npx wrangler secret put WHATSAPP_TELEFON_ID
-npx wrangler secret put WHATSAPP_NUMMER_KOSTA   # 49176...  ohne Plus, ohne Leerzeichen
-```
-
-In `wrangler.toml` `KANAL = "whatsapp"`, dann `npm run ausliefern`.
+**4.** Die drei Werte stehen im WhatsApp-Bereich der App und gehören in die
+Geheimnisse aus Abschnitt A. `KANAL = "whatsapp"` steht bereits in
+`wrangler.toml`.
 
 **5. Für den Dauerbetrieb** danach: Geschäftsverifizierung, eigene Nummer
 statt der Testnummer, und ein **dauerhaftes Token** über einen System User.

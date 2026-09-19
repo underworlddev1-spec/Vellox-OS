@@ -17,6 +17,6 @@ crons = ["0 9 * * *"]
 
 [vars]
 # Nicht geheim. Geheimes kommt ueber `wrangler secret put`.
-KANAL = "telegram"          # "telegram" zum Testen, "whatsapp" im Betrieb
+KANAL = "whatsapp"        # "whatsapp" im Betrieb, "telegram" nur als Ausweichweg
 BETRIEBSMODUS = "scharf"    # "scharf" = zustellen, "probe" = nur protokollieren
 STILLE_STUNDEN = "24"       # Herzschlag meldet sich nach so vielen Stunden ohne Mail
