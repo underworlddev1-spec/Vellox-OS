@@ -1,0 +1,6 @@
+node_modules/
+.wrangler/
+# Zugangsdaten gehoeren nie ins Repository. Die Beispieldatei daneben zeigt,
+# welche Namen gebraucht werden -- die Werte kommen ueber `wrangler secret put`.
+.dev.vars
+*.log

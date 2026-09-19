@@ -1,0 +1,22 @@
+name = "anfragen-bruecke"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Taeglicher Herzschlag: prueft, ob seit zu langer Zeit nichts angekommen ist.
+# Eine Bruecke, die still ausfaellt, ist schlimmer als keine.
+[triggers]
+crons = ["0 9 * * *"]
+
+# Zustand (letzte Mail, letzter Fehler, Zaehler).
+# Optional: Fehlt die Bindung, laeuft die Bruecke trotzdem, nur ohne Gedaechtnis.
+# Anlegen mit:  npx wrangler kv namespace create ZUSTAND
+# [[kv_namespaces]]
+# binding = "ZUSTAND"
+# id = "HIER_DIE_ID_EINTRAGEN"
+
+[vars]
+# Nicht geheim. Geheimes kommt ueber `wrangler secret put`.
+KANAL = "telegram"          # "telegram" zum Testen, "whatsapp" im Betrieb
+BETRIEBSMODUS = "scharf"    # "scharf" = zustellen, "probe" = nur protokollieren
+STILLE_STUNDEN = "24"       # Herzschlag meldet sich nach so vielen Stunden ohne Mail

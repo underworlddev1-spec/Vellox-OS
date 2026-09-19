@@ -1,0 +1,19 @@
+{
+  "name": "anfragen-bruecke",
+  "version": "1.0.0",
+  "description": "Faengt Anfragen aus einem bestehenden Postfach ab und stellt sie als kurze Nachricht auf WhatsApp oder Telegram zu.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pruefen": "node test/lauf.mjs",
+    "entwickeln": "wrangler dev",
+    "ausliefern": "wrangler deploy",
+    "protokoll": "wrangler tail"
+  },
+  "dependencies": {
+    "postal-mime": "^2.4.4"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

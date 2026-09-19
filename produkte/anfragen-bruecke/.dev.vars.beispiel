@@ -1,0 +1,16 @@
+# Kopiere diese Datei nach .dev.vars fuer lokale Laeufe.
+# Im Betrieb gehoert jeder dieser Werte ueber `wrangler secret put <NAME>`
+# in den Worker und NIEMALS in eine Datei, die im Repository landet.
+
+# --- Telegram (zum Testen, kostenlos, sofort verfuegbar) ---
+TELEGRAM_TOKEN=123456:AAG...
+TELEGRAM_CHAT=123456789
+
+# --- WhatsApp Cloud API (Betrieb) ---
+WHATSAPP_TOKEN=EAAG...
+WHATSAPP_TELEFON_ID=123456789012345
+WHATSAPP_VORLAGE=neue_anfrage
+WHATSAPP_SPRACHE=de
+
+# --- Betreiber: wohin Stoerungen und Google-Bestaetigungen gehen ---
+BETREIBER_MAIL=du@deine-domain.de
