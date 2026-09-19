@@ -12,7 +12,7 @@ Was heute im Postfach des Betriebs ankommt
         │
         │  Weiterleitungsregel — richtet der Kunde einmal ein
         ▼
-  kunde@bruecken-domain
+  pfaelzerhof@saphirweb.de
         │
         ▼
   Cloudflare Worker: lesen · filtern · kürzen
@@ -68,17 +68,32 @@ npx wrangler login
 dieselbe sein, die auch die Aufsteller tragen.
 
 **2. Email Routing einschalten.** Cloudflare-Oberfläche → Domain → *Email* →
-*Email Routing* aktivieren. Die MX-Einträge setzt Cloudflare selbst.
+*Email Routing* aktivieren.
+
+> ⚠️ **Zuerst prüfen, ob die Domain heute schon E-Mail empfängt.**
+> Email Routing ersetzt die MX-Einträge der **ganzen** Zone. Läuft dort
+> bereits ein Postfach, hört es in dem Moment auf, Mail zu bekommen.
+>
+> Der Ausweg ist eingebaut und kostet nichts: Vor dem Umschalten eine
+> **Catch-all-Regel** auf die bisherige Adresse anlegen. Dann geht alles,
+> was keine eigene Route hat, weiterhin dorthin. Erst danach umschalten.
+>
+> Prüfen lässt sich das in einer Zeile:
+> ```
+> dig +short MX saphirweb.de
+> ```
+> Kommt nichts zurück, empfängt die Domain heute keine Mail und du kannst
+> ohne Weiteres umschalten.
 
 **3. Ziel anlegen.** Unter *Destination addresses* deine eigene Mailadresse
 eintragen und bestätigen. Die braucht die Brücke, um Störungen und die
 Google-Bestätigung durchzureichen.
 
-**4. Route anlegen.** *Custom address* → `kosta@deine-domain` → Aktion
+**4. Route anlegen.** *Custom address* → `pfaelzerhof@saphirweb.de` → Aktion
 *Send to a Worker* → `anfragen-bruecke`.
 
 **5. Konfiguration eintragen.** In `src/konfiguration.js` den Schlüssel
-`kosta@BRUECKENDOMAIN` durch die echte Adresse ersetzen.
+`pfaelzerhof@saphirweb.de` durch die echte Adresse ersetzen.
 
 **6. Geheimnisse setzen.** Niemals in eine Datei:
 
@@ -176,7 +191,7 @@ Zwei Schritte, zehn Minuten, einmal.
 
 **1. Weiterleitungsadresse hinterlegen.**
 Gmail → *Einstellungen* → *Weiterleitung und POP/IMAP* →
-*Weiterleitungsadresse hinzufügen* → `kosta@deine-domain`
+*Weiterleitungsadresse hinzufügen* → `pfaelzerhof@saphirweb.de`
 
 Google schickt daraufhin einen Bestätigungscode an diese Adresse. **Der landet
 bei dir** — die Brücke erkennt Googles Absender und reicht die Mail
@@ -229,7 +244,7 @@ https://anfragen-bruecke.<dein-subdomain>.workers.dev/zustand?schluessel=...
 
 Drei Handgriffe, keine Programmierung:
 
-1. Route in Cloudflare: `betrieb@deine-domain` → Worker
+1. Route in Cloudflare: `cafe@saphirweb.de` → Worker
 2. Eintrag in `src/konfiguration.js` kopieren und anpassen
 3. Weiterleitungsregel im Postfach des Kunden
 

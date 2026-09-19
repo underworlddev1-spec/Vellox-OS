@@ -13,7 +13,11 @@
 export const KUNDEN = {
   // Die Adresse, auf die Kosta seine Anfragen weiterleitet.
   // Beim Anlegen der Route in Cloudflare exakt so eintragen.
-  'kosta@BRUECKENDOMAIN': {
+  //
+  // Benannt nach dem Betrieb und nicht nach der Person: Bei zwanzig Kunden
+  // liest sich eine Liste aus pfaelzerhof@, cafe@, metzgerei@ von selbst,
+  // eine aus kosta@, murat@, sabine@ nicht.
+  'pfaelzerhof@saphirweb.de': {
     name: 'Gasthaus Pfälzer Hof',
     sprache: 'de',
 
@@ -61,7 +65,7 @@ export const KUNDEN = {
   },
 
   // Zweiter Betrieb, Vorlage zum Kopieren.
-  // 'cafe@BRUECKENDOMAIN': { ... },
+  // 'cafe@saphirweb.de': { ... },
 }
 
 /** Google schickt die Bestaetigung der Weiterleitung von dieser Adresse. */

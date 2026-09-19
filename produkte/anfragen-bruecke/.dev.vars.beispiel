@@ -14,7 +14,7 @@ WHATSAPP_SPRACHE=de
 
 # --- Betreiber: wohin Stoerungen und Google-Bestaetigungen gehen ---
 BETREIBER_MAIL=du@deine-domain.de
-ABSENDER_MAIL=bruecke@deine-domain.de   # verifizierte Absenderdomain bei Resend
+ABSENDER_MAIL=bruecke@saphirweb.de   # verifizierte Absenderdomain bei Resend
 RESEND_TOKEN=re_...                     # dasselbe Konto wie die Kundenwebsites
 
 # --- Zustandsabfrage ---
