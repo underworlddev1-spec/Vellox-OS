@@ -8,6 +8,19 @@ compatibility_flags = ["nodejs_compat"]
 [triggers]
 crons = ["0 9 * * *"]
 
+# Alarmkanal: Stoerungsmeldungen an den Betreiber.
+#
+# Das Binding darf nur an *verifizierte* Zieladressen dieses Accounts senden
+# (Email Routing > Destination addresses). Welche davon es wird, sagt das
+# Secret BETREIBER_MAIL. Deshalb steht hier bewusst keine Adresse: Die
+# Bruecke bedient mehrere Kunden, und eine fest eingetragene Mailadresse
+# waere beim naechsten die falsche.
+#
+# Fehlt das Binding, faellt die Meldung auf Resend zurueck; fehlt auch das,
+# bleibt sie im Protokoll. Siehe Kopf von betreiberMelden in kanaele.js.
+[[send_email]]
+name = "MELDUNG"
+
 # Zustand (letzte Mail, letzter Fehler, Zaehler).
 # Optional: Fehlt die Bindung, laeuft die Bruecke trotzdem, nur ohne Gedaechtnis.
 # Anlegen mit:  npx wrangler kv namespace create ZUSTAND

@@ -105,23 +105,100 @@ export async function zustellen({ kunde, text, parameter, env }) {
 }
 
 /**
+ * Baut die Meldung als RFC-5322-Nachricht.
+ *
+ * Eigenhaendig und ohne Bibliothek, weil eine reine Textmail aus acht
+ * Kopfzeilen besteht und eine Abhaengigkeit dafuer teurer waere als der
+ * Code. Zwei Stellen darin sind keine Formsache.
+ *
+ * Der Betreff traegt einen Umlaut, und ein Kopfzeilenwert ist nach Norm
+ * US-ASCII. Ohne die Kodierung nach RFC 2047 kommt "St?rung" an oder der
+ * Empfaenger verwirft die Zeile.
+ *
+ * Der Rumpf geht als Base64 und nicht als 8-Bit-Text. Eine Stoerungsmeldung
+ * traegt fremden Text -- eine Absenderadresse, die Antwort eines Dienstes --
+ * und darin kann eine Zeile stehen, die mit einem einzelnen Punkt beginnt
+ * oder laenger als 998 Zeichen ist. Beides bricht SMTP an einer Stelle, an
+ * der niemand mehr hinsieht, und ausgerechnet die Meldung ueber einen
+ * Ausfall darf nicht selbst ausfallen.
+ *
+ * Rein, damit sie ohne Worker-Laufzeit geprueft werden kann; die Kennung
+ * kommt deshalb von aussen.
+ */
+export function meldungMime({ von, an, betreff, text, kennung }) {
+  const roh = (s) => {
+    const bytes = new TextEncoder().encode(s)
+    let binaer = ''
+    for (const b of bytes) binaer += String.fromCharCode(b)
+    return btoa(binaer)
+  }
+  return [
+    `From: ${von}`,
+    `To: ${an}`,
+    `Subject: =?UTF-8?B?${roh(betreff)}?=`,
+    `Message-ID: <${kennung}>`,
+    `Date: ${new Date().toUTCString().replace('GMT', '+0000')}`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=utf-8',
+    'Content-Transfer-Encoding: base64',
+    '',
+    roh(text).replace(/(.{76})/g, '$1\r\n'),
+  ].join('\r\n')
+}
+
+/**
  * Stoerungen gehen an den Betreiber, nicht an den Kunden -- und zwar per
- * E-Mail ueber Resend.
+ * E-Mail.
  *
  * Nicht ueber WhatsApp, obwohl der Kanal danebenliegt: Eine
  * geschaeftsinitiierte WhatsApp-Nachricht braucht eine genehmigte Vorlage,
  * und eine Vorlage mit einer freien Fehlermeldung als Variable waere bei
  * Meta entweder abgelehnt oder sie zwaengt jede Stoerung in drei Felder.
- * Eine Stoerungsmeldung muss sagen duerfen, was kaputt ist.
+ * Eine Stoerungsmeldung muss sagen duerfen, was kaputt ist. Der haertere
+ * Grund liegt eine Ebene tiefer: **Ein Alarm darf nicht den Kanal benutzen,
+ * dessen Ausfall er meldet.**
  *
- * Resend steht ohnehin schon, weil die Kundenwebsites darueber verschicken.
- * Fehlt es, bleibt die Meldung im Protokoll -- verschluckt wird sie nie.
+ * Der erste Weg ist seit dem 20. September 2026 Cloudflares eigenes
+ * `send_email`-Binding und nicht mehr Resend. Das Binding darf nur an
+ * *verifizierte* Zieladressen des Accounts senden. Fuer eine Meldung, die
+ * ausschliesslich an den Betreiber geht, ist das keine Huerde, sondern die
+ * richtige Grenze: Eine Stoerungsmeldung, die versehentlich beim Kunden
+ * landet, waere schlimmer als gar keine. Und es faellt eine Abhaengigkeit
+ * weg, die die Bruecke fuer ihren Datenpfad nie gebraucht hat -- Mail rein,
+ * WhatsApp raus, dazwischen wird nichts verschickt.
+ *
+ * Resend bleibt als zweiter Weg stehen, und das ist Absicht und kein
+ * Zoegern. Das Binding haengt an einer Liste, die im Dashboard gepflegt
+ * wird; wer dort eine Adresse austauscht und die Bruecke nicht anfasst, hat
+ * einen stummen Alarmkanal, ohne es zu merken. Genau dieser Zustand ist der,
+ * den die Funktion verhindern soll. Beide Wege sind optional, und fehlt auch
+ * der zweite, bleibt die Meldung im Protokoll -- verschluckt wird sie nie.
  */
 export async function betreiberMelden(text, env) {
   const zeile = `Brücke: ${text}`
   console.log('STOERUNG | ' + zeile.replace(/\n/g, ' | '))
 
-  if (!env.RESEND_TOKEN || !env.BETREIBER_MAIL || !env.ABSENDER_MAIL) return false
+  if (!env.BETREIBER_MAIL || !env.ABSENDER_MAIL) return false
+  const betreff = 'Anfragen-Brücke: Störung'
+
+  // Erster Weg: das Binding. `cloudflare:email` gibt es nur in der
+  // Worker-Laufzeit, deshalb erst hier und nicht im Dateikopf -- ausserhalb
+  // wuerde schon das Laden des Moduls scheitern.
+  if (env.MELDUNG) {
+    try {
+      const { EmailMessage } = await import('cloudflare:email')
+      const kennung = `${crypto.randomUUID()}@${env.ABSENDER_MAIL.split('@')[1]}`
+      const roh = meldungMime({ von: env.ABSENDER_MAIL, an: env.BETREIBER_MAIL, betreff, text, kennung })
+      await env.MELDUNG.send(new EmailMessage(env.ABSENDER_MAIL, env.BETREIBER_MAIL, roh))
+      return true
+    } catch (e) {
+      // Nicht abbrechen. Genau dafuer steht der zweite Weg da.
+      console.log('Meldung ueber send_email gescheitert:', e.message)
+    }
+  }
+
+  // Zweiter Weg: Resend.
+  if (!env.RESEND_TOKEN) return false
   try {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -132,7 +209,7 @@ export async function betreiberMelden(text, env) {
       body: JSON.stringify({
         from: env.ABSENDER_MAIL,
         to: [env.BETREIBER_MAIL],
-        subject: 'Anfragen-Brücke: Störung',
+        subject: betreff,
         text,
       }),
     })

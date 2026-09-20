@@ -101,17 +101,47 @@ Google-Bestätigung durchzureichen.
 npx wrangler secret put WHATSAPP_TOKEN          # aus der Meta-App
 npx wrangler secret put WHATSAPP_TELEFON_ID     # aus der Meta-App
 npx wrangler secret put WHATSAPP_NUMMER_KOSTA   # 49176...  ohne Plus, ohne Leerzeichen
-npx wrangler secret put BETREIBER_MAIL          # wohin Störungen gehen
-npx wrangler secret put ABSENDER_MAIL           # verifizierter Absender bei Resend
-npx wrangler secret put RESEND_TOKEN            # dasselbe Konto wie die Kundenwebsites
+npx wrangler secret put BETREIBER_MAIL          # wohin Störungen gehen; muss eine
+                                                # verifizierte Destination address sein
+npx wrangler secret put ABSENDER_MAIL           # z. B. bruecke@saphirweb.de -- die Domain
+                                                # muss in diesem Konto Email Routing haben
 npx wrangler secret put STATUS_SCHLUESSEL       # frei erfunden, lang
 ```
 
-> Störungsmeldungen gehen per **E-Mail über Resend**, nicht über WhatsApp.
-> Eine geschäftsinitiierte WhatsApp-Nachricht braucht eine genehmigte Vorlage,
-> und eine Vorlage, die eine freie Fehlermeldung tragen soll, zwängt jede
-> Störung in drei feste Felder. Eine Störungsmeldung muss sagen dürfen, was
-> kaputt ist.
+Für den Probelauf reichen die letzten drei. Ohne WhatsApp-Token stellt die
+Brücke nicht zu, und mit `BETRIEBSMODUS = "probe"` versucht sie es gar nicht
+erst.
+
+### Warum hier kein Mail-Dienst mehr steht
+
+Der Datenpfad der Brücke verschickt nichts: Mail rein, WhatsApp raus. Was
+verschickt wird, ist allein die **Störungsmeldung an dich** — und die läuft
+seit dem 20. September 2026 über Cloudflares eigenes `send_email`-Binding
+(`[[send_email]] name = "MELDUNG"` in `wrangler.toml`) statt über Resend.
+
+Das Binding darf nur an **verifizierte Zieladressen dieses Kontos** senden.
+Für eine Meldung, die ausschließlich an den Betreiber geht, ist das keine
+Hürde, sondern die richtige Grenze: Eine Störungsmeldung, die versehentlich
+beim Kunden landet, wäre schlimmer als gar keine. Nebenbei fällt ein Konto,
+ein Secret und eine fremde Abhängigkeit weg.
+
+`RESEND_TOKEN` bleibt als **zweiter Weg** im Code und ist optional. Das ist
+Absicht: Das Binding hängt an einer Liste, die im Dashboard gepflegt wird, und
+wer dort eine Adresse austauscht, ohne die Brücke anzufassen, hätte sonst
+einen stummen Alarmkanal, ohne es zu merken. Genau das soll die Funktion
+verhindern. Fehlt auch der zweite Weg, bleibt die Meldung im Protokoll —
+verschluckt wird sie nie.
+
+> Und in keinem Fall über WhatsApp, obwohl der Kanal danebenliegt. Eine
+> geschäftsinitiierte WhatsApp-Nachricht braucht eine genehmigte Vorlage, und
+> eine Vorlage, die eine freie Fehlermeldung tragen soll, zwängt jede Störung
+> in drei feste Felder. Der härtere Grund liegt eine Ebene tiefer: **Ein Alarm
+> darf nicht den Kanal benutzen, dessen Ausfall er meldet.**
+
+Einen Mail-Dienst braucht weiterhin die **Kundenwebsite**, nicht die Brücke:
+Die Empfangsbestätigung an den Gast geht an eine fremde Adresse, und genau das
+darf `send_email` nicht. Das ist eine Entscheidung über das Kontaktformular
+und keine über dieses Produkt.
 
 **7. Gedächtnis anlegen** (optional, für Zähler und Lebenszeichen):
 
@@ -123,7 +153,7 @@ npx wrangler kv namespace create ZUSTAND
 **8. Ausliefern:**
 
 ```bash
-npm run pruefen      # sieben Proben, müssen grün sein
+npm run pruefen      # sieben Proben und elf Behauptungen, müssen grün sein
 npm run ausliefern
 ```
 
@@ -224,9 +254,31 @@ Zusätzlich braucht die Brücke von ihm:
 ## Testen
 
 ```bash
-npm run pruefen        # Felderkennung und Filter gegen sieben Proben
+npm run pruefen        # Felderkennung und Filter gegen sieben Proben,
+                       # dazu elf Behauptungen über den Alarmkanal
 npm run protokoll      # Live-Protokoll des ausgelieferten Workers
 ```
+
+Beide Läufe kommen ohne Netz und ohne Worker-Laufzeit aus. `fetch` und das
+Binding sind gestellt, denn **ein Gate, das eine echte Meldung verschickt, ist
+kein Gate, sondern ein Absender.** Alle acht Gegenproben des Alarmkanals sind
+mit eingebautem Fehler nachweislich rot geworden.
+
+### Was `npm run pruefen` nicht erreicht
+
+Den Versand über das Binding selbst. `cloudflare:email` gibt es nur in der
+Worker-Laufzeit; in Node scheitert schon der Import — und genau das macht den
+Rückfall auf den zweiten Weg prüfbar, ohne ihn stellen zu müssen.
+
+Die Gegenprobe dafür ist kein Skript, sondern ein Lauf, und sie kostet zwei
+Minuten:
+
+1. `BETRIEBSMODUS = "scharf"`, `KANAL = "whatsapp"`, **kein** `WHATSAPP_TOKEN`
+2. eine Mail an die Kundenadresse schicken
+3. die Zustellung scheitert — und es **muss** eine Störungsmail ankommen
+
+Kommt keine, ist der Alarmkanal stumm, und das ist der einzige Fehler dieses
+Systems, den ohne diesen Lauf niemand bemerkt.
 
 Vor dem scharfen Betrieb `BETRIEBSMODUS = "probe"` setzen: Die Brücke liest,
 filtert und baut die Nachricht, stellt sie aber nicht zu, sondern schreibt sie
