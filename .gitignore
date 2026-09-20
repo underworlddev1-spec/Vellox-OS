@@ -1,0 +1,16 @@
+# Abhaengigkeiten. Erzeugt aus package-lock.json, gehoeren nie ins Repo.
+node_modules/
+
+# Wranglers lokaler Arbeitsstand.
+.wrangler/
+
+# Lokale Geheimnisse fuer `wrangler dev`. Hier stehen Tokens im Klartext.
+# Ein einziges `git add .` ohne diese Zeile legt sie offen -- und ein Token,
+# das einmal in der Historie steht, ist auch nach dem Loeschen kompromittiert.
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+
+# Betriebssystem.
+.DS_Store
