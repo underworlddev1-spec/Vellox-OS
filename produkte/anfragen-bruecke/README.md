@@ -309,11 +309,36 @@ https://anfragen-bruecke.<dein-subdomain>.workers.dev/zustand?schluessel=...
 
 ## Ein neuer Kunde
 
-Drei Handgriffe, keine Programmierung:
+**Null. Von welcher Adresse verschickt das Kontaktformular des Kunden?**
+
+Diese Frage steht vor allen anderen, und sie wird beantwortet, bevor irgendetwas
+eingerichtet wird — nicht geraten, sondern an einer echten Mail abgelesen.
+
+Ein Kontaktformular sendet fast immer von einer technischen Adresse, meist
+`noreply@`. Auf der Blockliste `absenderNein` steht genau dieses Wort, und die
+Liste ist richtig: Eine fremde `noreply@` ist zuverlässig Werbung. Nur ist die
+eigene `noreply@` ebenso zuverlässig das Formular des Betriebs.
+
+Aufgelöst wird das über `filter.eigeneDomains`. Trägt man sie nicht ein, wird
+**jede echte Anfrage still verworfen**, und niemand merkt es: Eine geblockte
+Mail wird angenommen und weggeworfen, nie abgelehnt. Der Betrieb glaubt, es
+kämen keine Anfragen.
+
+Die Domain der Website und die Domain der Mailadresse sind dabei nicht
+zwangsläufig dieselbe — beim Pfälzer Hof läuft die Website auf
+`pfaelzer-hof-walldorf.de`, die Mail aber auf `pfaelzerhofwalldorf.de`. Beide
+gehören in die Liste.
+
+Danach vier Handgriffe, keine Programmierung:
 
 1. Route in Cloudflare: `cafe@saphirweb.de` → Worker
-2. Eintrag in `src/konfiguration.js` kopieren und anpassen
+2. Eintrag in `src/konfiguration.js` kopieren und anpassen,
+   **`eigeneDomains` ausfüllen**
 3. Weiterleitungsregel im Postfach des Kunden
+4. Eine echte Anfrage durchschicken und im Protokoll nachsehen, **welche
+   Felder wirklich erkannt wurden** — die Beschriftungen jedes Formulars sind
+   anders, und `FELDNAMEN` in `src/extrahieren.js` kennt nur, was schon
+   einmal vorkam
 
 Das ist der Grund, warum die Konfiguration nach Empfängeradresse aufgeteilt
 ist und nicht fest verdrahtet: **Der zwanzigste Betrieb kostet dieselben zehn

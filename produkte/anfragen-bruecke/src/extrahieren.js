@@ -17,10 +17,98 @@ const MONATE = {
   nov: 11, dez: 12,
 }
 
-/** Wert hinter einer beschrifteten Zeile: "Datum: 04.10.2026" */
+/**
+ * Hoefliche Praefixe, die deutsche Formulare vor die Beschriftung setzen.
+ * "Ihr Name:" ist dasselbe Feld wie "Name:".
+ */
+const PRAEFIXE = 'ihr|ihre|dein|deine|mein|meine'
+
+/**
+ * Erlaubte Komposita-Endungen, mit optionalem Fugen-s.
+ *
+ * **Eine geschlossene Liste und ausdruecklich kein `\w*`.** Die freie Endung
+ * waere die naheliegende Loesung und sie ist gefaehrlich: In der
+ * Uhrzeitliste steht die Beschriftung "um", die damit auf "Umsatz:" und
+ * "Umgebung:" treffen wuerde, und in der Personenliste steht "anzahl", das
+ * auf "Anzahlung:" treffen wuerde. Eine Feier mit "Anzahlung: 100 Euro"
+ * haette dann hundert Gaeste.
+ *
+ * Die Liste deckt, was ein Formular wirklich schreibt, und nichts darueber
+ * hinaus. Wer eine Endung ergaenzt, prueft sie gegen die kurzen
+ * Beschriftungen der anderen Felder.
+ */
+const ENDUNGEN = 'nummer|nr|zahl|anzahl|wunsch|angabe|datum|zeit'
+
+/**
+ * Die Beschriftungen, je Feld, an genau einer Stelle.
+ *
+ * Sie standen bis zum 20. September 2026 zweimal im Code: einmal verteilt in
+ * den Finder-Funktionen und einmal als eigene Liste in auszugBauen. Beide
+ * mussten uebereinstimmen, und sie taten es nicht mehr, sobald die eine
+ * Praefixe und Endungen lernte und die andere nicht. Sichtbar wurde das
+ * daran, dass "Telefonnummer:" als Feld erkannt wurde und trotzdem im Auszug
+ * stehenblieb -- die Nummer stand zweimal in derselben Nachricht.
+ *
+ * **Zwei Listen, die uebereinstimmen muessen, sind eine Liste, die noch nicht
+ * zusammengefuehrt wurde.**
+ *
+ * Innerhalb eines Feldes gilt: die laengste Beschriftung zuerst.
+ * beschriftet() steigt beim ersten Treffer aus, und "anzahl" wuerde sonst
+ * "Anzahl Personen" vorwegnehmen und "Personen - 6" als Wert liefern.
+ */
+export const FELDNAMEN = {
+  datum: ['wunschtermin', 'datum', 'termin', 'tag', 'date'],
+  uhrzeit: ['uhrzeit', 'zeit', 'ankunft', 'um', 'time'],
+  personen: [
+    'anzahl der personen', 'anzahl der g(?:ä|ae)ste',
+    'anzahl personen', 'anzahl g(?:ä|ae)ste',
+    'personenzahl', 'personen', 'anzahl', 'g(?:ä|ae)ste', 'guests', 'pax',
+  ],
+  telefon: ['rufnummer', 'telefon', 'handy', 'mobil', 'phone', 'tel'],
+  name: ['nachname', 'vorname', 'name', 'gast', 'von'],
+  // Kein eigener Finder, aber im Auszug ebenso ueberfluessig wie der Rest.
+  sonstige: ['e-?mail', 'mail', 'adresse', 'anlass', 'betreff'],
+}
+
+/**
+ * Das Muster einer Beschriftung, mit Praefix, Endung und weichem Leerraum.
+ *
+ * Der weiche Leerraum -- ein Leerzeichen in der Beschriftung wird zu `\\s+` --
+ * hat eine Geschichte, die hier stehenbleibt, weil sie die Doktrin des
+ * Projekts an einem echten Fall zeigt.
+ *
+ * Seine Gegenprobe blieb gruen: Das Skript mit ausgebauter Regel meldete
+ * keinen einzigen Befund. Das haette drei Bedeutungen haben koennen -- die
+ * Regel ist tot, das Gate ist blind, oder die Gegenprobe taugt nichts -- und
+ * welche davon zutrifft, entscheidet keine Vermutung, sondern eine zweite
+ * Messung. Die ergab: "Anzahl Personen: 6" trifft auch ohne die Regel,
+ * "Anzahl  Personen: 6" mit doppeltem Leerzeichen trifft nur mit ihr.
+ *
+ * **Die Regel war also nicht tot, der Pruefstand war blind.** Repariert wird
+ * deshalb der Pruefstand und nicht der Code: Die Probe "formular_weicher_raum"
+ * traegt seitdem genau diesen doppelten Leerraum.
+ *
+ * Warum der Fall echt ist: Diese Bruecke liest Mail aus unbekannten und sich
+ * aendernden Quellen. Wer eine HTML-Tabelle in Text wandelt, bekommt
+ * Leerraum, den niemand getippt hat.
+ */
+function musterFuer(name) {
+  const kern = name.replace(/ +/g, '\\s+')
+  return `(?:(?:${PRAEFIXE})\\s+)?${kern}(?:s?(?:${ENDUNGEN}))?`
+}
+
+/**
+ * Wert hinter einer beschrifteten Zeile: "Datum: 04.10.2026"
+ *
+ * Gemessen am Kontaktformular des Gasthauses wurde "Telefonnummer:" nicht
+ * erkannt, weil die erste Fassung den Doppelpunkt unmittelbar hinter der
+ * Beschriftung verlangte. Die Nummer kam nur ueber den Freitext-Rueckfall
+ * herein und stand dadurch doppelt in der Nachricht: einmal als Feld und
+ * einmal im Auszug.
+ */
 function beschriftet(text, namen) {
   for (const name of namen) {
-    const re = new RegExp(`^[\\s>*-]*${name}\\s*[:\\-]\\s*(.+)$`, 'im')
+    const re = new RegExp(`^[\\s>*-]*${musterFuer(name)}\\s*[:\\-]\\s*(.+)$`, 'im')
     const m = text.match(re)
     if (m && m[1].trim()) return m[1].trim().replace(/\s{2,}/g, ' ')
   }
@@ -28,7 +116,7 @@ function beschriftet(text, namen) {
 }
 
 function datumFinden(text) {
-  const b = beschriftet(text, ['datum', 'termin', 'wunschtermin', 'tag', 'date'])
+  const b = beschriftet(text, FELDNAMEN.datum)
   if (b) return b
 
   // 04.10.2026 | 4.10.26 | 4.10.
@@ -50,7 +138,7 @@ function datumFinden(text) {
 }
 
 function uhrzeitFinden(text, datumTreffer) {
-  const b = beschriftet(text, ['uhrzeit', 'zeit', 'ankunft', 'um', 'time'])
+  const b = beschriftet(text, FELDNAMEN.uhrzeit)
   if (b) return normalisiereZeit(b) || b
 
   // Das gefundene Datum wird ausgeblendet, bevor nach der Uhrzeit gesucht
@@ -78,7 +166,7 @@ function normalisiereZeit(text) {
 }
 
 function personenFinden(text) {
-  const b = beschriftet(text, ['personen', 'personenzahl', 'anzahl', 'gäste', 'gaeste', 'guests', 'pax'])
+  const b = beschriftet(text, FELDNAMEN.personen)
   if (b) {
     const nur = b.match(/\d{1,3}/)
     if (nur) return nur[0]
@@ -93,7 +181,7 @@ function personenFinden(text) {
 }
 
 function telefonFinden(text) {
-  const b = beschriftet(text, ['telefon', 'tel', 'handy', 'mobil', 'rufnummer', 'phone'])
+  const b = beschriftet(text, FELDNAMEN.telefon)
   if (b) return b
 
   // Deutsche Schreibweisen, mindestens sieben Ziffern insgesamt.
@@ -106,7 +194,7 @@ function telefonFinden(text) {
 }
 
 function nameFinden(text, absenderName, absenderAdresse) {
-  const b = beschriftet(text, ['name', 'vorname', 'nachname', 'gast', 'von'])
+  const b = beschriftet(text, FELDNAMEN.name)
   if (b && b.length <= 60 && !b.includes('@')) return b
   if (absenderName && absenderName.trim() && !absenderName.includes('@')) return absenderName.trim()
   if (absenderAdresse) return absenderAdresse.split('@')[0]
@@ -156,14 +244,10 @@ export function extrahieren({ betreff, text, absenderName, absenderAdresse }) {
 function auszugBauen(text, felderStehenSchon) {
   let t = text
   if (felderStehenSchon) {
-    const beschriftungen = [
-      'name', 'vorname', 'nachname', 'gast', 'von',
-      'telefon', 'tel', 'handy', 'mobil', 'rufnummer', 'phone',
-      'datum', 'termin', 'wunschtermin', 'tag', 'date',
-      'uhrzeit', 'zeit', 'ankunft', 'time',
-      'personen', 'personenzahl', 'anzahl', 'g(?:ä|ae)ste', 'guests', 'pax',
-      'e-?mail', 'mail', 'adresse', 'anlass', 'betreff',
-    ]
+    // Dieselbe Quelle wie die Finder, und dieselben Regeln fuer Praefix und
+    // Endung. Eine eigene Liste hier hat genau einmal gereicht, um "Telefon-
+    // nummer:" als Feld zu ziehen und trotzdem im Auszug stehenzulassen.
+    const beschriftungen = Object.values(FELDNAMEN).flat().map(musterFuer)
     const re = new RegExp(`^[\\s>*-]*(?:${beschriftungen.join('|')})\\s*[:\\-].*$`, 'gim')
     t = t.replace(re, '')
     // "Nachricht:" ist die Ausnahme -- das ist genau der Teil, den wir wollen.

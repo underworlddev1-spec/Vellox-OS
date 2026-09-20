@@ -20,12 +20,22 @@ for (const p of PROBEN) {
   if (p.erwartet.durch !== undefined && entscheidung.durch !== p.erwartet.durch) {
     probleme.push(`Filter: erwartet durch=${p.erwartet.durch}, bekam ${entscheidung.durch} (${entscheidung.grund})`)
   }
-  for (const feld of ['datum', 'uhrzeit', 'personen', 'name']) {
+  for (const feld of ['datum', 'uhrzeit', 'personen', 'name', 'telefon']) {
     if (p.erwartet[feld] !== undefined && f[feld] !== p.erwartet[feld]) {
       probleme.push(`${feld}: erwartet "${p.erwartet[feld]}", bekam "${f[feld]}"`)
     }
   }
   if (p.erwartet.auszugNichtLeer && !f.auszug) probleme.push('Auszug ist leer')
+
+  // Was schon als Feld dasteht, gehoert nicht nochmal in den Auszug. Steht es
+  // doch drin, wurde die Beschriftung nicht erkannt und der Wert kam nur ueber
+  // einen Freitext-Rueckfall herein -- das funktioniert heute und faellt beim
+  // naechsten Formular um.
+  for (const nadel of p.erwartet.auszugOhne || []) {
+    if ((f.auszug || '').includes(nadel)) {
+      probleme.push(`Auszug wiederholt ein bereits gezogenes Feld: "${nadel}"`)
+    }
+  }
 
   const zeichen = probleme.length ? 'ROT ' : 'gruen'
   console.log(`${zeichen}  ${p.name.padEnd(22)} ${entscheidung.durch ? 'durch' : 'blockt'}  ${entscheidung.grund}`)

@@ -84,7 +84,8 @@ export const PROBEN = [
   },
   {
     name: 'automat',
-    warum: 'Absender ist ein Automat. Automaten reservieren nicht.',
+    warum: 'Ein Automat auf FREMDER Domain. Der Unterschied zur Probe '
+      + '"formular_eigene_domain" ist die Domain und nicht das Wort no-reply.',
     mail: {
       absenderAdresse: 'no-reply@irgendein-dienst.de',
       absenderName: 'Dienst',
@@ -92,5 +93,106 @@ export const PROBEN = [
       text: 'Tisch für 2 Personen am 04.10.2026',
     },
     erwartet: { durch: false },
+  },
+  {
+    name: 'formular_eigene_domain',
+    warum: 'Das echte Kontaktformular des Gasthauses. Fuenf Felder -- Name, E-Mail, '
+      + 'Telefonnummer, Betreff, Nachricht -- und KEIN Feld fuer Datum, Uhrzeit oder '
+      + 'Personenzahl. Die drei stehen als Fliesstext in der Nachricht.\n\n'
+      + 'Diese Probe ist der Pruefling, der dem Pruefstand gefehlt hat: Bis zum '
+      + '20. September 2026 war jede Probe entweder ein Freitext-Anschreiben oder ein '
+      + 'Automat auf FREMDER Domain. Der haeufigste Fall des Betriebs -- ein Formular '
+      + 'der eigenen Domain, das von noreply@ sendet -- kam nicht vor. Deshalb konnte '
+      + 'kein Lauf zeigen, dass die Bruecke ihn still verwarf.',
+    mail: {
+      absenderAdresse: 'noreply@pfaelzerhofwalldorf.de',
+      absenderName: 'Kontaktformular',
+      betreff: 'Neue Nachricht ueber das Kontaktformular',
+      text: [
+        'Name: Markus Weber',
+        'E-Mail: markus.weber@example.de',
+        'Telefonnummer: 0176 12345678',
+        'Betreff: Tischreservierung',
+        'Nachricht: Hallo, ich haette gerne am 04.10.2026 um 19:30 Uhr einen Tisch '
+          + 'fuer 4 Personen. Viele Gruesse, Markus Weber',
+      ].join('\n'),
+    },
+    erwartet: {
+      durch: true,
+      datum: '04.10.2026',
+      uhrzeit: '19:30 Uhr',
+      personen: '4',
+      name: 'Markus Weber',
+      telefon: '0176 12345678',
+      // Die Nummer steht schon als Feld. Stuende sie nochmal im Auszug, waere
+      // die Beschriftung "Telefonnummer:" nicht erkannt worden und die Nummer
+      // nur ueber den Freitext-Rueckfall hereingekommen.
+      auszugOhne: ['0176 12345678'],
+    },
+  },
+  {
+    name: 'formular_hoeflich',
+    warum: 'Dasselbe Formular mit den hoeflichen Beschriftungen, die viele Baukaesten '
+      + 'setzen. "Ihr Name" ist dasselbe Feld wie "Name", "Anzahl Personen" dasselbe '
+      + 'wie "Personen".',
+    mail: {
+      absenderAdresse: 'wordpress@pfaelzer-hof-walldorf.de',
+      absenderName: 'Pfaelzer Hof Website',
+      betreff: 'Kontaktanfrage',
+      text: [
+        'Ihr Name: Familie Schneider',
+        'Ihre Telefonnummer: 06227 4191',
+        'Anzahl Personen: 8',
+        'Terminwunsch: 12.12.2026',
+        'Uhrzeit: 18 Uhr',
+        'Ihre Nachricht: Wir moechten den Geburtstag meiner Mutter feiern.',
+      ].join('\n'),
+    },
+    erwartet: {
+      durch: true, datum: '12.12.2026', uhrzeit: '18:00 Uhr',
+      personen: '8', name: 'Familie Schneider', telefon: '06227 4191',
+    },
+  },
+  {
+    name: 'bounce_eigene_domain',
+    warum: 'Die Gegenrichtung zur Ausnahme fuer die eigene Domain. Ein '
+      + 'Unzustellbarkeitsbericht kommt von der eigenen Domain und ist trotzdem '
+      + 'keine Reservierung.\n\n'
+      + 'Die erste Fassung der Ausnahme hob die GANZE Sperrliste auf der eigenen '
+      + 'Domain auf und liess diesen Fall durch. Deshalb hebt sie heute nur die '
+      + 'noreply-Muster auf und ausdruecklich nicht mailer-daemon und postmaster.',
+    mail: {
+      absenderAdresse: 'mailer-daemon@pfaelzerhofwalldorf.de',
+      absenderName: 'Mail Delivery Subsystem',
+      betreff: 'Undelivered Mail Returned to Sender',
+      text: 'Ihre Nachricht an den Tisch fuer 4 Personen konnte nicht zugestellt werden.',
+    },
+    erwartet: { durch: false },
+  },
+  {
+    name: 'formular_weicher_raum',
+    warum: 'Doppelter Leerraum in der Beschriftung. Der Pruefling, der gefehlt hat: '
+      + 'Die Regel fuer weichen Leerraum in musterFuer() war da, aber keine Probe '
+      + 'hat sie je beruehrt, und ihre Gegenprobe blieb deshalb gruen. Eine gruene '
+      + 'Gegenprobe kann heissen "die Regel ist tot" oder "das Gate ist blind"; hier '
+      + 'war es das zweite, und entschieden hat das eine zweite Messung.\n\n'
+      + 'So entsteht der Fall im Betrieb: Wer eine HTML-Tabelle in Text wandelt, '
+      + 'bekommt Leerraum, den niemand getippt hat.',
+    mail: {
+      absenderAdresse: 'noreply@pfaelzerhofwalldorf.de',
+      absenderName: 'Kontaktformular',
+      betreff: 'Kontaktanfrage',
+      text: [
+        'Ihr  Name:  Herr Özdemir',
+        'Anzahl  Personen:  12',
+        'Wunschtermin:  24.12.2026',
+        'Uhrzeit:  17:00',
+        'Nachricht:  Wir kommen mit der ganzen Familie.',
+      ].join('\n'),
+    },
+    erwartet: {
+      durch: true, datum: '24.12.2026', uhrzeit: '17:00 Uhr',
+      personen: '12', name: 'Herr Özdemir',
+    },
   },
 ]
