@@ -279,6 +279,50 @@ Binding sind gestellt, denn **ein Gate, das eine echte Meldung verschickt, ist
 kein Gate, sondern ein Absender.** Alle acht Gegenproben des Alarmkanals sind
 mit eingebautem Fehler nachweislich rot geworden.
 
+### Der Alarmkanal, am 20. September 2026 im Betrieb belegt
+
+Die Gegenprobe unten ist gefahren worden, und sie ist grün: Bei scharf
+geschaltetem Worker und noch nicht freigegebener WhatsApp-Vorlage scheiterte
+die Zustellung, und keine zehn Sekunden später lag die Störungsmeldung im
+Postfach des Betreibers.
+
+```
+Von:     bruecke@saphirweb.de
+Betreff: Anfragen-Brücke: Störung
+
+Zustellung gescheitert für Gasthaus Pfälzer Hof.
+whatsapp: 404 (#132001) Template name does not exist in the translation
+
+Die Mail liegt weiter im Postfach des Kunden.
+```
+
+Damit ist belegt, was `npm run pruefen` grundsätzlich nicht erreichen kann:
+dass das `send_email`-Binding in der Worker-Laufzeit wirklich sendet, dass
+der RFC-2047-Betreff beim Empfänger als Umlaut ankommt, und dass eine
+gescheiterte Zustellung nicht still bleibt.
+
+**Nur lag sie im Spam. Und ein Alarm im Spamordner ist derselbe Fehler wie
+kein Alarm.**
+
+Gemessen fehlte ein DMARC-Eintrag. Die Domain hatte SPF und DKIM, verschickte
+aber ihre allererste Mail überhaupt, und Gmail sortiert genau dieses Profil
+aus: neue Domain, keine Historie, kurzer Text, das Wort "Störung". Repariert
+mit einem TXT-Eintrag auf `_dmarc`:
+
+```
+v=DMARC1; p=none; rua=mailto:dmarc@<domain>; fo=1
+```
+
+`p=none` beobachtet nur und lehnt nichts ab; das ist der Einstieg, der nichts
+kaputtmachen kann.
+
+**Die Lehre gilt über diesen Fall hinaus.** Dieses Projekt prüft an vielen
+Stellen, ob eine Meldung *erzeugt* wird. Ob sie *gelesen* wird, hat bis dahin
+nichts geprüft, und dazwischen liegt eine Zustellkette mit eigenen
+Ausfallarten. Wer einen neuen Kunden anschließt, schickt deshalb einmal
+absichtlich eine Störung los und sieht nach, **wo** sie landet -- nicht nur,
+**ob** es sie gibt.
+
 ### Was `npm run pruefen` nicht erreicht
 
 Den Versand über das Binding selbst. `cloudflare:email` gibt es nur in der
