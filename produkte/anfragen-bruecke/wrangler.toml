@@ -8,6 +8,18 @@ compatibility_flags = ["nodejs_compat"]
 [triggers]
 crons = ["0 9 * * *"]
 
+# Protokollhaltung.
+#
+# Ohne sie sieht von der Bruecke nur, wer in genau dem Moment ein
+# `wrangler tail` offen hat. Eine Anfrage, die nachts um halb elf schiefgeht,
+# waere damit nicht rekonstruierbar -- und bei einem System, dessen einziger
+# stiller Fehler eine nicht zugestellte Reservierung ist, ist das die falsche
+# Ausfallrichtung.
+#
+# Mit ihr bleiben die Zeilen abfragbar, auch rueckwirkend.
+[observability]
+enabled = true
+
 # Alarmkanal: Stoerungsmeldungen an den Betreiber.
 #
 # Das Binding darf nur an *verifizierte* Zieladressen dieses Accounts senden

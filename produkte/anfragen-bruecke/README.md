@@ -259,6 +259,21 @@ npm run pruefen        # Felderkennung und Filter gegen sieben Proben,
 npm run protokoll      # Live-Protokoll des ausgelieferten Workers
 ```
 
+`npm run protokoll` zeigt nur, was passiert, **während** es offen ist. Deshalb
+steht `[observability] enabled = true` in der `wrangler.toml`: Die Zeilen
+bleiben danach abfragbar, im Dashboard unter *Workers & Pages → anfragen-bruecke
+→ Logs*. Ohne das wäre eine Anfrage, die samstags um halb elf schiefgeht, am
+Sonntag nicht mehr rekonstruierbar — und bei einem System, dessen einziger
+stiller Fehler eine nicht zugestellte Reservierung ist, ist das die falsche
+Ausfallrichtung.
+
+> Eine Warnung aus dem Aufbau, die für jedes Werkzeug hier gilt: **`wrangler
+> tail` nie durch eine Pipe schicken, die puffert.** `grep` ohne
+> `--line-buffered` hält jede Zeile zurück, solange es nicht in ein Terminal
+> schreibt — und ein leeres Protokoll sieht genauso aus wie ein Worker, der
+> nichts tut. Entweder direkt in eine Datei schreiben oder `--line-buffered`
+> setzen.
+
 Beide Läufe kommen ohne Netz und ohne Worker-Laufzeit aus. `fetch` und das
 Binding sind gestellt, denn **ein Gate, das eine echte Meldung verschickt, ist
 kein Gate, sondern ein Absender.** Alle acht Gegenproben des Alarmkanals sind
