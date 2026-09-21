@@ -279,6 +279,29 @@ Binding sind gestellt, denn **ein Gate, das eine echte Meldung verschickt, ist
 kein Gate, sondern ein Absender.** Alle acht Gegenproben des Alarmkanals sind
 mit eingebautem Fehler nachweislich rot geworden.
 
+### Die vollständige Kette, am 21. September 2026 belegt
+
+Eine echte Mail an die Kundenadresse ist als WhatsApp-Nachricht auf einem
+Telefon angekommen. Damit ist der Hauptweg des Produkts zum ersten Mal ohne
+Lücke gefahren worden:
+
+```
+Mail → Cloudflare Email Routing → Worker → Filter → Extraktion
+     → WhatsApp Cloud API → Telefon
+```
+
+Vorausgegangen war die Freigabe der Vorlage `neue_anfrage` durch Meta, rund
+26 Stunden nach Einreichung. Am Worker war dafür nichts zu tun: Er ruft
+dieselbe Vorlage auf, die eine Stunde zuvor noch mit `404 (#132001)`
+abgelehnt wurde. **Eine Zustellung, die an einer fremden Freigabe hängt,
+braucht kein Deployment, wenn die Freigabe kommt** -- sie braucht nur einen
+Kanal, der so lange sauber scheitert. Genau das hat der Alarmkanal am Vortag
+getan.
+
+Was diese Messung nicht abdeckt und was für einen Kunden noch fehlt:
+die Weiterleitungsregel in seinem Postfach, seine Nummer als registrierter
+Empfänger bei Meta, und die Absenderadresse seines Kontaktformulars.
+
 ### Der Alarmkanal, am 20. September 2026 im Betrieb belegt
 
 Die Gegenprobe unten ist gefahren worden, und sie ist grün: Bei scharf
