@@ -32,14 +32,33 @@ export function terminZeile(f) {
 /** Die drei Parameter fuer die WhatsApp-Vorlage. Immer gefuellt. */
 export function vorlagenParameter(f, kunde) {
   const knapp = kunde && kunde.umfang === 'knapp'
-  const termin = terminZeile(f) || parameterSaeubern(f.betreff) || 'siehe Postfach'
+  // Der Betreff stand hier bis zum 26. September 2026 als Rueckfall, und er
+  // ist keiner: Die Vorlage beschriftet diesen Parameter mit "Wann:", und
+  // darunter stand auf dem Handy des Betriebs "Wann: Kontaktformular von
+  // Pierree". **Ein Rueckfall, der die Beschriftung seiner Zeile zur Luege
+  // macht, ist schlechter als eine leere Zeile.** Der Betreff geht nicht
+  // verloren; er steht in der Mail, auf die der letzte Satz verweist.
+  const termin = terminZeile(f) || 'kein Termin erkannt'
   const personen = f.personen ? `${f.personen} Personen` : 'Anzahl unbekannt'
 
   let gast
   if (knapp) {
     gast = 'Kontaktdaten im Postfach'
   } else {
-    gast = [f.name, f.telefon].filter(Boolean).join(' · ') || 'siehe Postfach'
+    // Die Nummer international, damit WhatsApp sie antippbar macht.
+    //
+    // **Das ist die Antwortfunktion, und sie kostet keinen Parameter.** Der
+    // Betrieb hat gefragt, wie er dem Gast zurueckschreiben kann. Eine
+    // Nummer als "01608896350" ist auf einem Teil der Geraete toter Text;
+    // als "+491608896350" oeffnet ein Tippen das Menue mit Anrufen und
+    // Nachricht schreiben. Die Vorlage bleibt dabei unveraendert, es
+    // braucht also keine neue Genehmigung durch Meta.
+    //
+    // Die nationale Schreibweise entfaellt bewusst statt zusaetzlich zu
+    // stehen: Zwei Fassungen derselben Nummer in einer Zeile, die in drei
+    // Sekunden gelesen werden soll, sind eine zu viel.
+    const nummer = f.telefonWa ? '+' + f.telefonWa : f.telefon
+    gast = [f.name, nummer].filter(Boolean).join(' · ') || 'siehe Postfach'
   }
 
   return [termin, personen, gast].map((w) => parameterSaeubern(w))
@@ -58,8 +77,12 @@ export function bauen(f, kunde) {
   if (f.personen) zeilen.push(`${f.personen} Personen`)
 
   if (!knapp) {
-    const gast = [f.name, f.telefon].filter(Boolean).join(' · ')
+    const nummer = f.telefonWa ? '+' + f.telefonWa : f.telefon
+    const gast = [f.name, nummer].filter(Boolean).join(' · ')
     if (gast) zeilen.push(gast)
+    // Die Mailadresse steht in einer eigenen Zeile und nicht hinter der
+    // Nummer: Sie ist der zweite Weg zum Gast, nicht ein Teil des ersten.
+    if (f.gastMail) zeilen.push(f.gastMail)
   }
 
   // Wenn nichts erkannt wurde, traegt der Auszug die Nachricht allein.

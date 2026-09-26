@@ -64,10 +64,21 @@ export const FELDNAMEN = {
     'anzahl personen', 'anzahl g(?:ä|ae)ste',
     'personenzahl', 'personen', 'anzahl', 'g(?:ä|ae)ste', 'guests', 'pax',
   ],
-  telefon: ['rufnummer', 'telefon', 'handy', 'mobil', 'phone', 'tel'],
+  // "phone number" steht hier als ganze Beschriftung und nicht als Endung.
+  //
+  // Das Formular dieses Hauses schreibt sie mit Leerzeichen, und ENDUNGEN
+  // kennt nur angewachsene Endungen wie "telefonnummer". Gemessen an der
+  // Anfrage vom 23. September kam die Nummer deshalb allein ueber den
+  // Freitext-Rueckfall herein -- als Feld richtig, im Auszug ein zweites
+  // Mal, in einer Nachricht mit vier Zeilen Platz.
+  //
+  // **Ein Wert, der ueber den Rueckfall hereinkommt, sieht aus wie ein
+  // erkanntes Feld und ist keines.** Sichtbar wird der Unterschied erst an
+  // der Wiederholung, und die faellt in der Eile niemandem auf.
+  telefon: ['rufnummer', 'phone number', 'telefon', 'handy', 'mobil', 'phone', 'tel'],
   name: ['nachname', 'vorname', 'name', 'customer', 'gast', 'von'],
   // Kein eigener Finder, aber im Auszug ebenso ueberfluessig wie der Rest.
-  sonstige: ['e-?mail', 'mail', 'adresse', 'anlass', 'betreff'],
+  sonstige: ['e-?mail', 'mail', 'adresse', 'anlass', 'betreff', 'website'],
 }
 
 /**
@@ -134,8 +145,36 @@ function datumFinden(text) {
     const monat = MONATE[wort[2].toLowerCase()]
     if (monat) return `${wort[1]}. ${wort[2]}`
   }
+
+  // "am Samstag", "uebermorgen" -- woertlich uebernommen und ausdruecklich
+  // nicht in ein Datum gerechnet.
+  //
+  // **Rechnen hiesse raten.** Wer "Samstag" in ein Datum wandelt, braucht
+  // das Absendedatum, die Zeitzone und die Entscheidung, ob dieser oder der
+  // naechste Samstag gemeint ist. Die letzte kann niemand treffen ausser dem
+  // Gast. Das Wort stehenzulassen kostet nichts und behauptet nichts: Der
+  // Wirt liest "Samstag" und weiss so viel wie der Gast geschrieben hat.
+  const tag = text.match(WOCHENTAG)
+  if (tag) return gross(tag[1])
+  const zeitwort = text.match(ZEITWORT)
+  if (zeitwort) return gross(zeitwort[1])
   return null
 }
+
+const WOCHENTAG =
+  /\b(montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag)\b/i
+
+/**
+ * "morgen" ist zwei Woerter, und nur eines davon ist ein Tag.
+ *
+ * "Guten Morgen" ist eine Begruessung und "am Morgen" eine Tageszeit; beide
+ * stehen in Anfragen, und beide wuerden sonst als Wunschtermin auf dem Handy
+ * landen. Ausgeschlossen wird deshalb das, was davorsteht, und nicht das
+ * Wort selbst. "Morgens" faengt die Wortgrenze.
+ */
+const ZEITWORT = /(?<!\b(?:guten|am)\s{1,3})\b(heute|(?:ü|ue)bermorgen|morgen)\b/i
+
+const gross = (w) => w.charAt(0).toUpperCase() + w.slice(1)
 
 function uhrzeitFinden(text, datumTreffer) {
   const b = beschriftet(text, FELDNAMEN.uhrzeit)
@@ -193,6 +232,60 @@ function telefonFinden(text) {
   return null
 }
 
+/**
+ * Die Rufnummer in internationaler Form, nur Ziffern: 491608896350.
+ *
+ * **Der Grund ist kein Schoenheitsgrund.** WhatsApp macht eine Nummer im
+ * Nachrichtentext nur dann antippbar, wenn es sie einem Konto zuordnen kann,
+ * und das gelingt zuverlaessig erst international. "01608896350" bleibt bei
+ * einem Teil der Geraete toter Text; "+491608896350" oeffnet das Menue mit
+ * Anrufen und Nachricht schreiben. Genau das ist die Funktion, nach der der
+ * Betrieb gefragt hat.
+ *
+ * Dieselbe Zeichenkette traegt spaeter den Knopf der Vorlage
+ * (https://wa.me/<ziffern>), deshalb steht sie hier ohne Plus und ohne
+ * Leerzeichen: wa.me nimmt nur Ziffern.
+ *
+ * Eine auslaendische Nummer wird nicht umgeschrieben. Wer eine Vorwahl
+ * errraet, die er nicht kennt, schickt den Wirt zu einem fremden Anschluss.
+ */
+export function telefonInternational(roh) {
+  const t = String(roh || '').trim()
+  if (!t) return null
+  const hatPlus = t.startsWith('+')
+  const z = t.replace(/\D/g, '')
+  if (z.length < 8) return null
+
+  if (t.startsWith('00')) return z.slice(2)          // 0049… -> 49…
+  if (hatPlus) return z                               // +49…  -> 49…
+  if (t.startsWith('0')) return '49' + z.slice(1)     // 0160… -> 49160…
+  if (z.startsWith('49')) return z                    // schon international
+  return null                                         // unbekannte Form: nicht raten
+}
+
+/**
+ * Die E-Mail des Gastes.
+ *
+ * Sie steht beim Formular dieses Hauses nicht in einem eigenen Feld, sondern
+ * im Rumpf: "From: [your-name] <manfred.neskudla@sap.com>". Gesucht wird
+ * deshalb im Text und nicht ueber eine Beschriftung.
+ *
+ * **Ausgeschlossen wird die eigene Technik.** Die Adresse des Formulars
+ * (no-reply@…) und die des Betriebs stehen in derselben Mail; wer sie als
+ * Gastadresse nimmt, laesst den Wirt sich selbst antworten.
+ */
+export function gastMailFinden(text, eigeneDomains) {
+  const alle = String(text || '').match(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g) || []
+  const eigen = (eigeneDomains || []).map((d) => String(d).toLowerCase())
+  for (const a of alle) {
+    const k = a.toLowerCase()
+    if (k.startsWith('no-reply') || k.startsWith('noreply')) continue
+    if (eigen.some((d) => k.endsWith('@' + d) || k.endsWith('.' + d))) continue
+    return a
+  }
+  return null
+}
+
 function nameFinden(text, absenderName, absenderAdresse) {
   const b = beschriftet(text, FELDNAMEN.name)
   if (b && b.length <= 60 && !b.includes('@')) return b
@@ -201,9 +294,34 @@ function nameFinden(text, absenderName, absenderAdresse) {
   return null
 }
 
+/**
+ * Der Kopf einer Weiterleitung.
+ *
+ * Gmail setzt vor die weitergeleitete Mail einen Block aus Markerzeile und
+ * Kopfzeilen: "Von:", "Date:", "Subject:", "To:". **Diese Zeilen sind
+ * Angaben ueber die Weiterleitung und nicht ueber die Anfrage**, und genau
+ * eine davon ist gefaehrlich: `Date:` traegt eine Beschriftung aus
+ * FELDNAMEN.datum und gewinnt damit gegen den Wunschtermin im Freitext.
+ *
+ * Gemessen am echten Postfach des Betriebs, Anfrage vom 23. September: Der
+ * Gast schrieb "fuer Morgen 24.09.2026 um 19:00", auf dem Handy stand
+ * "Wann: Mi., 23. Sept. 2026 um 16:02 Uhr · 19:00 Uhr". Das ist der
+ * Zeitpunkt der Weiterleitung, gesetzt an die Stelle des Wunschtermins,
+ * und es sieht aus wie eine gute Angabe. **Ein Wirt traegt den Tisch damit
+ * auf den falschen Tag ein.**
+ *
+ * Geschnitten werden nur Zeilen, die wirklich wie Kopfzeilen aussehen, und
+ * nur unmittelbar hinter der Markerzeile. Der Schnitt bis zur naechsten
+ * Leerzeile waere die kuerzere Fassung und die riskantere: Ein Absender
+ * ohne Leerzeile hinter dem Kopf verloere seine ganze Anfrage.
+ */
+const WEITERLEITUNGSKOPF =
+  /^[-\s]*(?:Forwarded message|Weitergeleitete Nachricht)[-\s]*$\n(?:^[A-Za-z-]{2,12}:[^\n]*$\n)*/gim
+
 /** Signaturen, Zitate und Fusszeilen abschneiden, damit der Auszug traegt. */
 export function textAufraeumen(roh) {
   let t = String(roh || '').replace(/\r\n/g, '\n')
+  t = t.replace(WEITERLEITUNGSKOPF, '')
   t = t.split(/^--\s*$/m)[0]
   t = t.split(/^-{5,}\s*Urspr(ü|ue)ngliche Nachricht/im)[0]
   t = t.replace(/^>.*$/gm, '')
@@ -211,17 +329,20 @@ export function textAufraeumen(roh) {
   return t.trim()
 }
 
-export function extrahieren({ betreff, text, absenderName, absenderAdresse }) {
+export function extrahieren({ betreff, text, absenderName, absenderAdresse, eigeneDomains }) {
   const sauber = textAufraeumen(text)
   const alles = `${betreff || ''}\n${sauber}`
 
   const datum = datumFinden(alles)
+  const telefon = telefonFinden(alles)
   const felder = {
     datum,
     uhrzeit: uhrzeitFinden(alles, datum),
     personen: personenFinden(alles),
     name: nameFinden(sauber, absenderName, absenderAdresse),
-    telefon: telefonFinden(alles),
+    telefon,
+    telefonWa: telefonInternational(telefon),
+    gastMail: gastMailFinden(sauber, eigeneDomains),
   }
 
   const getroffen = ['datum', 'uhrzeit', 'personen'].filter((k) => felder[k]).length
@@ -234,15 +355,25 @@ export function extrahieren({ betreff, text, absenderName, absenderAdresse }) {
   // einer zweiten wiederholt; die Nachricht hat vier Zeilen Platz, und die
   // gehoeren dem, was noch nicht dasteht -- dem Sonderwunsch, der oft ueber
   // den Tisch entscheidet.
-  const auszug = auszugBauen(sauber, getroffen > 0)
+  const auszug = auszugBauen(sauber, getroffen > 0, felder.gastMail)
 
   return { ...felder, getroffen, auszug, betreff: (betreff || '').trim() }
 }
 
 
 /** Beschriftete Zeilen entfernen, wenn ihre Werte bereits als Feld stehen. */
-function auszugBauen(text, felderStehenSchon) {
+function auszugBauen(text, felderStehenSchon, gastMail) {
   let t = text
+
+  // Die Adresse des Gastes steht seit dem 26. September als eigene Zeile in
+  // der Nachricht. Die Zeile, aus der sie stammt -- beim Formular dieses
+  // Hauses "From: [your-name] <gast@…>" --, faellt deshalb aus dem Auszug.
+  // Sonst stuende dieselbe Adresse zweimal in einer Nachricht, die vier
+  // Zeilen Platz hat.
+  if (gastMail) {
+    const sicher = gastMail.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    t = t.replace(new RegExp(`^.*${sicher}.*$`, 'gim'), '')
+  }
   if (felderStehenSchon) {
     // Dieselbe Quelle wie die Finder, und dieselben Regeln fuer Praefix und
     // Endung. Eine eigene Liste hier hat genau einmal gereicht, um "Telefon-
@@ -251,7 +382,7 @@ function auszugBauen(text, felderStehenSchon) {
     const re = new RegExp(`^[\\s>*-]*(?:${beschriftungen.join('|')})\\s*[:\\-].*$`, 'gim')
     t = t.replace(re, '')
     // "Nachricht:" ist die Ausnahme -- das ist genau der Teil, den wir wollen.
-    t = t.replace(/^[\s>*-]*(?:nachricht|anmerkung|bemerkung|wunsch|kommentar)\s*[:\-]\s*/gim, '')
+    t = t.replace(/^[\s>*-]*(?:nachricht|anmerkung|bemerkung|wunsch|kommentar|message body|message)\s*[:\-]\s*/gim, '')
   }
   return t.replace(/\s+/g, ' ').slice(0, 220).trim()
 }

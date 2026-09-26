@@ -195,4 +195,74 @@ export const PROBEN = [
       personen: '12', name: 'Herr Özdemir',
     },
   },
+  {
+    name: 'weiterleitung_gmail',
+    warum:
+      'Der echte Weg vom 23. September, Wort fuer Wort aus dem Postfach des '
+      + 'Betriebs. Gmail setzt vor die weitergeleitete Mail einen Kopf mit '
+      + '"Date:", und das ist eine Beschriftung aus FELDNAMEN.datum. Sie '
+      + 'gewinnt gegen den Wunschtermin im Freitext: Auf dem Handy stand der '
+      + 'Zeitpunkt der Weiterleitung an der Stelle des Termins. Der Gast '
+      + 'wollte den 24., die Nachricht sagte den 23.',
+    mail: {
+      absenderAdresse: 'kostaxhafaj@gmail.com',
+      absenderName: 'Kosta Xhafaj',
+      betreff: 'Fwd: Kontaktformular von Neskudla',
+      text: [
+        '---------- Forwarded message ---------',
+        'Von: WordPress <no-reply@pfaelzer-hof-walldorf.de>',
+        'Date: Mi., 23. Sept. 2026 um 16:02 Uhr',
+        'Subject: Kontaktformular von Neskudla',
+        'To: <post@pfaelzerhofwalldorf.de>',
+        '',
+        'From: [your-name] <manfred.neskudla@sap.com>',
+        '',
+        'Message Body:',
+        '',
+        'Customer : Neskudla',
+        '',
+        'Phone number : 01608896350',
+        '',
+        'Website : Reservierung',
+        '',
+        'Message: Hallo Pfälzer Hof, ich möchte für Morgen 24.09.2026 um 19:00 einen',
+        'Tisch für 3 Personen reservieren.',
+      ].join('\n'),
+    },
+    erwartet: {
+      durch: true, datum: '24.09.2026', uhrzeit: '19:00 Uhr',
+      personen: '3', name: 'Neskudla', telefon: '01608896350',
+      auszugOhne: ['manfred.neskudla@sap.com', '01608896350', '16:02'],
+    },
+  },
+  {
+    name: 'wochentag_ohne_datum',
+    warum:
+      'Die haeufigste Form einer echten Anfrage und die, an der die Bruecke '
+      + 'bisher schwieg: Ein Gast nennt einen Wochentag und kein Datum. Das '
+      + 'Wort wird uebernommen und ausdruecklich nicht in ein Datum gerechnet '
+      + '-- welcher Samstag gemeint ist, weiss nur der Gast.',
+    mail: {
+      absenderAdresse: 'lena.brandt@example.de',
+      absenderName: 'Lena Brandt',
+      betreff: 'Tischreservierung',
+      text: 'Guten Tag, wir würden am Samstag um 19 Uhr gerne mit 6 Personen kommen.',
+    },
+    erwartet: { durch: true, datum: 'Samstag', uhrzeit: '19:00 Uhr', personen: '6' },
+  },
+  {
+    name: 'gruss_ist_kein_termin',
+    warum:
+      '"Guten Morgen" ist eine Begruessung und keine Angabe. Ohne diese Probe '
+      + 'stuende sie als Wunschtermin auf dem Handy, und der Wirt haette '
+      + 'keine Moeglichkeit, den Irrtum zu bemerken. Ein falscher Termin ist '
+      + 'schlimmer als ein fehlender.',
+    mail: {
+      absenderAdresse: 'p.arnold@example.de',
+      absenderName: 'Peter Arnold',
+      betreff: 'Anfrage',
+      text: 'Guten Morgen, wir möchten gerne einen Tisch reservieren. Rufen Sie mich bitte unter 06227 4191 zurück.',
+    },
+    erwartet: { durch: true, datum: null, uhrzeit: null },
+  },
 ]

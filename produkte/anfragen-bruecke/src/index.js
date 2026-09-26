@@ -93,7 +93,10 @@ export default {
     }
 
     // 5. Felder ziehen und Nachricht bauen.
-    const felder = extrahieren({ betreff, text, absenderName, absenderAdresse })
+    const felder = extrahieren({
+      betreff, text, absenderName, absenderAdresse,
+      eigeneDomains: (kunde.filter && kunde.filter.eigeneDomains) || [],
+    })
     const nachricht = bauen(felder, kunde)
     const parameter = vorlagenParameter(felder, kunde)
 
