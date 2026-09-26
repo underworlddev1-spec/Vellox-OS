@@ -40,6 +40,42 @@ name = "MELDUNG"
 # binding = "ZUSTAND"
 # id = "HIER_DIE_ID_EINTRAGEN"
 
+# Was NICHT hier steht, und warum das wichtig ist.
+#
+# Wrangler behandelt diese Datei als Quelle der Wahrheit fuer `[vars]`: Beim
+# naechsten `wrangler deploy` schreibt es den Block unten und **loescht jede
+# Variable, die hier nicht aufgefuehrt ist**. Was im Dashboard nachgetragen
+# wurde, ist danach weg.
+#
+# Alles Folgende gehoert deshalb als *Secret* in die Umgebung und niemals in
+# diese Datei. Secrets fasst Wrangler beim Deploy nicht an:
+#
+#   ABSENDER_MAIL          Absender der Stoerungsmeldungen
+#   BETREIBER_MAIL         verifizierte Zieladresse fuer Stoerungsmeldungen
+#   WHATSAPP_TOKEN         Zugriffstoken des Meta-Systemnutzers
+#   WHATSAPP_TELEFON_ID    Phone Number ID des Geschaeftskontos
+#   WHATSAPP_VORLAGE       Name der genehmigten Nachrichtenvorlage
+#   WHATSAPP_SPRACHE       Sprachcode der Vorlage
+#   RESEND_TOKEN           Ausweichweg fuer Meldungen, falls MELDUNG fehlt
+#   STATUS_SCHLUESSEL      Schluessel der Statusabfrage
+#   TELEGRAM_TOKEN         nur fuer den Ausweichkanal
+#   TELEGRAM_CHAT          nur fuer den Ausweichkanal
+#
+# Dazu je Kunde die Empfaengerkennung, benannt in `konfiguration.js` unter
+# `ziel.whatsapp` -- derzeit WHATSAPP_NUMMER_KOSTA.
+#
+# **Diese eine faellt beim Suchen durch.** Alle anderen Werte stehen als
+# `env.NAME` im Quelltext und sind auffindbar; die Empfaengerkennung wird
+# ueber `env[ziel.whatsapp]` dynamisch nachgeschlagen und taucht deshalb in
+# keinem grep auf. Wer sie versehentlich als Variable statt als Secret
+# anlegt, verliert sie beim naechsten Deploy und findet im Code keinen
+# Hinweis darauf, dass sie je existiert hat. Der Worker sendet dann an die
+# Zeichenkette "WHATSAPP_NUMMER_KOSTA", Meta lehnt ab, und beim Betrieb
+# klingelt nichts mehr.
+#
+# Ausserdem ist eine Rufnummer ein personenbezogenes Datum und gehoert aus
+# diesem Grund ohnehin nicht in ein Repository.
+
 [vars]
 # Nicht geheim. Geheimes kommt ueber `wrangler secret put`.
 KANAL = "whatsapp"        # "whatsapp" im Betrieb, "telegram" nur als Ausweichweg
