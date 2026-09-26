@@ -65,7 +65,7 @@ export const FELDNAMEN = {
     'personenzahl', 'personen', 'anzahl', 'g(?:ä|ae)ste', 'guests', 'pax',
   ],
   telefon: ['rufnummer', 'telefon', 'handy', 'mobil', 'phone', 'tel'],
-  name: ['nachname', 'vorname', 'name', 'gast', 'von'],
+  name: ['nachname', 'vorname', 'name', 'customer', 'gast', 'von'],
   // Kein eigener Finder, aber im Auszug ebenso ueberfluessig wie der Rest.
   sonstige: ['e-?mail', 'mail', 'adresse', 'anlass', 'betreff'],
 }
