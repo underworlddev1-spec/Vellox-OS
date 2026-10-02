@@ -48,6 +48,8 @@ nicht auf und wird typischerweise vom Kunden gemeldet, nicht vom Team.
 Die praktische Folge: **Der obere Rand braucht Zahlen, weil er kein Symptom
 hat.** Am Telefon reicht Hinsehen, hier nicht.
 
+Beide Kapitel prüfen je einen Rand, und genau deshalb bleibt die Strecke dazwischen ungeprüft. Sie hat ein eigenes Kapitel: [Das Band dazwischen](09-das-band-dazwischen.md).
+
 ## Die vier Zahlen für das obere Ende
 
 Je Projekt einmal notiert, gemessen bei 1280, 1920 und 2560 Pixeln. Nicht

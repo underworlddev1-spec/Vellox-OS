@@ -17,6 +17,8 @@ existiert, wird am großen Bildschirm nicht gesehen, und zwar von niemandem.**
 Nicht vom Entwickler, nicht im Review, nicht in der Freigabe. Der einzige Weg
 dorthin ist Messen.
 
+Und zwischen beiden Rändern liegt ein drittes Band, das keiner der beiden Blicke erreicht: [Das Band dazwischen](09-das-band-dazwischen.md) beschreibt die Breiten, an denen die meisten Bruchstellen liegen und an denen am seltensten geprüft wird.
+
 ## Die Fehlerklasse hinter dem Menüfehler
 
 Der Fehler war eine fehlende Klasse. Auf dem Telefon sind Navigation und
