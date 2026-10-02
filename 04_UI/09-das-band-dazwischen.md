@@ -108,6 +108,20 @@ neuen Umschaltstelle liegt die Navigation hinter einer Berührung. Das ist eine
 Entscheidung gegen einen Umbruch und für gleichbleibende Größen, und sie ist
 vertretbar, solange die wichtigste Handlung sichtbar bleibt.
 
+## Zwei entgegengesetzte Rasterfehler aus derselben Ursache
+
+Die Spaltenzahl ist der Ort, an dem dieses Band am sichtbarsten versagt, und zwar in beide Richtungen gleichzeitig. Dieselbe Seite kann an einer Stelle zu wenige und an einer anderen zu viele Spalten haben, und beides geht darauf zurück, dass für das Band keine eigene Regel geschrieben wurde: Dort gilt dann entweder die Telefonregel oder die Laptopregel, und welche von beiden, entscheidet die Bruchstelle, an der jemand einmal gearbeitet hat.
+
+**Zu wenige Spalten.** Zwei Preiskarten standen bei 820 Pixeln untereinander, obwohl 756 Pixel Inhaltsbreite für zwei Spalten von je 370 Pixeln reichen. Der Schaden ist nicht ästhetisch: Preise vergleicht man nebeneinander, und wer dafür scrollen muss, vergleicht nicht, sondern liest zweimal. Wandert die Spaltenzahl auf das Band, muss die Höchstbreite mitwandern — sonst laufen die Karten auf dem Tablet über die ganze Breite und werden breiter als auf dem Laptop.
+
+**Zu viele Spalten.** Drei Textkarten standen ab 768 Pixeln nebeneinander, also je 208 bis 236 Pixel. Dort brach die Überschrift auf drei Zeilen und der Fließtext alle drei bis vier Wörter um. Betroffen waren elf Seiten, weil dieselbe Klassenkette an elf Stellen stand.
+
+**Der erste Fall ist messbar, der zweite ist ein Urteil.** Eine Spalte, die für Fließtext zu schmal ist, lässt sich an einer Zahl erkennen: Bei sechzehn Pixel Schrift und achtundzwanzig Pixel Innenabstand je Seite bleiben unter etwa 260 Pixeln Spaltenbreite weniger als zweihundert Pixel Text, also rund dreißig Zeichen je Zeile. Das ist eine Schwelle, die ein Skript prüfen kann.
+
+Ob eine Spalte dagegen *breiter sein dürfte*, kann kein Skript entscheiden. Zwei Dinge gehören nebeneinander, wenn man sie vergleicht, und untereinander, wenn man sie nacheinander liest — das steht im Inhalt und nicht im Layout. Diese Richtung bleibt Urteil und gehört in die Prüfliste, nicht in ein Gate.
+
+Für die messbare Richtung gilt dieselbe Hygiene wie bei jedem Bericht: Ein Befund wird behoben oder mit Grund als entschieden eingetragen. Im beschriebenen Projekt blieb genau einer stehen — vier Ablaufschritte mit 222 Pixeln je Spalte, deren Überschriften Einzelwörter sind und nicht brechen, und für die zwei Spalten mit je 490 Pixeln zu breit gewesen wären.
+
 ## Warum kein bestehendes Werkzeug das fand
 
 Im betroffenen Projekt liefen zu diesem Zeitpunkt sechs Prüfungen: Zeilenlängen,
@@ -128,7 +142,9 @@ gemeldet hat, wird danach mechanisiert, damit es nur einmal gemeldet werden muss
 
 ## Reviewfrage
 
-Öffne die Seite an den Rändern aller Bruchstellen und notiere je vier Zahlen.
+Zähle zuerst die Spalten. Trägt im Tablet-Band ein Raster Fließtext in Spalten unter etwa 260 Pixeln, ist es eine Spalte zu viel; steht eine Reihe gleichartiger Karten einspaltig, obwohl zwei nebeneinander passen, ist es eine zu wenig.
+
+Öffne die Seite danach an den Rändern aller Bruchstellen und notiere je vier Zahlen.
 Bleibt über ein ganzes Band jede davon gleich, benenne für jede einzeln, ob sie
 entschieden oder vergessen war. Prüfe danach, ob die Navigationsleiste an jeder
 dieser Breiten einzeilig bleibt — und wenn nicht, rechne nach, wie viele Pixel
