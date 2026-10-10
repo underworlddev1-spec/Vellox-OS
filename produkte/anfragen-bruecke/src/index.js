@@ -110,7 +110,23 @@ export default {
       const ergebnis = await zustellen({ kunde, text: nachricht, parameter, env })
       await zaehlen(env, 'zugestellt')
       await schreiben(env, { letzteZustellung: { zeit: jetzt(), kanal: ergebnis.kanal, kunde: kunde.name } })
-      console.log(`zugestellt ueber ${ergebnis.kanal}`)
+      const anzahl = ergebnis.zugestellt || 1
+      console.log(`zugestellt ueber ${ergebnis.kanal}` + (anzahl > 1 ? ` an ${anzahl} Empfaenger` : ''))
+
+      // Ein Betrieb mit mehreren Empfaengern kann teilweise ausfallen: Der
+      // Wirt bekommt seine Nachricht, das Geraet eines Mitarbeiters nicht.
+      // Das sieht im Betrieb wie Erfolg aus und ist keiner. Deshalb wird es
+      // gezaehlt und gemeldet, obwohl die Zustellung insgesamt geklappt hat.
+      const offen = ergebnis.gescheitert || []
+      if (offen.length) {
+        console.log('Teilausfall:', offen.join(' | '))
+        await zaehlen(env, 'fehler')
+        await schreiben(env, { letzterFehler: { zeit: jetzt(), was: `Teilausfall: ${offen.join(' | ')}`, kunde: kunde.name } })
+        ctx.waitUntil(betreiberMelden(
+          `Teilausfall bei ${kunde.name}.\n${anzahl} von ${anzahl + offen.length} Empfaengern erreicht.\n\n${offen.join('\n')}`,
+          env,
+        ))
+      }
     } catch (e) {
       // Eine gescheiterte Zustellung darf nie wie Erfolg aussehen und sie
       // darf nie still sein. Der Betreiber erfaehrt es sofort, und die Mail

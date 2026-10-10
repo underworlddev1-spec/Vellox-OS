@@ -71,6 +71,81 @@ export async function whatsappSenden({ nummer, parameter, env }) {
   return { kanal: 'whatsapp', status: res.status }
 }
 
+/**
+ * Mehrere Empfaenger aus einem einzigen Wert.
+ *
+ * Ein Betrieb ist nicht eine Person. Der Wirt steht nicht immer am Telefon,
+ * und eine Anfrage, die nur sein Geraet erreicht, liegt still, solange er
+ * nicht hinsieht. Die Empfaengerkennung ist deshalb eine **Liste**, getrennt
+ * durch Komma, Semikolon oder Leerzeichen.
+ *
+ * Sie steht weiter in demselben Secret wie vorher, und genau das ist der
+ * Grund fuer diese Form: Einen Mitarbeiter aufzunehmen heisst damit, im
+ * Dashboard einen Wert zu ergaenzen, und nicht, diese Datei zu aendern und
+ * neu auszuliefern. **Eine Einstellung, die fuer jede Aenderung einen Deploy
+ * braucht, wird nicht gepflegt.**
+ *
+ * Doppelte Nummern fallen weg. Ein versehentlich zweimal eingetragener
+ * Empfaenger bekaeme sonst zwei Nachrichten, und jede davon kostet Geld.
+ */
+export function nummernLesen(wert) {
+  // Getrennt wird an Komma, Semikolon und Zeilenumbruch -- **nicht am
+  // Leerzeichen.** Eine diktierte Nummer wird als "+49 160 8896350"
+  // aufgeschrieben, und ein Trenner am Leerzeichen macht daraus drei
+  // Bruchstuecke, die alle durch die Laengenpruefung fallen. Die erste
+  // Fassung tat genau das und hat die Nummer still verschluckt.
+  const roh = String(wert || '').split(/[,;\n\r]+/)
+  const sauber = roh
+    .map((n) => n.replace(/\D/g, ''))
+    // Untergrenze gegen Bruchstuecke, Obergrenze gegen Zusammengelaufenes:
+    // Stehen zwei Nummern mit Leerzeichen auf einer Zeile, ergaebe das eine
+    // Ziffernfolge, die es nicht gibt. E.164 laesst hoechstens 15 Ziffern zu.
+    .filter((n) => n.length >= 8 && n.length <= 15)
+  return [...new Set(sauber)]
+}
+
+/** Nur die letzten vier Ziffern. Eine Protokollzeile braucht nicht mehr. */
+const kuerzen = (n) => '\u2026' + String(n).slice(-4)
+
+/**
+ * An alle Empfaenger eines Betriebs zustellen.
+ *
+ * Parallel und ueber `allSettled`, nicht nacheinander: Ein Geraet, dessen
+ * Nummer nicht mehr stimmt, darf die Zustellung an die uebrigen weder
+ * verzoegern noch verhindern.
+ *
+ * Die Erfolgsregel steht hier und nicht beim Aufrufer, weil sie eine Aussage
+ * ueber den Vorgang selbst ist: **Erreicht ist der Betrieb, wenn mindestens
+ * ein Empfaenger die Nachricht hat.** Nicht erreicht ist er, wenn keiner sie
+ * hat; dann wirft die Funktion, und der bestehende Weg fuer gescheiterte
+ * Zustellungen greift unveraendert.
+ *
+ * Der Fall dazwischen ist der gefaehrliche und der eigentliche Grund fuer
+ * den Rueckgabewert: Der Wirt bekommt seine Nachricht, die Nummer eines
+ * Mitarbeiters ist seit Wochen tot, und niemand merkt es, weil ja etwas
+ * ankommt. Ein Teilausfall wird deshalb nicht verschluckt, sondern
+ * zurueckgegeben und vom Aufrufer gemeldet.
+ */
+export async function whatsappVerteilen({ nummern, parameter, env }) {
+  if (!nummern || !nummern.length) {
+    throw new ZustellFehler('whatsapp', 0, 'keine Zielnummer hinterlegt')
+  }
+  const laeufe = await Promise.allSettled(
+    nummern.map((nummer) => whatsappSenden({ nummer, parameter, env })),
+  )
+  const gescheitert = []
+  let zugestellt = 0
+  laeufe.forEach((lauf, i) => {
+    if (lauf.status === 'fulfilled') { zugestellt++; return }
+    const grund = (lauf.reason && lauf.reason.message) || String(lauf.reason)
+    gescheitert.push(`${kuerzen(nummern[i])}: ${grund}`)
+  })
+  if (!zugestellt) {
+    throw new ZustellFehler('whatsapp', 0, `kein Empfaenger erreicht -- ${gescheitert.join(' | ')}`)
+  }
+  return { kanal: 'whatsapp', status: 200, zugestellt, gescheitert }
+}
+
 /** Telegram. Fuer den Bau, den Test und als Ausweichweg im Betrieb. */
 export async function telegramSenden({ chat, text, env }) {
   if (!env.TELEGRAM_TOKEN) {
@@ -98,10 +173,13 @@ export async function zustellen({ kunde, text, parameter, env }) {
   const ziel = (kunde && kunde.ziel) || {}
 
   if (kanal === 'whatsapp') {
-    const nummer = ziel.whatsapp && env[ziel.whatsapp] ? env[ziel.whatsapp] : ziel.whatsapp
-    return whatsappSenden({ nummer, parameter, env })
+    const roh = ziel.whatsapp && env[ziel.whatsapp] ? env[ziel.whatsapp] : ziel.whatsapp
+    return whatsappVerteilen({ nummern: nummernLesen(roh), parameter, env })
   }
-  return telegramSenden({ chat: ziel.telegram, text, env })
+  // Gleiche Form wie der WhatsApp-Weg, damit der Aufrufer nicht zwei
+  // Rueckgabewerte unterscheiden muss.
+  const ergebnis = await telegramSenden({ chat: ziel.telegram, text, env })
+  return { ...ergebnis, zugestellt: 1, gescheitert: [] }
 }
 
 /**

@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "pruefen": "node test/lauf.mjs && node test/meldung.mjs",
+    "pruefen": "node test/lauf.mjs && node test/meldung.mjs && node test/antwortweg.mjs && node test/empfaenger.mjs",
     "entwickeln": "wrangler dev",
     "ausliefern": "wrangler deploy",
     "protokoll": "wrangler tail"
