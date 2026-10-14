@@ -24,6 +24,8 @@ Was das konkret ausschließt: kein zweispaltiger Hero mit Fließtext links und B
 
 Auf Mobile bleibt die zentrierte Achse erhalten; siehe [Mobile und Zwischenräume](#mobile-und-zwischenräume) für die übrigen Anpassungen (Bildbeschnitt, CTA-Reihenfolge, Abschnittsabstand), die davon unabhängig zu bewerten sind.
 
+**Geltungsbereich.** Die Regel gilt für den Hero des Einstiegs. Der Aufmacher einer Innenseite, die selbst eine Arbeit zeigt, ist keine Hero-Fläche mit Angebot, sondern die Titelseite eines Magazins: Das Bild füllt den Schirm und ist die Arbeit, der Titel steht in einer Ecke, weil die Mitte dem Bild gehört. Das ist eine begründete Ausnahme unter drei Bedingungen: Das Bild ist selbst die Arbeit und keine Stimmung, die vier Ecken des Fensters tragen eine feste Anordnung (Nummer, Disziplin, Titel, Handlung), und der Hero des Einstiegs bleibt zentriert. Ein linksbündiger Aufmacher über einem Stimmungsbild bleibt ausgeschlossen. Die Begründung und der Anlass stehen in [Wenn die Arbeit das Produkt ist](10-wenn-die-arbeit-das-produkt-ist.md).
+
 ## Visuelle Dominanz begrenzen
 
 Ein Hero darf groß sein, aber die Größe darf nicht selbst das Argument sein. Überdimensionierte Typografie, Videos oder komplexe Parallax-Effekte können die Kernbotschaft verdecken, besonders auf kleinen Bildschirmen und bei Zoom. Prüfe den Hero daher im schnellen Blick, im Scroll und unter reduzierter Bewegung.

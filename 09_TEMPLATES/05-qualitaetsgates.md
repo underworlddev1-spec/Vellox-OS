@@ -310,6 +310,44 @@ Agenturpräferenz ersetzt wurde, ohne dass es jemand bemerkt hat.
 Der Rest der Markeninventur bleibt bewusst auf Stufe 4. Ob das Ladenschild
 denselben Ton führt wie das Stylesheet, kann kein Skript beurteilen.
 
+## 11. Scrollgekoppelte Animationen überleben den Bau
+
+Ein Rückfall lässt die Seite ruhig weiterlaufen, wenn eine Wirkung ausfällt, und verdeckt damit den Ausfall. Der Fall, aus dem dieses Gate entstand: Der Minifizierer fasste `animation` und `animation-timeline` zu einer Kurzform zusammen, die der Browser verwarf, und jede scrollgekoppelte Wirkung der Seite war weg, bei grünen Gates. Das Gate liest das ausgelieferte CSS und meldet jede Kurzform, in der eine Zeitleiste steckt.
+
+```js
+// werkzeuge oder tools/gate-zeitleiste.mjs, Aufruf nach dem Bau: node tools/gate-zeitleiste.mjs dist
+import { readdirSync, readFileSync, statSync } from 'node:fs'
+import { join } from 'node:path'
+
+const wurzel = process.argv[2] ?? 'dist'
+const dateien = (ordner) =>
+  readdirSync(ordner).flatMap((n) => {
+    const pfad = join(ordner, n)
+    return statSync(pfad).isDirectory() ? dateien(pfad) : /\.(css|html)$/.test(n) ? [pfad] : []
+  })
+
+// Kurzform mit benanntem Zeitleistennamen (` --name`) oder view()/scroll() darin.
+const KURZFORM = /animation:[^;}]*(?:\s--[\w-]+|\sview\(|\sscroll\()[^;}]*/g
+
+const funde = dateien(wurzel).flatMap((datei) =>
+  (readFileSync(datei, 'utf8').match(KURZFORM) ?? []).map((t) => `${datei}: ${t.slice(0, 90)}`)
+)
+if (funde.length) {
+  console.error(`${funde.length} Kurzform(en) mit eingeschlossener Zeitleiste im ausgelieferten CSS:\n  ${funde.join('\n  ')}`)
+  console.error('Die Zeitleiste gehört in eigene Deklarationen. Prüfe, welcher Minifizierer die Kurzform erzeugt, und stelle ihn um.')
+  process.exit(1)
+}
+console.log('ok: keine Kurzform mit Zeitleiste im ausgelieferten CSS')
+```
+
+Negativ getestet an `animation:linear both eintauchen --fenster` (meldet) und an `animation:linear both eintauchen;animation-timeline:--fenster` (meldet nicht), dazu an einer Kurzform ohne Zeitleiste (meldet nicht). Die Fassung mit `view()` oder `scroll()` in der Kurzform wurde im Browser nicht geprüft und wird trotzdem gemeldet, weil ihre Unterstützung nicht belegt ist. Was das Gate nicht kann: beurteilen, ob die Zeitleiste im Browser tatsächlich läuft. Das bleibt eine Messung des berechneten Stils, siehe [Native Bewegung, Video und die Messung der Bühne](../07_ENGINEERING/06-native-bewegung-video-und-messung.md).
+
+## 12. Fingerziele auf dem Handy
+
+Eine Messung, kein Bau-Gate, weil sie einen Browser braucht. Sie läuft bei 375 Pixel Breite in der Konsole oder in einem Playwright-Lauf, und ihr Ergebnis wird im Messprotokoll notiert. Das Skript steht in [Native Bewegung, Video und die Messung der Bühne](../07_ENGINEERING/06-native-bewegung-video-und-messung.md), Abschnitt „Fingerziele, gemessen“. Der Ausgangswert aus dem Projekt: 22 von 52 Zielen unter 44 Pixel in der ersten Fassung, 0 von 52 nach einer Klasse, die die klickbare Fläche eines Textlinks vergrößert, ohne die Zeile zu ändern.
+
+Prüffrage vor der Freigabe: Ist die Zahl der Ziele unter 44 Pixel kleiner als bei der Seite, die ersetzt wird? Wenn nicht, ist die neue Seite am Handy schlechter, auch wenn sie am Schreibtisch besser aussieht.
+
 ## Aufnahmeprüfung
 
 Bevor das Projekt in Phase 3 geht:
@@ -322,6 +360,8 @@ Bevor das Projekt in Phase 3 geht:
 - [ ] Bildleser kennt jedes im Projekt verwendete Format
 - [ ] Jede Zahl auf der Seite hat genau eine Quelle im Code
 - [ ] Jeder Design-Token trägt eine Herkunft, übernommene mit Fundstelle und Datum
+- [ ] Bei scrollgekoppelter Bewegung: Zeitleisten-Gate (Abschnitt 11) aufgerufen und negativ getestet
+- [ ] Tap-Ziele bei 375 Pixel gemessen und gegen die bisherige Seite verglichen (Abschnitt 12)
 - [ ] Der Katalog in [Erzwungene Qualität](../00_SYSTEM/06-erzwungene-qualitaet.md) ist um projektspezifische Gates ergänzt
 
 Der negative Test in Zeile drei wird am häufigsten übersprungen und ist der wichtigste. Ein Gate mit einem Denkfehler in der Bedingung erzeugt Vertrauen, das es nicht deckt.

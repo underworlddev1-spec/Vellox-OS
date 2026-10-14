@@ -95,7 +95,17 @@ Die folgenden Gates haben sich in der Praxis bewährt. Sie sind kein Ersatz für
 | Tabellenzeile hat so viele Zellen wie die Kopfzeile | 1 | Eine verrutschte Tabelle ist auf einer Preisseite eine Falschaussage. |
 | Kante um fremdes Bildmaterial ist unabhängig vom Bildinhalt | 4 | Die mittlere Helligkeit dreier Kundenaufnahmen ergab gegen einen dunklen Grund 1,22:1, 2,62:1 und 10,92:1. Die dunkelste löste sich auf, und der Rahmen war Teil des Problems: Er stand auf derselben Farbe wie der Grund. Unter 3:1 braucht es eine Kante. |
 | Ein Element mit zwei Aufgaben bekommt zwei Umsetzungen | 4 | Vier Fassungen einer Hervorhebung gemessen: Jede, die das Licht unregelmäßig machte, verlor die Kante irgendwo. Eine Eigenschaft, die Grenze und Atmosphäre gleichzeitig leisten soll, leistet keines von beidem zuverlässig. |
+| Ein entferntes Bild bricht den Bau, wo es noch verwendet wird | 2 | Ein Titelbild fließt in Kachel, Vorschau, Gegenüberstellung und Verzeichnis. Wer es an einer Stelle ersetzt, übersieht die zweite. Wird die Datei gelöscht, nennt der Bau jede Stelle, die noch auf sie verweist. Beobachtet: Ein vom Auftraggeber abgelehntes Bild tauchte nach der ersten Korrektur an einer zweiten Stelle wieder auf. |
+| Referenzbilder zeigen das Ergebnis, nicht das Browserfenster | 4 | Ob ein Bild eine Adressleiste enthält, kann kein Bau beurteilen. Es steht im [Design Review](../10_CHECKLISTS/03-design-review.md) und im Asset-Register, mit der Frage, was das Bild vom Ergebnis zeigt. |
+| Zahl und Einheit stehen in einer Zeile | 1 | Die Komponente für Kennzahlen setzt `white-space: nowrap`, ein geschütztes Leerzeichen und eine Schriftgröße aus der Breite der Reihe. „100 %“ in zwei Zeilen kann dann nicht entstehen. |
 | Genau ein Bild je Seite lädt bevorzugt | 4 | Ein Bild oberhalb der Falz mit `lazy` kostet Ladezeit, eines darunter mit `eager` ebenfalls, und beides passiert, wenn man raten darf. Deshalb ist die Angabe ein Pflichtwert ohne Vorgabe. |
+
+### Wirkung und Ausfall
+
+| Gate | Stufe | Warum |
+|---|---|---|
+| Scrollgekoppelte Animation überlebt die Minifizierung | 3 | Der Minifizierer fasste `animation` und `animation-timeline` zu einer Kurzform zusammen, die Chrome verwarf. Alle scrollgekoppelten Effekte liefen danach nicht, ohne Fehlermeldung, weil der Rückfall die Seite ruhig weiterlaufen ließ. Das Gate liest das ausgelieferte CSS. Ausgeführt in [Qualitätsgates](../09_TEMPLATES/05-qualitaetsgates.md), Abschnitt 11. |
+| Jedes Tap-Ziel ist mindestens 44 Pixel hoch | 3 | Gemessen auf 375 Pixel: 22 von 52 Zielen einer neuen Seite lagen darunter, mehr als bei der bisherigen. Ohne Messung fiel es nicht auf. Ausgeführt in [Qualitätsgates](../09_TEMPLATES/05-qualitaetsgates.md), Abschnitt 12. |
 
 ### Was unterhalb einer Bruchstelle passiert
 
@@ -124,6 +134,12 @@ Der Wächter rechnet aus jeder Überschrift den Eigennamen der Seite heraus, als
 Was er nicht kann: Er misst Gliederung, nicht Substanz. Zwei Seiten mit verschiedenen Überschriften und austauschbarem Fließtext gehen durch. Er ersetzt den [Anti-Template-Review](05-anti-template-standard.md) nicht, er nimmt ihm den Fall ab, der sich mechanisch erkennen lässt.
 
 Diese Ehrlichkeit über die Grenze gilt für jedes Gate. Ein Gate, dem mehr zugetraut wird als es leistet, ist gefährlicher als keines.
+
+## Ein Effekt, der still ausfällt, braucht eine Prüfung am Ergebnis
+
+Ein Rückfall ist richtig und hat eine Nebenwirkung. Wer eine Wirkung so baut, dass die Seite ohne sie vollständig bleibt, baut zugleich eine Wirkung, deren Ausfall niemand bemerkt. In einem Projekt standen alle scrollgekoppelten Effekte in der Quelle richtig und kamen im gebauten CSS anders an: Der Minifizierer hatte Deklarationen zusammengefasst, und der Browser verwarf die zusammengefasste. Die Seite sah ruhig aus, die Gates waren grün, und die Wirkung, die sie verkaufen sollte, fehlte vollständig. Gefunden wurde es durch einen Blick auf den berechneten Stil.
+
+**Daraus folgt eine eigene Regel: Für jede Wirkung, die still ausfallen kann, prüft ein Gate das Ergebnis und nicht den Code.** Das kann der ausgelieferte Text sein, wie bei der Zeitleiste, oder ein berechneter Stil in einem Browserlauf. Eine Prüfung der Quelldatei beweist hier nichts, weil die Quelle richtig war. Ausgeführt in [Native Bewegung, Video und die Messung der Bühne](../07_ENGINEERING/06-native-bewegung-video-und-messung.md).
 
 ## Messen statt schätzen
 

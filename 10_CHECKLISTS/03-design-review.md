@@ -12,6 +12,10 @@ Das Design Review prüft, ob die visuelle Form die strategische und UX-Absicht t
 | Oberfläche besitzt kontrollierte Tiefe | Schatten, Border und Radius erklären Beziehungen statt dekorativ zu konkurrieren. | Surface-Review. |
 | Hero unterstützt Einordnung und Handlung | Größe und Bewegung dürfen die primäre Entscheidung nicht verschleiern. | Hero- und CTA-Review. |
 | Hero-Inhalt ist zentriert, nicht linksbündig | Zentrierung ist bei VELLOX ein festes Systemmerkmal, kein Gestaltungsspielraum — siehe [Ausrichtung: Hero immer zentriert](../04_UI/02-navigation-und-hero.md#ausrichtung-hero-immer-zentriert). | Hero-Review auf Desktop und Mobile. |
+| Jede Szene beweist einen Satz (Betriebe mit Bild) | Eine Szene, die keinen Satz beweist, ist Dekoration und kostet einen Scrollweg. | Szenenliste mit dem Satz je Szene, siehe [Wenn die Arbeit das Produkt ist](../04_UI/10-wenn-die-arbeit-das-produkt-ist.md). |
+| Die Leitform berührt keinen Text | Eine Form, die in die Beschriftung schneidet, wirkt wie ein Fehler und nicht wie eine Marke. | Hover- und Fokuszustand von Kachel, Schaltfläche und Rahmen, mit der Beschriftung daneben. |
+| Referenzbilder zeigen das Ergebnis, kein Browserfenster | Ein Fenster zeigt das Gefäß der Arbeit und nicht ihre Wirkung. | Asset-Register mit der Frage, was das Bild vom Ergebnis zeigt. |
+| Zahl und Einheit stehen bei 320 und 2560 Pixel in einer Zeile | Ein Umbruch trennt „100“ von „%“ und fällt zuerst dem Auftraggeber auf. | Messung der Zeilenzahl der Zahlenreihe bei beiden Breiten. |
 | Navigation bleibt als Karte verständlich | Aktiver Zustand, mobile Ansicht und Footer müssen dieselbe Ordnung tragen. | Navigationsdurchlauf. |
 | Spacing und Grid bilden Beziehungen ab | Abstand ist Bedeutung, nicht nur optische Luft. | Layout-Review mit realem Inhalt. |
 | Ausnahmen sind begründet | Charakter entsteht aus bewusster Abweichung, nicht aus Zufall. | Entscheidungseintrag. |

@@ -47,6 +47,10 @@ Motion Language wird nicht nur im Prototyp erklärt. Benenne, welche Bewegungen 
 ## Alterung vermeiden
 
 Ein Effekt, der beim ersten Besuch auffällt, kann bei täglicher Nutzung stören. Prüfe Wiederholung, Wartegefühl und reduzierte Bewegung. Premium entsteht durch eine Form, die auch nach vielen Besuchen ruhig und bedeutungsvoll bleibt.
+## Szenen mit starker Bewegung
+
+Eine Seite darf an wenigen Stellen mehr Bewegung tragen als die drei Aufgaben oben verlangen, wenn die Bewegung ein Versprechen vorführt, das sonst nur behauptet wäre. Eine Szene, in der ein Video beim Scrollen live auf vier Seitenverhältnisse zugeschnitten wird, erklärt „aus einem Dreh entstehen vier Formate“ besser als jeder Absatz. Das ist Orientieren in einem größeren Maßstab und deshalb mit den Regeln dieses Kapitels vereinbar, solange die Szene einen Satz beweist, einen Rückfall ohne Bewegung hat und selten bleibt. Die Bedingungen stehen in [Wenn die Arbeit das Produkt ist](../04_UI/10-wenn-die-arbeit-das-produkt-ist.md), die technische Ausführung in [Native Bewegung, Video und die Messung der Bühne](../07_ENGINEERING/06-native-bewegung-video-und-messung.md).
+
 ## Motion ohne Markenverlust
 
 Wenn eine Marke auf Bewegung angewiesen ist, um lebendig zu wirken, besitzt ihre visuelle Sprache wahrscheinlich noch zu wenig Substanz in Typografie, Bild, Rhythmus oder Interaktion. Motion darf den Charakter verfeinern. Sie sollte ihn nicht allein tragen. Eine gute reduzierte Fassung bleibt deshalb als eigenständige Marke erkennbar.

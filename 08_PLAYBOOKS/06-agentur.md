@@ -22,6 +22,10 @@ Vermeide Selbstbezeichnungen wie „innovativ“, wenn keine Handlung sie beweis
 
 Die Gestaltung sollte eine klare eigene Haltung besitzen, aber nicht vom Inhalt ablenken. Editoriale Typografie, präzises Grid, starke Cases und kontrollierte Bewegung können Kompetenz und Charakter verbinden. Component-System und Dokumentation müssen so sauber sein, wie die Agentur es Kunden verspricht.
 
+## Wenn die Agentur Bild und Bewegtbild verkauft
+
+Für Agenturen, deren Leistung Film, Foto oder Gestaltung ist, gilt zusätzlich [Wenn die Arbeit das Produkt ist](../04_UI/10-wenn-die-arbeit-das-produkt-ist.md): Der Hero ist das Reel, die Seite ist eine Folge von Szenen, mindestens eine Szene führt das Kernversprechen vor, und die Leitform kommt aus dem Handwerk. Cases zeigen das Ergebnis in Benutzung und nicht die Website des Kunden im Browserfenster. Eigenproduktionen und Konzeptmarken, die die Agentur selbst erfunden hat, werden als solche benannt: auf der Kachel, auf der Fallseite und in der Übersicht, mit einem Satz, der sagt, dass die Marke erfunden ist. Eine Agentur, die ihre eigene Arbeit nicht sauber kennzeichnet, verkauft Ordnung und liefert sie nicht.
+
 ## Conversion und SEO
 
 Conversion ist ein passendes Erstgespräch oder eine qualifizierte Projektanfrage. Miss nicht nur Kontaktzahl, sondern Passung, Budgetklarheit und Entscheidungsreife. SEO-Copy adressiert Probleme und Branchenfragen, nicht nur Agenturleistungen. Cases liefern Long-Tail-Relevanz, wenn sie konkrete Ausgangslagen und Ergebnisse beschreiben.

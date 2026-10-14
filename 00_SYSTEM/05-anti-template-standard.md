@@ -66,6 +66,8 @@ Eigenständigkeit wird nicht durch möglichst viele ungewöhnliche Formen herges
 
 Der wichtigste Rohstoff gegen Templates ist echtes Material. Ein konkretes Detail aus einem Interview, eine charakteristische Arbeitsweise, ein lokaler Weg, ein wahrer Einwand oder ein ungewöhnlicher Prozess kann mehr Eigenständigkeit erzeugen als ein spektakulärer Farbverlauf. Research liefert das Material. Branding gibt ihm eine Haltung. UX ordnet es. UI und Engineering machen es zuverlässig erlebbar.
 
+**Fehlerfreiheit ist keine Eigenständigkeit.** Ein Projekt hat diese Regel an der eigenen Arbeit gelernt: Die erste Fassung entstand, indem jedes Verdachtsmuster aus einem bestehenden Auftritt entfernt und seine Reihenfolge behalten wurde. Sie erfüllte den Katalog und wurde vom Auftraggeber abgelehnt, weil man sie noch als gebaut erkannte. Wer nur Muster entfernt, hat nichts entschieden. Was an ihre Stelle tritt, hängt vom Betrieb ab; für Betriebe, die Arbeit mit Bild zeigen, steht es in [Wenn die Arbeit das Produkt ist](../04_UI/10-wenn-die-arbeit-das-produkt-ist.md). Und jedes vom Auftraggeber abgelehnte Muster wird in eine Negativprobe des Projekts geschrieben und bei jeder weiteren Fassung an allen Stellen geprüft, nicht nur an der, an der es gemeldet wurde.
+
 ## Anti-Template-Review
 
 Vor der Freigabe werden fünf Fragen beantwortet:

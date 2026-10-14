@@ -44,6 +44,16 @@ Vor dem Launch werden nicht nur Dateien übergeben. Das Team übergibt die Logik
 
 Nach dem Launch wird ein begrenztes Lernfenster vereinbart. Beobachtet werden nicht nur Klickzahlen, sondern Suchanfragen, Formularabbrüche, qualitative Rückmeldungen, Supportfragen und technische Signale. Erkenntnisse werden zurück in die passenden Kapitel oder das Projektarchiv geschrieben.
 
+## Der Vergleich mit dem Vorgänger
+
+Bei einem Relaunch wird am Ende behauptet, die neue Seite sei besser. Ein Auftraggeber, der den Vorgänger kennt und mag, glaubt das nicht, und er hat recht, solange die Behauptung ohne Zahl bleibt. Der Vergleich folgt deshalb einem festen Verfahren.
+
+**Beide Seiten werden am selben Tag mit demselben Werkzeug gemessen:** übertragene Bytes beim ersten Laden, Anzahl der Anfragen, Gewicht des Skripts, Länge von Titel und Beschreibung, Überlauf und Tap-Ziele bei 375 Pixel, Gewicht der Filme. Eine Aussage über Gestaltung gehört nicht in diese Liste, weil sie keine Messung ist. **Genannt wird nur, was belegbar besser ist, und es werden nicht mehr Punkte genannt, als es gibt.** Wer auf fünf Punkte auffüllt, obwohl es vier gibt, entwertet die vier.
+
+Dazu gehören zwei Listen, die Auftraggeber selten erwarten und die den Vergleich glaubwürdig machen. Die erste nennt, was der Vorgänger auch hat und was deshalb kein Gewinn ist (ein Sprunglink, Alternativtexte, die Kennzeichnung der Eigenproduktionen). Die zweite nennt, wo der Vorgänger besser oder gleichwertig ist, mit Zahl oder Beobachtung. Wer sie weglässt, wird bei der ersten Gegenfrage widerlegt.
+
+**Der Vergleich kann gegen die eigene Fassung ausgehen, und dann wird die Fassung korrigiert, nicht der Vergleich.** In einem Projekt hatte die neue Seite bei der Messung mehr zu kleine Tap-Ziele als die alte (22 von 52 gegen 12 von 36). Sie wurde nachgebessert, gemessen und mit beiden Zahlen dokumentiert. Das Urteil über Wirkung, etwa ob eine Seite nach Maschine aussieht, bleibt beim Auftraggeber und wird nicht als Messung ausgegeben.
+
 ## Rhythmus und Verantwortlichkeiten
 
 Jede Phase besitzt eine verantwortliche Person, einen Freigabepunkt und ein sichtbares Artefakt. Die verantwortliche Person muss nicht alles selbst erstellen; sie sorgt dafür, dass die Entscheidung eine Quelle der Wahrheit besitzt. Stakeholder werden zu den Fragen eingeladen, bei denen sie Kontext oder Autorität haben, nicht zu jeder Mikroentscheidung.

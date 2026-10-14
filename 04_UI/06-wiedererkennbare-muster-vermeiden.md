@@ -20,7 +20,7 @@ Der Hero ist der Abschnitt, für den beim Bauen am wenigsten Information vorlieg
 
 Es gibt keinen guten Standard-Hero. Es gibt fünf Formen, und welche greift, entscheidet die Frage, welchen Beweis der Betrieb heute tatsächlich hat. Damit entstehen unterschiedliche Heros nicht aus Abwechslung, sondern aus unterschiedlichen Voraussetzungen.
 
-**Beleg-Hero.** Es gibt mindestens zwei nennbare, öffentlich erreichbare Arbeiten. Dann stehen sie oben, mit Namen. Nicht als Logoreihe, sondern als Artefakt, das man anklicken kann. Der Hero behauptet nichts, er zeigt.
+**Beleg-Hero.** Es gibt mindestens zwei nennbare, öffentlich erreichbare Arbeiten. Dann stehen sie oben, mit Namen. Nicht als Logoreihe, sondern als Artefakt, das man anklicken kann. Der Hero behauptet nichts, er zeigt. Bei Betrieben, deren Arbeit Bewegtbild ist, hat er eine eigene Form: das Reel, ausgeführt in [Wenn die Arbeit das Produkt ist](10-wenn-die-arbeit-das-produkt-ist.md).
 
 **Ort-Hero.** Die räumliche Nähe ist das Argument. „Mein Schreibtisch steht in der Gutenbergstraße. Wenn du hier einen Betrieb führst, bin ich in zehn Minuten bei dir." Das ist überprüfbar und von einem Wettbewerber aus einer anderen Stadt nicht kopierbar.
 
@@ -43,7 +43,7 @@ Diese Elemente sind nicht verboten. Verboten ist, sie als Vorgabe zu setzen, ohn
 | Zentrierter Fließtext über die Seitenbreite | Zentrierter Text ab drei Zeilen kostet Lesegeschwindigkeit, weil jede Zeile einen neuen Anfangspunkt hat. Zentrieren ist eine Entscheidung für kurze Zeilen, nicht für Bedeutung. |
 | Mockup auf Farbverlauf | Der Verlauf ersetzt eine Aussage, das Mockup ersetzt einen Beleg. |
 | Graue Logoreihe „Vertraut von" | Ohne Erlaubnis rechtlich fragwürdig, ohne Bezug wirkungslos, in Grau zusätzlich als Dekoration erkennbar. |
-| Vollflächiges Video ohne Aussage | Ein Video ist ein Beleg oder eine Stimmung. Als Stimmung kostet es Ladezeit und liefert nichts. |
+| Vollflächiges Video ohne Aussage | Ein Video ist ein Beleg oder eine Stimmung. Als Stimmung kostet es Ladezeit und liefert nichts. Ein Reel, das den Titel der laufenden Arbeit als Link trägt, ist ein Beleg und fällt nicht darunter. |
 | Überschrift ohne Subjekt | „Digitale Lösungen für nachhaltiges Wachstum" hat kein Subjekt, keinen Adressaten und keine Prüfbarkeit. |
 
 ## Die Marke oben links
@@ -71,6 +71,8 @@ und verglichen liest sich ein Schein in der Markenfarbe als ausgewähltes
 Bedienelement, ein weißer als Licht, das auf den Gegenstand fällt. Ausgeführt
 steht das in [Das Handy ist nicht die kleine Fassung](07-handy-zuerst-und-gemessen.md).
 
+Die Quelle der Form muss dabei nicht das Zeichen sein. In einem Projekt wurde die aus dem Logo abgelesene Fase abgelehnt und die Form angenommen, die der Auftraggeber aus seinem Handwerk kannte, die vier Ecken eines Kamerasuchers. Welche Quelle trägt, entscheidet, ob der Auftraggeber die Form ohne Erklärung als seine erkennt. Ausgeführt steht das in [Wenn die Arbeit das Produkt ist](10-wenn-die-arbeit-das-produkt-ist.md).
+
 **Wenn es keine Marke gibt, ist das eine Lücke in der Recherche und keine Gestaltungsfreiheit.** Sie wird benannt und geschlossen, nicht durch einen Schriftzug überbrückt.
 
 ## Die Erkennungsmerkmale im Einzelnen
@@ -89,6 +91,8 @@ Die folgenden Listen sind Verdachtsmomente, keine Verbote. Jeder Fund wird entwe
 - Emoji als Abschnittsmarkierung
 - Eine einzige Schriftfamilie für alles, ohne zweite Stimme
 - Schatten dort, wo eine Linie genügt hätte
+- Ein Punkt (Kreis) als Aufzählungszeichen, Statusmarke oder Vorspann einer Beschriftung, der keinen Zustand anzeigt
+- Ein Bildschirmfoto der eigenen Referenz im Browserfenster als Titelbild oder Vorschau, wo ein Standbild aus dem Ergebnis stünde
 - Alles zentriert. Symmetrie braucht denselben Grund wie Asymmetrie
 - Jedes Element fährt beim Scrollen von unten ein. Eine Bewegung, die überall gleich ist, ist keine Sprache, sondern eine Voreinstellung
 
@@ -129,6 +133,6 @@ Der Rest bleibt Urteil, und zwar bewusst. Ob eine Überschrift ein Subjekt hat, 
 
 ## Verhältnis zu den anderen Kapiteln
 
-Der [Anti-Template-Standard](../00_SYSTEM/05-anti-template-standard.md) nennt die Haltung und die fünf Freigabefragen. Dieses Kapitel nennt die konkreten Formen, in denen der Verstoß auftritt, weil eine Haltung ohne Beispiele nicht wiedererkannt wird. [Navigation und Hero](02-navigation-und-hero.md) beschreibt den Aufbau, [Visuelles System](../02_BRANDING/02-visuelles-system.md) die Herkunft der Formen, [Motion Language](../02_BRANDING/03-motion-language.md) die Bewegung.
+Der [Anti-Template-Standard](../00_SYSTEM/05-anti-template-standard.md) nennt die Haltung und die fünf Freigabefragen. Dieses Kapitel nennt die konkreten Formen, in denen der Verstoß auftritt, weil eine Haltung ohne Beispiele nicht wiedererkannt wird. [Wenn die Arbeit das Produkt ist](10-wenn-die-arbeit-das-produkt-ist.md) zeigt, was an die Stelle der Vorlage tritt, wenn ein Betrieb Arbeit mit Bild zeigt. [Navigation und Hero](02-navigation-und-hero.md) beschreibt den Aufbau, [Visuelles System](../02_BRANDING/02-visuelles-system.md) die Herkunft der Formen, [Motion Language](../02_BRANDING/03-motion-language.md) die Bewegung.
 
 Die Reihenfolge der Arbeit bleibt dabei unverändert: Erst Recherche, dann Positionierung, dann Struktur, dann Form. Dieses Kapitel beschleunigt keinen dieser Schritte. Es verhindert nur, dass ihr Ergebnis am Ende aussieht wie das Ergebnis von jemandem, der sie übersprungen hat.
