@@ -56,6 +56,24 @@ Wo dieses Kapitel älteren Regeln widerspricht, gilt dieses Kapitel. Es ist das 
 
 Lighthouse (mobil und Desktop) und axe laufen gegen den gebauten Stand, nicht gegen den Entwicklungsserver. Das Ziel ist 100 bei Barrierefreiheit, Best Practices und SEO und mindestens 99 bei Performance. Zwei Fallen aus Saphirweb: Eine Farbe, die erst durch Scrollen oder Einblenden ihren Endwert erreicht (Leitsatz, der Wort für Wort dunkel wird), wird vom Prüfer im Ausgangszustand gemessen, der Ausgangszustand muss deshalb 4,5 zu 1 erreichen. Und eine Kopfleiste mit dem Ton "dunkel" auf einer Seite, deren Anfang hell ist, macht das Logo unleserlich. axe wird mit `prefers-reduced-motion: reduce` und nach einem Durchlauf durch die ganze Seite gefahren, sonst meldet es Zwischenzustände der Einblendungen.
 
+## Effizienz: wenig Token, volle Leistung
+
+Die Arbeit an einer Seite ist teuer, wenn jede Sitzung wieder erkundet, was schon bekannt ist. Diese Regeln halten Kontext und Ausgabe klein, ohne die Qualität zu senken. Richtigkeit, Sicherheit und Schutz vor zerstörenden Aktionen gehen immer vor Kürze.
+
+**Zuerst suchen, dann gezielt lesen.** Mit Grep oder Glob die Stelle finden und die Datei nur im betroffenen Bereich lesen (Zeilenbereich statt ganze Datei). Nennt der Auftraggeber Pfad oder Funktion, wird direkt dorthin gegangen. Sperrdateien, Build-Ausgaben, minimierte Dateien und erzeugter Code werden nicht gelesen.
+
+**Einmal lesen, einmal prüfen.** Eine Datei wird je Aufgabe einmal gelesen und nach dem eigenen Edit nicht erneut. Gebaut und gemessen wird einmal am Ende, nicht nach jeder Änderung, und nur der betroffene Teil (eine Seite, ein Test), nicht die ganze Suite.
+
+**Ausgabe an der Quelle begrenzen.** Befehle laufen mit `head`, `tail`, `grep` oder `--quiet`. Lange Berichte (Lighthouse, axe) werden auf Kennzahlen und durchgefallene Prüfungen gefiltert, nie ganz ausgegeben.
+
+**Unabhängiges parallel.** Lesen, Suchen und Messungen ohne Abhängigkeit laufen in einem Schritt. Hohe Datenmengen (Testläufe, Logs, breite Suchen) gehen an einen Hilfsagenten, der nur das Ergebnis zurückgibt, aber nichts, was in drei Aufrufen erledigt ist.
+
+**Kleinste Änderung.** Kein Umbau nebenbei, keine Umbenennung, keine neuen Kommentare. Mehrere Änderungen an einer Datei gehören in einen Aufruf.
+
+**Antworten.** Ergebnis zuerst, höchstens fünf Zeilen, keine Wiederholung des Diffs, höchstens eine Rückfrage. Eine lange Sitzung wird mit `/compact` gekürzt, ein Themenwechsel mit `/clear` begonnen.
+
+**Leistung der Seite selbst.** Der gleiche Gedanke gilt für das Ergebnis: Bilder als WebP oder AVIF in der angezeigten Größe, nur eine Schrift mit wenigen Schnitten, kein Skript ohne Wirkung, CSS-Animation statt Bibliothek, `prefers-reduced-motion` respektieren. Das Ziel bleibt Lighthouse 99 oder mehr bei Performance.
+
 ## Prüfung vor der Übergabe
 
 Ein Entwurf geht erst raus, wenn diese Fragen mit Ja beantwortet sind:
