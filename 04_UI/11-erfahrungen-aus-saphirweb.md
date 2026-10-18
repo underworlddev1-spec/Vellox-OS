@@ -52,6 +52,10 @@ Wo dieses Kapitel älteren Regeln widerspricht, gilt dieses Kapitel. Es ist das 
 
 **Antworten sind kurz und deutsch.** Zuerst das Ergebnis, dann höchstens vier Zeilen. Keine Wiederholung dessen, was im Diff steht, und höchstens eine Rückfrage, nur wenn die Arbeit blockiert ist.
 
+## Messwerte, die vor jeder Übergabe stehen
+
+Lighthouse (mobil und Desktop) und axe laufen gegen den gebauten Stand, nicht gegen den Entwicklungsserver. Das Ziel ist 100 bei Barrierefreiheit, Best Practices und SEO und mindestens 99 bei Performance. Zwei Fallen aus Saphirweb: Eine Farbe, die erst durch Scrollen oder Einblenden ihren Endwert erreicht (Leitsatz, der Wort für Wort dunkel wird), wird vom Prüfer im Ausgangszustand gemessen, der Ausgangszustand muss deshalb 4,5 zu 1 erreichen. Und eine Kopfleiste mit dem Ton "dunkel" auf einer Seite, deren Anfang hell ist, macht das Logo unleserlich. axe wird mit `prefers-reduced-motion: reduce` und nach einem Durchlauf durch die ganze Seite gefahren, sonst meldet es Zwischenzustände der Einblendungen.
+
 ## Prüfung vor der Übergabe
 
 Ein Entwurf geht erst raus, wenn diese Fragen mit Ja beantwortet sind:
@@ -62,7 +66,8 @@ Ein Entwurf geht erst raus, wenn diese Fragen mit Ja beantwortet sind:
 4. Steht jeder Abschnitt dort, wo er den Besucher abholt, und ist keine Angebotsstruktur falsch für das, was angeboten wird?
 5. Ist jeder sichtbare Text belegt, und wurde kein Kundentext ohne Rückfrage geändert?
 6. Sind Vorschaubilder frisch aus der laufenden Seite erzeugt?
-7. Wurde auf Branch und Vorschau gearbeitet, wo die Seite verkauft ist, und liegt der Link in der Antwort?
+7. Stehen Lighthouse und axe auf den Zielwerten?
+8. Wurde auf Branch und Vorschau gearbeitet, wo die Seite verkauft ist, und liegt der Link in der Antwort?
 
 Die Fragen 1 und 3 sind mechanisierbar und gehören nach [`00_SYSTEM/06-erzwungene-qualitaet.md`](../00_SYSTEM/06-erzwungene-qualitaet.md) in ein Gate im Bau. Eine Regel aus diesem Kapitel, die einmal gebrochen wurde, zieht eine Stufe nach oben.
 
